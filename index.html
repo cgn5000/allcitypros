@@ -1,32 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
-    <title>AllCityPros - Your Local Business Directory</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #333; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 5px 0; }
-        a { text-decoration: none; color: #0070f3; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
+  <title>AllCityPros — Find Top Local Professionals</title>
+  <meta name="description" content="Discover top-rated local professionals across 50+ cities. HVAC, legal, cleaning, contractors, digital marketing and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>AllCityPros</h1>
-    <p>Find top-rated professionals in your city.</p>
-    <h2>Select Your City</h2>
-    <ul>
-        <li><a href="/tampa/">Tampa</a></li>
-        <li><a href="/pittsburgh/">Pittsburgh</a></li>
-        <li><a href="/orlando/">Orlando</a></li>
-        <li><a href="/fortmyers/">Fort Myers</a></li>
-        <li><a href="/charlotte/">Charlotte</a></li>
-        <li><a href="/newyork/">New York</a></li>
-        <li><a href="/losangeles/">Los Angeles</a></li>
-        <li><a href="/chicago/">Chicago</a></li>
-        <!-- Add more as needed -->
-    </ul>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="logo">AllCity<span>Pros</span></a>
+  <nav class="header-nav">
+    <a href="#">Cities</a>
+    <a href="#">Categories</a>
+    <a href="#">List Your Business</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">⭐ Trusted Local Directory</div>
+    <h1>Find Top <em>Local Pros</em><br>In Your City</h1>
+    <p>Vetted professionals across HVAC, legal, cleaning, contracting & more — in 50+ cities nationwide.</p>
+    <div class="hero-search">
+      <input type="text" placeholder="Search city, service, or business…">
+      <button type="button">Search</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>50+</strong><span>Cities</span></div>
+      <div class="hero-stat"><strong>500+</strong><span>Listings</span></div>
+      <div class="hero-stat"><strong>5</strong><span>Categories</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY STRIP -->
+<div class="category-strip">
+  <div class="cat-pill active"><span class="icon">🏙️</span> All</div>
+  <div class="cat-pill"><span class="icon">❄️</span> HVAC</div>
+  <div class="cat-pill"><span class="icon">⚖️</span> Legal</div>
+  <div class="cat-pill"><span class="icon">🧹</span> Cleaning</div>
+  <div class="cat-pill"><span class="icon">🔨</span> Contracting</div>
+  <div class="cat-pill"><span class="icon">📈</span> Digital Marketing</div>
+</div>
+
+<!-- CITIES -->
+<div class="section">
+  <h2 class="section-title">Browse by City</h2>
+  <p class="section-sub">Select your city to find local professionals near you</p>
+  <div class="city-grid">
+    <a href="/tampa/" class="city-card"><div class="city-icon">🌴</div><div class="city-info"><div class="city-name">Tampa</div><div class="city-count">11 listings</div></div></a>
+    <a href="/miami/" class="city-card"><div class="city-icon">🌊</div><div class="city-info"><div class="city-name">Miami</div><div class="city-count">5 listings</div></div></a>
+    <a href="/orlando/" class="city-card"><div class="city-icon">🎡</div><div class="city-info"><div class="city-name">Orlando</div><div class="city-count">5 listings</div></div></a>
+    <a href="/newyork/" class="city-card"><div class="city-icon">🗽</div><div class="city-info"><div class="city-name">New York</div><div class="city-count">5 listings</div></div></a>
+    <a href="/losangeles/" class="city-card"><div class="city-icon">🎬</div><div class="city-info"><div class="city-name">Los Angeles</div><div class="city-count">5 listings</div></div></a>
+    <a href="/chicago/" class="city-card"><div class="city-icon">🌆</div><div class="city-info"><div class="city-name">Chicago</div><div class="city-count">5 listings</div></div></a>
+    <a href="/houston/" class="city-card"><div class="city-icon">🤠</div><div class="city-info"><div class="city-name">Houston</div><div class="city-count">5 listings</div></div></a>
+    <a href="/dallas/" class="city-card"><div class="city-icon">⭐</div><div class="city-info"><div class="city-name">Dallas</div><div class="city-count">5 listings</div></div></a>
+    <a href="/phoenix/" class="city-card"><div class="city-icon">🌵</div><div class="city-info"><div class="city-name">Phoenix</div><div class="city-count">5 listings</div></div></a>
+    <a href="/philadelphia/" class="city-card"><div class="city-icon">🔔</div><div class="city-info"><div class="city-name">Philadelphia</div><div class="city-count">5 listings</div></div></a>
+    <a href="/sanantonio/" class="city-card"><div class="city-icon">🌺</div><div class="city-info"><div class="city-name">San Antonio</div><div class="city-count">5 listings</div></div></a>
+    <a href="/sandiego/" class="city-card"><div class="city-icon">🏄</div><div class="city-info"><div class="city-name">San Diego</div><div class="city-count">5 listings</div></div></a>
+    <a href="/boston/" class="city-card"><div class="city-icon">🫘</div><div class="city-info"><div class="city-name">Boston</div><div class="city-count">5 listings</div></div></a>
+    <a href="/seattle/" class="city-card"><div class="city-icon">☕</div><div class="city-info"><div class="city-name">Seattle</div><div class="city-count">5 listings</div></div></a>
+    <a href="/denver/" class="city-card"><div class="city-icon">🏔️</div><div class="city-info"><div class="city-name">Denver</div><div class="city-count">5 listings</div></div></a>
+    <a href="/atlanta/" class="city-card"><div class="city-icon">🍑</div><div class="city-info"><div class="city-name">Atlanta</div><div class="city-count">5 listings</div></div></a>
+    <a href="/austin/" class="city-card"><div class="city-icon">🎸</div><div class="city-info"><div class="city-name">Austin</div><div class="city-count">5 listings</div></div></a>
+    <a href="/nashville/" class="city-card"><div class="city-icon">🎵</div><div class="city-info"><div class="city-name">Nashville</div><div class="city-count">5 listings</div></div></a>
+    <a href="/charlotte/" class="city-card"><div class="city-icon">🏦</div><div class="city-info"><div class="city-name">Charlotte</div><div class="city-count">11 listings</div></div></a>
+    <a href="/portland/" class="city-card"><div class="city-icon">🌲</div><div class="city-info"><div class="city-name">Portland</div><div class="city-count">5 listings</div></div></a>
+    <a href="/lasvegas/" class="city-card"><div class="city-icon">🎰</div><div class="city-info"><div class="city-name">Las Vegas</div><div class="city-count">5 listings</div></div></a>
+    <a href="/minneapolis/" class="city-card"><div class="city-icon">❄️</div><div class="city-info"><div class="city-name">Minneapolis</div><div class="city-count">5 listings</div></div></a>
+    <a href="/raleigh/" class="city-card"><div class="city-icon">🌿</div><div class="city-info"><div class="city-name">Raleigh</div><div class="city-count">5 listings</div></div></a>
+    <a href="/pittsburgh/" class="city-card"><div class="city-icon">🌉</div><div class="city-info"><div class="city-name">Pittsburgh</div><div class="city-count">5 listings</div></div></a>
+    <a href="/indianapolis/" class="city-card"><div class="city-icon">🏁</div><div class="city-info"><div class="city-name">Indianapolis</div><div class="city-count">5 listings</div></div></a>
+    <a href="/jacksonville/" class="city-card"><div class="city-icon">🌊</div><div class="city-info"><div class="city-name">Jacksonville</div><div class="city-count">5 listings</div></div></a>
+    <a href="/columbus/" class="city-card"><div class="city-icon">🏛️</div><div class="city-info"><div class="city-name">Columbus</div><div class="city-count">5 listings</div></div></a>
+    <a href="/fortworth/" class="city-card"><div class="city-icon">🤠</div><div class="city-info"><div class="city-name">Fort Worth</div><div class="city-count">5 listings</div></div></a>
+    <a href="/sanfrancisco/" class="city-card"><div class="city-icon">🌁</div><div class="city-info"><div class="city-name">San Francisco</div><div class="city-count">5 listings</div></div></a>
+    <a href="/washington/" class="city-card"><div class="city-icon">🏛️</div><div class="city-info"><div class="city-name">Washington DC</div><div class="city-count">5 listings</div></div></a>
+    <a href="/fortmyers/" class="city-card"><div class="city-icon">🦈</div><div class="city-info"><div class="city-name">Fort Myers</div><div class="city-count">5 listings</div></div></a>
+    <a href="/detroit/" class="city-card"><div class="city-icon">🚗</div><div class="city-info"><div class="city-name">Detroit</div><div class="city-count">5 listings</div></div></a>
+    <a href="/baltimore/" class="city-card"><div class="city-icon">🦀</div><div class="city-info"><div class="city-name">Baltimore</div><div class="city-count">5 listings</div></div></a>
+    <a href="/louisville/" class="city-card"><div class="city-icon">🐎</div><div class="city-info"><div class="city-name">Louisville</div><div class="city-count">5 listings</div></div></a>
+    <a href="/milwaukee/" class="city-card"><div class="city-icon">🍺</div><div class="city-info"><div class="city-name">Milwaukee</div><div class="city-count">5 listings</div></div></a>
+    <a href="/albuquerque/" class="city-card"><div class="city-icon">🎈</div><div class="city-info"><div class="city-name">Albuquerque</div><div class="city-count">5 listings</div></div></a>
+    <a href="/tucson/" class="city-card"><div class="city-icon">🌵</div><div class="city-info"><div class="city-name">Tucson</div><div class="city-count">5 listings</div></div></a>
+    <a href="/fresno/" class="city-card"><div class="city-icon">🍇</div><div class="city-info"><div class="city-name">Fresno</div><div class="city-count">5 listings</div></div></a>
+    <a href="/sacramento/" class="city-card"><div class="city-icon">🌾</div><div class="city-info"><div class="city-name">Sacramento</div><div class="city-count">5 listings</div></div></a>
+    <a href="/kansascity/" class="city-card"><div class="city-icon">🎷</div><div class="city-info"><div class="city-name">Kansas City</div><div class="city-count">5 listings</div></div></a>
+    <a href="/mesa/" class="city-card"><div class="city-icon">🏜️</div><div class="city-info"><div class="city-name">Mesa</div><div class="city-count">5 listings</div></div></a>
+    <a href="/omaha/" class="city-card"><div class="city-icon">🌽</div><div class="city-info"><div class="city-name">Omaha</div><div class="city-count">5 listings</div></div></a>
+    <a href="/oklahomacity/" class="city-card"><div class="city-icon">🌪️</div><div class="city-info"><div class="city-name">Oklahoma City</div><div class="city-count">5 listings</div></div></a>
+    <a href="/elpaso/" class="city-card"><div class="city-icon">🌅</div><div class="city-info"><div class="city-name">El Paso</div><div class="city-count">5 listings</div></div></a>
+    <a href="/arlington/" class="city-card"><div class="city-icon">🏟️</div><div class="city-info"><div class="city-name">Arlington</div><div class="city-count">5 listings</div></div></a>
+    <a href="/aurora/" class="city-card"><div class="city-icon">🌄</div><div class="city-info"><div class="city-name">Aurora</div><div class="city-count">5 listings</div></div></a>
+    <a href="/bakersfield/" class="city-card"><div class="city-icon">🛢️</div><div class="city-info"><div class="city-name">Bakersfield</div><div class="city-count">5 listings</div></div></a>
+    <a href="/longbeach/" class="city-card"><div class="city-icon">⚓</div><div class="city-info"><div class="city-name">Long Beach</div><div class="city-count">5 listings</div></div></a>
+    <a href="/oakland/" class="city-card"><div class="city-icon">🌉</div><div class="city-info"><div class="city-name">Oakland</div><div class="city-count">5 listings</div></div></a>
+    <a href="/sanjose/" class="city-card"><div class="city-icon">💻</div><div class="city-info"><div class="city-name">San Jose</div><div class="city-count">5 listings</div></div></a>
+    <a href="/tulsa/" class="city-card"><div class="city-icon">🛢️</div><div class="city-info"><div class="city-name">Tulsa</div><div class="city-count">5 listings</div></div></a>
+    <a href="/virginiabeach/" class="city-card"><div class="city-icon">🏖️</div><div class="city-info"><div class="city-name">Virginia Beach</div><div class="city-count">5 listings</div></div></a>
+    <a href="/coloradosprings/" class="city-card"><div class="city-icon">⛰️</div><div class="city-info"><div class="city-name">Colorado Springs</div><div class="city-count">5 listings</div></div></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo">AllCity<span>Pros</span></div>
+  <p>Connecting people with trusted local professionals across America.</p>
+  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="#">List Your Business</a></p>
+</footer>
+
 </body>
 </html>
