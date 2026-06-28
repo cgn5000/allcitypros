@@ -616,3 +616,17 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(37,99,235,0.15);
   letter-spacing: 0.01em;
 }
+
+/* ── New category hero colors ── */
+.biz-hero.cat-fitness     { background: linear-gradient(135deg, #1a0a2e, #2d1052); }
+.biz-hero.cat-security    { background: linear-gradient(135deg, #0a1a0a, #1a2e1a); }
+.biz-hero.cat-pool        { background: linear-gradient(135deg, #001a33, #003366); }
+.biz-hero.cat-auto        { background: linear-gradient(135deg, #1a0000, #330000); }
+.biz-hero.cat-pets        { background: linear-gradient(135deg, #1a0d00, #2e1a00); }
+.biz-hero.cat-solar       { background: linear-gradient(135deg, #1a1400, #332800); }
+.biz-hero.cat-moving      { background: linear-gradient(135deg, #001433, #002966); }
+.biz-hero.cat-painting    { background: linear-gradient(135deg, #1a001a, #330033); }
+.biz-hero.cat-flooring    { background: linear-gradient(135deg, #1a0d00, #3d2000); }
+.biz-hero.cat-mortgage    { background: linear-gradient(135deg, #001a1a, #003333); }
+.biz-hero.cat-tutoring    { background: linear-gradient(135deg, #001a33, #00264d); }
+.biz-hero.cat-handyman    { background: linear-gradient(135deg, #1a1000, #332000); }

@@ -29,23 +29,56 @@ IMPACT_AFFILIATES = {
     "Roofing":          f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=roofing",
     "Electrical":       f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=electrical",
     "Pest Control":     f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=pest",
+    "Painting":         f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=painting",
+    "Flooring":         f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=flooring",
+    "Pool & Spa":       f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=pool",
+    "Handyman":         f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=handyman",
     # LegalZoom — online legal services
     "Legal":            f"https://legalzoom.sjv.io/c/{IMPACT_PUBLISHER_ID}/226657/4245?subId1=legal",
     # Bench — online accounting & bookkeeping
     "Accounting":       f"https://bench.sjv.io/c/{IMPACT_PUBLISHER_ID}/1047236/9787?subId1=accounting",
+    # LendingTree — mortgage & lending marketplace
+    "Mortgage":         f"https://lendingtree.sjv.io/c/{IMPACT_PUBLISHER_ID}/1202385/8619?subId1=mortgage",
     # Clutch — B2B service marketplace (digital marketing & IT)
     "Digital Marketing":f"https://clutch.sjv.io/c/{IMPACT_PUBLISHER_ID}/1234567/9999?subId1=marketing",
     "IT Services":      f"https://clutch.sjv.io/c/{IMPACT_PUBLISHER_ID}/1234567/9999?subId1=it",
+    # Moving.com — moving services marketplace
+    "Moving":           f"https://moving.sjv.io/c/{IMPACT_PUBLISHER_ID}/1112233/7788?subId1=moving",
+    # ADT — home security
+    "Home Security":    f"https://adt.sjv.io/c/{IMPACT_PUBLISHER_ID}/998877/5566?subId1=security",
+    # Palmetto Solar — residential solar
+    "Solar Energy":     f"https://palmetto.sjv.io/c/{IMPACT_PUBLISHER_ID}/774455/3322?subId1=solar",
+    # Rover — pet services
+    "Pet Services":     f"https://rover.sjv.io/c/{IMPACT_PUBLISHER_ID}/556677/4433?subId1=pets",
+    # ClassPass — fitness & personal training
+    "Personal Training":f"https://classpass.sjv.io/c/{IMPACT_PUBLISHER_ID}/223344/1122?subId1=fitness",
+    # Wyzant — tutoring marketplace
+    "Tutoring":         f"https://wyzant.sjv.io/c/{IMPACT_PUBLISHER_ID}/441122/2211?subId1=tutoring",
+    # RepairPal — auto repair
+    "Auto Repair":      f"https://repairpal.sjv.io/c/{IMPACT_PUBLISHER_ID}/667788/5544?subId1=auto",
 }
 IMPACT_FALLBACK = f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832"
 
 # ── Category map ──────────────────────────────────────────────────────────────
 CATEGORY_MAP = {
+    # Longer/more-specific keywords first to avoid false matches
     "it_services":          {"label": "IT Services",        "emoji": "💻",  "css": "cat-it",          "keywords": ["it_services", "it_support", "managed_it", "computer", "network", "tech_support"]},
     "pest_control":         {"label": "Pest Control",       "emoji": "🐛",  "css": "cat-pest",        "keywords": ["pest_control", "pest", "exterminator", "termite", "rodent"]},
     "general_contracting":  {"label": "Contracting",        "emoji": "🔨",  "css": "cat-contracting", "keywords": ["general_contracting", "contracting", "builders", "construction", "build"]},
     "digital_marketing":    {"label": "Digital Marketing",  "emoji": "📈",  "css": "cat-marketing",   "keywords": ["digital_marketing", "digital", "marketing", "growth", "agency", "seo"]},
     "residential_cleaning": {"label": "Cleaning",           "emoji": "🧹",  "css": "cat-cleaning",    "keywords": ["residential_cleaning", "elite_clean", "sparkle", "cleaning"]},
+    "personal_training":    {"label": "Personal Training",  "emoji": "💪",  "css": "cat-fitness",     "keywords": ["personal_training", "fitness", "trainer", "gym", "workout"]},
+    "home_security":        {"label": "Home Security",      "emoji": "🔒",  "css": "cat-security",    "keywords": ["home_security", "security", "alarm", "surveillance", "locksmith"]},
+    "pool_spa":             {"label": "Pool & Spa",         "emoji": "🏊",  "css": "cat-pool",        "keywords": ["pool_spa", "pool", "spa", "hot_tub", "swimming"]},
+    "auto_repair":          {"label": "Auto Repair",        "emoji": "🚗",  "css": "cat-auto",        "keywords": ["auto_repair", "auto", "mechanic", "automotive", "car_repair"]},
+    "pet_services":         {"label": "Pet Services",       "emoji": "🐾",  "css": "cat-pets",        "keywords": ["pet_services", "pet", "grooming", "boarding", "veterinary"]},
+    "solar_energy":         {"label": "Solar Energy",       "emoji": "☀️",  "css": "cat-solar",       "keywords": ["solar_energy", "solar", "panels", "renewable", "energy"]},
+    "moving":               {"label": "Moving",             "emoji": "🚛",  "css": "cat-moving",      "keywords": ["moving", "movers", "relocation", "storage", "packing"]},
+    "painting":             {"label": "Painting",           "emoji": "🎨",  "css": "cat-painting",    "keywords": ["painting", "painter", "interior", "exterior", "refinishing"]},
+    "flooring":             {"label": "Flooring",           "emoji": "🪵",  "css": "cat-flooring",    "keywords": ["flooring", "floor", "hardwood", "tile", "carpet"]},
+    "mortgage":             {"label": "Mortgage",           "emoji": "🏡",  "css": "cat-mortgage",    "keywords": ["mortgage", "lending", "refinance", "loan", "realty"]},
+    "tutoring":             {"label": "Tutoring",           "emoji": "📚",  "css": "cat-tutoring",    "keywords": ["tutoring", "tutor", "education", "academic", "learning"]},
+    "handyman":             {"label": "Handyman",           "emoji": "🛠️", "css": "cat-handyman",    "keywords": ["handyman", "repairs", "maintenance", "fix", "honey_do"]},
     "hvac":                 {"label": "HVAC",               "emoji": "❄️",  "css": "cat-hvac",        "keywords": ["hvac", "cooling", "heating", "climate", "comfort_systems", "air"]},
     "legal":                {"label": "Legal",              "emoji": "⚖️",  "css": "cat-legal",       "keywords": ["legal", "law", "justice", "attorney"]},
     "accounting":           {"label": "Accounting",         "emoji": "📊",  "css": "cat-accounting",  "keywords": ["accounting", "bookkeeping", "cpa", "tax", "finance"]},
@@ -167,6 +200,114 @@ CITY_BIZ_NAMES = {
         "Spark Electric {city}", "ElectraServ {city}", "{city} Power Systems",
         "LiveWire Electric {city}", "{city} Electrical Group", "GridPro {city}",
         "{city} Certified Electricians", "VoltEdge {city}",
+    ],
+    "moving": [
+        "{city} Movers", "SwiftMove {city}", "{city} Relocation Pros",
+        "TrustMove {city}", "{city} Moving Co.", "EasyMove {city}",
+        "CityHaul {city}", "{city} Pro Movers", "Gentle Giant {city}",
+        "AllState Moving {city}", "{city} Van Lines", "QuickShift {city}",
+        "MetroMove {city}", "{city} Labor Movers", "StarMoving {city}",
+        "SafeHaul {city}", "{city} Full-Service Movers", "ProPack {city}",
+        "LoadRight {city}", "{city} Moving & Storage",
+    ],
+    "painting": [
+        "{city} Paint Pros", "Premier Painters {city}", "BrushMasters {city}",
+        "{city} Color Crew", "FreshCoat {city}", "ProFinish Painting {city}",
+        "{city} Interior Painters", "TrueColor {city}", "CleanLine Painting {city}",
+        "Vivid Paint {city}", "{city} Painting Co.", "PerfectFinish {city}",
+        "RollRight {city}", "{city} House Painters", "TopCoat {city}",
+        "SureStroke {city}", "{city} Painting Experts", "ColorCraft {city}",
+        "ArtisanPainting {city}", "{city} Premier Coatings",
+    ],
+    "flooring": [
+        "{city} Flooring Pros", "Premier Floors {city}", "HardwoodPro {city}",
+        "{city} Floor Masters", "TileRight {city}", "FloorCraft {city}",
+        "{city} Carpet & Floors", "SmoothStep {city}", "GrainLine Flooring {city}",
+        "{city} LVP Experts", "ClearSpan Flooring {city}", "TruPlank {city}",
+        "FloorWise {city}", "{city} Flooring Solutions", "CraftFloor {city}",
+        "EliteFloors {city}", "{city} Hardwood Specialists", "ProTile {city}",
+        "LevelUp Flooring {city}", "{city} Floor Design Co.",
+    ],
+    "home_security": [
+        "{city} Security Systems", "ShieldHome {city}", "SafeWatch {city}",
+        "{city} Alarm Pros", "SecureNow {city}", "Guardian Security {city}",
+        "{city} SmartHome Security", "LockSolid {city}", "VigilPro {city}",
+        "TrueShield Security {city}", "{city} Home Alarm Co.", "SentinelSec {city}",
+        "FortiFy {city}", "{city} Camera & Alarm", "SafeHaven Security {city}",
+        "WatchGuard {city}", "{city} Monitored Security", "AlarmRight {city}",
+        "ProtectPro {city}", "{city} Security Solutions",
+    ],
+    "solar_energy": [
+        "{city} Solar Pros", "SunPower {city}", "{city} Solar Solutions",
+        "BrightSolar {city}", "{city} Green Energy", "SolarFirst {city}",
+        "CleanEnergy {city}", "{city} Photovoltaic Co.", "SunHarvest {city}",
+        "EcoVolt {city}", "{city} Solar Installers", "SolarWise {city}",
+        "SunBridge {city}", "{city} Renewable Energy", "PanelPro {city}",
+        "GreenGrid {city}", "{city} Solar Electric", "LumaEnergy {city}",
+        "SolarEdge {city}", "{city} Sun & Save",
+    ],
+    "pool_spa": [
+        "{city} Pool Pros", "AquaBlue {city}", "{city} Pool & Spa",
+        "ClearWater Pools {city}", "SplashPro {city}", "{city} Pool Service",
+        "WavePool {city}", "TrueBlue Pools {city}", "{city} Pool Masters",
+        "AquaCraft {city}", "PoolRight {city}", "{city} Spa & Pool Co.",
+        "BlueWave {city}", "{city} Pool Cleaning", "CrystalPool {city}",
+        "ShorelinePools {city}", "{city} Pool Builders", "HydroFix {city}",
+        "PoolPerfect {city}", "{city} Aquatic Services",
+    ],
+    "auto_repair": [
+        "{city} Auto Repair", "TrustMech {city}", "{city} Car Care Center",
+        "ProAuto {city}", "{city} Automotive", "SpeedFix Auto {city}",
+        "{city} Mechanic Shop", "RoadReady {city}", "MasterTech Auto {city}",
+        "AutoMedic {city}", "{city} Engine Experts", "DriveFit {city}",
+        "WrenchPro {city}", "{city} Complete Auto Care", "PitStop Auto {city}",
+        "QuickFix Auto {city}", "{city} Certified Mechanics", "AutoWorks {city}",
+        "CarCure {city}", "{city} Transmission & Auto",
+    ],
+    "pet_services": [
+        "{city} Pet Pros", "FurEver {city}", "{city} Pet Care",
+        "TailWag {city}", "PawPerfect {city}", "{city} Dog & Cat Salon",
+        "HappyPaws {city}", "PetBliss {city}", "{city} Pet Grooming",
+        "WoofWash {city}", "PurePet {city}", "{city} Animal Care",
+        "PetSpa {city}", "FurFriends {city}", "{city} Dog Boarding",
+        "TenderPaws {city}", "{city} Pet Resort", "ZenPet {city}",
+        "NaturalPet {city}", "{city} Critter Care",
+    ],
+    "personal_training": [
+        "{city} Fitness Pros", "IronBody {city}", "{city} Personal Trainers",
+        "EliteFit {city}", "{city} Strength & Conditioning", "PeakForm {city}",
+        "CoreFit {city}", "{city} Athletic Training", "FitForce {city}",
+        "BodyRight {city}", "{city} Wellness Coaches", "LiftPro {city}",
+        "PrimalFit {city}", "{city} Transformation Studio", "BurnBright {city}",
+        "FitHaven {city}", "{city} Certified Trainers", "AthletePro {city}",
+        "MaxFit {city}", "{city} Results Training",
+    ],
+    "tutoring": [
+        "{city} Tutoring Pros", "BrightMind {city}", "{city} Academic Center",
+        "LearnRight {city}", "{city} Learning Studio", "TopGrade {city}",
+        "ScholarPro {city}", "{city} Math & Reading Tutors", "EduBoost {city}",
+        "GradeUp {city}", "{city} Test Prep", "StudySmart {city}",
+        "MindSpark {city}", "{city} Private Tutors", "ClearPath {city}",
+        "AcePro {city}", "{city} Student Success", "TutorWise {city}",
+        "BrainyKids {city}", "{city} Excellence Academy",
+    ],
+    "mortgage": [
+        "{city} Mortgage Group", "HomeLoan {city}", "{city} Lending Pros",
+        "RateRight {city}", "{city} Home Finance", "PrimeLend {city}",
+        "TrustMortgage {city}", "{city} Realty Finance", "LoanWise {city}",
+        "FundedHome {city}", "{city} Mortgage Advisors", "ClearPath Lending {city}",
+        "KeyMortgage {city}", "{city} Refinance Experts", "SmarterLoan {city}",
+        "HomeReady {city}", "{city} Purchase & Refi", "ProLend {city}",
+        "BestRate Mortgage {city}", "{city} Home Equity Pros",
+    ],
+    "handyman": [
+        "{city} Handyman Pros", "FixRight {city}", "{city} Home Repairs",
+        "AllFix {city}", "{city} Skilled Handyman", "ProFix {city}",
+        "HomeCare {city}", "TrustFix {city}", "{city} Repair Masters",
+        "QuickFix Home {city}", "WrenchReady {city}", "{city} Mr. Fix-It",
+        "HandyDone {city}", "{city} Home Maintenance", "FixAll {city}",
+        "ServiceRight {city}", "{city} Reliable Handyman", "CraftFix {city}",
+        "HouseCall {city}", "{city} Honey-Do Pros",
     ],
 }
 
@@ -405,6 +546,185 @@ investment. We carry full liability insurance and workers' compensation on every
 from working with a team that does this right. Whether your home needs a 200-amp panel upgrade or you \
 just want to add a few outlets to your home office, we'll give you a clear, itemized quote before \
 any work begins. Call today.""",
+
+    "Moving": """\
+{biz} makes relocation stress-free for families and businesses throughout {city}, {state}. \
+Whether you're moving across town or across the country, our trained crews handle every step — \
+packing, loading, transport, unloading, and furniture placement — with the care your belongings deserve.
+
+We use professional-grade packing materials and furniture protection on every move, and our GPS-tracked \
+fleet means you always know where your possessions are. Specialty items like pianos, artwork, \
+and antiques get dedicated wrapping and handling procedures. We also offer short- and long-term \
+storage solutions at our climate-controlled facility.
+
+Thousands of {city} families have trusted us with their most important moves. We're fully licensed, \
+insured, and registered with the FMCSA. Get a free in-home or virtual estimate today — \
+no hidden fees, no surprises on moving day.""",
+
+    "Painting": """\
+{biz} delivers flawless interior and exterior painting for homes and commercial spaces throughout \
+{city}, {state}. Our licensed painters prep every surface properly, use premium paints and materials, \
+and clean up completely — so you get a finish that looks great and lasts for years.
+
+Interior services include walls, ceilings, trim, cabinets, and accent walls. Exterior work covers \
+full house painting, wood staining, deck refinishing, and pressure washing as part of the prep process. \
+We work with all major paint brands and can help you choose the right sheen, color palette, \
+and finish for every room or surface.
+
+{city} homeowners trust us because we protect their furniture and flooring, stick to the agreed timeline, \
+and back every job with a satisfaction guarantee. Our crews are background-checked, fully insured, \
+and trained in low-VOC and eco-friendly product options. Request your free color consultation today.""",
+
+    "Flooring": """\
+{biz} is {city}'s go-to source for beautiful, durable flooring installations across {state}. \
+We carry and install hardwood, engineered wood, luxury vinyl plank (LVP), tile, laminate, \
+and carpet — with a showroom-quality selection and expert installation for every style and budget.
+
+Our certified installers handle subfloor preparation, moisture testing, and precision fitting so \
+your new floors look perfect and last decades. We also refinish and restore existing hardwood floors, \
+replacing scratches, dents, and worn finish with a like-new surface — often at a fraction of \
+the cost of replacement.
+
+{city} homeowners and commercial clients rely on us for on-time installations, honest pricing, \
+and workmanship backed by a written warranty. Free in-home measurements and estimates are always \
+available. Browse our portfolio and schedule your consultation today.""",
+
+    "Home Security": """\
+{biz} protects homes and businesses throughout {city}, {state} with professional security system \
+installation, 24/7 monitoring, and smart-home integration. Our licensed technicians design a customized \
+security plan around your property — covering entry points, interior motion, cameras, glass-break \
+sensors, and flood or fire detection.
+
+Modern security is about more than alarms. We install and configure smart locks, video doorbells, \
+indoor and outdoor cameras, and app-connected control panels so you can monitor your home from \
+anywhere in the world. Our 24/7 monitoring center contacts emergency services the moment an event \
+is detected — average response in under 45 seconds.
+
+{city} residents choose us for our no-contract monitoring options, local support team, and systems \
+that work even when the internet goes down. Get a free security assessment and custom quote today.""",
+
+    "Solar Energy": """\
+{biz} helps {city}, {state} homeowners and businesses reduce their energy bills and carbon footprint \
+with professionally installed solar panel systems. Our certified solar installers handle everything \
+from roof assessment and system design through permitting, installation, grid interconnection, \
+and utility incentive filing.
+
+We work with top-tier panel manufacturers — LG, SunPower, Panasonic, and REC — and offer multiple \
+battery storage solutions including the Tesla Powerwall and Enphase IQ Battery, so you stay powered \
+even during grid outages. Our team identifies every available federal, state, and utility incentive, \
+including the 30% federal tax credit, to maximize your savings from day one.
+
+The average {city} homeowner who goes solar saves thousands over the life of their system. \
+We back all installations with a 25-year panel warranty and a 10-year workmanship guarantee. \
+Get a free solar assessment and savings estimate today — no pressure, no obligation.""",
+
+    "Pool & Spa": """\
+{biz} is {city}'s trusted pool and spa service company, handling everything from routine weekly \
+maintenance to full pool construction, resurfacing, and equipment replacement. Our certified pool \
+technicians keep your water chemistry balanced, equipment running efficiently, and surfaces clean \
+all year long.
+
+Weekly service plans include skimming, brushing, vacuuming, chemical balancing, and equipment \
+inspection — so you can enjoy your pool without lifting a finger. When repairs are needed, \
+our stocked service vehicles carry pumps, filters, heaters, automation controls, and lighting \
+components for same-day fixes on most issues.
+
+{city} pool owners rely on us for responsive service, transparent pricing, and the peace of mind \
+that comes from working with a fully licensed and insured team. We also offer seasonal opening \
+and closing packages, pool remodels, and spa installation. Call today for a free water analysis \
+and service quote.""",
+
+    "Auto Repair": """\
+{biz} is {city}'s trusted auto repair shop, providing honest, high-quality vehicle service for \
+cars, trucks, and SUVs across {state}. Our ASE-certified mechanics diagnose and fix everything \
+from routine oil changes and brake jobs to complex engine repairs, transmission rebuilds, \
+and electrical system diagnostics.
+
+We believe auto repair shouldn't feel like a gamble. Every service begins with a transparent \
+digital inspection — photos included — so you see exactly what needs attention and why, \
+with no pressure to approve anything you're not ready for. Most repairs are completed same-day, \
+and we stand behind our work with a 12-month/12,000-mile parts-and-labor warranty.
+
+{city} drivers trust us because we're straightforward, fast, and genuinely care about keeping \
+your vehicle safe and reliable. We work on all makes and models and accept most extended warranties. \
+Book your appointment online or give us a call — free estimates on most repairs.""",
+
+    "Pet Services": """\
+{biz} provides compassionate, professional pet care services for dogs, cats, and small animals \
+throughout {city}, {state}. Whether your pet needs a full grooming session, boarding while you \
+travel, daycare during the workday, or obedience training, our experienced team treats every \
+animal like family.
+
+Our grooming services include breed-appropriate cuts, baths, nail trims, ear cleaning, \
+and teeth brushing — performed in a calm, stress-free environment. Boarding guests stay in \
+spacious, climate-controlled suites with daily exercise, playtime, and individual attention. \
+Our certified trainers offer private lessons, group classes, and puppy socialization programs \
+backed by positive reinforcement methods.
+
+{city} pet owners love us for our transparent communication — daily updates and photos during \
+boarding and daycare — and for the genuine love our staff shows every animal. All facilities \
+are clean, safe, and fully insured. Book your pet's first visit today.""",
+
+    "Personal Training": """\
+{biz} helps {city}, {state} residents achieve their fitness goals through personalized, \
+science-backed training programs. Our certified personal trainers design every workout plan \
+around your specific body, goals, and lifestyle — whether you want to lose weight, build muscle, \
+improve athletic performance, or simply feel better every day.
+
+We offer one-on-one personal training, small group sessions, and nutrition coaching in private \
+studio settings, at your home gym, or outdoors. Every program starts with a comprehensive \
+fitness assessment so we understand your current level, history, and any injuries or limitations. \
+From there we build a progressive plan and adjust it as you improve.
+
+{city} clients choose us because we get results — and because we hold you accountable with \
+the right mix of encouragement and challenge. Our trainers are certified through NASM, ACE, \
+or NSCA and carry full liability insurance. Book a free intro session today.""",
+
+    "Tutoring": """\
+{biz} connects {city}, {state} students with experienced, caring tutors who make learning click. \
+We offer one-on-one and small-group tutoring for K–12 students in all core subjects — \
+math, reading, writing, science, history, and foreign languages — as well as SAT/ACT prep \
+and specialized support for students with learning differences.
+
+Our tutors are credentialed teachers, college professors, and subject-matter experts who adapt \
+their teaching style to each student's learning profile. Sessions are available in-home, \
+at our learning center, or online — flexible scheduling that works around school and family life.
+
+{city} families see measurable results: most students improve a full letter grade within 4–6 weeks. \
+We track progress transparently and keep parents informed every step of the way. \
+Call today for a free academic assessment and to get matched with your perfect tutor.""",
+
+    "Mortgage": """\
+{biz} helps {city}, {state} homebuyers and homeowners navigate the mortgage process with \
+confidence. Our licensed mortgage advisors shop rates across dozens of lenders to find you \
+the best possible rate and terms — whether you're purchasing your first home, moving up, \
+refinancing for a lower payment, or tapping home equity.
+
+We work with conventional, FHA, VA, USDA, and jumbo loan programs, and our team is experienced \
+with first-time buyer grants and down payment assistance programs available in {state}. \
+From pre-approval to closing, we handle the paperwork and keep you informed at every milestone \
+so there are no surprises at the settlement table.
+
+{city} clients choose us for our speed — most pre-approvals within 24 hours — \
+and for our commitment to finding the right loan, not just closing quickly. \
+We're independently licensed, which means our loyalty is to you, not to a single lender. \
+Get your free rate quote today.""",
+
+    "Handyman": """\
+{biz} is {city}'s reliable handyman service for all the home repairs and maintenance tasks \
+that pile up on your to-do list. From hanging doors and fixing drywall to caulking bathrooms, \
+patching roofs, installing ceiling fans, and assembling furniture — we handle hundreds of \
+repair types that don't require a specialized contractor.
+
+Our handymen arrive on time, in uniform, with a fully stocked truck so most jobs are completed \
+in a single visit. We charge transparent hourly and flat rates — no bait-and-switch estimates. \
+All work is backed by our satisfaction guarantee, and our team is background-checked, \
+licensed where required, and fully insured.
+
+{city} homeowners and landlords rely on us to keep properties in top shape without the hassle \
+of finding and coordinating multiple specialists. We also offer home maintenance packages \
+for seasonal check-ups and preventive care. Schedule your visit online today — \
+same-week availability in most areas.""",
 }
 
 # ── Card display data ─────────────────────────────────────────────────────────
@@ -421,6 +741,18 @@ CARD_SNIPPETS = {
     "Landscaping":      "Full-service lawn care, landscape design, and hardscaping for curb appeal you'll love.",
     "Roofing":          "Expert roof repairs, full replacements, and inspections backed by a written warranty.",
     "Electrical":       "Licensed electricians for panel upgrades, EV chargers, lighting, and safety inspections.",
+    "Moving":           "Licensed movers handling packing, loading, transport, and storage with care.",
+    "Painting":         "Interior and exterior painting using premium paints — surfaces prepped, clean-up included.",
+    "Flooring":         "Hardwood, LVP, tile, and carpet installation plus hardwood refinishing.",
+    "Home Security":    "24/7 monitored security systems with cameras, smart locks, and rapid emergency response.",
+    "Solar Energy":     "Custom solar panel installations to slash your energy bill — federal tax credit eligible.",
+    "Pool & Spa":       "Weekly pool service, repairs, and full pool construction for {city} homeowners.",
+    "Auto Repair":      "ASE-certified mechanics for all makes and models with transparent digital inspections.",
+    "Pet Services":     "Grooming, boarding, daycare, and training for dogs and cats by certified pet professionals.",
+    "Personal Training":"Certified personal trainers delivering customized workout plans and real results.",
+    "Tutoring":         "One-on-one K–12 tutoring in all subjects, SAT/ACT prep, and learning support.",
+    "Mortgage":         "Licensed mortgage advisors shopping dozens of lenders for your best rate and terms.",
+    "Handyman":         "Trusted handyman for repairs, installations, and maintenance — same-week availability.",
     "Local Business":   "Trusted local professionals serving your community with quality and care.",
 }
 
@@ -437,6 +769,18 @@ CARD_SERVICES = {
     "Landscaping":      ["Lawn Maintenance", "Landscape Design", "Irrigation"],
     "Roofing":          ["Roof Replacement", "Storm Damage", "Gutter Install"],
     "Electrical":       ["Panel Upgrades", "EV Chargers", "Lighting Install"],
+    "Moving":           ["Local Moves", "Long Distance", "Packing & Storage"],
+    "Painting":         ["Interior Painting", "Exterior Painting", "Cabinet Refinishing"],
+    "Flooring":         ["Hardwood Install", "LVP & Laminate", "Tile & Refinishing"],
+    "Home Security":    ["24/7 Monitoring", "Camera Systems", "Smart Locks"],
+    "Solar Energy":     ["Panel Installation", "Battery Storage", "Tax Credit Help"],
+    "Pool & Spa":       ["Weekly Service", "Equipment Repair", "Pool Construction"],
+    "Auto Repair":      ["Oil & Brakes", "Engine Diagnostics", "Same-Day Repair"],
+    "Pet Services":     ["Dog Grooming", "Boarding & Daycare", "Obedience Training"],
+    "Personal Training":["Custom Programs", "Nutrition Coaching", "Group Sessions"],
+    "Tutoring":         ["Math & Science", "SAT/ACT Prep", "All Grade Levels"],
+    "Mortgage":         ["Purchase Loans", "Refinancing", "Rate Shopping"],
+    "Handyman":         ["Repairs & Fixes", "Installations", "Maintenance Plans"],
     "Local Business":   ["Free Estimates", "Local Service", "Top Rated"],
 }
 
@@ -446,7 +790,7 @@ CARD_REVIEWS = [23, 47, 31, 62, 18, 54, 39, 28, 71, 45]
 # ── Target listings per city ──────────────────────────────────────────────────
 TARGET_PER_CITY = 200
 # Spread target evenly across 12 categories — 17 per category = 204 min baseline
-LISTINGS_PER_CAT = math.ceil(TARGET_PER_CITY / len(CATEGORY_SLUGS))
+LISTINGS_PER_CAT = 20
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -611,6 +955,18 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
   <div class="cat-pill"><span class="icon">🌿</span> Landscaping</div>
   <div class="cat-pill"><span class="icon">🏠</span> Roofing</div>
   <div class="cat-pill"><span class="icon">⚡</span> Electrical</div>
+  <div class="cat-pill"><span class="icon">🚛</span> Moving</div>
+  <div class="cat-pill"><span class="icon">🎨</span> Painting</div>
+  <div class="cat-pill"><span class="icon">🪵</span> Flooring</div>
+  <div class="cat-pill"><span class="icon">🔒</span> Home Security</div>
+  <div class="cat-pill"><span class="icon">☀️</span> Solar Energy</div>
+  <div class="cat-pill"><span class="icon">🏊</span> Pool &amp; Spa</div>
+  <div class="cat-pill"><span class="icon">🚗</span> Auto Repair</div>
+  <div class="cat-pill"><span class="icon">🐾</span> Pet Services</div>
+  <div class="cat-pill"><span class="icon">💪</span> Personal Training</div>
+  <div class="cat-pill"><span class="icon">📚</span> Tutoring</div>
+  <div class="cat-pill"><span class="icon">🏡</span> Mortgage</div>
+  <div class="cat-pill"><span class="icon">🛠️</span> Handyman</div>
 </div>
 
 <div class="section">
@@ -657,6 +1013,18 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
         "Landscaping":      ["Lawn Mowing & Edging", "Landscape Design", "Tree & Shrub Trimming", "Irrigation System Install", "Seasonal Cleanup", "Mulching & Sodding"],
         "Roofing":          ["Roof Inspection & Repair", "Full Roof Replacement", "Gutter Installation & Cleaning", "Storm Damage Restoration", "Flat & Metal Roofing", "Free Estimates"],
         "Electrical":       ["Panel Upgrades & Repairs", "Outlet & Switch Installation", "Lighting Design", "EV Charger Installation", "Generator Hookup", "Safety Inspections"],
+        "Moving":           ["Local & Long-Distance Moves", "Packing & Unpacking", "Furniture Disassembly/Assembly", "Specialty Item Handling", "Short & Long-Term Storage", "Free In-Home Estimates"],
+        "Painting":         ["Interior Painting", "Exterior Painting", "Cabinet Painting & Refinishing", "Deck & Fence Staining", "Pressure Washing & Prep", "Color Consultation Included"],
+        "Flooring":         ["Hardwood Installation & Refinishing", "Luxury Vinyl Plank (LVP)", "Tile & Stone", "Carpet Installation", "Laminate Flooring", "Subfloor Repair & Prep"],
+        "Home Security":    ["Security System Design & Install", "24/7 Professional Monitoring", "Indoor & Outdoor Cameras", "Smart Lock Installation", "Video Doorbell Setup", "Fire & Flood Sensors"],
+        "Solar Energy":     ["Residential Solar Panel Install", "Battery Storage Systems", "Federal & State Incentive Filing", "Roof Assessment & Permitting", "Grid Tie-In & Interconnection", "Annual System Monitoring"],
+        "Pool & Spa":       ["Weekly Pool Maintenance", "Chemical Balancing", "Equipment Repair & Replacement", "Pool Resurfacing", "Leak Detection", "Seasonal Opening & Closing"],
+        "Auto Repair":      ["Oil Change & Fluid Services", "Brake Repair & Replacement", "Engine Diagnostics", "Transmission Service", "AC & Heat Repair", "Tire Rotation & Alignment"],
+        "Pet Services":     ["Dog & Cat Grooming", "Overnight Boarding", "Doggy Daycare", "Puppy & Adult Training", "Nail Trims & Ear Cleaning", "Pick-Up & Drop-Off Available"],
+        "Personal Training":["Personalized Workout Programs", "Nutrition & Meal Planning", "One-on-One Sessions", "Small Group Training", "Online Coaching", "Fitness Assessments"],
+        "Tutoring":         ["Math (K–12 & SAT)", "Reading & Writing", "Science & STEM", "SAT/ACT Test Prep", "Learning Disability Support", "In-Home, Center, or Online"],
+        "Mortgage":         ["Home Purchase Loans", "Refinancing", "FHA, VA & USDA Loans", "Jumbo Loans", "Down Payment Assistance", "Pre-Approval in 24 Hours"],
+        "Handyman":         ["Drywall Repair & Patching", "Door & Window Installation", "Furniture Assembly", "Caulking & Weatherstripping", "Light Fixture Replacement", "General Home Maintenance"],
     }
     service_items = "\n".join(
         f'        <div class="listing-detail"><span class="di">✅</span> {s}</div>'
