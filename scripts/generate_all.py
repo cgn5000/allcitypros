@@ -889,6 +889,326 @@ CARD_SERVICES = {
 CARD_RATINGS = ["4.7", "4.8", "4.9", "4.8", "5.0", "4.6", "4.8", "4.9", "4.7", "4.8"]
 CARD_REVIEWS = [23, 47, 31, 62, 18, 54, 39, 28, 71, 45]
 
+# ── FAQ content per category (renders as FAQPage schema + visible accordion) ──
+FAQS = {
+    "HVAC": [
+        ("How much does HVAC repair cost in {city}?",
+         "HVAC repair costs in {city} typically range from $150–$500 for minor fixes like a capacitor or refrigerant recharge, up to $1,500+ for compressor or coil replacement. Get 2–3 free estimates from local {city} HVAC companies before committing."),
+        ("How often should I service my HVAC system?",
+         "Most manufacturers recommend a professional tune-up twice a year — spring for your AC and fall for your heating system. Annual maintenance extends equipment life, improves efficiency, and catches small issues before they become expensive breakdowns."),
+        ("What SEER rating should I look for?",
+         "SEER (Seasonal Energy Efficiency Ratio) measures cooling efficiency. Modern systems run 14–25 SEER. In warmer climates a 16–18 SEER unit offers the best balance of upfront cost and long-term energy savings."),
+        ("How long do HVAC systems last?",
+         "Central AC units last 15–20 years and furnaces 20–30 years with proper maintenance. If your system is over 15 years old and needs a major repair, replacement is often more cost-effective. A local {city} HVAC technician can assess your system during a free inspection."),
+        ("Do {city} HVAC companies offer emergency same-day service?",
+         "Yes — most {city} HVAC companies provide 24/7 emergency service for situations like a broken AC in summer heat or a failed furnace in winter. Many charge no after-hours surcharge for genuine emergencies."),
+    ],
+    "Legal": [
+        ("How do I find a good attorney in {city}?",
+         "Start with a free consultation — most {city} law firms offer one. Look for attorneys who specialize in your specific issue (personal injury, family law, criminal defense, etc.), check their bar standing, and ask about fee structures before hiring."),
+        ("What is a contingency fee?",
+         "A contingency fee means you pay nothing unless your attorney wins your case. The attorney takes a percentage of the settlement or award — typically 25–40%. This arrangement is common in personal injury, workers' comp, and class-action cases."),
+        ("How much does a lawyer cost in {city}?",
+         "{city} attorney rates vary widely by practice area. Hourly rates typically range from $150–$500/hr for general practice up to $400–$800/hr for complex litigation. Many cases use flat-fee or contingency arrangements instead."),
+        ("What should I bring to my first legal consultation?",
+         "Bring all relevant documents: contracts, medical records, police reports, correspondence, photos, or anything related to your case. The more information your {city} attorney has upfront, the better they can assess your situation."),
+        ("How long do legal cases take in {city}?",
+         "Timelines vary significantly. Simple contract disputes may settle in weeks; personal injury cases often take 6–18 months; complex litigation can run 2–3 years. Your attorney can give you a realistic timeline after reviewing your specific situation."),
+    ],
+    "Cleaning": [
+        ("How much does house cleaning cost in {city}?",
+         "Professional house cleaning in {city} typically costs $100–$200 for a standard clean of a 1,500 sq ft home. Deep cleans, move-out cleans, and post-construction cleans run higher — usually $200–$400+. Most services offer free instant quotes online."),
+        ("How often should I have my home professionally cleaned?",
+         "Most homeowners schedule professional cleaning every 2–4 weeks. Weekly service suits busy households or homes with pets and kids; bi-weekly is the most popular frequency; monthly works well for single occupants or low-traffic homes."),
+        ("Are cleaning products safe for kids and pets?",
+         "Reputable {city} cleaning companies use EPA-approved, non-toxic products that are safe for children and pets. Ask your cleaning service about their product line — many offer fully green cleaning options at no extra charge."),
+        ("Do I need to be home during the cleaning?",
+         "No — most {city} cleaning clients provide a key or door code and aren't home during service. All professional cleaning staff are background-checked and insured, so you can feel comfortable leaving them access to your home."),
+        ("What's included in a deep clean vs a regular clean?",
+         "A regular clean covers standard surfaces, floors, bathrooms, and kitchen. A deep clean adds inside appliances, baseboards, window sills, ceiling fans, grout scrubbing, and other detail work. Most {city} cleaning companies recommend starting with a deep clean, then switching to maintenance visits."),
+    ],
+    "Contracting": [
+        ("How do I find a licensed contractor in {city}?",
+         "Always verify a contractor's license with {state}'s licensing board before hiring. Ask for proof of insurance, check reviews on Google and Houzz, and get at least three written bids. Licensed contractors in {city} are required to pull permits, protecting you legally."),
+        ("How much does a home addition cost in {city}?",
+         "Home additions in {city} average $150–$300 per square foot depending on complexity, materials, and finishes. A 400 sq ft addition could run $60,000–$120,000. Always get a detailed written estimate that breaks out labor, materials, and permits."),
+        ("What permits are required for remodeling in {city}?",
+         "Most structural changes, electrical work, plumbing, HVAC modifications, and additions require permits in {city}. Your licensed contractor should handle all permit applications. Unpermitted work can cause issues when you sell your home."),
+        ("How long does a kitchen remodel take?",
+         "A mid-sized kitchen remodel typically takes 4–8 weeks for an experienced {city} contractor. Complex projects with custom cabinetry and structural changes can run 10–16 weeks. Ask for a detailed project timeline in your written contract."),
+        ("What should a contractor contract include?",
+         "A solid contract should include: project scope and specifications, start and completion dates, payment schedule (never pay more than 10% upfront), materials list, change-order process, warranty terms, and proof of insurance. Your {city} contractor should provide all of this in writing."),
+    ],
+    "Digital Marketing": [
+        ("How much does digital marketing cost in {city}?",
+         "Digital marketing budgets in {city} vary widely. SEO retainers typically run $750–$3,000/month; PPC management 10–20% of ad spend; social media management $500–$2,500/month. Most agencies offer free audits so you can see the opportunity before committing."),
+        ("How long does SEO take to show results?",
+         "SEO is a long-term investment — most {city} businesses see meaningful ranking improvements in 3–6 months, with strong results at 9–12 months. Factors like domain age, competition, and content quality all affect the timeline."),
+        ("What's better for {city} businesses — SEO or paid ads?",
+         "Paid ads deliver immediate traffic but stop when your budget stops. SEO builds lasting organic visibility. Most {city} marketing agencies recommend running both: paid ads for quick wins while SEO compounds in the background."),
+        ("How do I know if my digital marketing is working?",
+         "Track the metrics that matter: organic traffic growth, keyword rankings, lead volume, cost per acquisition, and return on ad spend (ROAS). A good {city} marketing agency provides monthly reports and is proactive about strategy adjustments."),
+        ("Do I need a website before running ads?",
+         "Yes — your ads send traffic somewhere, and a slow or poorly designed landing page wastes your budget. Before investing in paid ads, ensure your {city} business website loads in under 3 seconds, works on mobile, and has clear calls to action."),
+    ],
+    "Accounting": [
+        ("How much does a CPA cost in {city}?",
+         "CPA rates in {city} range from $150–$400/hr for complex work. Tax return preparation for a small business typically runs $500–$2,500 depending on complexity. Monthly bookkeeping retainers start around $200–$800/month. Most {city} accounting firms offer a free initial consultation."),
+        ("When should a small business hire an accountant?",
+         "If you're spending more than 5 hours a month on bookkeeping, have employees, are considering business structure changes, or are facing an IRS notice — it's time. A {city} CPA typically saves businesses more than they cost through tax planning alone."),
+        ("What's the difference between a CPA and a bookkeeper?",
+         "A bookkeeper records daily transactions and reconciles accounts. A CPA (Certified Public Accountant) has advanced credentials, can prepare audited financial statements, represent you before the IRS, and provide strategic financial advice. Many {city} firms offer both services."),
+        ("Can an accountant help me save on taxes in {city}?",
+         "Absolutely. A proactive {city} CPA identifies legal deductions, advises on business structure (LLC vs S-corp), manages quarterly estimated taxes, and plans for capital events — typically saving small business owners thousands annually."),
+        ("What records should I keep for my accountant?",
+         "Keep all receipts for business expenses, bank statements, payroll records, mileage logs, invoices issued and received, and prior-year tax returns. Most {city} accountants recommend cloud-based accounting software like QuickBooks or Xero to keep everything organized."),
+    ],
+    "IT Services": [
+        ("How much does managed IT support cost in {city}?",
+         "Managed IT services in {city} typically cost $75–$200 per user per month, depending on the level of support and monitoring included. This is usually far less than a full-time IT employee and includes 24/7 monitoring, help desk support, and proactive maintenance."),
+        ("What is managed IT and do I need it?",
+         "Managed IT means outsourcing your technology management to a local {city} IT firm that monitors your systems around the clock, handles updates and patches, provides help desk support, and responds to issues — often before you even notice them."),
+        ("How do I protect my {city} business from cyberattacks?",
+         "Start with multi-factor authentication, up-to-date software and patches, employee phishing training, endpoint protection, and regular data backups. A {city} IT security firm can assess your current vulnerabilities and build a layered defense tailored to your business."),
+        ("What's the best cloud backup solution for a small business?",
+         "Leading options include Microsoft Azure Backup, Backblaze B2, and Veeam. The right choice depends on your data volume, recovery time objectives, and compliance requirements. Your {city} IT provider can recommend and manage the right solution for your size and industry."),
+        ("How quickly can an IT company respond to emergencies in {city}?",
+         "Reputable managed IT firms in {city} offer guaranteed response times — often 15–60 minutes for critical issues. Many provide 24/7 help desk support. Make sure your contract specifies response time SLAs before signing."),
+    ],
+    "Pest Control": [
+        ("How much does pest control cost in {city}?",
+         "A one-time pest treatment in {city} typically costs $150–$300. Ongoing quarterly service plans run $100–$200 per visit. Termite treatments are more involved — $500–$2,500 depending on treatment method and home size. Most companies offer a free inspection before quoting."),
+        ("How long does a pest treatment take to work?",
+         "Most residual pesticide treatments take 24–72 hours to fully eliminate active insects. For termites, liquid treatments work within days but full colony elimination can take 30–90 days. Your {city} exterminator will tell you what to expect for your specific pest and treatment type."),
+        ("Are pest control chemicals safe for my family and pets?",
+         "Licensed {city} pest control companies use EPA-registered products that are safe when applied correctly. Technicians will advise you on re-entry times (typically 1–4 hours) and any precautions for children and pets during and after treatment."),
+        ("How do I prevent pests from coming back?",
+         "Integrated Pest Management (IPM) combines sealing entry points, eliminating moisture and food sources, and scheduled preventive treatments. A quarterly protection plan from a {city} pest control company is the most reliable way to stay pest-free year-round."),
+        ("When should I call an exterminator vs handle it myself?",
+         "DIY products work for minor ant or roach issues. Call a licensed {city} exterminator for termites, bed bugs, rodents, wasps, or any infestation that's spread or recurring. These require professional-grade treatments and safety protocols."),
+    ],
+    "Plumbing": [
+        ("How much does a plumber cost in {city}?",
+         "Plumbers in {city} typically charge $75–$150/hr for standard work, with a $50–$100 service call fee. Common jobs: drain cleaning $100–$250, water heater installation $800–$1,500, pipe repair $200–$500. Emergency calls may carry a higher rate — always ask upfront."),
+        ("What plumbing issues require emergency service?",
+         "Call a {city} plumber immediately for: burst pipes, sewer backup, gas line issues, water heater failure, no water pressure, or flooding. Most {city} plumbing companies offer 24/7 emergency service with same-day response."),
+        ("How do I know if I have a hidden water leak?",
+         "Signs include an unexplained spike in your water bill, low water pressure, mold or mildew smell, wet spots on walls or ceilings, and the sound of running water when everything is off. A {city} plumber can perform a leak detection inspection to confirm."),
+        ("How long does a water heater last?",
+         "Traditional tank water heaters last 8–12 years; tankless units last 15–20 years. If yours is over 10 years old and showing signs of corrosion, rust-colored water, or inconsistent temperatures, consult a {city} plumber about replacement before it fails."),
+        ("Should I repair or replace my water heater?",
+         "If repairs cost more than 50% of a new unit and the heater is over 8 years old, replacement is usually smarter. A {city} plumber can assess your unit and give you an honest recommendation — a quality plumber won't push replacement if repair is the right call."),
+    ],
+    "Landscaping": [
+        ("How much does lawn care cost in {city}?",
+         "Weekly mowing and edging in {city} runs $30–$80 per visit depending on yard size. Monthly lawn care packages average $150–$400. Full landscape design and installation projects are priced per scope — most {city} landscapers offer free estimates."),
+        ("How often should my lawn be mowed in {city}?",
+         "During peak growing season, most {city} lawns need mowing every 7–10 days. Cool-season grasses may slow in summer heat; warm-season grasses grow fastest in summer. Your landscaper will recommend a frequency that keeps your lawn healthy without over-cutting."),
+        ("What's the best time to plant in {city}?",
+         "Planting timing depends on your plant type and {state}'s climate zone. Generally, spring (after last frost) and fall (6 weeks before first frost) are ideal for most plants. A {city} landscape designer can recommend plants suited to your specific soil and sun conditions."),
+        ("How do I get rid of weeds without hurting my lawn?",
+         "Pre-emergent herbicides applied in early spring prevent weed seeds from germinating. Post-emergent products target existing weeds. Thick, healthy turf is your best long-term defense — proper fertilization, watering, and mowing height all help. A {city} lawn care professional can develop a year-round program."),
+        ("Do I need an irrigation system in {city}?",
+         "Irrigation systems pay for themselves in water savings and plant health, especially during {city}'s dry seasons. A smart drip or sprinkler system installed by a {city} landscaper typically costs $2,500–$6,000 and can reduce outdoor water use by 30–50%."),
+    ],
+    "Roofing": [
+        ("How much does roof replacement cost in {city}?",
+         "A full roof replacement in {city} typically costs $8,000–$18,000 for an average-sized home with asphalt shingles, depending on roof size, pitch, and materials. Metal and tile roofs run higher. Get 2–3 free estimates from licensed {city} roofing contractors."),
+        ("How long does a roof last?",
+         "Asphalt shingles: 20–30 years. Architectural shingles: 25–30 years. Metal roofing: 40–70 years. Tile: 50+ years. Regular inspections by a {city} roofing contractor can catch minor issues and extend your roof's life significantly."),
+        ("How do I know if my roof needs replacement vs repair?",
+         "Signs you may need replacement: shingles curling, cracking, or missing in large areas; granules in gutters; daylight through attic; roof age over 20 years; repeated leaks after repairs. A licensed {city} roofer can assess during a free inspection."),
+        ("Does homeowner's insurance cover roof replacement in {city}?",
+         "Most {state} homeowner's policies cover storm-related damage (wind, hail) but not normal wear and tear. After a severe storm, have a licensed {city} roofing contractor document the damage before you file a claim — they can often assist with the insurance process."),
+        ("How long does a roof replacement take?",
+         "Most residential roof replacements in {city} are completed in 1–2 days by an experienced crew. Larger or more complex roofs may take 2–3 days. Your {city} roofer should give you a clear timeline and communicate any weather-related delays."),
+    ],
+    "Electrical": [
+        ("How much does an electrician cost in {city}?",
+         "Electricians in {city} charge $75–$150/hr, with a $50–$100 service call fee. Common jobs: outlet installation $100–$200, panel upgrade $1,500–$3,500, EV charger installation $500–$1,200. Always get a written estimate before work begins."),
+        ("When do I need to upgrade my electrical panel?",
+         "Panel upgrades are needed when: you're adding major appliances, installing EV charging, adding a home addition, or your panel is under 100 amps (or over 25 years old with fuses). A {city} electrician can assess your panel during a free safety inspection."),
+        ("Is it safe to DIY electrical work in {city}?",
+         "Minor tasks like replacing a light switch or outlet cover are generally safe for DIYers. But anything involving your panel, new circuits, or structural wiring must be done by a licensed {city} electrician — unpermitted electrical work is dangerous and can void your home insurance."),
+        ("How do I know if I have faulty wiring?",
+         "Warning signs: flickering lights, tripped breakers, burning smell, discolored outlets, sparks, or a buzzing sound from your panel. If you notice any of these in your {city} home, call a licensed electrician immediately — faulty wiring is a leading cause of house fires."),
+        ("Can an electrician install EV charging in {city}?",
+         "Yes — most licensed {city} electricians install Level 2 EV chargers (240V). The process involves adding a dedicated circuit, installing the charger unit, and pulling the required permit. Total cost typically runs $500–$1,200 installed, and federal tax credits may apply."),
+    ],
+    "Moving": [
+        ("How much does it cost to hire movers in {city}?",
+         "Local moves in {city} (under 50 miles) typically cost $100–$200/hr for a 2-person crew, with most moves totaling $400–$1,500 depending on home size. Long-distance moves are usually quoted by weight and distance. Always get an in-home or virtual estimate."),
+        ("How far in advance should I book movers in {city}?",
+         "Book at least 4–6 weeks ahead for peak season (May–September) and month-end dates. For off-peak moves, 2 weeks is usually sufficient. The best {city} moving companies fill up fast — don't wait until the week before."),
+        ("What's the difference between a binding and non-binding moving estimate?",
+         "A binding estimate is a guaranteed price. A non-binding estimate is based on weight and may change. Always request a binding estimate from your {city} mover to avoid surprise charges on moving day. Reputable movers provide these in writing."),
+        ("How do I protect my valuables during a move in {city}?",
+         "Keep irreplaceable items (jewelry, documents, hard drives) with you personally. Use quality packing materials for fragile items, and photograph valuables before packing. Verify that your {city} moving company carries full-value protection insurance, not just released-liability coverage."),
+        ("Are {city} moving companies required to be licensed?",
+         "Yes — interstate movers must be registered with the FMCSA and have a USDOT number. Local {city} movers must hold a state license. Always verify before booking, and avoid any mover that refuses to provide written estimates or asks for a large cash deposit upfront."),
+    ],
+    "Painting": [
+        ("How much does interior painting cost in {city}?",
+         "Interior painting in {city} typically costs $2–$6 per square foot of wall space, or $1,500–$4,000 for an average 3-bedroom home. Cost depends on ceiling height, number of colors, surface prep needed, and finish quality. Get 2–3 free quotes from licensed {city} painters."),
+        ("How long does interior painting take?",
+         "A professional {city} painting crew can paint a 3-bedroom home in 2–4 days. Exterior projects depend on home size and prep needs — most run 3–5 days. Proper surface prep (caulking, priming, sanding) is what separates a lasting paint job from one that peels in two years."),
+        ("What's the best paint sheen for each room?",
+         "Flat/matte: low-traffic areas like bedrooms and ceilings. Eggshell: living rooms and dining rooms. Satin: kitchens, bathrooms, hallways. Semi-gloss: trim, doors, and high-moisture areas. Your {city} painter can help you choose the right sheen and finish for each space."),
+        ("How do I prepare my home for interior painting?",
+         "Remove fragile items and move furniture to room centers. Your {city} painting crew will cover floors and furniture with drop cloths, tape trim and outlets, and fill holes and cracks before painting. You don't need to do much beyond clearing the space."),
+        ("How long does exterior paint last in {city}?",
+         "Quality exterior paint in {city}'s climate lasts 5–10 years. Proper surface preparation — pressure washing, sanding, priming, and caulking — is the biggest factor in longevity. A professional paint job from a {city} contractor significantly outlasts DIY work."),
+    ],
+    "Flooring": [
+        ("How much does hardwood floor installation cost in {city}?",
+         "Solid hardwood installation in {city} runs $8–$15 per square foot installed. Engineered hardwood is $5–$10/sq ft; luxury vinyl plank $4–$8/sq ft; carpet $3–$7/sq ft. Most {city} flooring companies offer free in-home estimates including subfloor assessment."),
+        ("Hardwood vs luxury vinyl plank — which is better?",
+         "Hardwood adds more resale value and can be refinished multiple times. LVP is 100% waterproof, more durable against scratches, and easier to install. For kitchens, bathrooms, or homes with pets and kids, LVP is often the smarter choice. Your {city} flooring specialist can walk you through both options."),
+        ("How long does floor installation take?",
+         "A typical 1,000 sq ft installation takes 1–3 days for an experienced {city} flooring crew. Add time for subfloor prep and acclimation (hardwood needs 3–5 days to acclimate to your home's humidity before installation)."),
+        ("Can hardwood floors be refinished instead of replaced?",
+         "Yes — solid hardwood can typically be sanded and refinished 3–5 times over its lifetime. Refinishing costs $3–$5 per square foot, a fraction of replacement cost. A {city} flooring company can assess your floor's thickness and condition to see if it's a candidate."),
+        ("What subfloor conditions are needed for new flooring?",
+         "Your subfloor must be dry, level (within 3/16\" over 10 feet), structurally sound, and free of squeaks. Moisture is the enemy of hardwood and laminate — your {city} flooring installer should conduct a moisture test before installation begins."),
+    ],
+    "Home Security": [
+        ("How much does a home security system cost in {city}?",
+         "Professional security systems in {city} typically cost $200–$800 for equipment, plus $20–$60/month for 24/7 monitoring. Smart home integration (cameras, smart locks, video doorbell) adds to equipment cost. Many companies offer $0-down equipment with a monitoring contract."),
+        ("Do I need a professional installer or can I DIY?",
+         "DIY systems (Ring, SimpliSafe, Wyze) are cheaper and flexible but lack professional installation and often have higher false-alarm rates. Professional {city} security companies handle installation, system programming, and integrate all devices for maximum reliability."),
+        ("What deters burglars most effectively?",
+         "Studies show visible security cameras, alarm system signage, motion-activated lighting, and reinforced door locks are the most effective deterrents. A {city} security professional can assess your home's vulnerabilities and recommend a layered approach."),
+        ("How fast does a monitoring center respond in {city}?",
+         "Professional monitoring centers have average response times of 30–45 seconds. When an alarm triggers, they attempt to contact you, then dispatch police, fire, or medical services as needed. Local {city} response times after dispatch depend on your area's emergency services."),
+        ("Does a security system lower my homeowner's insurance in {city}?",
+         "Yes — most {state} insurance carriers offer 5–20% discounts for professionally monitored security systems. Discounts vary by carrier and system type. Ask your {city} security company to provide documentation for your insurance agent."),
+    ],
+    "Solar Energy": [
+        ("How much do solar panels cost in {city}?",
+         "A typical residential solar installation in {city} costs $15,000–$25,000 before incentives. After the 30% federal tax credit (ITC), the net cost drops to $10,500–$17,500. Most {city} homeowners break even in 6–10 years and save $20,000–$40,000 over the system's lifetime."),
+        ("What solar incentives are available in {state}?",
+         "{state} homeowners can claim the 30% federal Investment Tax Credit (ITC) on the full cost of their solar system. {state} may also offer additional state tax credits, net metering policies, and utility rebates. A {city} solar installer can identify every incentive you qualify for."),
+        ("How much can solar reduce my electricity bill in {city}?",
+         "Most {city} homeowners eliminate 70–100% of their electricity bill with a properly sized solar system. Your exact savings depend on your current usage, roof size and orientation, and local utility rates. A {city} solar company will model your savings before you sign anything."),
+        ("Do solar panels work on cloudy days?",
+         "Yes — solar panels generate electricity from daylight, not direct sun. They're less efficient on cloudy days (typically 10–25% of peak output) but still produce meaningful energy. {city} homeowners in cloudier climates still achieve excellent payback through net metering."),
+        ("How long do solar panels last?",
+         "Quality solar panels carry 25-year performance warranties and often last 30–40 years. System output degrades slowly — about 0.5% per year. Your {city} solar installer will show you a production model projecting output over the full warranty period."),
+    ],
+    "Pool & Spa": [
+        ("How much does pool maintenance cost in {city}?",
+         "Weekly pool service in {city} typically costs $100–$200/month for chemical balancing, cleaning, and equipment checks. Equipment repairs are billed separately. Many {city} pool companies offer bundled service plans that include chemical costs and a set number of repairs per year."),
+        ("How often should my pool be serviced?",
+         "During swim season, weekly service is standard. Off-season, every 2 weeks is often sufficient. Pools left unserviced quickly develop algae, imbalanced chemistry, and equipment wear. A regular {city} pool service plan is the most cost-effective way to protect your investment."),
+        ("How do I close my pool for winter in {city}?",
+         "Pool winterization in {city} involves balancing chemicals, lowering the water level, blowing out lines, adding antifreeze (in freeze-risk areas), covering the pool, and winterizing the pump and filter. Most {city} pool companies offer seasonal closing packages starting at $150–$300."),
+        ("How long does pool construction take in {city}?",
+         "A typical in-ground pool build in {city} takes 6–12 weeks from excavation to final inspection, depending on design complexity, material availability, and permit timelines. Your {city} pool builder should provide a detailed timeline with milestones before construction begins."),
+        ("What chemicals do I need to maintain my pool?",
+         "Core pool chemicals include chlorine (sanitizer), pH increaser/decreaser, alkalinity increaser, calcium hardness increaser, and algaecide. Target ranges: pH 7.2–7.6, chlorine 1–3 ppm, alkalinity 80–120 ppm. A {city} pool service tech will handle all of this on your weekly service visits."),
+    ],
+    "Auto Repair": [
+        ("How do I know if an auto repair shop in {city} is trustworthy?",
+         "Look for ASE-certified technicians, verified Google reviews (4.5+ stars with 50+ reviews), written estimates before work begins, and a clear warranty on parts and labor. The best {city} shops are transparent about what they find and never pressure you into repairs."),
+        ("How much does an oil change cost in {city}?",
+         "Conventional oil changes in {city} run $30–$60; synthetic oil changes $60–$120 depending on vehicle. Dealer service centers charge more; independent {city} shops are typically 20–40% less for the same quality work."),
+        ("How often should I get my brakes inspected?",
+         "Have brakes inspected every 12,000 miles or annually, whichever comes first. Signs you need brake service: squealing or grinding noise, vibration when braking, a soft pedal, or the brake warning light. Don't delay — brakes are a safety-critical system."),
+        ("What is a digital vehicle inspection?",
+         "Modern {city} auto shops use tablet-based digital inspections that include photos of your vehicle's actual condition. You see exactly what the technician sees — no more guessing whether a recommended repair is legitimate. Ask any {city} shop if they offer digital inspections."),
+        ("What warranty should I expect on auto repairs in {city}?",
+         "Reputable {city} auto repair shops offer 12-month/12,000-mile warranties on parts and labor as a minimum standard. Some shops offer 24-month/24,000-mile warranties. Ask about warranty coverage before approving any repair."),
+    ],
+    "Pet Services": [
+        ("How often should my dog be groomed in {city}?",
+         "Most dogs benefit from professional grooming every 4–8 weeks. Short-coated breeds can go 8–12 weeks; long-coated or double-coated breeds typically need grooming every 4–6 weeks to prevent matting. Your {city} groomer can recommend the right schedule for your breed."),
+        ("What should I look for in a dog boarding facility in {city}?",
+         "Visit in person before booking. Look for clean facilities, adequate space, separated areas by dog size, staff-to-dog ratios (ideally 1:10 or better), vaccination requirements for all guests, and 24-hour supervision. Ask to see the sleeping areas and outdoor runs."),
+        ("Is doggy daycare worth it for my dog?",
+         "Daycare is excellent for high-energy dogs, those prone to separation anxiety, and dogs that thrive on socialization. A well-run {city} daycare provides structured play, rest periods, and monitoring — resulting in a calmer, happier dog at home."),
+        ("How do I find a certified dog trainer in {city}?",
+         "Look for trainers certified by the CCPDT (Certified Professional Dog Trainer) or IAABC. Positive reinforcement methods are the gold standard — avoid trainers who rely on punishment or dominance-based techniques. Most {city} trainers offer free consultations."),
+        ("What vaccinations are required for boarding and daycare in {city}?",
+         "Most {city} pet facilities require current rabies, DHPP (distemper combo), and Bordetella (kennel cough) vaccinations. Some also require the canine influenza vaccine. Check your facility's specific requirements when booking and ensure your vet records are up to date."),
+    ],
+    "Personal Training": [
+        ("How much does a personal trainer cost in {city}?",
+         "Personal training in {city} typically costs $60–$120 per session for one-on-one training. Package rates lower the per-session cost. Semi-private (2–4 people) training runs $30–$60/session. Online coaching with a {city} trainer runs $100–$300/month."),
+        ("How many personal training sessions do I need to see results?",
+         "Most clients see noticeable changes in 4–8 weeks of consistent training (3x/week) combined with nutritional improvements. Significant body composition changes typically take 3–6 months. Consistency is far more important than frequency — 2 quality sessions per week beats 5 inconsistent ones."),
+        ("Should I get a personal trainer if I'm a beginner?",
+         "Absolutely — beginners benefit most from professional guidance. A {city} personal trainer teaches proper form from the start (preventing injuries), sets realistic expectations, and builds habits that last. The investment pays dividends for years."),
+        ("What should I look for in a personal trainer's credentials?",
+         "Look for certifications from NASM, ACE, NSCA, or ACSM — the four most recognized bodies. Additionally, check for CPR/AED certification, liability insurance, and experience with clients who have similar goals or conditions as yours."),
+        ("Can a personal trainer help me lose weight?",
+         "Training is one piece of the puzzle. A qualified {city} personal trainer will combine resistance training (which preserves muscle and boosts metabolism) with cardio programming and nutritional guidance. Clients who train consistently and improve their nutrition typically lose 1–2 lbs per week safely."),
+    ],
+    "Tutoring": [
+        ("How much does tutoring cost in {city}?",
+         "Private tutoring in {city} runs $40–$100/hr for most subjects; SAT/ACT prep and specialized subjects can run $80–$150/hr. Online tutoring is generally 20–30% less. Many {city} tutoring centers offer package rates and free initial assessments."),
+        ("How do I know if my child needs a tutor?",
+         "Common signs: dropping grades, avoiding homework, loss of confidence in school, teacher concerns, or struggling with a specific subject. Early intervention is key — the sooner a {city} tutor identifies and addresses gaps, the faster progress happens."),
+        ("How often should my child meet with a tutor?",
+         "Most students benefit from 1–2 sessions per week. For SAT/ACT prep or urgent grade recovery, 2–3 sessions per week is more effective. Consistency matters more than volume — regular 60–90 minute sessions with homework in between produce the best results."),
+        ("What's the difference between a tutoring center and private tutoring?",
+         "Tutoring centers offer structured programs, consistent availability, and group sessions — often at lower cost. Private tutors provide completely personalized attention and flexible scheduling. Both are effective; the best fit depends on your child's learning style and your family's schedule."),
+        ("How long does SAT/ACT prep take?",
+         "Most students see meaningful score improvements (50–150+ points on SAT) with 40–80 hours of focused prep over 3–4 months. Starting prep 4–6 months before your target test date gives enough time for content review, practice tests, and score analysis."),
+    ],
+    "Mortgage": [
+        ("What credit score do I need for a mortgage in {city}?",
+         "Conventional loans typically require a 620+ credit score; FHA loans accept scores as low as 580 (with 3.5% down) or 500 (with 10% down); VA loans have no minimum score set by the VA but lenders usually require 580–620. Your {city} mortgage advisor can help you understand your options."),
+        ("How much do I need for a down payment in {city}?",
+         "Conventional loans start at 3% down; FHA loans require 3.5%; VA and USDA loans are 0% down for qualifying buyers. First-time buyer programs in {state} may offer down payment assistance. Your {city} mortgage advisor can identify every program you qualify for."),
+        ("What's the difference between pre-qualification and pre-approval?",
+         "Pre-qualification is a quick estimate based on self-reported information. Pre-approval is a verified commitment — lenders check your credit, income, and assets and issue a formal letter. In competitive {city} markets, sellers strongly prefer buyers with pre-approval letters."),
+        ("How long does it take to close on a home in {city}?",
+         "Most purchase loans close in 30–45 days; refinances typically close in 20–30 days. Your {city} mortgage company will give you a clear timeline at application. Delays usually stem from appraisals, title issues, or missing documentation — your loan officer will keep you informed."),
+        ("Is it worth refinancing my mortgage right now?",
+         "The classic rule is to refinance if you can drop your rate by 1%+ and recoup closing costs within 2 years. But every situation is different. A {city} mortgage advisor can run a break-even analysis in minutes to show you exactly when refinancing makes sense for your loan."),
+    ],
+    "Handyman": [
+        ("How much does a handyman cost in {city}?",
+         "Handyman rates in {city} typically run $60–$120/hr, with most companies having a 2-hour minimum. Flat-rate pricing is common for defined jobs (e.g., TV mounting $100–$150, ceiling fan install $75–$125, drywall patch $100–$250). Always get a written estimate before work starts."),
+        ("What jobs does a handyman do vs a licensed contractor?",
+         "Handymen handle general repairs, installations, and maintenance that don't require a specialty license — drywall, caulking, door hardware, furniture assembly, minor carpentry. Jobs involving structural changes, electrical panels, plumbing lines, or gas require licensed {city} contractors with permits."),
+        ("How do I find a reliable handyman in {city}?",
+         "Ask neighbors for referrals, check Google and Nextdoor reviews, verify they're insured (ask for a certificate), and get a written scope and estimate before any work begins. Reliable {city} handymen are booked out 1–2 weeks — if someone is immediately available at a very low price, be cautious."),
+        ("Can a handyman do multiple small jobs in one visit?",
+         "Yes — this is one of a handyman's biggest advantages over specialty contractors. Most {city} handymen will work through your honey-do list in a single visit, making efficient use of the minimum charge. Group your small jobs together to maximize value."),
+        ("Is a handyman insured in {city}?",
+         "Always ask for proof of general liability insurance before letting anyone into your home. Professional {city} handyman services carry at least $1M in liability coverage. This protects you if they accidentally damage your property or cause an injury on site."),
+    ],
+}
+
+# ── Cross-category suggestions (shown on business detail pages) ──────────────
+CROSS_CATS = {
+    "HVAC":             [("Electrical", "⚡"), ("Plumbing", "🔧"), ("Home Security", "🔒")],
+    "Legal":            [("Accounting", "📊"), ("Mortgage", "🏡"), ("IT Services", "💻")],
+    "Cleaning":         [("Handyman", "🛠️"), ("Pest Control", "🐛"), ("Flooring", "🪵")],
+    "Contracting":      [("Electrical", "⚡"), ("Plumbing", "🔧"), ("Flooring", "🪵")],
+    "Digital Marketing":[("IT Services", "💻"), ("Accounting", "📊"), ("Contracting", "🔨")],
+    "Accounting":       [("Legal", "⚖️"), ("Digital Marketing", "📈"), ("IT Services", "💻")],
+    "IT Services":      [("Digital Marketing", "📈"), ("Home Security", "🔒"), ("Accounting", "📊")],
+    "Pest Control":     [("Cleaning", "🧹"), ("Handyman", "🛠️"), ("Landscaping", "🌿")],
+    "Plumbing":         [("HVAC", "❄️"), ("Electrical", "⚡"), ("Handyman", "🛠️")],
+    "Landscaping":      [("Pest Control", "🐛"), ("Pool & Spa", "🏊"), ("Handyman", "🛠️")],
+    "Roofing":          [("Electrical", "⚡"), ("Contracting", "🔨"), ("Painting", "🎨")],
+    "Electrical":       [("HVAC", "❄️"), ("Home Security", "🔒"), ("Solar Energy", "☀️")],
+    "Moving":           [("Handyman", "🛠️"), ("Cleaning", "🧹"), ("Flooring", "🪵")],
+    "Painting":         [("Flooring", "🪵"), ("Contracting", "🔨"), ("Handyman", "🛠️")],
+    "Flooring":         [("Painting", "🎨"), ("Contracting", "🔨"), ("Cleaning", "🧹")],
+    "Home Security":    [("Electrical", "⚡"), ("IT Services", "💻"), ("Handyman", "🛠️")],
+    "Solar Energy":     [("Electrical", "⚡"), ("Roofing", "🏠"), ("Home Security", "🔒")],
+    "Pool & Spa":       [("Landscaping", "🌿"), ("Electrical", "⚡"), ("Plumbing", "🔧")],
+    "Auto Repair":      [("Electrical", "⚡"), ("Handyman", "🛠️"), ("IT Services", "💻")],
+    "Pet Services":     [("Cleaning", "🧹"), ("Landscaping", "🌿"), ("Handyman", "🛠️")],
+    "Personal Training":[("Tutoring", "📚"), ("Accounting", "📊"), ("IT Services", "💻")],
+    "Tutoring":         [("Personal Training", "💪"), ("IT Services", "💻"), ("Legal", "⚖️")],
+    "Mortgage":         [("Legal", "⚖️"), ("Accounting", "📊"), ("Contracting", "🔨")],
+    "Handyman":         [("Plumbing", "🔧"), ("Electrical", "⚡"), ("Painting", "🎨")],
+}
+
 # ── Target listings per city ──────────────────────────────────────────────────
 TARGET_PER_CITY = 200
 # Spread target evenly across 12 categories — 17 per category = 204 min baseline
@@ -969,7 +1289,7 @@ def jsonld_breadcrumb(crumbs):
 
 
 # ── City index page ───────────────────────────────────────────────────────────
-def city_index_html(city_slug, city_name, state, emoji, listings):
+def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=None):
     cards = ""
     for i, (biz_name, cat_label, cat_emoji, fname) in enumerate(listings):
         snippet = CARD_SNIPPETS.get(cat_label, CARD_SNIPPETS["Local Business"])
@@ -1001,6 +1321,20 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
     count = len(listings)
     page_url = f"{DOMAIN}/{city_slug}/"
     breadcrumb_ld = jsonld_breadcrumb([("Home", DOMAIN), (city_name, page_url)])
+
+    # State cities internal linking section
+    if state_cities:
+        sc_links = " &nbsp;·&nbsp; ".join(
+            f'<a href="/{slug}/" style="color:var(--blue);text-decoration:none;">{name}</a>'
+            for slug, name in state_cities[:20] if slug != city_slug
+        )
+        state_cities_section = f"""<div class="section" style="padding-top:0">
+  <h2 class="section-title" style="font-size:1rem;">More Cities in {state}</h2>
+  <p style="font-size:0.85rem;color:var(--gray-600);line-height:1.9;">{sc_links}</p>
+</div>"""
+    else:
+        state_cities_section = ""
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1115,6 +1449,8 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
   </div>
 </div>
 
+{state_cities_section}
+
 <footer class="site-footer">
   <div class="footer-logo">AllCity<span>Pros</span></div>
   <p>Connecting people with trusted local professionals across America.</p>
@@ -1127,7 +1463,8 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
 
 
 # ── Business detail page ──────────────────────────────────────────────────────
-def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, filename):
+def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, filename,
+                       related_listings=None, state_cities=None):
     services_map = {
         "HVAC":             ["AC Installation & Replacement", "AC Repair & Emergency Service", "Heating System Service", "Preventive Maintenance Plans", "Indoor Air Quality Solutions", "Duct Cleaning & Sealing"],
         "Legal":            ["Free Initial Consultation", "Civil Litigation", "Family Law", "Criminal Defense", "Personal Injury", "Business Law"],
@@ -1168,6 +1505,69 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
     page_url = f"{DOMAIN}/{city_slug}/{os.path.splitext(filename)[0]}"
     biz_slug = os.path.splitext(filename)[0]
 
+    # ── FAQ schema + HTML ──────────────────────────────────────────────────
+    raw_faqs = FAQS.get(cat_label, [])
+    faq_items_ld = []
+    faq_html_items = []
+    for q_tmpl, a_tmpl in raw_faqs:
+        q = q_tmpl.replace("{city}", city_name).replace("{state}", state)
+        a = a_tmpl.replace("{city}", city_name).replace("{state}", state)
+        faq_items_ld.append(
+            f'{{"@type":"Question","name":"{q}","acceptedAnswer":{{"@type":"Answer","text":"{a}"}}}}'
+        )
+        faq_html_items.append(f"""      <details class="faq-item">
+        <summary class="faq-q">{q}</summary>
+        <div class="faq-a">{a}</div>
+      </details>""")
+    faq_schema = ""
+    faq_section = ""
+    if faq_items_ld:
+        faq_schema = f"""  <script type="application/ld+json">
+  {{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{",".join(faq_items_ld)}]}}
+  </script>"""
+        faq_section = f"""        <br>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+{"".join(faq_html_items)}
+        </div>"""
+
+    # ── Related listings (same category, same city) ────────────────────────
+    related_html = ""
+    if related_listings:
+        rel_links = "".join(
+            f'<a href="/{city_slug}/{rfname}" class="rel-link">'
+            f'<span class="rel-emoji">{cat_emoji}</span> {rbiz}</a>'
+            for rbiz, rfname in related_listings[:6]
+        )
+        related_html = f"""        <br>
+        <h2>Other {cat_label} Pros in {city_name}</h2>
+        <div class="rel-grid">{rel_links}</div>"""
+
+    # ── Cross-category suggestions ─────────────────────────────────────────
+    cross = CROSS_CATS.get(cat_label, [])
+    cross_html = ""
+    if cross:
+        cross_links = "".join(
+            f'<a href="/{city_slug}/" class="cross-link">'
+            f'<span>{emoji}</span> {label} in {city_name}</a>'
+            for label, emoji in cross
+        )
+        cross_html = f"""        <br>
+        <h2>You Might Also Need</h2>
+        <div class="rel-grid">{cross_links}</div>"""
+
+    # ── Nearby cities (same state) ─────────────────────────────────────────
+    nearby_html = ""
+    if state_cities:
+        city_links = "".join(
+            f'<a href="/{slug}/" class="rel-link">'
+            f'<span class="rel-emoji">📍</span> {cat_label} in {name}</a>'
+            for slug, name in state_cities[:8] if slug != city_slug
+        )
+        nearby_html = f"""        <br>
+        <h2>{cat_label} Pros in Other {state} Cities</h2>
+        <div class="rel-grid">{city_links}</div>"""
+
     local_biz_ld = jsonld_local_business(biz_name, cat_label, city_name, state, page_url)
     breadcrumb_ld = jsonld_breadcrumb([
         ("Home", DOMAIN),
@@ -1189,6 +1589,7 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
   <meta property="og:type" content="website">
 {local_biz_ld}
 {breadcrumb_ld}
+{faq_schema}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
@@ -1278,6 +1679,11 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
         <p style="color:var(--gray-600);font-size:0.9rem;margin-bottom:16px;">⭐ <strong>4.8 / 5</strong> based on 47 local reviews</p>
         <textarea id="review-{biz_slug}" placeholder="Share your experience with {biz_name}..." rows="3" style="width:100%;padding:10px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-bottom:10px;"></textarea>
         <button type="button" onclick="document.getElementById('review-{biz_slug}').value='';alert('Thank you for your review!')" class="btn-primary" style="display:inline-block;padding:10px 20px;border:none;cursor:pointer;border-radius:8px;">Submit Review</button>
+
+{faq_section}
+{related_html}
+{cross_html}
+{nearby_html}
       </div>
 
       <div class="biz-sidebar">
@@ -1386,6 +1792,11 @@ def main():
     total_cities = 0
     total_businesses = 0
 
+    # Pre-build state → [(slug, city_name)] map for internal linking
+    state_city_map = {}
+    for slug, (name, st, _) in CITY_META.items():
+        state_city_map.setdefault(st, []).append((slug, name))
+
     for city_slug, (city_name, state, emoji) in CITY_META.items():
         city_dir = os.path.join(root, city_slug)
         os.makedirs(city_dir, exist_ok=True)
@@ -1427,14 +1838,33 @@ def main():
             if f.endswith('.html') and f != 'index.html'
         ])
 
-        listings = []
+        # Collect full listing metadata (including cat_css)
+        full_listings = []  # (biz_name, cat_label, cat_emoji, cat_css, fname)
         for fname in all_files:
             fpath = os.path.join(city_dir, fname)
             biz_name = generate_biz_name(fpath, city_name) if not os.path.getsize(fpath) else extract_business_name(fpath, city_name)
             cat_label, cat_emoji, cat_css = detect_category(fname)
-            listings.append((biz_name, cat_label, cat_emoji, fname))
+            full_listings.append((biz_name, cat_label, cat_emoji, cat_css, fname))
 
-            page_html = business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, fname)
+        # listings for city index (without cat_css)
+        listings = [(b, c, e, f) for b, c, e, cs, f in full_listings]
+
+        # Category bucket for related-listing internal links
+        cat_bucket = {}
+        for biz_name, cat_label, cat_emoji, cat_css, fname in full_listings:
+            cat_bucket.setdefault(cat_label, []).append((biz_name, fname))
+
+        nearby_cities = state_city_map.get(state, [])
+
+        for biz_name, cat_label, cat_emoji, cat_css, fname in full_listings:
+            fpath = os.path.join(city_dir, fname)
+            related = [(b, f) for b, f in cat_bucket.get(cat_label, []) if f != fname][:6]
+
+            page_html = business_page_html(
+                city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, fname,
+                related_listings=related,
+                state_cities=nearby_cities,
+            )
             with open(fpath, 'w') as fp:
                 fp.write(page_html)
             all_urls.append(f"{DOMAIN}/{city_slug}/{os.path.splitext(fname)[0]}")
@@ -1443,7 +1873,8 @@ def main():
         # ── Step 5: write city index ──
         idx_path = os.path.join(city_dir, 'index.html')
         with open(idx_path, 'w') as fp:
-            fp.write(city_index_html(city_slug, city_name, state, emoji, listings))
+            fp.write(city_index_html(city_slug, city_name, state, emoji, listings,
+                                     state_cities=nearby_cities))
         all_urls.append(f"{DOMAIN}/{city_slug}/")
         total_cities += 1
         print(f"  ✓ {city_name} — {len(listings)} listings")

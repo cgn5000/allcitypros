@@ -630,3 +630,60 @@ a { color: inherit; text-decoration: none; }
 .biz-hero.cat-mortgage    { background: linear-gradient(135deg, #001a1a, #003333); }
 .biz-hero.cat-tutoring    { background: linear-gradient(135deg, #001a33, #00264d); }
 .biz-hero.cat-handyman    { background: linear-gradient(135deg, #1a1000, #332000); }
+
+/* ── FAQ accordion ── */
+.faq-list { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.faq-item {
+  border:1px solid var(--gray-200);
+  border-radius:10px;
+  overflow:hidden;
+}
+.faq-q {
+  padding:14px 18px;
+  font-weight:600;
+  font-size:0.9rem;
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--navy);
+}
+.faq-q::-webkit-details-marker { display:none; }
+.faq-q::after { content:"＋"; font-size:1.1rem; color:var(--blue); }
+details[open] .faq-q::after { content:"－"; }
+.faq-a {
+  padding:0 18px 14px;
+  font-size:0.85rem;
+  color:var(--gray-700);
+  line-height:1.65;
+  border-top:1px solid var(--gray-100);
+}
+
+/* ── Related / cross-cat link grids ── */
+.rel-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
+.rel-link, .cross-link {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 13px;
+  border:1px solid var(--gray-200);
+  border-radius:8px;
+  font-size:0.82rem;
+  font-weight:500;
+  color:var(--navy);
+  text-decoration:none;
+  background:var(--gray-50,#f9fafb);
+  transition:border-color .15s, background .15s;
+}
+.rel-link:hover, .cross-link:hover {
+  border-color:var(--blue);
+  background:#eff6ff;
+  color:var(--blue);
+}
+.rel-emoji { font-size:1rem; }
