@@ -983,7 +983,33 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
       <strong>Own a business in {city_name}?</strong>
       <span>Claim or add your listing — it's free to get started.</span>
     </div>
-    <a href="mailto:hello@allcitypros.com?subject=List My Business — {city_name}" class="claim-btn">Claim Your Listing →</a>
+    <button type="button" class="claim-btn" style="cursor:pointer;border:none;"
+      onclick="this.style.display='none';document.getElementById('city-claim-form').style.display='block';">
+      List My Business →
+    </button>
+    <form id="city-claim-form" action="https://formspree.io/f/allcitypros-claim" method="POST"
+      style="display:none;margin-top:14px;width:100%;">
+      <input type="hidden" name="city" value="{city_name}, {state}">
+      <input type="hidden" name="type" value="New Listing Request">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <input type="text" name="business_name" placeholder="Business name" required
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="text" name="owner_name" placeholder="Your name" required
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="email" name="email" placeholder="Email address" required
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="tel" name="phone" placeholder="Phone number"
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="text" name="category" placeholder="Business category (e.g. HVAC)"
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="url" name="website" placeholder="Website (optional)"
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <button type="submit" class="btn-primary"
+          style="border:none;cursor:pointer;padding:10px 20px;font-size:0.85rem;border-radius:7px;font-weight:700;white-space:nowrap;">
+          Submit for Review →
+        </button>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -1201,9 +1227,39 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
         <div class="claim-banner" style="margin-top:24px;padding:16px;">
           <div class="claim-text">
             <strong>Is this your business?</strong>
-            <span>Claim this listing to update info and respond to reviews.</span>
+            <span>Submit your info and we'll verify and update this listing.</span>
           </div>
-          <a href="mailto:hello@allcitypros.com?subject=Claim Listing — {biz_name}" class="claim-btn" style="margin-top:12px;">Claim Listing</a>
+          <button type="button" class="claim-btn"
+            style="margin-top:12px;cursor:pointer;border:none;width:100%;"
+            onclick="this.style.display='none';document.getElementById('claim-form-{biz_slug}').style.display='block';">
+            Claim This Listing →
+          </button>
+          <form id="claim-form-{biz_slug}"
+            action="https://formspree.io/f/allcitypros-claim"
+            method="POST"
+            style="display:none;margin-top:14px;">
+            <input type="hidden" name="listing" value="{biz_name}">
+            <input type="hidden" name="city" value="{city_name}, {state}">
+            <input type="hidden" name="listing_url" value="{page_url}">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <input type="text" name="owner_name" placeholder="Your full name" required
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="email" name="email" placeholder="Business email" required
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="tel" name="phone" placeholder="Business phone"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="url" name="website" placeholder="Website URL (optional)"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="text" name="address" placeholder="Business street address"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <textarea name="notes" placeholder="Anything else we should know?" rows="2"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;resize:vertical;"></textarea>
+              <button type="submit" class="btn-primary"
+                style="border:none;cursor:pointer;padding:10px;font-size:0.85rem;border-radius:7px;font-weight:700;">
+                Submit for Review →
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

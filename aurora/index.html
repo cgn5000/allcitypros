@@ -2383,7 +2383,7 @@
       <div class="listing-card-header">
         <div class="listing-avatar">🛠️</div>
         <div>
-          <div class="name">Aurora Honey-Do Pros</div>
+          <div class="name">Do Pros</div>
           <div class="category-tag">Handyman</div>
         </div>
       </div>
@@ -4813,7 +4813,7 @@
       <div class="listing-card-header">
         <div class="listing-avatar">🚛</div>
         <div>
-          <div class="name">Aurora Full-Service Movers</div>
+          <div class="name">Service Movers</div>
           <div class="category-tag">Moving</div>
         </div>
       </div>
@@ -8724,7 +8724,33 @@
       <strong>Own a business in Aurora?</strong>
       <span>Claim or add your listing — it's free to get started.</span>
     </div>
-    <a href="mailto:hello@allcitypros.com?subject=List My Business — Aurora" class="claim-btn">Claim Your Listing →</a>
+    <button type="button" class="claim-btn" style="cursor:pointer;border:none;"
+      onclick="this.style.display='none';document.getElementById('city-claim-form').style.display='block';">
+      List My Business →
+    </button>
+    <form id="city-claim-form" action="https://formspree.io/f/allcitypros-claim" method="POST"
+      style="display:none;margin-top:14px;width:100%;">
+      <input type="hidden" name="city" value="Aurora, CO">
+      <input type="hidden" name="type" value="New Listing Request">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <input type="text" name="business_name" placeholder="Business name" required
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="text" name="owner_name" placeholder="Your name" required
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="email" name="email" placeholder="Email address" required
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="tel" name="phone" placeholder="Phone number"
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="text" name="category" placeholder="Business category (e.g. HVAC)"
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <input type="url" name="website" placeholder="Website (optional)"
+          style="flex:1;min-width:160px;padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+        <button type="submit" class="btn-primary"
+          style="border:none;cursor:pointer;padding:10px 20px;font-size:0.85rem;border-radius:7px;font-weight:700;white-space:nowrap;">
+          Submit for Review →
+        </button>
+      </div>
+    </form>
   </div>
 </div>
 

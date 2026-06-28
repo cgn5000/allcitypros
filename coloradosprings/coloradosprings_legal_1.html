@@ -180,9 +180,39 @@
         <div class="claim-banner" style="margin-top:24px;padding:16px;">
           <div class="claim-text">
             <strong>Is this your business?</strong>
-            <span>Claim this listing to update info and respond to reviews.</span>
+            <span>Submit your info and we'll verify and update this listing.</span>
           </div>
-          <a href="mailto:hello@allcitypros.com?subject=Claim Listing — Colorado Springs Law Office" class="claim-btn" style="margin-top:12px;">Claim Listing</a>
+          <button type="button" class="claim-btn"
+            style="margin-top:12px;cursor:pointer;border:none;width:100%;"
+            onclick="this.style.display='none';document.getElementById('claim-form-coloradosprings_legal_1').style.display='block';">
+            Claim This Listing →
+          </button>
+          <form id="claim-form-coloradosprings_legal_1"
+            action="https://formspree.io/f/allcitypros-claim"
+            method="POST"
+            style="display:none;margin-top:14px;">
+            <input type="hidden" name="listing" value="Colorado Springs Law Office">
+            <input type="hidden" name="city" value="Colorado Springs, CO">
+            <input type="hidden" name="listing_url" value="https://allcitypros.com/coloradosprings/coloradosprings_legal_1">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <input type="text" name="owner_name" placeholder="Your full name" required
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="email" name="email" placeholder="Business email" required
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="tel" name="phone" placeholder="Business phone"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="url" name="website" placeholder="Website URL (optional)"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <input type="text" name="address" placeholder="Business street address"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;">
+              <textarea name="notes" placeholder="Anything else we should know?" rows="2"
+                style="padding:9px 11px;border:1px solid var(--gray-200);border-radius:7px;font-size:0.85rem;font-family:inherit;resize:vertical;"></textarea>
+              <button type="submit" class="btn-primary"
+                style="border:none;cursor:pointer;padding:10px;font-size:0.85rem;border-radius:7px;font-weight:700;">
+                Submit for Review →
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
