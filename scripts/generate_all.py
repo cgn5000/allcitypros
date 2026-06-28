@@ -1,65 +1,176 @@
 """
 Generate styled index pages for every city and styled detail pages for every business.
 Run from the repo root: python3 scripts/generate_all.py
+
+Impact affiliate links:
+  Once you join Impact.com programs, set IMPACT_PUBLISHER_ID to your numeric publisher ID.
+  Then replace the placeholder URLs in IMPACT_AFFILIATES with your real Impact tracking links.
+  Each link follows: https://<brand>.sjv.io/c/<publisher_id>/<offer_id>/<media_id>
 """
 
 import os
 import re
+import math
 
 DOMAIN = "https://allcitypros.com"
 
+# ── Impact affiliate config ────────────────────────────────────────────────────
+# Replace "YOUR_IMPACT_ID" with your numeric Impact.com publisher ID.
+# Then update each URL with your real offer/media IDs from the Impact dashboard.
+IMPACT_PUBLISHER_ID = "YOUR_IMPACT_ID"
+
+IMPACT_AFFILIATES = {
+    # Angi (HomeAdvisor) — home services marketplace
+    "HVAC":             f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=hvac",
+    "Cleaning":         f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=cleaning",
+    "Contracting":      f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=contracting",
+    "Plumbing":         f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=plumbing",
+    "Landscaping":      f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=landscaping",
+    "Roofing":          f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=roofing",
+    "Electrical":       f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=electrical",
+    "Pest Control":     f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832?subId1=pest",
+    # LegalZoom — online legal services
+    "Legal":            f"https://legalzoom.sjv.io/c/{IMPACT_PUBLISHER_ID}/226657/4245?subId1=legal",
+    # Bench — online accounting & bookkeeping
+    "Accounting":       f"https://bench.sjv.io/c/{IMPACT_PUBLISHER_ID}/1047236/9787?subId1=accounting",
+    # Clutch — B2B service marketplace (digital marketing & IT)
+    "Digital Marketing":f"https://clutch.sjv.io/c/{IMPACT_PUBLISHER_ID}/1234567/9999?subId1=marketing",
+    "IT Services":      f"https://clutch.sjv.io/c/{IMPACT_PUBLISHER_ID}/1234567/9999?subId1=it",
+}
+IMPACT_FALLBACK = f"https://angi.sjv.io/c/{IMPACT_PUBLISHER_ID}/1073438/15832"
+
+# ── Category map ──────────────────────────────────────────────────────────────
 CATEGORY_MAP = {
-    # Order matters: more specific keywords checked before short/ambiguous ones
-    "it_services":  {"label": "IT Services",       "emoji": "💻",  "css": "cat-it",          "keywords": ["it_services", "it_support", "managed_it", "computer", "network", "tech_support"]},
-    "pest_control": {"label": "Pest Control",      "emoji": "🐛",  "css": "cat-pest",        "keywords": ["pest_control", "pest", "exterminator", "termite", "rodent"]},
-    "general_contracting": {"label": "Contracting","emoji": "🔨",  "css": "cat-contracting", "keywords": ["general_contracting", "contracting", "builders", "construction", "build"]},
-    "digital_marketing":   {"label": "Digital Marketing","emoji": "📈","css": "cat-marketing","keywords": ["digital_marketing", "digital", "marketing", "growth", "agency", "seo"]},
-    "residential_cleaning":{"label": "Cleaning",   "emoji": "🧹",  "css": "cat-cleaning",    "keywords": ["residential_cleaning", "elite_clean", "sparkle", "cleaning"]},
-    "hvac":         {"label": "HVAC",             "emoji": "❄️",  "css": "cat-hvac",        "keywords": ["hvac", "cooling", "heating", "climate", "comfort_systems"]},
-    "legal":        {"label": "Legal",             "emoji": "⚖️",  "css": "cat-legal",       "keywords": ["legal", "law", "justice", "attorney"]},
-    "accounting":   {"label": "Accounting",        "emoji": "📊",  "css": "cat-accounting",  "keywords": ["accounting", "bookkeeping", "cpa", "tax", "finance"]},
-    "plumbing":     {"label": "Plumbing",          "emoji": "🔧",  "css": "cat-plumbing",    "keywords": ["plumbing", "plumber", "drain", "pipe"]},
-    "landscaping":  {"label": "Landscaping",       "emoji": "🌿",  "css": "cat-landscaping", "keywords": ["landscaping", "lawn", "garden", "yard"]},
-    "roofing":      {"label": "Roofing",           "emoji": "🏠",  "css": "cat-roofing",     "keywords": ["roofing", "roof", "gutter", "shingle"]},
-    "electrical":   {"label": "Electrical",        "emoji": "⚡",  "css": "cat-electrical",  "keywords": ["electrical", "electrician", "wiring"]},
+    "it_services":          {"label": "IT Services",        "emoji": "💻",  "css": "cat-it",          "keywords": ["it_services", "it_support", "managed_it", "computer", "network", "tech_support"]},
+    "pest_control":         {"label": "Pest Control",       "emoji": "🐛",  "css": "cat-pest",        "keywords": ["pest_control", "pest", "exterminator", "termite", "rodent"]},
+    "general_contracting":  {"label": "Contracting",        "emoji": "🔨",  "css": "cat-contracting", "keywords": ["general_contracting", "contracting", "builders", "construction", "build"]},
+    "digital_marketing":    {"label": "Digital Marketing",  "emoji": "📈",  "css": "cat-marketing",   "keywords": ["digital_marketing", "digital", "marketing", "growth", "agency", "seo"]},
+    "residential_cleaning": {"label": "Cleaning",           "emoji": "🧹",  "css": "cat-cleaning",    "keywords": ["residential_cleaning", "elite_clean", "sparkle", "cleaning"]},
+    "hvac":                 {"label": "HVAC",               "emoji": "❄️",  "css": "cat-hvac",        "keywords": ["hvac", "cooling", "heating", "climate", "comfort_systems", "air"]},
+    "legal":                {"label": "Legal",              "emoji": "⚖️",  "css": "cat-legal",       "keywords": ["legal", "law", "justice", "attorney"]},
+    "accounting":           {"label": "Accounting",         "emoji": "📊",  "css": "cat-accounting",  "keywords": ["accounting", "bookkeeping", "cpa", "tax", "finance"]},
+    "plumbing":             {"label": "Plumbing",           "emoji": "🔧",  "css": "cat-plumbing",    "keywords": ["plumbing", "plumber", "drain", "pipe"]},
+    "landscaping":          {"label": "Landscaping",        "emoji": "🌿",  "css": "cat-landscaping", "keywords": ["landscaping", "lawn", "garden", "yard"]},
+    "roofing":              {"label": "Roofing",            "emoji": "🏠",  "css": "cat-roofing",     "keywords": ["roofing", "roof", "gutter", "shingle"]},
+    "electrical":           {"label": "Electrical",         "emoji": "⚡",  "css": "cat-electrical",  "keywords": ["electrical", "electrician", "wiring"]},
 }
 
-# Affiliate base URLs by category — swap these for real program links
-AFFILIATE_BASES = {
-    "HVAC":             "https://www.homeadvisor.com/c.HVAC.html?ref=allcitypros",
-    "Legal":            "https://www.avvo.com/?ref=allcitypros",
-    "Cleaning":         "https://www.homeadvisor.com/c.House-Cleaning.html?ref=allcitypros",
-    "Contracting":      "https://www.homeadvisor.com/c.General-Contractors.html?ref=allcitypros",
-    "Digital Marketing":"https://www.clutch.co/agencies/digital-marketing?ref=allcitypros",
-    "Accounting":       "https://www.thumbtack.com/k/accountant/near-me/?ref=allcitypros",
-    "IT Services":      "https://www.clutch.co/it-services?ref=allcitypros",
-    "Pest Control":     "https://www.homeadvisor.com/c.Pest-Control.html?ref=allcitypros",
-    "Plumbing":         "https://www.homeadvisor.com/c.Plumbing.html?ref=allcitypros",
-    "Landscaping":      "https://www.homeadvisor.com/c.Lawn-Care.html?ref=allcitypros",
-    "Roofing":          "https://www.homeadvisor.com/c.Roofing.html?ref=allcitypros",
-    "Electrical":       "https://www.homeadvisor.com/c.Electricians.html?ref=allcitypros",
-}
+# ── Ordered category slugs for even numbered-file distribution ────────────────
+CATEGORY_SLUGS = list(CATEGORY_MAP.keys())
 
+# ── Business name templates (20+ per category for 200-listing variety) ────────
 CITY_BIZ_NAMES = {
-    "hvac":                 ["{city} Climate Control", "{city} Air Experts", "{city} Comfort Systems", "Premier HVAC {city}", "{city} Heating & Cooling"],
-    "legal":                ["{city} Law Group", "{city} Legal Partners", "The {city} Attorneys", "{city} Justice Law", "Premier Legal {city}"],
-    "residential_cleaning": ["Sparkle {city} Cleaning", "{city} Elite Clean", "Fresh Start {city}", "{city} Shine Services", "Pro Clean {city}"],
-    "cleaning":             ["Sparkle {city} Cleaning", "{city} Elite Clean", "Fresh Start {city}", "{city} Shine Services", "Pro Clean {city}"],
-    "general_contracting":  ["{city} Prime Contracting", "{city} Builders", "Metro Contractors {city}", "{city} Construction Group", "Premier Build {city}"],
-    "contracting":          ["{city} Prime Contracting", "{city} Builders", "Metro Contractors {city}", "{city} Construction Group", "Premier Build {city}"],
-    "digital_marketing":    ["{city} Growth Agency", "{city} Digital Co.", "Metro Marketing {city}", "{city} SEO Pros", "Elevate Digital {city}"],
-    "marketing":            ["{city} Growth Agency", "{city} Digital Co.", "Metro Marketing {city}", "{city} SEO Pros", "Elevate Digital {city}"],
-    "accounting":           ["{city} Accounting Group", "{city} CPA Partners", "Premier Books {city}", "{city} Tax Pros", "Clarity Accounting {city}"],
-    "it_services":          ["{city} Tech Solutions", "{city} IT Pros", "Premier IT {city}", "{city} Managed Tech", "NetSure {city}"],
-    "it":                   ["{city} Tech Solutions", "{city} IT Pros", "Premier IT {city}", "{city} Managed Tech", "NetSure {city}"],
-    "pest":                 ["Shield Pest {city}", "{city} Pest Pros", "Premier Pest {city}", "Bug Guard {city}", "{city} Exterminators"],
-    "pest_control":         ["Shield Pest {city}", "{city} Pest Pros", "Premier Pest {city}", "Bug Guard {city}", "{city} Exterminators"],
-    "plumbing":             ["{city} Plumbing Pros", "Premier Plumbers {city}", "FlowFix {city}", "{city} Drain Masters", "Quick Plumb {city}"],
-    "landscaping":          ["{city} Lawn & Land", "Green Thumb {city}", "Premier Landscapes {city}", "{city} Yard Pros", "Bloom {city}"],
-    "roofing":              ["{city} Roofing Pros", "Peak Roofing {city}", "Premier Roof {city}", "SkyShield {city}", "{city} Roof Masters"],
-    "electrical":           ["{city} Electric Co.", "Premier Electric {city}", "Volt Pros {city}", "{city} Electricians", "PowerUp {city}"],
+    "hvac": [
+        "{city} Climate Control", "{city} Air Experts", "{city} Comfort Systems",
+        "Premier HVAC {city}", "{city} Heating & Cooling", "Arctic Air {city}",
+        "{city} HVAC Solutions", "ThermalPro {city}", "{city} AC Masters",
+        "CoolBreeze {city}", "{city} Air Pros", "BlueFlame Heating {city}",
+        "{city} Indoor Comfort", "AirRight {city}", "PolarPro HVAC {city}",
+        "{city} Energy Solutions", "Comfort Zone {city}", "AirFlow Experts {city}",
+        "{city} Mechanical Services", "TempMaster {city}",
+    ],
+    "legal": [
+        "{city} Law Group", "{city} Legal Partners", "The {city} Attorneys",
+        "{city} Justice Law", "Premier Legal {city}", "{city} Counsel Group",
+        "Meridian Law {city}", "{city} Advocacy Group", "Apex Attorneys {city}",
+        "{city} Legal Associates", "Liberty Law {city}", "{city} Trial Lawyers",
+        "Summit Law {city}", "{city} Legal Defense", "Shield Legal {city}",
+        "Citywide Attorneys {city}", "{city} Law Office", "Prestige Legal {city}",
+        "{city} Rights Law Firm", "Cornerstone Attorneys {city}",
+    ],
+    "residential_cleaning": [
+        "Sparkle {city} Cleaning", "{city} Elite Clean", "Fresh Start {city}",
+        "{city} Shine Services", "Pro Clean {city}", "Crystal Clear {city}",
+        "{city} Maid Brigade", "Gleam Team {city}", "{city} Pristine Cleaning",
+        "TidyHome {city}", "{city} Deep Clean Co.", "Radiant Clean {city}",
+        "SmartMaids {city}", "{city} Home Sparkle", "CleanSweep {city}",
+        "Luminous Clean {city}", "{city} White Glove Cleaning", "FreshHaven {city}",
+        "{city} Premier Maid Service", "SpotlessHome {city}",
+    ],
+    "general_contracting": [
+        "{city} Prime Contracting", "{city} Builders", "Metro Contractors {city}",
+        "{city} Construction Group", "Premier Build {city}", "Keystone Builders {city}",
+        "{city} Master Craftsmen", "Solid Ground Contracting {city}", "Apex Builders {city}",
+        "{city} Pro Builders", "Heritage Construction {city}", "{city} Quality Build Co.",
+        "Summit Contractors {city}", "{city} Renovation Pros", "Blueprint Builders {city}",
+        "CraftWorks {city}", "{city} General Contractors", "Pioneer Build {city}",
+        "{city} Home Improvements", "StrongBuild {city}",
+    ],
+    "digital_marketing": [
+        "{city} Growth Agency", "{city} Digital Co.", "Metro Marketing {city}",
+        "{city} SEO Pros", "Elevate Digital {city}", "{city} Click Lab",
+        "Ignite Media {city}", "{city} Brand Builders", "ROI Agency {city}",
+        "Pixel & Pulse {city}", "{city} Lead Gen Pros", "UpRank Digital {city}",
+        "LaunchPad Marketing {city}", "{city} Content Studio", "Visible {city}",
+        "Momentum Digital {city}", "{city} Conversion Lab", "BrightReach {city}",
+        "{city} Online Authority", "ScaleUp Agency {city}",
+    ],
+    "accounting": [
+        "{city} Accounting Group", "{city} CPA Partners", "Premier Books {city}",
+        "{city} Tax Pros", "Clarity Accounting {city}", "Ledger Pro {city}",
+        "{city} Financial Services", "TrueNumber CPA {city}", "BookRight {city}",
+        "{city} Smart Books", "Pinnacle Accounting {city}", "{city} Tax Solutions",
+        "Balanced Books {city}", "{city} CPA Advisors", "ProLedger {city}",
+        "{city} Financial Group", "Accurate Accounting {city}", "TaxRight {city}",
+        "{city} Business Finance", "NumberCrunchers {city}",
+    ],
+    "it_services": [
+        "{city} Tech Solutions", "{city} IT Pros", "Premier IT {city}",
+        "{city} Managed Tech", "NetSure {city}", "TechGuard {city}",
+        "{city} Network Solutions", "DataShield IT {city}", "CloudBridge {city}",
+        "{city} CyberPros", "SysOps {city}", "{city} IT Management",
+        "TechEdge {city}", "{city} Managed Services", "DigitalCore IT {city}",
+        "InfraPro {city}", "{city} IT Consultants", "SecureTech {city}",
+        "{city} IT Help Desk", "ConnectPro IT {city}",
+    ],
+    "pest_control": [
+        "Shield Pest {city}", "{city} Pest Pros", "Premier Pest {city}",
+        "Bug Guard {city}", "{city} Exterminators", "CleanSlate Pest {city}",
+        "{city} Pest Defense", "SafeHome Pest {city}", "BugBusters {city}",
+        "{city} Pest Masters", "TerraFirma Pest {city}", "Guardian Pest {city}",
+        "{city} Termite & Pest", "ZeroBug {city}", "AllClear Pest {city}",
+        "NatureSafe Pest {city}", "{city} Pest Patrol", "Precision Pest {city}",
+        "{city} Bug Eliminators", "TrueShield Pest {city}",
+    ],
+    "plumbing": [
+        "{city} Plumbing Pros", "Premier Plumbers {city}", "FlowFix {city}",
+        "{city} Drain Masters", "Quick Plumb {city}", "PipeLine {city}",
+        "{city} Water Works", "ClearDrain {city}", "TrustFlow Plumbing {city}",
+        "{city} Pipe Pros", "AquaPro {city}", "MasterFlow {city}",
+        "{city} Plumbing Solutions", "FastFlow {city}", "RootOut Plumbing {city}",
+        "ProPipe {city}", "{city} Leak Stoppers", "DrainRight {city}",
+        "{city} Expert Plumbers", "SureFlo {city}",
+    ],
+    "landscaping": [
+        "{city} Lawn & Land", "Green Thumb {city}", "Premier Landscapes {city}",
+        "{city} Yard Pros", "Bloom {city}", "TurfMaster {city}",
+        "{city} Curb Appeal Co.", "GreenScape {city}", "LawnPerfect {city}",
+        "{city} Garden Pros", "EdenScapes {city}", "NatureScape {city}",
+        "{city} Outdoor Living", "GrassRoots {city}", "ProTurf {city}",
+        "LandCraft {city}", "{city} Lawn Care Experts", "YardWorks {city}",
+        "{city} Green Services", "SproutScapes {city}",
+    ],
+    "roofing": [
+        "{city} Roofing Pros", "Peak Roofing {city}", "Premier Roof {city}",
+        "SkyShield {city}", "{city} Roof Masters", "TopDeck Roofing {city}",
+        "{city} Storm Shield", "ApexRoof {city}", "CrestLine Roofing {city}",
+        "{city} Roof Experts", "ProTech Roofing {city}", "EagleRoof {city}",
+        "{city} Shingle Pros", "TrueRoof {city}", "SafeHarbor Roofing {city}",
+        "PinnaclePro Roofing {city}", "{city} Roof & Gutter", "CoverPro {city}",
+        "{city} WeatherSeal Roofing", "SummitRoof {city}",
+    ],
+    "electrical": [
+        "{city} Electric Co.", "Premier Electric {city}", "Volt Pros {city}",
+        "{city} Electricians", "PowerUp {city}", "BrightWire {city}",
+        "{city} PowerPros", "AmperePro {city}", "{city} Electric Masters",
+        "CircuitPro {city}", "WattWise {city}", "{city} Electrical Solutions",
+        "Spark Electric {city}", "ElectraServ {city}", "{city} Power Systems",
+        "LiveWire Electric {city}", "{city} Electrical Group", "GridPro {city}",
+        "{city} Certified Electricians", "VoltEdge {city}",
+    ],
 }
 
+# ── City metadata ─────────────────────────────────────────────────────────────
 CITY_META = {
     "albuquerque":     ("Albuquerque",    "NM", "🎈"),
     "arlington":       ("Arlington",      "TX", "🏟️"),
@@ -117,7 +228,7 @@ CITY_META = {
     "wichita":         ("Wichita",        "KS", "🌪️"),
 }
 
-# Rich descriptions by category — ~200 words each, unique per city via template
+# ── Long descriptions per category ───────────────────────────────────────────
 LONG_DESCS = {
     "HVAC": """\
 {biz} has been the trusted name in heating, ventilation, and air conditioning throughout {city}, {state} for years. \
@@ -296,6 +407,7 @@ just want to add a few outlets to your home office, we'll give you a clear, item
 any work begins. Call today.""",
 }
 
+# ── Card display data ─────────────────────────────────────────────────────────
 CARD_SNIPPETS = {
     "HVAC":             "Expert heating & cooling installation, repairs, and tune-ups for homes and businesses.",
     "Legal":            "Experienced attorneys serving individuals, families, and businesses with personalized care.",
@@ -328,13 +440,18 @@ CARD_SERVICES = {
     "Local Business":   ["Free Estimates", "Local Service", "Top Rated"],
 }
 
-# Rating variety so cards don't all show identical scores
 CARD_RATINGS = ["4.7", "4.8", "4.9", "4.8", "5.0", "4.6", "4.8", "4.9", "4.7", "4.8"]
 CARD_REVIEWS = [23, 47, 31, 62, 18, 54, 39, 28, 71, 45]
 
+# ── Target listings per city ──────────────────────────────────────────────────
+TARGET_PER_CITY = 200
+# Spread target evenly across 12 categories — 17 per category = 204 min baseline
+LISTINGS_PER_CAT = math.ceil(TARGET_PER_CITY / len(CATEGORY_SLUGS))
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
 def detect_category(filename):
     fn = os.path.splitext(os.path.basename(filename))[0].lower()
-    # Split into segments so "digital" doesn't match inside "residential"
     segments = set(re.split(r'[_\-\s]+', fn))
     for key, meta in CATEGORY_MAP.items():
         for kw in meta["keywords"]:
@@ -404,6 +521,8 @@ def jsonld_breadcrumb(crumbs):
   {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{",".join(items)}]}}
   </script>"""
 
+
+# ── City index page ───────────────────────────────────────────────────────────
 def city_index_html(city_slug, city_name, state, emoji, listings):
     cards = ""
     for i, (biz_name, cat_label, cat_emoji, fname) in enumerate(listings):
@@ -488,6 +607,10 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
   <div class="cat-pill"><span class="icon">📊</span> Accounting</div>
   <div class="cat-pill"><span class="icon">💻</span> IT Services</div>
   <div class="cat-pill"><span class="icon">🐛</span> Pest Control</div>
+  <div class="cat-pill"><span class="icon">🔧</span> Plumbing</div>
+  <div class="cat-pill"><span class="icon">🌿</span> Landscaping</div>
+  <div class="cat-pill"><span class="icon">🏠</span> Roofing</div>
+  <div class="cat-pill"><span class="icon">⚡</span> Electrical</div>
 </div>
 
 <div class="section">
@@ -518,6 +641,8 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
 </html>
 """
 
+
+# ── Business detail page ──────────────────────────────────────────────────────
 def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, filename):
     services_map = {
         "HVAC":             ["AC Installation & Replacement", "AC Repair & Emergency Service", "Heating System Service", "Preventive Maintenance Plans", "Indoor Air Quality Solutions", "Duct Cleaning & Sealing"],
@@ -542,7 +667,8 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
     desc_html = raw_desc.replace("{biz}", biz_name).replace("{city}", city_name).replace("{state}", state)
     desc_paragraphs = "\n".join(f"        <p>{p.strip()}</p>" for p in desc_html.split("\n\n") if p.strip())
 
-    aff_url = AFFILIATE_BASES.get(cat_label, "https://www.homeadvisor.com/?ref=allcitypros")
+    # Impact affiliate link — primary CTA on every listing page
+    aff_url = IMPACT_AFFILIATES.get(cat_label, IMPACT_FALLBACK)
     page_url = f"{DOMAIN}/{city_slug}/{os.path.splitext(filename)[0]}"
     biz_slug = os.path.splitext(filename)[0]
 
@@ -604,6 +730,15 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
     </div>
   </div>
 </section>
+
+<!-- Impact affiliate banner -->
+<div style="background:linear-gradient(90deg,#1d4ed8,#2563eb);color:#fff;text-align:center;padding:14px 20px;font-size:0.9rem;font-weight:600;">
+  🔗 Looking for the best {cat_label} pros in {city_name}?
+  <a href="{aff_url}" target="_blank" rel="noopener sponsored"
+     style="color:#fde68a;margin-left:10px;text-decoration:underline;font-weight:700;">
+    Compare Top-Rated Pros Now →
+  </a>
+</div>
 
 <div class="biz-content">
   <div class="biz-card">
@@ -685,10 +820,13 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
         </div>
 
         <br>
-        <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-primary" style="display:block;text-align:center;padding:13px;border-radius:8px;font-size:0.9rem;font-weight:700;margin-bottom:10px;">
+        <!-- Impact affiliate CTA buttons -->
+        <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-primary"
+           style="display:block;text-align:center;padding:13px;border-radius:8px;font-size:0.9rem;font-weight:700;margin-bottom:10px;">
           📋 Request a Free Quote
         </a>
-        <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-outline" style="display:block;text-align:center;padding:10px;border-radius:8px;font-size:0.85rem;">
+        <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-outline"
+           style="display:block;text-align:center;padding:10px;border-radius:8px;font-size:0.85rem;">
           View More {cat_label} Pros →
         </a>
 
@@ -714,6 +852,8 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 </html>
 """
 
+
+# ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     all_urls = [DOMAIN + "/"]
@@ -722,37 +862,67 @@ def main():
 
     for city_slug, (city_name, state, emoji) in CITY_META.items():
         city_dir = os.path.join(root, city_slug)
-        if not os.path.isdir(city_dir):
-            continue
+        os.makedirs(city_dir, exist_ok=True)
 
-        html_files = sorted([
+        # ── Step 1: discover real named files (not index.html, not numbered slugs) ──
+        existing = sorted([
             f for f in os.listdir(city_dir)
             if f.endswith('.html') and f != 'index.html'
         ])
-        if not html_files:
-            continue
+        # Identify numbered generic files (e.g. tampa_hvac_3.html)
+        numbered_pattern = re.compile(rf'^{re.escape(city_slug)}_[a-z_]+_\d+\.html$')
+        named_files = [f for f in existing if not numbered_pattern.match(f)]
+
+        # ── Step 2: count how many named files exist per category ──
+        named_per_cat = {slug: 0 for slug in CATEGORY_SLUGS}
+        for f in named_files:
+            cat_label, _, _ = detect_category(f)
+            for slug, meta in CATEGORY_MAP.items():
+                if meta["label"] == cat_label:
+                    named_per_cat[slug] += 1
+                    break
+
+        # ── Step 3: ensure LISTINGS_PER_CAT numbered files per category ──
+        for cat_slug in CATEGORY_SLUGS:
+            cat_meta = CATEGORY_MAP[cat_slug]
+            named_count = named_per_cat[cat_slug]
+            needed = max(0, LISTINGS_PER_CAT - named_count)
+            for n in range(1, needed + 1):
+                fname = f"{city_slug}_{cat_slug}_{n}.html"
+                fpath = os.path.join(city_dir, fname)
+                if not os.path.exists(fpath):
+                    # Create a stub so extract_business_name works on first pass
+                    with open(fpath, 'w') as fp:
+                        fp.write("")
+
+        # ── Step 4: collect all files and regenerate ──
+        all_files = sorted([
+            f for f in os.listdir(city_dir)
+            if f.endswith('.html') and f != 'index.html'
+        ])
 
         listings = []
-        for fname in html_files:
+        for fname in all_files:
             fpath = os.path.join(city_dir, fname)
-            biz_name = extract_business_name(fpath, city_name)
+            biz_name = generate_biz_name(fpath, city_name) if not os.path.getsize(fpath) else extract_business_name(fpath, city_name)
             cat_label, cat_emoji, cat_css = detect_category(fname)
             listings.append((biz_name, cat_label, cat_emoji, fname))
 
             page_html = business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, fname)
-            with open(fpath, 'w') as f:
-                f.write(page_html)
+            with open(fpath, 'w') as fp:
+                fp.write(page_html)
             all_urls.append(f"{DOMAIN}/{city_slug}/{os.path.splitext(fname)[0]}")
             total_businesses += 1
 
+        # ── Step 5: write city index ──
         idx_path = os.path.join(city_dir, 'index.html')
-        with open(idx_path, 'w') as f:
-            f.write(city_index_html(city_slug, city_name, state, emoji, listings))
+        with open(idx_path, 'w') as fp:
+            fp.write(city_index_html(city_slug, city_name, state, emoji, listings))
         all_urls.append(f"{DOMAIN}/{city_slug}/")
         total_cities += 1
         print(f"  ✓ {city_name} — {len(listings)} listings")
 
-    # Write sitemap.xml
+    # ── Sitemap ──
     sitemap_path = os.path.join(root, 'sitemap.xml')
     with open(sitemap_path, 'w') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
@@ -762,7 +932,7 @@ def main():
         f.write('</urlset>\n')
     print(f"\nSitemap: {len(all_urls)} URLs → sitemap.xml")
 
-    # Write robots.txt
+    # ── robots.txt ──
     robots_path = os.path.join(root, 'robots.txt')
     with open(robots_path, 'w') as f:
         f.write("User-agent: *\nAllow: /\nSitemap: https://allcitypros.com/sitemap.xml\n")
