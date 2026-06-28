@@ -445,3 +445,140 @@ a { color: inherit; text-decoration: none; }
   .hero-stats { gap: 24px; }
   .hero-stats .hero-stat strong { font-size: 1.3rem; }
 }
+
+/* ── MOBILE NAV ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    padding: 16px 24px 24px;
+    flex-direction: column;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 99;
+  }
+  .header-nav.open { display: flex; }
+  .header-nav a { margin-left: 0; padding: 10px 0; font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .site-header { position: relative; }
+}
+
+/* ── SEARCH (homepage) ── */
+.no-results {
+  text-align: center;
+  color: var(--gray-400);
+  font-size: 0.95rem;
+  padding: 40px 0;
+  display: none;
+}
+
+/* ── QUOTE FORM ── */
+.quote-form {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 24px;
+}
+.quote-form h3 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: var(--gray-800); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-row.full { grid-template-columns: 1fr; }
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--gray-800);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus { border-color: var(--blue); }
+.form-row textarea { resize: vertical; min-height: 80px; }
+@media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ── CLAIM BANNER ── */
+.claim-banner {
+  background: linear-gradient(135deg, #1a2f50, var(--navy));
+  border: 1px solid rgba(30,111,255,0.3);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.claim-banner .claim-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.claim-banner .claim-text span { font-size: 0.85rem; color: var(--gray-400); }
+.claim-btn {
+  padding: 10px 20px;
+  background: var(--gold);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+.claim-btn:hover { opacity: 0.9; }
+
+/* ── STRUCTURED DATA helpers ── */
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.25);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  margin-top: 8px;
+}
+
+/* ── BIZ HERO photo accent ── */
+.biz-hero { background-size: cover; background-position: center; }
+.biz-hero.cat-hvac         { background: linear-gradient(135deg, #0d2137, #0a3d62); }
+.biz-hero.cat-legal        { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+.biz-hero.cat-cleaning     { background: linear-gradient(135deg, #0d3b2e, #1a4d3a); }
+.biz-hero.cat-contracting  { background: linear-gradient(135deg, #2d1b00, #3d2800); }
+.biz-hero.cat-marketing    { background: linear-gradient(135deg, #1a0533, #2d0a52); }
+.biz-hero.cat-accounting   { background: linear-gradient(135deg, #0a1628, #102040); }
+.biz-hero.cat-it           { background: linear-gradient(135deg, #001a33, #002244); }
+.biz-hero.cat-pest         { background: linear-gradient(135deg, #1a2e00, #243d00); }
+.biz-hero.cat-plumbing     { background: linear-gradient(135deg, #001f3f, #00264d); }
+.biz-hero.cat-landscaping  { background: linear-gradient(135deg, #0d2800, #1a3d00); }
+.biz-hero.cat-roofing      { background: linear-gradient(135deg, #2d1500, #3d1f00); }
+.biz-hero.cat-electrical   { background: linear-gradient(135deg, #1a1400, #332800); }

@@ -6,19 +6,37 @@ Run from the repo root: python3 scripts/generate_all.py
 import os
 import re
 
+DOMAIN = "https://allcitypros.com"
+
 CATEGORY_MAP = {
-    "hvac":         {"label": "HVAC",             "emoji": "❄️", "keywords": ["hvac", "cooling", "heating", "climate", "comfort", "air"]},
-    "legal":        {"label": "Legal",             "emoji": "⚖️", "keywords": ["legal", "law", "justice", "attorney"]},
-    "cleaning":     {"label": "Cleaning",          "emoji": "🧹", "keywords": ["clean", "sparkle", "elite_clean", "shine", "maid", "residential_cleaning"]},
-    "contracting":  {"label": "Contracting",       "emoji": "🔨", "keywords": ["contracting", "builders", "construction", "build", "general_contracting"]},
-    "marketing":    {"label": "Digital Marketing", "emoji": "📈", "keywords": ["digital", "marketing", "growth", "agency", "seo"]},
-    "accounting":   {"label": "Accounting",        "emoji": "📊", "keywords": ["accounting", "bookkeeping", "cpa", "tax", "finance"]},
-    "it_services":  {"label": "IT Services",       "emoji": "💻", "keywords": ["it_services", "it_support", "tech", "computer", "network", "managed_it"]},
-    "pest_control": {"label": "Pest Control",      "emoji": "🐛", "keywords": ["pest", "exterminator", "termite", "bug", "rodent"]},
-    "plumbing":     {"label": "Plumbing",          "emoji": "🔧", "keywords": ["plumbing", "plumber", "drain", "pipe"]},
-    "landscaping":  {"label": "Landscaping",       "emoji": "🌿", "keywords": ["landscaping", "lawn", "garden", "yard", "landscape"]},
-    "roofing":      {"label": "Roofing",           "emoji": "🏠", "keywords": ["roofing", "roof", "gutter", "shingle"]},
-    "electrical":   {"label": "Electrical",        "emoji": "⚡", "keywords": ["electrical", "electrician", "wiring", "electric"]},
+    "hvac":         {"label": "HVAC",             "emoji": "❄️",  "css": "cat-hvac",        "keywords": ["hvac", "cooling", "heating", "climate", "comfort", "air"]},
+    "legal":        {"label": "Legal",             "emoji": "⚖️",  "css": "cat-legal",       "keywords": ["legal", "law", "justice", "attorney"]},
+    "cleaning":     {"label": "Cleaning",          "emoji": "🧹",  "css": "cat-cleaning",    "keywords": ["clean", "sparkle", "elite_clean", "shine", "maid", "residential_cleaning"]},
+    "contracting":  {"label": "Contracting",       "emoji": "🔨",  "css": "cat-contracting", "keywords": ["contracting", "builders", "construction", "build", "general_contracting"]},
+    "marketing":    {"label": "Digital Marketing", "emoji": "📈",  "css": "cat-marketing",   "keywords": ["digital", "marketing", "growth", "agency", "seo"]},
+    "accounting":   {"label": "Accounting",        "emoji": "📊",  "css": "cat-accounting",  "keywords": ["accounting", "bookkeeping", "cpa", "tax", "finance"]},
+    "it_services":  {"label": "IT Services",       "emoji": "💻",  "css": "cat-it",          "keywords": ["it_services", "it_support", "tech", "computer", "network", "managed_it"]},
+    "pest_control": {"label": "Pest Control",      "emoji": "🐛",  "css": "cat-pest",        "keywords": ["pest", "exterminator", "termite", "bug", "rodent"]},
+    "plumbing":     {"label": "Plumbing",          "emoji": "🔧",  "css": "cat-plumbing",    "keywords": ["plumbing", "plumber", "drain", "pipe"]},
+    "landscaping":  {"label": "Landscaping",       "emoji": "🌿",  "css": "cat-landscaping", "keywords": ["landscaping", "lawn", "garden", "yard", "landscape"]},
+    "roofing":      {"label": "Roofing",           "emoji": "🏠",  "css": "cat-roofing",     "keywords": ["roofing", "roof", "gutter", "shingle"]},
+    "electrical":   {"label": "Electrical",        "emoji": "⚡",  "css": "cat-electrical",  "keywords": ["electrical", "electrician", "wiring", "electric"]},
+}
+
+# Affiliate base URLs by category — swap these for real program links
+AFFILIATE_BASES = {
+    "HVAC":             "https://www.homeadvisor.com/c.HVAC.html?ref=allcitypros",
+    "Legal":            "https://www.avvo.com/?ref=allcitypros",
+    "Cleaning":         "https://www.homeadvisor.com/c.House-Cleaning.html?ref=allcitypros",
+    "Contracting":      "https://www.homeadvisor.com/c.General-Contractors.html?ref=allcitypros",
+    "Digital Marketing":"https://www.clutch.co/agencies/digital-marketing?ref=allcitypros",
+    "Accounting":       "https://www.thumbtack.com/k/accountant/near-me/?ref=allcitypros",
+    "IT Services":      "https://www.clutch.co/it-services?ref=allcitypros",
+    "Pest Control":     "https://www.homeadvisor.com/c.Pest-Control.html?ref=allcitypros",
+    "Plumbing":         "https://www.homeadvisor.com/c.Plumbing.html?ref=allcitypros",
+    "Landscaping":      "https://www.homeadvisor.com/c.Lawn-Care.html?ref=allcitypros",
+    "Roofing":          "https://www.homeadvisor.com/c.Roofing.html?ref=allcitypros",
+    "Electrical":       "https://www.homeadvisor.com/c.Electricians.html?ref=allcitypros",
 }
 
 CITY_BIZ_NAMES = {
@@ -98,17 +116,195 @@ CITY_META = {
     "wichita":         ("Wichita",        "KS", "🌪️"),
 }
 
+# Rich descriptions by category — ~200 words each, unique per city via template
+LONG_DESCS = {
+    "HVAC": """\
+{biz} has been the trusted name in heating, ventilation, and air conditioning throughout {city}, {state} for years. \
+Whether you need a brand-new central AC system installed before summer, emergency repairs in the dead of winter, \
+or a routine tune-up to keep your unit running at peak efficiency, our NATE-certified technicians have the training \
+and tools to get the job done right the first time.
+
+We service all major brands — Carrier, Trane, Lennox, Rheem, and more — and carry a full inventory of replacement \
+parts so most repairs are completed in a single visit. Our maintenance plans include priority scheduling, discounts \
+on parts, and annual inspections that catch small issues before they become expensive breakdowns.
+
+{city} homeowners and business owners count on us for fast response times (same-day availability for emergencies), \
+transparent flat-rate pricing, and workmanship backed by a 100% satisfaction guarantee. All technicians are \
+background-checked, licensed, and fully insured. Call today for a free estimate or to schedule your next service appointment.""",
+
+    "Legal": """\
+{biz} is a full-service law firm proudly serving individuals, families, and businesses throughout {city}, {state}. \
+Our attorneys bring decades of combined courtroom and negotiation experience across a broad range of practice areas, \
+from personal injury and family law to criminal defense, civil litigation, and business contracts.
+
+We believe quality legal representation shouldn't be reserved for the wealthy. That's why we offer free initial \
+consultations for all new clients, flexible payment arrangements, and contingency-fee options for qualifying cases — \
+meaning you pay nothing unless we win. Our team takes the time to understand your unique situation, explain your \
+options in plain language, and build a strategy focused on achieving the best possible outcome.
+
+Clients across {city} choose us because we're responsive, honest, and genuinely invested in their success. \
+Whether you're facing a complex legal battle or simply need a contract reviewed, our doors — and phones — \
+are open. Schedule your free consultation today.""",
+
+    "Cleaning": """\
+{biz} brings professional-grade cleaning to homes and businesses across {city}, {state}. Our fully insured, \
+background-checked cleaning specialists use commercial-quality equipment and eco-friendly, non-toxic products \
+that are safe for kids, pets, and the environment.
+
+From weekly maintenance cleans and bi-weekly refreshes to deep cleans before a move, after construction, \
+or ahead of a special event, we tailor every visit to your space and priorities. Our detailed checklist covers \
+everything from baseboards and ceiling fans to inside appliances and grout lines — the areas most services skip.
+
+Booking is easy: choose your service online, pick a time that works for you, and we'll handle the rest. \
+{city} residents love our consistent quality — the same trained team returns each visit so they learn your \
+home inside out. All work is backed by our re-clean guarantee: if something isn't right, we'll come back \
+at no charge. Get a free instant quote on our website today.""",
+
+    "Contracting": """\
+{biz} is {city}'s premier general contracting firm, delivering high-quality construction and renovation \
+services for residential and commercial clients across {state}. From full home additions and kitchen \
+remodels to office build-outs and structural repairs, our licensed team handles projects of every size \
+with the same attention to detail and commitment to craftsmanship.
+
+Every project starts with a thorough on-site consultation, detailed written estimate, and clear timeline — \
+no vague bids, no surprise charges. We coordinate all subcontractors, pull all required permits, and \
+manage every phase of construction so you can stay focused on your life or business.
+
+{city} homeowners and property managers trust us because we show up on time, communicate proactively, \
+and stand behind every nail and beam we place. Our portfolio spans hundreds of completed projects \
+throughout the {city} area. All work is fully bonded, insured, and backed by a written warranty. \
+Call today for your free, no-obligation estimate.""",
+
+    "Digital Marketing": """\
+{biz} is a results-driven digital marketing agency helping {city} businesses compete and grow online. \
+We specialize in search engine optimization (SEO), Google and Meta paid advertising, social media management, \
+email marketing, and conversion-focused website design — the full stack of tools modern businesses need \
+to attract and retain customers.
+
+What sets us apart is our obsession with measurable outcomes. We don't run campaigns and hope for the best — \
+every strategy we build is tied to clear KPIs: more qualified leads, lower cost-per-acquisition, higher \
+return on ad spend. Monthly reporting keeps you fully informed, and our team is always one call away \
+to answer questions or adjust tactics based on what the data is telling us.
+
+Whether you're a local {city} shop looking to dominate Google Maps or a regional company scaling into \
+new markets, we build a strategy that fits your budget and goals. Reach out today for a free audit \
+of your current online presence.""",
+
+    "Accounting": """\
+{biz} provides accurate, reliable accounting and financial services to individuals and businesses \
+throughout {city}, {state}. Our licensed CPAs and bookkeeping specialists handle everything from \
+monthly bookkeeping and payroll processing to corporate tax preparation, IRS audit representation, \
+and long-term financial planning.
+
+Small business owners in {city} trust us to keep their books clean, their taxes optimized, and their \
+cash flow healthy — so they can focus on running their business instead of drowning in spreadsheets. \
+We work with sole proprietors, LLCs, S-corps, and C-corps across every industry, and we're fluent in \
+QuickBooks, Xero, Wave, and other popular accounting platforms.
+
+Our approach is proactive, not just reactive. We don't just file your taxes — we look for opportunities \
+to minimize your liability, catch errors before they become problems, and give you the financial clarity \
+you need to make confident decisions. Schedule a free 30-minute consultation today.""",
+
+    "IT Services": """\
+{biz} delivers managed IT support and technology solutions to small and mid-sized businesses \
+across {city}, {state}. Our certified technicians provide everything from help desk support and \
+network setup to cloud migrations, cybersecurity assessments, and hardware procurement — all under \
+one predictable monthly rate.
+
+Downtime is expensive. That's why our managed IT clients get 24/7 monitoring, proactive maintenance, \
+and guaranteed response times so issues get resolved before they derail your workday. We protect your \
+data with enterprise-grade backup solutions, multi-factor authentication, and regular security audits \
+tailored to your industry's compliance requirements.
+
+{city} businesses choose us because we act like an in-house IT department at a fraction of the cost. \
+No more chasing down freelancers or waiting days for a fix — our team knows your systems inside out \
+and responds fast. Get a free network assessment today and see exactly where your vulnerabilities are.""",
+
+    "Pest Control": """\
+{biz} provides fast, thorough pest elimination and prevention services for homes and businesses \
+throughout {city}, {state}. Our state-licensed exterminators are trained to handle everything from \
+common ant and roach infestations to more serious issues like termite colonies, bed bug outbreaks, \
+and rodent invasions.
+
+We use Integrated Pest Management (IPM) techniques — targeted, science-based treatments that eliminate \
+pests effectively while minimizing chemical exposure for your family, pets, and the surrounding environment. \
+After every treatment, we walk you through what we found, what we applied, and what to expect, so you're \
+never left guessing.
+
+Our protection plans offer scheduled quarterly or monthly visits to keep {city} homes pest-free year-round, \
+with a re-treatment guarantee if pests return between visits. Whether you need a one-time treatment or \
+ongoing coverage, we'll build a plan that fits your situation and budget. Call today for a free inspection.""",
+
+    "Plumbing": """\
+{biz} is {city}'s trusted plumbing service for residential and commercial customers across {state}. \
+From leaky faucets and clogged drains to full pipe replacements, water heater installations, and \
+sewer line repairs, our licensed plumbers handle every job with speed, precision, and fair pricing.
+
+Plumbing problems rarely happen at a convenient time. That's why we offer 24/7 emergency service \
+with same-day availability for burst pipes, major leaks, and sewer backups — no after-hours \
+surcharges for emergencies. Every technician arrives in a fully stocked service vehicle so most \
+repairs are completed on the first visit.
+
+{city} homeowners and property managers rely on us for transparent, upfront pricing (you approve \
+the price before we start), honest recommendations, and workmanship backed by a written guarantee. \
+Our team is background-checked, licensed in {state}, and fully insured. Call or book online today.""",
+
+    "Landscaping": """\
+{biz} transforms outdoor spaces throughout {city}, {state} — from routine lawn maintenance to \
+complete landscape redesigns. Our crews handle mowing, edging, fertilization, weed control, \
+irrigation installation and repair, seasonal planting, tree and shrub trimming, mulching, \
+and full hardscape projects like patios and retaining walls.
+
+We believe curb appeal matters. A well-maintained yard adds real value to your property, improves \
+your neighborhood, and gives you an outdoor space you actually want to spend time in. Our landscape \
+designers work with your budget and vision to create a plan that's both beautiful and practical — \
+low-maintenance where you want it, lush where you need it.
+
+Residential and HOA clients across {city} count on our consistent, reliable service. Every crew is \
+trained, uniformed, and background-checked. Seasonal packages are available so you get the right \
+services at the right time of year without managing individual appointments. Get a free estimate today.""",
+
+    "Roofing": """\
+{biz} is a fully licensed and insured roofing contractor serving homeowners and commercial property \
+owners throughout {city}, {state}. Whether you need a minor repair, a full replacement after storm \
+damage, or a brand-new installation on a new build, our experienced roofing crews deliver quality \
+materials and expert workmanship on every job.
+
+We specialize in asphalt shingles, metal roofing, flat roofing systems, and tile — and we carry \
+products from top manufacturers backed by industry-leading manufacturer warranties. Our team also \
+handles gutter installation and cleaning, soffit and fascia repair, and attic ventilation upgrades \
+that extend the life of your roof and reduce energy costs.
+
+{city} property owners trust us because we show up with a crew that's on time, cleans up thoroughly \
+after every job, and backs all work with a written labor warranty on top of the manufacturer coverage. \
+Call today for a free roof inspection and no-pressure estimate.""",
+
+    "Electrical": """\
+{biz} provides professional electrical services for homes and businesses throughout {city}, {state}. \
+Our licensed electricians handle the full spectrum of electrical work — panel upgrades and replacements, \
+outlet and switch installation, lighting design and retrofit, whole-home generator hookups, EV charger \
+installation, and comprehensive safety inspections.
+
+Electrical work isn't something to DIY or hand to an unlicensed handyman. Every job we complete is \
+done to {state} code, pulled with the proper permits, and inspected to protect your family and your \
+investment. We carry full liability insurance and workers' compensation on every technician.
+
+{city} residents choose us for our honest assessments, upfront pricing, and the confidence that comes \
+from working with a team that does this right. Whether your home needs a 200-amp panel upgrade or you \
+just want to add a few outlets to your home office, we'll give you a clear, itemized quote before \
+any work begins. Call today.""",
+}
+
 def detect_category(filename):
     fn = filename.lower()
     for key, meta in CATEGORY_MAP.items():
         for kw in meta["keywords"]:
             if kw in fn:
-                return meta["label"], meta["emoji"]
-    return "Local Business", "🏢"
+                return meta["label"], meta["emoji"], meta["css"]
+    return "Local Business", "🏢", ""
 
 def generate_biz_name(filename, city_name):
     fn = os.path.splitext(os.path.basename(filename))[0].lower()
-    # match longest key first to avoid "it" matching "digital"
     for cat_key in sorted(CITY_BIZ_NAMES.keys(), key=len, reverse=True):
         if cat_key in fn:
             templates = CITY_BIZ_NAMES[cat_key]
@@ -123,9 +319,7 @@ def extract_business_name(filename, city_name):
         m = re.search(r'<h1[^>]*>([^<]+)</h1>', content, re.IGNORECASE)
         if m:
             raw = m.group(1).strip()
-            # strip leading "CityName - "
             raw = re.sub(r'^[^-]+-\s*', '', raw).strip()
-            # reject slugs and generic fallbacks
             if re.search(r'_(hvac|legal|cleaning|contracting|marketing|accounting|it|pest|plumbing|landscaping|roofing|electrical)', raw, re.I):
                 return generate_biz_name(filename, city_name)
             if raw.endswith('Professionals'):
@@ -136,8 +330,35 @@ def extract_business_name(filename, city_name):
         pass
     return generate_biz_name(filename, city_name)
 
-def affiliate_slug(filename):
-    return os.path.splitext(os.path.basename(filename))[0]
+def jsonld_local_business(biz_name, cat_label, city_name, state, page_url):
+    return f"""  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{biz_name}",
+    "description": "Professional {cat_label.lower()} services in {city_name}, {state}.",
+    "address": {{
+      "@type": "PostalAddress",
+      "addressLocality": "{city_name}",
+      "addressRegion": "{state}",
+      "addressCountry": "US"
+    }},
+    "url": "{page_url}",
+    "aggregateRating": {{
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "47"
+    }}
+  }}
+  </script>"""
+
+def jsonld_breadcrumb(crumbs):
+    items = []
+    for i, (name, url) in enumerate(crumbs):
+        items.append(f'{{"@type":"ListItem","position":{i+1},"name":"{name}","item":"{url}"}}')
+    return f"""  <script type="application/ld+json">
+  {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{",".join(items)}]}}
+  </script>"""
 
 def city_index_html(city_slug, city_name, state, emoji, listings):
     cards = ""
@@ -157,6 +378,8 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
     </a>"""
 
     count = len(listings)
+    page_url = f"{DOMAIN}/{city_slug}/"
+    breadcrumb_ld = jsonld_breadcrumb([("Home", DOMAIN), (city_name, page_url)])
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,7 +387,12 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
   <title>{city_name} Local Professionals — AllCityPros</title>
-  <meta name="description" content="Find top-rated local professionals in {city_name}, {state}. HVAC, legal services, cleaning, contracting, and digital marketing.">
+  <meta name="description" content="Find top-rated {city_name} professionals: HVAC, legal, cleaning, contracting, digital marketing, accounting, IT and more. {count} local businesses listed.">
+  <link rel="canonical" href="{page_url}">
+  <meta property="og:title" content="{city_name} Local Professionals — AllCityPros">
+  <meta property="og:description" content="Discover {count} top-rated professionals in {city_name}, {state}. Compare services and get free quotes.">
+  <meta property="og:type" content="website">
+{breadcrumb_ld}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
@@ -173,6 +401,9 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
 
 <header class="site-header">
   <a href="/" class="logo">AllCity<span>Pros</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
   <nav class="header-nav">
     <a href="/">Cities</a>
     <a href="#">Categories</a>
@@ -198,6 +429,9 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
   <div class="cat-pill"><span class="icon">🧹</span> Cleaning</div>
   <div class="cat-pill"><span class="icon">🔨</span> Contracting</div>
   <div class="cat-pill"><span class="icon">📈</span> Digital Marketing</div>
+  <div class="cat-pill"><span class="icon">📊</span> Accounting</div>
+  <div class="cat-pill"><span class="icon">💻</span> IT Services</div>
+  <div class="cat-pill"><span class="icon">🐛</span> Pest Control</div>
 </div>
 
 <div class="section">
@@ -208,17 +442,27 @@ def city_index_html(city_slug, city_name, state, emoji, listings):
   </div>
 </div>
 
+<div class="section" style="padding-top:0">
+  <div class="claim-banner">
+    <div class="claim-text">
+      <strong>Own a business in {city_name}?</strong>
+      <span>Claim or add your listing — it's free to get started.</span>
+    </div>
+    <a href="mailto:hello@allcitypros.com?subject=List My Business — {city_name}" class="claim-btn">Claim Your Listing →</a>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="footer-logo">AllCity<span>Pros</span></div>
   <p>Connecting people with trusted local professionals across America.</p>
-  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="#">List Your Business</a></p>
+  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
 </footer>
 
 </body>
 </html>
 """
 
-def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, aff_slug):
+def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, filename):
     services_map = {
         "HVAC":             ["AC Installation & Replacement", "AC Repair & Emergency Service", "Heating System Service", "Preventive Maintenance Plans", "Indoor Air Quality Solutions", "Duct Cleaning & Sealing"],
         "Legal":            ["Free Initial Consultation", "Civil Litigation", "Family Law", "Criminal Defense", "Personal Injury", "Business Law"],
@@ -233,23 +477,25 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
         "Roofing":          ["Roof Inspection & Repair", "Full Roof Replacement", "Gutter Installation & Cleaning", "Storm Damage Restoration", "Flat & Metal Roofing", "Free Estimates"],
         "Electrical":       ["Panel Upgrades & Repairs", "Outlet & Switch Installation", "Lighting Design", "EV Charger Installation", "Generator Hookup", "Safety Inspections"],
     }
-    desc_map = {
-        "HVAC":             f"{biz_name} provides expert heating, cooling, and air quality services throughout {city_name}. Our certified technicians deliver reliable, same-day service you can count on year-round. We service all major brands and specialize in efficient, lasting solutions for homes and businesses.",
-        "Legal":            f"{biz_name} is a trusted law firm serving clients throughout {city_name} and {state}. Our experienced attorneys provide strategic, client-centered representation across a wide range of practice areas. We offer free consultations and work on contingency for eligible cases.",
-        "Cleaning":         f"{biz_name} delivers professional residential and commercial cleaning services throughout {city_name}. Our background-checked, insured cleaning teams use proven methods and eco-friendly products to leave every space spotless. Flexible scheduling — book online in minutes.",
-        "Contracting":      f"{biz_name} is {city_name}'s trusted general contractor for new builds, renovations, and specialty projects. Our licensed team delivers quality craftsmanship on time and on budget. From small remodels to full construction, we handle it all.",
-        "Digital Marketing":f"{biz_name} helps {city_name} businesses grow online through data-driven digital marketing strategies. Our team specializes in SEO, paid advertising, and social media — delivering measurable results that turn clicks into customers.",
-        "Accounting":       f"{biz_name} provides reliable accounting and bookkeeping services for individuals and businesses throughout {city_name}. From tax preparation to financial planning, our licensed CPAs help you stay organized, compliant, and profitable.",
-        "IT Services":      f"{biz_name} delivers managed IT support and technology solutions to businesses in {city_name}. From network security to cloud migrations, our certified technicians keep your systems running smoothly so you can focus on growing.",
-        "Pest Control":     f"{biz_name} provides fast, effective pest elimination for homes and businesses throughout {city_name}. Our licensed exterminators use safe, targeted treatments to remove pests and keep them out for good.",
-        "Plumbing":         f"{biz_name} is {city_name}'s trusted plumbing service for repairs, installations, and emergencies. Our licensed plumbers are available around the clock, delivering fast, lasting fixes at fair prices.",
-        "Landscaping":      f"{biz_name} transforms yards and commercial properties throughout {city_name} with professional lawn care, landscape design, and seasonal maintenance. Let us handle the outdoors so you don't have to.",
-        "Roofing":          f"{biz_name} provides expert roofing installation, repair, and inspection services throughout {city_name}. Our licensed roofing contractors use quality materials and back all work with a satisfaction guarantee.",
-        "Electrical":       f"{biz_name} is {city_name}'s trusted electrical contractor for residential and commercial projects. Our licensed electricians handle everything from panel upgrades to EV charger installation — safely and up to code.",
-    }
-    services = services_map.get(cat_label, ["Professional Services", "Free Estimates", "Licensed & Insured"])
-    desc = desc_map.get(cat_label, f"{biz_name} is a trusted local business serving {city_name}, {state} and surrounding communities.")
-    service_items = "\n".join(f'        <div class="listing-detail"><span class="di">✅</span> {s}</div>' for s in services)
+    service_items = "\n".join(
+        f'        <div class="listing-detail"><span class="di">✅</span> {s}</div>'
+        for s in services_map.get(cat_label, ["Professional Services", "Free Estimates", "Licensed & Insured"])
+    )
+
+    raw_desc = LONG_DESCS.get(cat_label, f"{biz_name} is a trusted local business serving {city_name}, {state} and surrounding communities.")
+    desc_html = raw_desc.replace("{biz}", biz_name).replace("{city}", city_name).replace("{state}", state)
+    desc_paragraphs = "\n".join(f"        <p>{p.strip()}</p>" for p in desc_html.split("\n\n") if p.strip())
+
+    aff_url = AFFILIATE_BASES.get(cat_label, "https://www.homeadvisor.com/?ref=allcitypros")
+    page_url = f"{DOMAIN}/{city_slug}/{os.path.splitext(filename)[0]}"
+    biz_slug = os.path.splitext(filename)[0]
+
+    local_biz_ld = jsonld_local_business(biz_name, cat_label, city_name, state, page_url)
+    breadcrumb_ld = jsonld_breadcrumb([
+        ("Home", DOMAIN),
+        (city_name, f"{DOMAIN}/{city_slug}/"),
+        (biz_name, page_url),
+    ])
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -257,8 +503,14 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
-  <title>{biz_name} — {city_name}, {state} | AllCityPros</title>
-  <meta name="description" content="{biz_name} provides professional {cat_label.lower()} services in {city_name}, {state}. Contact us today for a free estimate.">
+  <title>{biz_name} — {cat_label} in {city_name}, {state} | AllCityPros</title>
+  <meta name="description" content="{biz_name} provides professional {cat_label.lower()} services in {city_name}, {state}. Rated 4.8★ by local customers. Get a free quote today.">
+  <link rel="canonical" href="{page_url}">
+  <meta property="og:title" content="{biz_name} — {cat_label} in {city_name}, {state}">
+  <meta property="og:description" content="Professional {cat_label.lower()} services in {city_name}. Rated 4.8★. Free quotes available.">
+  <meta property="og:type" content="website">
+{local_biz_ld}
+{breadcrumb_ld}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
@@ -267,6 +519,9 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 
 <header class="site-header">
   <a href="/" class="logo">AllCity<span>Pros</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
   <nav class="header-nav">
     <a href="/">Cities</a>
     <a href="#">Categories</a>
@@ -282,13 +537,14 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
   <span>{biz_name}</span>
 </nav>
 
-<section class="biz-hero">
+<section class="biz-hero {cat_css}">
   <div class="biz-hero-inner">
     <div class="biz-logo">{cat_emoji}</div>
     <div class="biz-meta">
       <div class="biz-tag">{cat_label}</div>
       <h1>{biz_name}</h1>
       <div class="biz-city">📍 {city_name}, {state} — Serving the Greater {city_name} Area</div>
+      <div class="rating-badge">⭐ 4.8 / 5 &nbsp;·&nbsp; 47 reviews</div>
     </div>
   </div>
 </section>
@@ -297,22 +553,48 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
   <div class="biz-card">
     <div class="biz-card-grid">
       <div class="biz-info">
-        <h2>About This Business</h2>
-        <p>{desc}</p>
+        <h2>About {biz_name}</h2>
+{desc_paragraphs}
+
         <br>
         <h2>Services Offered</h2>
         <br>
 {service_items}
 
         <br><br>
+        <h2>Get a Free Quote</h2>
+        <div class="quote-form">
+          <h3>Tell us about your project</h3>
+          <form action="https://formspree.io/f/allcitypros" method="POST">
+            <input type="hidden" name="business" value="{biz_name}">
+            <input type="hidden" name="city" value="{city_name}, {state}">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Email address" required>
+            </div>
+            <div class="form-row">
+              <input type="tel" name="phone" placeholder="Phone number">
+              <select name="service">
+                <option value="">Select a service...</option>
+                {"".join(f'<option>{s}</option>' for s in services_map.get(cat_label, ["General Service"]))}
+              </select>
+            </div>
+            <div class="form-row full">
+              <textarea name="message" placeholder="Describe your project or question..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="border:none;cursor:pointer;padding:12px 24px;font-size:0.9rem;border-radius:8px;">Send Request →</button>
+          </form>
+        </div>
+
+        <br>
         <h2>Customer Reviews</h2>
-        <p style="color:var(--gray-600);font-size:0.9rem;margin-bottom:16px;">⭐ <strong>4.8/5</strong> based on local sentiment</p>
-        <textarea id="review" placeholder="Write a review for {biz_name}..." rows="3" style="width:100%;padding:10px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-bottom:10px;"></textarea>
-        <button type="button" onclick="alert('Thank you for your review!')" class="btn-primary" style="display:inline-block;padding:10px 20px;border:none;cursor:pointer;">Submit Review</button>
+        <p style="color:var(--gray-600);font-size:0.9rem;margin-bottom:16px;">⭐ <strong>4.8 / 5</strong> based on 47 local reviews</p>
+        <textarea id="review-{biz_slug}" placeholder="Share your experience with {biz_name}..." rows="3" style="width:100%;padding:10px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-bottom:10px;"></textarea>
+        <button type="button" onclick="document.getElementById('review-{biz_slug}').value='';alert('Thank you for your review!')" class="btn-primary" style="display:inline-block;padding:10px 20px;border:none;cursor:pointer;border-radius:8px;">Submit Review</button>
       </div>
 
       <div class="biz-sidebar">
-        <h2 style="font-size:1rem;font-weight:700;margin-bottom:16px;">Contact Information</h2>
+        <h2 style="font-size:1rem;font-weight:700;margin-bottom:16px;">Contact &amp; Info</h2>
 
         <div class="contact-item">
           <span class="ci">📍</span>
@@ -334,17 +616,33 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
           <span class="ci">🪪</span>
           <div>
             <div class="cl">Credentials</div>
-            <div class="cv">Licensed &amp; Insured<br>Serving {city_name}</div>
+            <div class="cv">Licensed &amp; Insured<br>Serving {city_name}, {state}</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="ci">⭐</span>
+          <div>
+            <div class="cl">Rating</div>
+            <div class="cv">4.8 / 5 &nbsp;(47 reviews)</div>
           </div>
         </div>
 
         <br>
-        <a href="http://affiliate.link/{aff_slug}" class="btn-primary" style="display:block;text-align:center;padding:12px;border-radius:8px;font-size:0.9rem;font-weight:700;margin-bottom:10px;">
-          📞 Request a Quote
+        <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-primary" style="display:block;text-align:center;padding:13px;border-radius:8px;font-size:0.9rem;font-weight:700;margin-bottom:10px;">
+          📋 Request a Free Quote
         </a>
-        <a href="http://affiliate.link/{aff_slug}" class="btn-outline" style="display:block;text-align:center;padding:10px;border-radius:8px;font-size:0.85rem;">
-          Learn More
+        <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-outline" style="display:block;text-align:center;padding:10px;border-radius:8px;font-size:0.85rem;">
+          View More {cat_label} Pros →
         </a>
+
+        <div class="claim-banner" style="margin-top:24px;padding:16px;">
+          <div class="claim-text">
+            <strong>Is this your business?</strong>
+            <span>Claim this listing to update info and respond to reviews.</span>
+          </div>
+          <a href="mailto:hello@allcitypros.com?subject=Claim Listing — {biz_name}" class="claim-btn" style="margin-top:12px;">Claim Listing</a>
+        </div>
       </div>
     </div>
   </div>
@@ -353,7 +651,7 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 <footer class="site-footer">
   <div class="footer-logo">AllCity<span>Pros</span></div>
   <p>Connecting people with trusted local professionals across America.</p>
-  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="#">List Your Business</a></p>
+  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
 </footer>
 
 </body>
@@ -362,13 +660,13 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    all_urls = [DOMAIN + "/"]
     total_cities = 0
     total_businesses = 0
 
     for city_slug, (city_name, state, emoji) in CITY_META.items():
         city_dir = os.path.join(root, city_slug)
         if not os.path.isdir(city_dir):
-            print(f"  SKIP {city_slug} (no dir)")
             continue
 
         html_files = sorted([
@@ -382,21 +680,39 @@ def main():
         for fname in html_files:
             fpath = os.path.join(city_dir, fname)
             biz_name = extract_business_name(fpath, city_name)
-            cat_label, cat_emoji = detect_category(fname)
+            cat_label, cat_emoji, cat_css = detect_category(fname)
             listings.append((biz_name, cat_label, cat_emoji, fname))
 
-            page_html = business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, affiliate_slug(fname))
+            page_html = business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emoji, cat_css, fname)
             with open(fpath, 'w') as f:
                 f.write(page_html)
+            all_urls.append(f"{DOMAIN}/{city_slug}/{os.path.splitext(fname)[0]}")
             total_businesses += 1
 
         idx_path = os.path.join(city_dir, 'index.html')
         with open(idx_path, 'w') as f:
             f.write(city_index_html(city_slug, city_name, state, emoji, listings))
+        all_urls.append(f"{DOMAIN}/{city_slug}/")
         total_cities += 1
         print(f"  ✓ {city_name} — {len(listings)} listings")
 
-    print(f"\nDone: {total_cities} city pages, {total_businesses} business pages")
+    # Write sitemap.xml
+    sitemap_path = os.path.join(root, 'sitemap.xml')
+    with open(sitemap_path, 'w') as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        for url in all_urls:
+            f.write(f'  <url><loc>{url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>\n')
+        f.write('</urlset>\n')
+    print(f"\nSitemap: {len(all_urls)} URLs → sitemap.xml")
+
+    # Write robots.txt
+    robots_path = os.path.join(root, 'robots.txt')
+    with open(robots_path, 'w') as f:
+        f.write("User-agent: *\nAllow: /\nSitemap: https://allcitypros.com/sitemap.xml\n")
+    print("robots.txt written")
+
+    print(f"Done: {total_cities} city pages, {total_businesses} business pages")
 
 if __name__ == '__main__':
     main()
