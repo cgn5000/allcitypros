@@ -9,18 +9,19 @@ import re
 DOMAIN = "https://allcitypros.com"
 
 CATEGORY_MAP = {
-    "hvac":         {"label": "HVAC",             "emoji": "❄️",  "css": "cat-hvac",        "keywords": ["hvac", "cooling", "heating", "climate", "comfort", "air"]},
+    # Order matters: more specific keywords checked before short/ambiguous ones
+    "it_services":  {"label": "IT Services",       "emoji": "💻",  "css": "cat-it",          "keywords": ["it_services", "it_support", "managed_it", "computer", "network", "tech_support"]},
+    "pest_control": {"label": "Pest Control",      "emoji": "🐛",  "css": "cat-pest",        "keywords": ["pest_control", "pest", "exterminator", "termite", "rodent"]},
+    "general_contracting": {"label": "Contracting","emoji": "🔨",  "css": "cat-contracting", "keywords": ["general_contracting", "contracting", "builders", "construction", "build"]},
+    "digital_marketing":   {"label": "Digital Marketing","emoji": "📈","css": "cat-marketing","keywords": ["digital_marketing", "digital", "marketing", "growth", "agency", "seo"]},
+    "residential_cleaning":{"label": "Cleaning",   "emoji": "🧹",  "css": "cat-cleaning",    "keywords": ["residential_cleaning", "elite_clean", "sparkle", "cleaning"]},
+    "hvac":         {"label": "HVAC",             "emoji": "❄️",  "css": "cat-hvac",        "keywords": ["hvac", "cooling", "heating", "climate", "comfort_systems"]},
     "legal":        {"label": "Legal",             "emoji": "⚖️",  "css": "cat-legal",       "keywords": ["legal", "law", "justice", "attorney"]},
-    "cleaning":     {"label": "Cleaning",          "emoji": "🧹",  "css": "cat-cleaning",    "keywords": ["clean", "sparkle", "elite_clean", "shine", "maid", "residential_cleaning"]},
-    "contracting":  {"label": "Contracting",       "emoji": "🔨",  "css": "cat-contracting", "keywords": ["contracting", "builders", "construction", "build", "general_contracting"]},
-    "marketing":    {"label": "Digital Marketing", "emoji": "📈",  "css": "cat-marketing",   "keywords": ["digital", "marketing", "growth", "agency", "seo"]},
     "accounting":   {"label": "Accounting",        "emoji": "📊",  "css": "cat-accounting",  "keywords": ["accounting", "bookkeeping", "cpa", "tax", "finance"]},
-    "it_services":  {"label": "IT Services",       "emoji": "💻",  "css": "cat-it",          "keywords": ["it_services", "it_support", "tech", "computer", "network", "managed_it"]},
-    "pest_control": {"label": "Pest Control",      "emoji": "🐛",  "css": "cat-pest",        "keywords": ["pest", "exterminator", "termite", "bug", "rodent"]},
     "plumbing":     {"label": "Plumbing",          "emoji": "🔧",  "css": "cat-plumbing",    "keywords": ["plumbing", "plumber", "drain", "pipe"]},
-    "landscaping":  {"label": "Landscaping",       "emoji": "🌿",  "css": "cat-landscaping", "keywords": ["landscaping", "lawn", "garden", "yard", "landscape"]},
+    "landscaping":  {"label": "Landscaping",       "emoji": "🌿",  "css": "cat-landscaping", "keywords": ["landscaping", "lawn", "garden", "yard"]},
     "roofing":      {"label": "Roofing",           "emoji": "🏠",  "css": "cat-roofing",     "keywords": ["roofing", "roof", "gutter", "shingle"]},
-    "electrical":   {"label": "Electrical",        "emoji": "⚡",  "css": "cat-electrical",  "keywords": ["electrical", "electrician", "wiring", "electric"]},
+    "electrical":   {"label": "Electrical",        "emoji": "⚡",  "css": "cat-electrical",  "keywords": ["electrical", "electrician", "wiring"]},
 }
 
 # Affiliate base URLs by category — swap these for real program links
@@ -295,20 +296,63 @@ just want to add a few outlets to your home office, we'll give you a clear, item
 any work begins. Call today.""",
 }
 
+CARD_SNIPPETS = {
+    "HVAC":             "Expert heating & cooling installation, repairs, and tune-ups for homes and businesses.",
+    "Legal":            "Experienced attorneys serving individuals, families, and businesses with personalized care.",
+    "Cleaning":         "Professional home and office cleaning with eco-friendly products and a re-clean guarantee.",
+    "Contracting":      "Licensed general contractors for remodels, additions, and new construction projects.",
+    "Digital Marketing":"Results-driven SEO, paid ads, and social media to grow your online presence and leads.",
+    "Accounting":       "CPA-led bookkeeping, tax prep, and financial planning for individuals and small businesses.",
+    "IT Services":      "Managed IT support, cybersecurity, and network solutions with 24/7 monitoring.",
+    "Pest Control":     "State-licensed exterminators using targeted IPM treatments safe for kids and pets.",
+    "Plumbing":         "Licensed plumbers for repairs, installations, and 24/7 emergency service.",
+    "Landscaping":      "Full-service lawn care, landscape design, and hardscaping for curb appeal you'll love.",
+    "Roofing":          "Expert roof repairs, full replacements, and inspections backed by a written warranty.",
+    "Electrical":       "Licensed electricians for panel upgrades, EV chargers, lighting, and safety inspections.",
+    "Local Business":   "Trusted local professionals serving your community with quality and care.",
+}
+
+CARD_SERVICES = {
+    "HVAC":             ["AC Installation", "Heating Repair", "Maintenance Plans"],
+    "Legal":            ["Free Consultation", "Personal Injury", "Family Law"],
+    "Cleaning":         ["Deep Cleaning", "Move-In/Out", "Weekly Service"],
+    "Contracting":      ["Kitchen Remodels", "Home Additions", "Commercial Build-Out"],
+    "Digital Marketing":["SEO & SEM", "Paid Ads", "Social Media"],
+    "Accounting":       ["Tax Preparation", "Bookkeeping", "Payroll"],
+    "IT Services":      ["Managed IT", "Cybersecurity", "Cloud Migration"],
+    "Pest Control":     ["Termite Control", "Rodent Removal", "Quarterly Plans"],
+    "Plumbing":         ["Drain Cleaning", "Water Heaters", "Emergency Service"],
+    "Landscaping":      ["Lawn Maintenance", "Landscape Design", "Irrigation"],
+    "Roofing":          ["Roof Replacement", "Storm Damage", "Gutter Install"],
+    "Electrical":       ["Panel Upgrades", "EV Chargers", "Lighting Install"],
+    "Local Business":   ["Free Estimates", "Local Service", "Top Rated"],
+}
+
+# Rating variety so cards don't all show identical scores
+CARD_RATINGS = ["4.7", "4.8", "4.9", "4.8", "5.0", "4.6", "4.8", "4.9", "4.7", "4.8"]
+CARD_REVIEWS = [23, 47, 31, 62, 18, 54, 39, 28, 71, 45]
+
 def detect_category(filename):
-    fn = filename.lower()
+    fn = os.path.splitext(os.path.basename(filename))[0].lower()
+    # Split into segments so "digital" doesn't match inside "residential"
+    segments = set(re.split(r'[_\-\s]+', fn))
     for key, meta in CATEGORY_MAP.items():
         for kw in meta["keywords"]:
-            if kw in fn:
+            kw_segs = set(kw.split('_'))
+            if kw_segs.issubset(segments):
                 return meta["label"], meta["emoji"], meta["css"]
     return "Local Business", "🏢", ""
 
 def generate_biz_name(filename, city_name):
     fn = os.path.splitext(os.path.basename(filename))[0].lower()
+    segments = set(re.split(r'[_\-\s]+', fn))
+    num_match = re.search(r'_(\d+)$', fn)
+    file_num = int(num_match.group(1)) - 1 if num_match else 0
     for cat_key in sorted(CITY_BIZ_NAMES.keys(), key=len, reverse=True):
-        if cat_key in fn:
+        kw_segs = set(cat_key.split('_'))
+        if kw_segs.issubset(segments):
             templates = CITY_BIZ_NAMES[cat_key]
-            idx = len(city_name) % len(templates)
+            idx = (len(city_name) + file_num) % len(templates)
             return templates[idx].replace("{city}", city_name)
     return city_name + " Professionals"
 
@@ -362,18 +406,30 @@ def jsonld_breadcrumb(crumbs):
 
 def city_index_html(city_slug, city_name, state, emoji, listings):
     cards = ""
-    for biz_name, cat_label, cat_emoji, fname in listings:
+    for i, (biz_name, cat_label, cat_emoji, fname) in enumerate(listings):
+        snippet = CARD_SNIPPETS.get(cat_label, CARD_SNIPPETS["Local Business"])
+        services = CARD_SERVICES.get(cat_label, CARD_SERVICES["Local Business"])
+        rating = CARD_RATINGS[i % len(CARD_RATINGS)]
+        review_count = CARD_REVIEWS[i % len(CARD_REVIEWS)]
+        service_pills = "".join(f'<span class="svc-pill">{s}</span>' for s in services)
+        stars = "★" * int(float(rating)) + ("" if float(rating) == int(float(rating)) else "½")
         cards += f"""
     <a href="/{city_slug}/{fname}" class="listing-card">
       <div class="listing-card-header">
         <div class="listing-avatar">{cat_emoji}</div>
-        <div><div class="name">{biz_name}</div><div class="category-tag">{cat_label}</div></div>
+        <div>
+          <div class="name">{biz_name}</div>
+          <div class="category-tag">{cat_label}</div>
+        </div>
       </div>
       <div class="listing-card-body">
+        <div class="card-rating"><span class="stars">{stars}</span> <strong>{rating}</strong> <span class="review-ct">({review_count} reviews)</span></div>
+        <div class="card-snippet">{snippet}</div>
+        <div class="card-services">{service_pills}</div>
         <div class="listing-detail"><span class="di">📍</span> {city_name}, {state}</div>
       </div>
       <div class="listing-card-actions">
-        <div class="btn-primary">View Details</div>
+        <div class="btn-primary">View Details →</div>
       </div>
     </a>"""
 

@@ -582,3 +582,37 @@ a { color: inherit; text-decoration: none; }
 .biz-hero.cat-landscaping  { background: linear-gradient(135deg, #0d2800, #1a3d00); }
 .biz-hero.cat-roofing      { background: linear-gradient(135deg, #2d1500, #3d1f00); }
 .biz-hero.cat-electrical   { background: linear-gradient(135deg, #1a1400, #332800); }
+
+/* ── LISTING CARD rich content ── */
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+  color: var(--gray-700);
+}
+.card-rating .stars { color: #f59e0b; font-size: 0.9rem; letter-spacing: 1px; }
+.card-rating .review-ct { color: var(--gray-500); }
+.card-snippet {
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+.card-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.svc-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: var(--blue-light, #eff6ff);
+  color: var(--blue, #2563eb);
+  border: 1px solid rgba(37,99,235,0.15);
+  letter-spacing: 0.01em;
+}
