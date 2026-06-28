@@ -790,7 +790,7 @@ CARD_REVIEWS = [23, 47, 31, 62, 18, 54, 39, 28, 71, 45]
 # ── Target listings per city ──────────────────────────────────────────────────
 TARGET_PER_CITY = 200
 # Spread target evenly across 12 categories — 17 per category = 204 min baseline
-LISTINGS_PER_CAT = 20
+LISTINGS_PER_CAT = 41
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
