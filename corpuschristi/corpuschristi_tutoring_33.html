@@ -49,8 +49,8 @@
   </button>
   <nav class="header-nav">
     <a href="/">Cities</a>
-    <a href="#">Categories</a>
-    <a href="#">List Your Business</a>
+    <a href="/#categories">Categories</a>
+    <a href="/#list-business">List Your Business</a>
   </nav>
 </header>
 
@@ -130,8 +130,14 @@
         <br>
         <h2>Customer Reviews</h2>
         <p style="color:var(--gray-600);font-size:0.9rem;margin-bottom:16px;">⭐ <strong>4.8 / 5</strong> based on 47 local reviews</p>
-        <textarea id="review-corpuschristi_tutoring_33" placeholder="Share your experience with ScholarPro Corpus Christi..." rows="3" style="width:100%;padding:10px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-bottom:10px;"></textarea>
-        <button type="button" onclick="document.getElementById('review-corpuschristi_tutoring_33').value='';alert('Thank you for your review!')" class="btn-primary" style="display:inline-block;padding:10px 20px;border:none;cursor:pointer;border-radius:8px;">Submit Review</button>
+        <form action="https://formspree.io/f/allcitypros" method="POST"
+          onsubmit="event.preventDefault();var f=this;fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(){f.style.display='none';document.getElementById('review-thanks-corpuschristi_tutoring_33').style.display='block';});">
+          <input type="hidden" name="biz_name" value="ScholarPro Corpus Christi">
+          <input type="hidden" name="city_name" value="Corpus Christi, TX">
+          <textarea name="review" placeholder="Share your experience with ScholarPro Corpus Christi..." rows="3" required style="width:100%;padding:10px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-bottom:10px;"></textarea>
+          <button type="submit" class="btn-primary" style="display:inline-block;padding:10px 20px;border:none;cursor:pointer;border-radius:8px;">Submit Review</button>
+        </form>
+        <div id="review-thanks-corpuschristi_tutoring_33" style="display:none;padding:12px;background:#f0fdf4;border-radius:8px;color:#166534;font-weight:600;">Thank you for your review!</div>
 
         <br>
         <h2>Frequently Asked Questions</h2>
@@ -255,7 +261,7 @@
 <footer class="site-footer">
   <div class="footer-logo">AllCity<span>Pros</span></div>
   <p>Connecting people with trusted local professionals across America.</p>
-  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
+  <p class="mt-4"><a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms-of-service">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
 </footer>
 
 </body>

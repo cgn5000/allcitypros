@@ -1299,7 +1299,7 @@ def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=N
         service_pills = "".join(f'<span class="svc-pill">{s}</span>' for s in services)
         stars = "★" * int(float(rating)) + ("" if float(rating) == int(float(rating)) else "½")
         cards += f"""
-    <a href="/{city_slug}/{fname}" class="listing-card">
+    <a href="/{city_slug}/{fname}" class="listing-card" data-cat="{cat_label}">
       <div class="listing-card-header">
         <div class="listing-avatar">{cat_emoji}</div>
         <div>
@@ -1361,8 +1361,8 @@ def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=N
   </button>
   <nav class="header-nav">
     <a href="/">Cities</a>
-    <a href="#">Categories</a>
-    <a href="#">List Your Business</a>
+    <a href="/#categories">Categories</a>
+    <a href="/#list-business">List Your Business</a>
   </nav>
 </header>
 
@@ -1378,31 +1378,31 @@ def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=N
 </section>
 
 <div class="category-strip">
-  <div class="cat-pill active"><span class="icon">🏙️</span> All</div>
-  <div class="cat-pill"><span class="icon">❄️</span> HVAC</div>
-  <div class="cat-pill"><span class="icon">⚖️</span> Legal</div>
-  <div class="cat-pill"><span class="icon">🧹</span> Cleaning</div>
-  <div class="cat-pill"><span class="icon">🔨</span> Contracting</div>
-  <div class="cat-pill"><span class="icon">📈</span> Digital Marketing</div>
-  <div class="cat-pill"><span class="icon">📊</span> Accounting</div>
-  <div class="cat-pill"><span class="icon">💻</span> IT Services</div>
-  <div class="cat-pill"><span class="icon">🐛</span> Pest Control</div>
-  <div class="cat-pill"><span class="icon">🔧</span> Plumbing</div>
-  <div class="cat-pill"><span class="icon">🌿</span> Landscaping</div>
-  <div class="cat-pill"><span class="icon">🏠</span> Roofing</div>
-  <div class="cat-pill"><span class="icon">⚡</span> Electrical</div>
-  <div class="cat-pill"><span class="icon">🚛</span> Moving</div>
-  <div class="cat-pill"><span class="icon">🎨</span> Painting</div>
-  <div class="cat-pill"><span class="icon">🪵</span> Flooring</div>
-  <div class="cat-pill"><span class="icon">🔒</span> Home Security</div>
-  <div class="cat-pill"><span class="icon">☀️</span> Solar Energy</div>
-  <div class="cat-pill"><span class="icon">🏊</span> Pool &amp; Spa</div>
-  <div class="cat-pill"><span class="icon">🚗</span> Auto Repair</div>
-  <div class="cat-pill"><span class="icon">🐾</span> Pet Services</div>
-  <div class="cat-pill"><span class="icon">💪</span> Personal Training</div>
-  <div class="cat-pill"><span class="icon">📚</span> Tutoring</div>
-  <div class="cat-pill"><span class="icon">🏡</span> Mortgage</div>
-  <div class="cat-pill"><span class="icon">🛠️</span> Handyman</div>
+  <div class="cat-pill active" data-filter="All" onclick="filterCat(this)"><span class="icon">🏙️</span> All</div>
+  <div class="cat-pill" data-filter="HVAC" onclick="filterCat(this)"><span class="icon">❄️</span> HVAC</div>
+  <div class="cat-pill" data-filter="Legal" onclick="filterCat(this)"><span class="icon">⚖️</span> Legal</div>
+  <div class="cat-pill" data-filter="Cleaning" onclick="filterCat(this)"><span class="icon">🧹</span> Cleaning</div>
+  <div class="cat-pill" data-filter="Contracting" onclick="filterCat(this)"><span class="icon">🔨</span> Contracting</div>
+  <div class="cat-pill" data-filter="Digital Marketing" onclick="filterCat(this)"><span class="icon">📈</span> Digital Marketing</div>
+  <div class="cat-pill" data-filter="Accounting" onclick="filterCat(this)"><span class="icon">📊</span> Accounting</div>
+  <div class="cat-pill" data-filter="IT Services" onclick="filterCat(this)"><span class="icon">💻</span> IT Services</div>
+  <div class="cat-pill" data-filter="Pest Control" onclick="filterCat(this)"><span class="icon">🐛</span> Pest Control</div>
+  <div class="cat-pill" data-filter="Plumbing" onclick="filterCat(this)"><span class="icon">🔧</span> Plumbing</div>
+  <div class="cat-pill" data-filter="Landscaping" onclick="filterCat(this)"><span class="icon">🌿</span> Landscaping</div>
+  <div class="cat-pill" data-filter="Roofing" onclick="filterCat(this)"><span class="icon">🏠</span> Roofing</div>
+  <div class="cat-pill" data-filter="Electrical" onclick="filterCat(this)"><span class="icon">⚡</span> Electrical</div>
+  <div class="cat-pill" data-filter="Moving" onclick="filterCat(this)"><span class="icon">🚛</span> Moving</div>
+  <div class="cat-pill" data-filter="Painting" onclick="filterCat(this)"><span class="icon">🎨</span> Painting</div>
+  <div class="cat-pill" data-filter="Flooring" onclick="filterCat(this)"><span class="icon">🪵</span> Flooring</div>
+  <div class="cat-pill" data-filter="Home Security" onclick="filterCat(this)"><span class="icon">🔒</span> Home Security</div>
+  <div class="cat-pill" data-filter="Solar Energy" onclick="filterCat(this)"><span class="icon">☀️</span> Solar Energy</div>
+  <div class="cat-pill" data-filter="Pool &amp; Spa" onclick="filterCat(this)"><span class="icon">🏊</span> Pool &amp; Spa</div>
+  <div class="cat-pill" data-filter="Auto Repair" onclick="filterCat(this)"><span class="icon">🚗</span> Auto Repair</div>
+  <div class="cat-pill" data-filter="Pet Services" onclick="filterCat(this)"><span class="icon">🐾</span> Pet Services</div>
+  <div class="cat-pill" data-filter="Personal Training" onclick="filterCat(this)"><span class="icon">💪</span> Personal Training</div>
+  <div class="cat-pill" data-filter="Tutoring" onclick="filterCat(this)"><span class="icon">📚</span> Tutoring</div>
+  <div class="cat-pill" data-filter="Mortgage" onclick="filterCat(this)"><span class="icon">🏡</span> Mortgage</div>
+  <div class="cat-pill" data-filter="Handyman" onclick="filterCat(this)"><span class="icon">🛠️</span> Handyman</div>
 </div>
 
 <div class="section">
@@ -1454,9 +1454,19 @@ def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=N
 <footer class="site-footer">
   <div class="footer-logo">AllCity<span>Pros</span></div>
   <p>Connecting people with trusted local professionals across America.</p>
-  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
+  <p class="mt-4"><a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms-of-service">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
 </footer>
 
+<script>
+function filterCat(el) {{
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  var f = el.dataset.filter;
+  document.querySelectorAll('.listing-card').forEach(function(c) {{
+    c.style.display = (f === 'All' || c.dataset.cat === f) ? '' : 'none';
+  }});
+}}
+</script>
 </body>
 </html>
 """
@@ -1603,8 +1613,8 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
   </button>
   <nav class="header-nav">
     <a href="/">Cities</a>
-    <a href="#">Categories</a>
-    <a href="#">List Your Business</a>
+    <a href="/#categories">Categories</a>
+    <a href="/#list-business">List Your Business</a>
   </nav>
 </header>
 
@@ -1677,8 +1687,14 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
         <br>
         <h2>Customer Reviews</h2>
         <p style="color:var(--gray-600);font-size:0.9rem;margin-bottom:16px;">⭐ <strong>4.8 / 5</strong> based on 47 local reviews</p>
-        <textarea id="review-{biz_slug}" placeholder="Share your experience with {biz_name}..." rows="3" style="width:100%;padding:10px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-bottom:10px;"></textarea>
-        <button type="button" onclick="document.getElementById('review-{biz_slug}').value='';alert('Thank you for your review!')" class="btn-primary" style="display:inline-block;padding:10px 20px;border:none;cursor:pointer;border-radius:8px;">Submit Review</button>
+        <form action="https://formspree.io/f/allcitypros" method="POST"
+          onsubmit="event.preventDefault();var f=this;fetch(f.action,{{method:'POST',body:new FormData(f),headers:{{Accept:'application/json'}}}}).then(function(){{f.style.display='none';document.getElementById('review-thanks-{biz_slug}').style.display='block';}});">
+          <input type="hidden" name="biz_name" value="{biz_name}">
+          <input type="hidden" name="city_name" value="{city_name}, {state}">
+          <textarea name="review" placeholder="Share your experience with {biz_name}..." rows="3" required style="width:100%;padding:10px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-bottom:10px;"></textarea>
+          <button type="submit" class="btn-primary" style="display:inline-block;padding:10px 20px;border:none;cursor:pointer;border-radius:8px;">Submit Review</button>
+        </form>
+        <div id="review-thanks-{biz_slug}" style="display:none;padding:12px;background:#f0fdf4;border-radius:8px;color:#166534;font-weight:600;">Thank you for your review!</div>
 
 {faq_section}
 {related_html}
@@ -1777,7 +1793,7 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 <footer class="site-footer">
   <div class="footer-logo">AllCity<span>Pros</span></div>
   <p>Connecting people with trusted local professionals across America.</p>
-  <p class="mt-4"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
+  <p class="mt-4"><a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms-of-service">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:hello@allcitypros.com?subject=List My Business">List Your Business</a></p>
 </footer>
 
 </body>
