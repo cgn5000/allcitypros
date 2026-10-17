@@ -1,0 +1,5 @@
+{
+  "_readme": "Fill in to turn on monetization. Nothing renders until a category has a url. formspree_id is reserved for a future lead form.",
+  "formspree_id": "",
+  "cta": {}
+}

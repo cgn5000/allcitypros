@@ -1,0 +1,20 @@
+.g-wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+.g-article h2 { font-size: 1.35rem; font-weight: 800; color: var(--navy); margin: 32px 0 10px; letter-spacing: -0.3px; }
+.g-article h3 { font-size: 1.05rem; font-weight: 700; color: var(--gray-800); margin: 22px 0 8px; }
+.g-article p, .g-article li { color: var(--gray-600); line-height: 1.7; font-size: 1rem; }
+.g-article ol, .g-article ul { padding-left: 22px; margin: 8px 0; }
+.g-article li { margin-bottom: 6px; }
+.g-lead { font-size: 1.1rem !important; color: var(--gray-800) !important; }
+.g-small { font-size: 0.85rem !important; color: var(--gray-400) !important; }
+.g-table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 0.95rem; }
+.g-table th, .g-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--gray-200); }
+.g-table th { background: var(--gray-50); color: var(--gray-800); font-weight: 700; }
+.g-table td:last-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+.g-cta { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 18px 20px; margin: 22px 0; }
+.g-cta p { margin: 6px 0 12px; }
+.g-cta small { display: block; margin-top: 10px; color: var(--gray-400); font-size: 0.75rem; }
+.g-disclaimer { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--gray-200); font-size: 0.8rem !important; color: var(--gray-400) !important; }
+.g-article .rel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; margin: 10px 0 4px; }
+.g-article .faq-list { display: grid; gap: 10px; margin-top: 10px; }
+.g-article .faq-a { padding: 0 18px 14px; }
+@media (max-width: 600px) { .g-table td:last-child { white-space: normal; } }
