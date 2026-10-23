@@ -27,6 +27,8 @@ WAVE1 = ("newyork losangeles chicago houston phoenix philadelphia sanantonio san
          "fortworth columbus charlotte sanfrancisco indianapolis seattle denver washington boston elpaso nashville detroit "
          "oklahomacity portland lasvegas louisville baltimore milwaukee albuquerque tucson fresno sacramento atlanta "
          "kansascity miami raleigh omaha minneapolis tampa orlando").split()
+# Used for the "popular cities" link lists only. The sitemap no longer has waves: the service
+# hubs are the indexable set, so there is nothing left to ration.
 WAVE1_N = int(os.environ.get("WAVE1_N", "25"))
 
 CAT_EMOJI = {"hvac":"❄️","plumbing":"🔧","electrical":"⚡","roofing":"🏠","general_contracting":"🔨","landscaping":"🌿","painting":"🎨",
@@ -67,7 +69,7 @@ HEAD = """<!DOCTYPE html>
   <title>{title}</title>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{canon}">
-  <meta property="og:title" content="{title}">
+{robots}  <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="article">
 {ld}
@@ -139,9 +141,7 @@ def guide_page(city, cat):
         {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc, "dateModified": TODAY,
          "datePublished": TODAY, "mainEntityOfPage": url, "author": {"@type": "Organization", "name": "AllCityPros"},
          "publisher": {"@type": "Organization", "name": "AllCityPros", "url": DOMAIN}},
-        crumbs_ld([("Home", "/"), ("Guides", "/guides"), (label, f"/guides/{slug(cat)}"), (f"{name}, {st}", gpath(city, cat))]),
-        {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
+        crumbs_ld([("Home", "/"), ("Guides", "/guides"), (label, f"/guides/{slug(cat)}"), (f"{name}, {st}", gpath(city, cat))]))
     rows = "".join(f"<tr><td>{esc(a)}</td><td>{esc(b)}</td></tr>" for a, b in d["cost"])
     steps = "".join(f"<li>{esc(s.format(**fmt))}</li>" for s in d["steps"])
     qs = "".join(f"<li>{esc(s.format(**fmt))}</li>" for s in d["questions"])
@@ -160,6 +160,7 @@ def guide_page(city, cat):
 <article class="g-article">
 <p class="g-lead">{esc(d['intro'].format(**fmt))}</p>
 <p>{esc(snap)}</p>
+<p class="g-small">For the full {esc(lc(label))} guide &mdash; cost drivers, how prices vary by region, licensing and the complete FAQ &mdash; see <a href="/guides/{slug(cat)}">our {esc(lc(label))} guide</a>.</p>
 {f'<h2>What to know in {esc(name)}</h2><p>{esc(note)}</p>' if note else ''}
 <h2>Typical {esc(lc(label))} costs</h2>
 <p class="g-small">National ballpark ranges for planning only. Actual prices in {esc(name)} depend on the scope of work, materials and the provider &mdash; always compare written quotes.</p>
@@ -176,23 +177,145 @@ def guide_page(city, cat):
 <p class="g-disclaimer">AllCityPros is an independent information resource. We do not endorse, rate or vouch for any specific business, and nothing here is professional advice. Cost ranges are national ballparks and are not quotes. Always verify licenses, insurance and references yourself.</p>
 </article>
 </main>"""
-    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld) + body + FOOT
+    # noindex: these 3,745 pages are ~96% identical city-to-city (only the city name and a
+    # state-level climate note change), which is what produced thousands of "Google chose a
+    # different canonical" in Search Console. The service hub at /guides/<service> is the
+    # indexable page; these stay live and crawlable ("follow") for readers and internal links.
+    robots = '  <meta name="robots" content="noindex, follow">\n'
+    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots=robots) + body + FOOT
+
+REGION_ORDER = ["hot_humid", "hot_dry", "mixed", "cold", "mild"]
+REGION_NAME = {
+    "hot_humid": "Hot &amp; humid South",
+    "hot_dry": "Hot &amp; dry Southwest",
+    "mixed": "Mixed / four-season",
+    "cold": "Cold North &amp; Mountain",
+    "mild": "Mild West Coast",
+}
+REGION_STATES = {r: sorted(st for st, rr in REGION.items() if rr == r) for r in REGION_ORDER}
+
+
+# The service copy was written to be stamped into a city page, so it is phrased for a specific
+# place: "the {state} licensing authority", "{state} homes need...". Substituting a generic
+# phrase leaves "the your state licensing authority" and "your state homes need". These two
+# helpers reshape the sentence instead of just swapping the token.
+def _tidy(out, *words):
+    out = re.sub(r"\bthe (your (?:state|city|area)|this region)\b",
+                 lambda m: m.group(1) + ("'s" if m.group(1).startswith("your") else "'s"), out)
+    out = re.sub(r"\s{2,}", " ", out).strip()
+    # Reshaping "{state} homes need" into "homes in this region need" leaves a lower-case opener.
+    return out[:1].upper() + out[1:] if out else out
+
+
+def generic(text):
+    """Render city-page service copy at national level."""
+    t = text
+    for a, b in (("the {city} building department", "your local building department"),
+                 ("{city} building department", "your local building department"),
+                 ("{city} homeowners", "homeowners"),
+                 ("{city} residents", "residents"),
+                 ("{state} homeowners", "homeowners"),
+                 ("{city} homes", "homes in your area"),
+                 ("{state} homes", "homes in your state")):
+        t = t.replace(a, b)
+    return _tidy(t.format(city="your area", state="your state", st=""))
+
+
+def region_text(text):
+    """Render a per-region climate note where the region, not a state, is the subject."""
+    t = text
+    for noun in ("homes", "roofs", "lawns", "homeowners", "residents", "yards", "drivers"):
+        t = t.replace(f"{{state}} {noun}", f"{noun} in {{state}}")
+        t = t.replace(f"{{city}} {noun}", f"{noun} in {{city}}")
+    return _tidy(t.format(city="your city", state="this region", st=""))
+
 
 def category_hub(cat):
-    d = CATS[cat]; label = d["label"]
+    """The one indexable page per service.
+
+    This carries the full guide. The 155 city variants are noindexed because they were
+    ~96% identical to each other, so all the ranking signal belongs here.
+    """
+    d = CATS[cat]
+    label = d["label"]
     url = f"{DOMAIN}/guides/{slug(cat)}"
-    title = f"{label} Guides by City: Costs, Hiring Tips & Red Flags | AllCityPros"
-    desc = f"City-by-city {lc(label)} guides: typical costs, how to compare {d['noun']}s, licensing checks and red flags for {len(CITIES)} U.S. cities."
-    ld = ld_block(crumbs_ld([("Home", "/"), ("Guides", "/guides"), (label, f"/guides/{slug(cat)}")]))
-    by_state = {}
-    for c, (n, s) in sorted(CITIES.items(), key=lambda x: (STATE_NAMES[x[1][1]], x[1][0])):
-        by_state.setdefault(s, []).append((c, n))
-    blocks = "".join(f'<h3>{esc(STATE_NAMES[s])}</h3><div class="rel-grid">' +
-        "".join(f'<a class="rel-link" href="{gpath(c, cat)}">{esc(label)} in {esc(n)}</a>' for c, n in v) + "</div>"
-        for s, v in sorted(by_state.items(), key=lambda x: STATE_NAMES[x[0]]))
-    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld) + f"""{breadcrumb_html([("Home", "/"), ("Guides", "/guides"), (label, "")])}
-<section class="page-hero"><h1>{CAT_EMOJI[cat]} {esc(label)} Guides by City</h1><p>{esc(d['intro'].format(city='your city', state='your state', st='')).replace('your city', 'your city')}</p></section>
-<main class="g-wrap"><article class="g-article"><h2>Pick your city</h2>{blocks}</article></main>""" + FOOT
+    title = f"{label} Costs & How to Hire: 2026 Guide | AllCityPros"
+    # Only promise the regional section on the services that actually have one.
+    region_bit = "how needs vary by region, " if cat in CLIMATE else ""
+    desc = (f"What {lc(label)} work actually costs, {region_bit}how to compare "
+            f"{d['noun']}s, licence checks, red flags and FAQs. Updated {MONTH_YEAR}.")
+    faq = [(generic(q), generic(a)) for q, a in d["faq"]]
+    ld = ld_block(
+        {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc,
+         "dateModified": TODAY, "datePublished": TODAY, "mainEntityOfPage": url,
+         "author": {"@type": "Organization", "name": "AllCityPros"},
+         "publisher": {"@type": "Organization", "name": "AllCityPros", "url": DOMAIN}},
+        crumbs_ld([("Home", "/"), ("Guides", "/guides"), (label, f"/guides/{slug(cat)}")]),
+        {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
+
+    rows = "".join(f"<tr><td>{esc(a)}</td><td>{esc(b)}</td></tr>" for a, b in d["cost"])
+    steps = "".join(f"<li>{esc(generic(x))}</li>" for x in d["steps"])
+    qs = "".join(f"<li>{esc(generic(x))}</li>" for x in d["questions"])
+    red = "".join(f"<li>{esc(generic(x))}</li>" for x in d["red"])
+    faqh = "".join(f'<details class="faq-item"><summary class="faq-q">{esc(q)}</summary>'
+                   f'<div class="faq-a">{esc(a)}</div></details>' for q, a in faq)
+
+    # Regional variation is the one place local detail is real rather than a find-and-replace:
+    # these notes are written per service per climate region. Services whose cost drivers are
+    # not weather-driven (accounting, legal, tutoring...) have no such data, so they get no table.
+    region_block = ""
+    if cat in CLIMATE:
+        rr = "".join(
+            f"<tr><td><strong>{REGION_NAME[r]}</strong><br><span class=\"g-small\">"
+            f"{esc(', '.join(REGION_STATES[r]))}</span></td>"
+            f"<td>{esc(region_text(CLIMATE[cat][r]))}</td></tr>"
+            for r in REGION_ORDER if r in CLIMATE[cat])
+        region_block = (f"<h2>How {esc(lc(label))} needs vary by region</h2>"
+                        f"<p>Climate changes what matters most, what fails first and when to book. "
+                        f"Find your region below.</p>"
+                        f'<table class="g-table"><thead><tr><th>Region</th><th>What changes</th></tr></thead>'
+                        f"<tbody>{rr}</tbody></table>")
+
+    # Link a readable set of metros, not all 155. Every city hub is in the sitemap already, so
+    # the long list bought no discovery -- it just added ~560 words of near-identical link text
+    # to all 24 hubs, diluting the editorial content and making the hubs resemble each other.
+    top = [c for c in WAVE1 if c in CITIES][:WAVE1_N]
+    blocks = ('<div class="rel-grid">'
+              + "".join(f'<a class="rel-link" href="{gpath(c, cat)}">{esc(label)} in {esc(CITIES[c][0])}, '
+                        f'{CITIES[c][1]}</a>' for c in top)
+              + "</div>"
+              + f'<p class="g-small"><a href="/">Browse all {len(CITIES)} cities &rarr;</a></p>')
+
+    others = [c for c in CATS if c != cat]
+    more = "".join(f'<a class="rel-link" href="/guides/{slug(c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> '
+                   f'{esc(CATS[c]["label"])}</a>' for c in others)
+
+    crumbs = [("Home", "/"), ("Guides", "/guides"), (label, "")]
+    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots="") + f"""{breadcrumb_html(crumbs)}
+<section class="page-hero"><h1>{CAT_EMOJI[cat]} {esc(label)}: Costs &amp; How to Hire</h1><p>What the work costs, how to compare quotes and what to ask &middot; Updated {MONTH_YEAR}</p></section>
+<main class="g-wrap">
+<article class="g-article">
+<p class="g-lead">{esc(generic(d['intro']))}</p>
+<h2>Typical {esc(lc(label))} costs</h2>
+<p class="g-small">National ballpark ranges for planning only &mdash; not quotes. What you pay depends on scope, materials, access and your local market, so always compare written estimates.</p>
+<table class="g-table"><thead><tr><th>Service</th><th>Typical range</th></tr></thead><tbody>{rows}</tbody></table>
+{cta_html(cat, "your area")}
+{region_block}
+<h2>How to hire the right {esc(d['noun'])}</h2><ol>{steps}</ol>
+<h2>Questions to ask before you hire</h2><ul>{qs}</ul>
+<h2>Red flags to watch for</h2><ul>{red}</ul>
+<h2>Licensing and verification</h2><p>{esc(generic(d['lic']))}</p>
+<h2>When to schedule</h2><p>{esc(generic(d['timing']))}</p>
+<h2>Frequently asked questions</h2><div class="faq-list">{faqh}</div>
+<h2>{esc(label)} by city</h2>
+<p class="g-small">Local notes for {len(CITIES)} cities &mdash; licensing bodies, climate and seasonal timing.</p>
+{blocks}
+<h2>Other guides</h2><div class="rel-grid">{more}</div>
+<p class="g-disclaimer">AllCityPros is an independent information resource. We do not endorse, rate or vouch for any specific business, and nothing here is professional advice. Cost ranges are national ballparks and are not quotes. Always verify licences, insurance and references yourself.</p>
+</article>
+</main>""" + FOOT
+
 
 def guides_index():
     url = f"{DOMAIN}/guides"
@@ -202,7 +325,7 @@ def guides_index():
     cards = "".join(f'<a class="rel-link" href="/guides/{slug(c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> {esc(d["label"])} guides</a>' for c, d in CATS.items())
     top = [c for c in WAVE1 if c in CITIES][:WAVE1_N]
     city_cards = "".join(f'<a class="rel-link" href="/{c}">{esc(CITIES[c][0])}, {CITIES[c][1]}</a>' for c in top)
-    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld) + f"""{breadcrumb_html([("Home", "/"), ("Guides", "")])}
+    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots="") + f"""{breadcrumb_html([("Home", "/"), ("Guides", "")])}
 <section class="page-hero"><h1>Local Service Guides</h1><p>What it costs, how to hire well and what to watch out for &mdash; in {len(CITIES)} U.S. cities.</p></section>
 <main class="g-wrap"><article class="g-article"><h2>Browse by service</h2><div class="rel-grid">{cards}</div>
 <h2>Popular cities</h2><div class="rel-grid">{city_cards}</div>
@@ -214,11 +337,20 @@ def city_hub(city):
     title = f"{name}, {st} Local Service Guides: Costs & Hiring Tips | AllCityPros"
     desc = f"Hiring help in {name}, {st}: cost guides, questions to ask and red flags for HVAC, plumbing, roofing, legal, accounting and 18 more services."
     ld = ld_block(crumbs_ld([("Home", "/"), (f"{name}, {st}", f"/{city}")]))
-    cards = "".join(f'<a class="rel-link" href="{gpath(city, c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> {esc(d["label"])} in {esc(name)}</a>' for c, d in CATS.items())
-    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld) + f"""{breadcrumb_html([("Home", "/"), ("Guides", "/guides"), (f"{name}, {st}", "")])}
+    # Point the city hub at the indexable service guides. It used to link only the city x service
+    # leaves, which are now noindexed -- that left every city hub a dead end passing no signal to
+    # the pages meant to rank. The local page is still offered, as a secondary "local notes" link.
+    cards = "".join(f'<a class="rel-link" href="/guides/{slug(c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> '
+                    f'{esc(d["label"])}</a>' for c, d in CATS.items())
+    local = "".join(f'<a class="rel-link" href="{gpath(city, c)}">{esc(CATS[c]["label"])} in {esc(name)}</a>'
+                    for c in CATS)
+    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots="") + f"""{breadcrumb_html([("Home", "/"), ("Guides", "/guides"), (f"{name}, {st}", "")])}
 <section class="page-hero"><h1>{esc(name)}, {st} Local Service Guides</h1><p>Costs, hiring checklists and red flags for {len(CATS)} services &middot; Updated {MONTH_YEAR}</p></section>
 <main class="g-wrap"><article class="g-article"><h2>Choose a service</h2><div class="rel-grid">{cards}</div>
 <p>These guides explain what typical projects cost, how to compare providers and how to check licensing in {esc(STATE_NAMES[st])}.</p>
+<h2>Local notes for {esc(name)}</h2>
+<p class="g-small">Short {esc(name)}-specific notes on climate, seasonal timing and {esc(STATE_NAMES[st])} licensing. The full guidance is in the service guides above.</p>
+<div class="rel-grid">{local}</div>
 <p class="g-disclaimer">AllCityPros is an independent information resource and does not endorse or rate specific businesses. Sample directory entries from an earlier version of this site are kept for reference at <a href="/{city}/listings">/{city}/listings</a> and are not verified.</p></article></main>""" + FOOT
 
 def homepage():
@@ -232,7 +364,7 @@ def homepage():
                   for c in top[:4] for k in ("hvac", "plumbing", "roofing")[:3])
     cards = "".join(f'<a href="/{c}" class="city-card"><div class="city-icon">{EMOJI.get(c, "📍")}</div><div class="city-info"><div class="city-name">{esc(n)}</div><div class="city-count">{s}</div></div></a>'
                     for c, (n, s) in sorted(CITIES.items(), key=lambda x: (x[1][0], x[1][1])))
-    return (HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld).replace('og:type" content="article"', 'og:type" content="website"') + f"""
+    return (HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots="").replace('og:type" content="article"', 'og:type" content="website"') + f"""
 <section class="hero"><div class="hero-content">
   <div class="hero-badge">Independent local service guides</div>
   <h1>Hire Local Pros <em>With Confidence</em></h1>
@@ -279,17 +411,16 @@ def main():
         if os.path.exists(idx) and not os.path.exists(lst):
             os.rename(idx, lst)  # keep the old listings page (noindexed by scripts/noindex_listings.py)
         write(f"{city}/index.html", city_hub(city))
-    # sitemap: hubs + wave-1 guides
+    # Sitemap = indexable pages only. The city x service guides are noindexed (see guide_page),
+    # so listing them would just spend crawl budget re-confirming pages that cannot rank.
     urls = [("/", "1.0"), ("/guides", "0.9")]
-    urls += [(f"/guides/{slug(c)}", "0.8") for c in CATS]
-    urls += [(f"/{c}", "0.7") for c in CITIES]
-    wave = [c for c in WAVE1 if c in CITIES][:WAVE1_N]
-    urls += [(gpath(c, cat), "0.6") for c in wave for cat in CATS]
+    urls += [(f"/guides/{slug(c)}", "0.9") for c in CATS]
+    urls += [(f"/{c}", "0.6") for c in CITIES]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f"  <url><loc>{DOMAIN}{u if u != '/' else '/'}</loc><lastmod>{TODAY}</lastmod><priority>{p}</priority></url>" for u, p in urls]
     sm.append("</urlset>")
     write("sitemap.xml", "\n".join(sm) + "\n")
-    print(f"guides: {n}, hubs: {len(CATS)}+{len(CITIES)}+1, sitemap urls: {len(urls)} (wave1 cities: {len(wave)})")
+    print(f"guides: {n} (noindex), service hubs: {len(CATS)}, city hubs: {len(CITIES)}, sitemap urls: {len(urls)}")
 
 if __name__ == "__main__":
     main()
