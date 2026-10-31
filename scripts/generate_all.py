@@ -11,6 +11,10 @@ Impact affiliate links:
 import os
 import re
 import math
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ga4 import GA4_SNIPPET  # noqa: E402
 
 DOMAIN = "https://allcitypros.com"
 
@@ -1338,7 +1342,7 @@ def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=N
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+{GA4_SNIPPET}  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
   <title>{city_name} Local Professionals — AllCityPros</title>
@@ -1588,7 +1592,7 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+{GA4_SNIPPET}  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
   <title>{biz_name} — {cat_label} in {city_name}, {state} | AllCityPros</title>
