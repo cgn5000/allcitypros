@@ -14,6 +14,7 @@ from multiprocessing import Pool
 sys.path.insert(0, os.path.dirname(__file__))
 from guide_data import CATS  # noqa: E402
 from generate_guides import CITIES, gpath, slug  # noqa: E402
+from build_sitemap import build as build_sitemap  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MARK = '<meta name="robots" content="noindex, follow">'
@@ -81,6 +82,8 @@ def main():
     with Pool() as pool:
         done = sum(pool.imap_unordered(process, jobs, chunksize=200))
     print(f"processed {done} of {len(jobs)} pages")
+    info = build_sitemap(ROOT)
+    print(f"sitemap urls: {info['url_count']}")
 
 if __name__ == "__main__":
     main()
