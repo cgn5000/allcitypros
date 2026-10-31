@@ -16,6 +16,7 @@ import ast, datetime, html, json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 from guide_data import CATS, CLIMATE, REGION, REGION_LABEL, STATE_NAMES, local_note  # noqa: E402
+from ga4 import GA4_SNIPPET  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://allcitypros.com"
@@ -60,10 +61,12 @@ def esc(s): return html.escape(s, quote=True)
 def slug(cat): return cat.replace("_", "-")
 def gpath(city, cat): return f"/guides/{city}-{slug(cat)}"
 
+# GA4_SNIPPET is concatenated with braces doubled so HEAD.format() leaves the
+# inline script intact (the script itself contains `{` / `}`).
 HEAD = """<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+""" + GA4_SNIPPET.replace("{", "{{").replace("}", "}}") + """  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
   <title>{title}</title>
