@@ -3,6 +3,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ga4 import GA4_SNIPPET  # noqa: E402
+from build_sitemap import build as build_sitemap  # noqa: E402
 
 cities = ["tampa", "pittsburgh", "orlando", "fortmyers", "charlotte"]
 
@@ -16,3 +17,6 @@ for city in cities:
             f"<p>Top rated local services coming soon.</p></body></html>"
         )
 print("Scaffolding created for: " + ", ".join(cities))
+# Drafts under content/ are not indexable. Refresh the sitemap for everything else.
+info = build_sitemap()
+print(f"sitemap urls: {info['url_count']}")

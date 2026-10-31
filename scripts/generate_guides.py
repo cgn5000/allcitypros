@@ -7,7 +7,7 @@ Outputs
   guides/<service>.html          (24 category hubs, one per service)
   guides/index.html              (all guides)
   <city>/index.html              (city hub; the old listings page is kept as <city>/listings.html, noindex)
-  sitemap.xml                    (hubs + wave-1 guides; see WAVE1)
+  sitemap.xml                    (sitemap index; child files written by scripts/build_sitemap.py)
 
 Monetization hooks are config-driven and render nothing until configured:
   scripts/monetization.json -> {"cta": {"hvac": {"url": "...", "label": "...", "partner": "..."}}, "formspree_id": "xxxx"}
@@ -17,6 +17,7 @@ import ast, datetime, html, json, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from guide_data import CATS, CLIMATE, REGION, REGION_LABEL, STATE_NAMES, local_note  # noqa: E402
 from ga4 import GA4_SNIPPET  # noqa: E402
+from build_sitemap import build as build_sitemap  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://allcitypros.com"
@@ -414,16 +415,13 @@ def main():
         if os.path.exists(idx) and not os.path.exists(lst):
             os.rename(idx, lst)  # keep the old listings page (noindexed by scripts/noindex_listings.py)
         write(f"{city}/index.html", city_hub(city))
-    # Sitemap = indexable pages only. The city x service guides are noindexed (see guide_page),
-    # so listing them would just spend crawl budget re-confirming pages that cannot rank.
-    urls = [("/", "1.0"), ("/guides", "0.9")]
-    urls += [(f"/guides/{slug(c)}", "0.9") for c in CATS]
-    urls += [(f"/{c}", "0.6") for c in CITIES]
-    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    sm += [f"  <url><loc>{DOMAIN}{u if u != '/' else '/'}</loc><lastmod>{TODAY}</lastmod><priority>{p}</priority></url>" for u, p in urls]
-    sm.append("</urlset>")
-    write("sitemap.xml", "\n".join(sm) + "\n")
-    print(f"guides: {n} (noindex), service hubs: {len(CATS)}, city hubs: {len(CITIES)}, sitemap urls: {len(urls)}")
+    # City x service guides are noindex (see guide_page). build_sitemap scans the tree and
+    # lists only indexable URLs, split under the 50,000-URL / 50 MB sitemap limits.
+    info = build_sitemap(ROOT)
+    print(
+        f"guides: {n} (noindex), service hubs: {len(CATS)}, city hubs: {len(CITIES)}, "
+        f"sitemap urls: {info['url_count']}"
+    )
 
 if __name__ == "__main__":
     main()

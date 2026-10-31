@@ -15,6 +15,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ga4 import GA4_SNIPPET  # noqa: E402
+from build_sitemap import build as build_sitemap  # noqa: E402
 
 DOMAIN = "https://allcitypros.com"
 
@@ -1808,7 +1809,6 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    all_urls = [DOMAIN + "/"]
     total_cities = 0
     total_businesses = 0
 
@@ -1887,7 +1887,6 @@ def main():
             )
             with open(fpath, 'w') as fp:
                 fp.write(page_html)
-            all_urls.append(f"{DOMAIN}/{city_slug}/{os.path.splitext(fname)[0]}")
             total_businesses += 1
 
         # ── Step 5: write city index ──
@@ -1895,19 +1894,16 @@ def main():
         with open(idx_path, 'w') as fp:
             fp.write(city_index_html(city_slug, city_name, state, emoji, listings,
                                      state_cities=nearby_cities))
-        all_urls.append(f"{DOMAIN}/{city_slug}/")
         total_cities += 1
         print(f"  ✓ {city_name} — {len(listings)} listings")
 
-    # ── Sitemap ──
-    sitemap_path = os.path.join(root, 'sitemap.xml')
-    with open(sitemap_path, 'w') as f:
-        f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-        for url in all_urls:
-            f.write(f'  <url><loc>{url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>\n')
-        f.write('</urlset>\n')
-    print(f"\nSitemap: {len(all_urls)} URLs → sitemap.xml")
+    # Sitemap index + child files. URLs are the extensionless, slash-free paths
+    # Vercel serves with 200 (cleanUrls, trailingSlash false), and noindex pages
+    # are left out. Splits at 50,000 URLs / 50 MB.
+    info = build_sitemap(root)
+    print(f"\nSitemap: {info['url_count']} indexable URLs")
+    for name, count in info["files"]:
+        print(f"  {name}: {count}")
 
     # ── robots.txt ──
     robots_path = os.path.join(root, 'robots.txt')
