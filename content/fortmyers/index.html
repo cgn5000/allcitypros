@@ -16,4 +16,132 @@
       gtag("config", id);
     })();
   </script>
+  <!-- acp-outbound-clicks -->
+  <script>
+    (function () {
+      var AMAZON = ["amazon.com", "amzn.to"];
+      var AFFILIATE = [
+        "angi.com", "homeadvisor.com", "thumbtack.com",
+        "awin.com", "awin1.com",
+        "cj.com", "anrdoezrs.net", "dpbolvw.net", "jdoqocy.com", "kqzyfj.com", "tkqlhce.com", "qksrv.net", "emjcd.com",
+        "impact.com", "impactradius.com", "sjv.io", "pxf.io",
+        "shareasale.com", "shareasale-analytics.com", "shrsl.com",
+        "partnerize.com", "prf.hn"
+      ];
+
+      function hostIs(host, root) {
+        if (!host) return false;
+        host = host.toLowerCase();
+        if (host === root) return true;
+        var suffix = "." + root;
+        return host.length > suffix.length && host.indexOf(suffix, host.length - suffix.length) === host.length - suffix.length;
+      }
+
+      function hostIn(host, roots) {
+        for (var i = 0; i < roots.length; i++) {
+          if (hostIs(host, roots[i])) return true;
+        }
+        return false;
+      }
+
+      function collapse(value) {
+        return (value || "").replace(/\s+/g, " ").trim();
+      }
+
+      function placementOf(node) {
+        while (node && node !== document) {
+          if (node.getAttribute) {
+            var value = collapse(node.getAttribute("data-placement"));
+            if (value) return value;
+          }
+          node = node.parentNode;
+        }
+        return "";
+      }
+
+      function markedAffiliate(node) {
+        while (node && node !== document) {
+          if (node.hasAttribute && node.hasAttribute("data-affiliate")) return true;
+          node = node.parentNode;
+        }
+        return false;
+      }
+
+      function relSponsored(anchor) {
+        var parts = (anchor.getAttribute("rel") || "").toLowerCase().split(/\s+/);
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i] === "sponsored") return true;
+        }
+        return false;
+      }
+
+      function linkDomain(url) {
+        if (url.protocol === "mailto:") {
+          var addr = url.pathname || "";
+          var at = addr.indexOf("@");
+          return at >= 0 ? addr.slice(at + 1).toLowerCase() : "";
+        }
+        return (url.hostname || "").toLowerCase();
+      }
+
+      function send(name, anchor, url) {
+        var params = {
+          link_url: url.href,
+          link_text: collapse(anchor.textContent),
+          page_path: location.pathname,
+          link_domain: linkDomain(url),
+          transport_type: "beacon"
+        };
+        var placement = placementOf(anchor);
+        if (placement) params.placement = placement;
+        if (typeof window.gtag !== "function") {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { window.dataLayer.push(arguments); };
+        }
+        window.gtag("event", name, params);
+      }
+
+      function classify(anchor) {
+        var raw = anchor.getAttribute("href");
+        if (!raw) return null;
+        var url;
+        try {
+          url = new URL(raw, location.href);
+        } catch (err) {
+          return null;
+        }
+        var proto = url.protocol;
+        if (proto === "tel:" || proto === "mailto:") return {name: "contact_click", url: url};
+        if (proto !== "http:" && proto !== "https:") return null;
+        var host = (url.hostname || "").toLowerCase();
+        var here = (location.hostname || "").toLowerCase();
+        if (host === here || host === "allcitypros.com" || host === "www.allcitypros.com") return null;
+        if (hostIn(host, AMAZON)) return {name: "amazon_click", url: url};
+        if (relSponsored(anchor) || markedAffiliate(anchor) || hostIn(host, AFFILIATE)) {
+          return {name: "affiliate_click", url: url};
+        }
+        return null;
+      }
+
+      function onPointer(event) {
+        if (event.type === "auxclick") {
+          if (event.button !== 1) return;
+        } else if (event.button !== 0) {
+          return;
+        }
+        var node = event.target;
+        if (!node) return;
+        if (node.nodeType === 3) node = node.parentNode;
+        if (!node || !node.closest) return;
+        var anchor = node.closest("a");
+        if (!anchor) return;
+        var hit = classify(anchor);
+        if (!hit) return;
+        send(hit.name, anchor, hit.url);
+      }
+
+      document.addEventListener("click", onPointer);
+      document.addEventListener("auxclick", onPointer);
+    })();
+  </script>
 </head><body><h1>Welcome to Fortmyers - AllCityPros</h1><p>Top rated local services coming soon.</p></body></html>
