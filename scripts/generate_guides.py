@@ -24,13 +24,14 @@ DOMAIN = "https://allcitypros.com"
 TODAY = os.environ.get("GUIDE_DATE", "2026-10-17")
 MONTH_YEAR = datetime.date.fromisoformat(TODAY).strftime("%B %Y")
 
-# Largest metros first; their guides go in the first sitemap wave (grow the wave as pages get indexed).
+# Largest metros, used only to pick a short "popular cities" link list (WAVE1_N).
+# This does not gate the sitemap or which pages are indexable. City x service guides
+# are noindexed because they are near-duplicates of the service hub; raising WAVE1_N
+# only adds more of those noindexed URLs to the hub's link list.
 WAVE1 = ("newyork losangeles chicago houston phoenix philadelphia sanantonio sandiego dallas sanjose austin jacksonville "
          "fortworth columbus charlotte sanfrancisco indianapolis seattle denver washington boston elpaso nashville detroit "
          "oklahomacity portland lasvegas louisville baltimore milwaukee albuquerque tucson fresno sacramento atlanta "
          "kansascity miami raleigh omaha minneapolis tampa orlando").split()
-# Used for the "popular cities" link lists only. The sitemap no longer has waves: the service
-# hubs are the indexable set, so there is nothing left to ration.
 WAVE1_N = int(os.environ.get("WAVE1_N", "25"))
 
 CAT_EMOJI = {"hvac":"❄️","plumbing":"🔧","electrical":"⚡","roofing":"🏠","general_contracting":"🔨","landscaping":"🌿","painting":"🎨",
@@ -355,7 +356,7 @@ def city_hub(city):
 <h2>Local notes for {esc(name)}</h2>
 <p class="g-small">Short {esc(name)}-specific notes on climate, seasonal timing and {esc(STATE_NAMES[st])} licensing. The full guidance is in the service guides above.</p>
 <div class="rel-grid">{local}</div>
-<p class="g-disclaimer">AllCityPros is an independent information resource and does not endorse or rate specific businesses. Sample directory entries from an earlier version of this site are kept for reference at <a href="/{city}/listings">/{city}/listings</a> and are not verified.</p></article></main>""" + FOOT
+<p class="g-disclaimer">AllCityPros is an independent information resource and does not endorse or rate specific businesses. Sample directory entries from an earlier version of this site are kept for reference and are not verified.</p></article></main>""" + FOOT
 
 def homepage():
     url = DOMAIN + "/"

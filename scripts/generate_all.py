@@ -1,6 +1,15 @@
 """
-Generate styled index pages for every city and styled detail pages for every business.
+Generate the old template directory (listings.html) and one detail page per sample business.
 Run from the repo root: python3 scripts/generate_all.py
+
+Does not write <city>/index.html. That file is the indexable city hub from
+generate_guides.py. The directory page is <city>/listings.html, noindexed, and
+its cards are not links: cleanUrls 308s any /<city>/<file>.html href, and those
+pages must not be crawled from the rest of the site.
+
+After this script, run scripts/noindex_listings.py. URLs are the apex host with
+no www, no .html, and no trailing slash, matching vercel.json (cleanUrls,
+trailingSlash false, www -> apex).
 
 Impact affiliate links:
   Once you join Impact.com programs, set IMPACT_PUBLISHER_ID to your numeric publisher ID.
@@ -1275,12 +1284,7 @@ def jsonld_local_business(biz_name, cat_label, city_name, state, page_url):
       "addressRegion": "{state}",
       "addressCountry": "US"
     }},
-    "url": "{page_url}",
-    "aggregateRating": {{
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "47"
-    }}
+    "url": "{page_url}"
   }}
   </script>"""
 
@@ -1296,15 +1300,12 @@ def jsonld_breadcrumb(crumbs):
 # ── City index page ───────────────────────────────────────────────────────────
 def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=None):
     cards = ""
-    for i, (biz_name, cat_label, cat_emoji, fname) in enumerate(listings):
+    for biz_name, cat_label, cat_emoji, _fname in listings:
         snippet = CARD_SNIPPETS.get(cat_label, CARD_SNIPPETS["Local Business"])
         services = CARD_SERVICES.get(cat_label, CARD_SERVICES["Local Business"])
-        rating = CARD_RATINGS[i % len(CARD_RATINGS)]
-        review_count = CARD_REVIEWS[i % len(CARD_REVIEWS)]
         service_pills = "".join(f'<span class="svc-pill">{s}</span>' for s in services)
-        stars = "★" * int(float(rating)) + ("" if float(rating) == int(float(rating)) else "½")
         cards += f"""
-    <a href="/{city_slug}/{fname}" class="listing-card" data-cat="{cat_label}">
+    <div class="listing-card" data-cat="{cat_label}">
       <div class="listing-card-header">
         <div class="listing-avatar">{cat_emoji}</div>
         <div>
@@ -1313,24 +1314,23 @@ def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=N
         </div>
       </div>
       <div class="listing-card-body">
-        <div class="card-rating"><span class="stars">{stars}</span> <strong>{rating}</strong> <span class="review-ct">({review_count} reviews)</span></div>
         <div class="card-snippet">{snippet}</div>
         <div class="card-services">{service_pills}</div>
         <div class="listing-detail"><span class="di">📍</span> {city_name}, {state}</div>
       </div>
       <div class="listing-card-actions">
-        <div class="btn-primary">View Details →</div>
+        <div class="btn-primary">Sample entry</div>
       </div>
-    </a>"""
+    </div>"""
 
     count = len(listings)
-    page_url = f"{DOMAIN}/{city_slug}/"
-    breadcrumb_ld = jsonld_breadcrumb([("Home", DOMAIN), (city_name, page_url)])
+    page_url = f"{DOMAIN}/{city_slug}/listings"
+    breadcrumb_ld = jsonld_breadcrumb([("Home", f"{DOMAIN}/"), (city_name, page_url)])
 
     # State cities internal linking section
     if state_cities:
         sc_links = " &nbsp;·&nbsp; ".join(
-            f'<a href="/{slug}/" style="color:var(--blue);text-decoration:none;">{name}</a>'
+            f'<a href="/{slug}" style="color:var(--blue);text-decoration:none;">{name}</a>'
             for slug, name in state_cities[:20] if slug != city_slug
         )
         state_cities_section = f"""<div class="section" style="padding-top:0">
@@ -1345,6 +1345,7 @@ def city_index_html(city_slug, city_name, state, emoji, listings, state_cities=N
 <head>
 {GA4_SNIPPET}  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
   <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
   <title>{city_name} Local Professionals — AllCityPros</title>
   <meta name="description" content="Find top-rated {city_name} professionals: HVAC, legal, cleaning, contracting, digital marketing, accounting, IT and more. {count} local businesses listed.">
@@ -1546,24 +1547,18 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 {"".join(faq_html_items)}
         </div>"""
 
-    # ── Related listings (same category, same city) ────────────────────────
+    # Related sample listings are noindex. Linking them (and the old .html hrefs)
+    # is what put redirecting URLs into Search Console. The parameter is kept
+    # so callers do not change; nothing is rendered.
     related_html = ""
-    if related_listings:
-        rel_links = "".join(
-            f'<a href="/{city_slug}/{rfname}" class="rel-link">'
-            f'<span class="rel-emoji">{cat_emoji}</span> {rbiz}</a>'
-            for rbiz, rfname in related_listings[:6]
-        )
-        related_html = f"""        <br>
-        <h2>Other {cat_label} Pros in {city_name}</h2>
-        <div class="rel-grid">{rel_links}</div>"""
+    del related_listings
 
     # ── Cross-category suggestions ─────────────────────────────────────────
     cross = CROSS_CATS.get(cat_label, [])
     cross_html = ""
     if cross:
         cross_links = "".join(
-            f'<a href="/{city_slug}/" class="cross-link">'
+            f'<a href="/{city_slug}" class="cross-link">'
             f'<span>{emoji}</span> {label} in {city_name}</a>'
             for label, emoji in cross
         )
@@ -1575,7 +1570,7 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
     nearby_html = ""
     if state_cities:
         city_links = "".join(
-            f'<a href="/{slug}/" class="rel-link">'
+            f'<a href="/{slug}" class="rel-link">'
             f'<span class="rel-emoji">📍</span> {cat_label} in {name}</a>'
             for slug, name in state_cities[:8] if slug != city_slug
         )
@@ -1585,8 +1580,8 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 
     local_biz_ld = jsonld_local_business(biz_name, cat_label, city_name, state, page_url)
     breadcrumb_ld = jsonld_breadcrumb([
-        ("Home", DOMAIN),
-        (city_name, f"{DOMAIN}/{city_slug}/"),
+        ("Home", f"{DOMAIN}/"),
+        (city_name, f"{DOMAIN}/{city_slug}"),
         (biz_name, page_url),
     ])
 
@@ -1595,12 +1590,13 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 <head>
 {GA4_SNIPPET}  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
   <meta name='impact-site-verification' value='6b714473-0498-4933-83ec-09fb32acd5fa'>
   <title>{biz_name} — {cat_label} in {city_name}, {state} | AllCityPros</title>
-  <meta name="description" content="{biz_name} provides professional {cat_label.lower()} services in {city_name}, {state}. Rated 4.8★ by local customers. Get a free quote today.">
+  <meta name="description" content="{biz_name} provides professional {cat_label.lower()} services in {city_name}, {state}. Get a free quote today.">
   <link rel="canonical" href="{page_url}">
   <meta property="og:title" content="{biz_name} — {cat_label} in {city_name}, {state}">
-  <meta property="og:description" content="Professional {cat_label.lower()} services in {city_name}. Rated 4.8★. Free quotes available.">
+  <meta property="og:description" content="Professional {cat_label.lower()} services in {city_name}. Free quotes available.">
   <meta property="og:type" content="website">
 {local_biz_ld}
 {breadcrumb_ld}
@@ -1626,7 +1622,7 @@ def business_page_html(city_slug, city_name, state, biz_name, cat_label, cat_emo
 <nav class="breadcrumb">
   <a href="/">Home</a>
   <span class="sep">›</span>
-  <a href="/{city_slug}/">{city_name}</a>
+  <a href="/{city_slug}">{city_name}</a>
   <span class="sep">›</span>
   <span>{biz_name}</span>
 </nav>
@@ -1824,7 +1820,7 @@ def main():
         # ── Step 1: discover real named files (not index.html, not numbered slugs) ──
         existing = sorted([
             f for f in os.listdir(city_dir)
-            if f.endswith('.html') and f != 'index.html'
+            if f.endswith('.html') and f not in ('index.html', 'listings.html')
         ])
         # Identify numbered generic files (e.g. tampa_hvac_3.html)
         numbered_pattern = re.compile(rf'^{re.escape(city_slug)}_[a-z_]+_\d+\.html$')
@@ -1855,7 +1851,7 @@ def main():
         # ── Step 4: collect all files and regenerate ──
         all_files = sorted([
             f for f in os.listdir(city_dir)
-            if f.endswith('.html') and f != 'index.html'
+            if f.endswith('.html') and f not in ('index.html', 'listings.html')
         ])
 
         # Collect full listing metadata (including cat_css)
@@ -1889,9 +1885,10 @@ def main():
                 fp.write(page_html)
             total_businesses += 1
 
-        # ── Step 5: write city index ──
-        idx_path = os.path.join(city_dir, 'index.html')
-        with open(idx_path, 'w') as fp:
+        # ── Step 5: write the noindexed directory page. Leave index.html alone
+        # (that is the city hub from generate_guides.py).
+        lst_path = os.path.join(city_dir, 'listings.html')
+        with open(lst_path, 'w') as fp:
             fp.write(city_index_html(city_slug, city_name, state, emoji, listings,
                                      state_cities=nearby_cities))
         total_cities += 1

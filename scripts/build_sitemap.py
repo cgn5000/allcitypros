@@ -16,12 +16,14 @@ path and with no trailing slash (the homepage keeps the root slash):
 Requests for the .html form or a trailing slash 308-redirect, so those forms
 are never written into the sitemap. When a page declares a canonical URL it
 is used, after the same normalization (apex host, no .html, no trailing
-slash). www.allcitypros.com also answers 200 today; canonicals and this
-sitemap stay on https://allcitypros.com.
+slash). vercel.json also 308-redirects www.allcitypros.com to this host.
+Canonicals and this sitemap stay on https://allcitypros.com.
 
 Pages left out:
 
     noindex / googlebot noindex / X-Robots-Tag noindex
+    template listings (<city>/<city>_*.html and <city>/listings.html), even
+    if the noindex tag is missing
     meta-refresh redirects
     404 documents
     drafts and templates (content/, templates/, drafts/, unreplaced {{ }})
@@ -278,6 +280,20 @@ def section_for(rel, cities, cities_by_len):
     return "pages"
 
 
+def _is_template_listing(rel, cities):
+    """Thin generated directory pages. Never sitemap these.
+
+    Every HTML file in a city directory except index.html is a sample listing
+    (numbered <city>_<category>_<n>.html, <city>/listings.html, or an older
+    named file such as Kansas_City_legal.html). The indexable city hub is
+    <city>/index.html.
+    """
+    parts = rel.split("/")
+    if len(parts) != 2 or parts[0] not in cities:
+        return False
+    return parts[1] != "index.html"
+
+
 def _skip_reason_for_path(rel):
     parts = rel.split("/")
     if any(part.startswith(".") for part in parts):
@@ -298,6 +314,8 @@ def inspect_file(root, rel, cities, cities_by_len):
     reason = _skip_reason_for_path(rel)
     if reason:
         return None, reason
+    if _is_template_listing(rel, cities):
+        return None, "listing"
     path = os.path.join(root, rel.replace("/", os.sep))
     text = _read_head(path)
     if "<html" not in text.lower():
@@ -523,6 +541,8 @@ def validate(root, entries):
             path_part = _loc_path(url)
             if path_part != "/" and (path_part.endswith("/") or path_part.endswith(".html")):
                 raise AssertionError(f"loc would redirect: {url}")
+            if path_part.endswith("/listings") or "/listings/" in path_part:
+                raise AssertionError(f"loc is a template listing: {url}")
             if url.startswith("https://www."):
                 raise AssertionError(f"loc uses www: {url}")
             found.append(url)
@@ -603,6 +623,15 @@ def _self_test():
             title="Biz",
             extra='<meta content="noindex" name="googlebot">',
         ))
+        # Indexable-looking template listings must still stay out of the sitemap.
+        _write_html(tmp, "newyork/listings.html", page.format(
+            title="Listings",
+            extra='<link rel="canonical" href="https://allcitypros.com/newyork/">',
+        ))
+        _write_html(tmp, "newyork/newyork_hvac_1.html", page.format(
+            title="Sample HVAC",
+            extra='<link rel="canonical" href="https://allcitypros.com/newyork/newyork_hvac_1.html">',
+        ))
         _write_html(tmp, "404.html", page.format(title="404 Not Found", extra=""))
         _write_html(tmp, "gone.html", page.format(
             title="Gone",
@@ -642,9 +671,11 @@ def _self_test():
             raise SystemExit("service hub section")
         if locs["https://allcitypros.com/newyork"].section != "cities":
             raise SystemExit("city section")
-        for reason in ("noindex", "not_found", "redirect", "draft", "canonical_offsite"):
+        for reason in ("noindex", "not_found", "redirect", "draft", "canonical_offsite", "listing"):
             if skipped[reason] < 1:
                 raise SystemExit(f"expected skip {reason}, got {skipped}")
+        if skipped["listing"] < 2:
+            raise SystemExit(f"expected both template listings to be skipped, got {skipped}")
 
         # Force a split so the 50,000-URL path is exercised.
         info = build(tmp, max_urls=2, max_bytes=MAX_BYTES)
