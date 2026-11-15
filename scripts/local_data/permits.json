@@ -1,0 +1,737 @@
+{
+ "akron": {
+  "issuer": "County of Summit Division of Building Standards",
+  "url": "https://co.summitoh.net/departments/Building-Standards.html",
+  "verified": "fetched"
+ },
+ "albuquerque": {
+  "issuer": "City of Albuquerque Planning Department, Building Safety Division",
+  "url": "https://www.cabq.gov/planning/building-safety-division/permits",
+  "verified": "fetched"
+ },
+ "amarillo": {
+  "issuer": "City of Amarillo Building Safety Department",
+  "url": "https://www.amarillo.gov/building-safety/",
+  "verified": "fetched"
+ },
+ "anaheim": {
+  "issuer": "City of Anaheim Building Division",
+  "url": "https://www.anaheim.net/816/Residential-Construction",
+  "verified": "search"
+ },
+ "anchorage": {
+  "issuer": "Municipality of Anchorage Development Services",
+  "url": "https://www.muni.org/Departments/OCPD/development-services/permits-inspections/Pages/default.aspx",
+  "verified": "fetched"
+ },
+ "arlington": {
+  "issuer": "City of Arlington Planning and Development Services Department",
+  "url": "https://www.arlingtontx.gov/Business/Planning-Development/Permitting-Inspections",
+  "verified": "fetched"
+ },
+ "atlanta": {
+  "issuer": "City of Atlanta Department of City Planning, Office of Buildings",
+  "url": "https://www.atlantaga.gov/government/departments/city-planning/about-dcp/office-of-buildings",
+  "verified": "search"
+ },
+ "aurora": {
+  "issuer": "City of Aurora Building Division",
+  "url": "https://www.auroragov.org/business_services/development_center/permitting/building_permits",
+  "verified": "fetched"
+ },
+ "austin": {
+  "issuer": "City of Austin Development Services Department",
+  "url": "https://www.austintexas.gov/services/apply-residential-building-permit",
+  "verified": "fetched"
+ },
+ "bakersfield": {
+  "issuer": "City of Bakersfield Development Services Department, Building Division",
+  "url": "https://www.bakersfieldcity.us/development-center",
+  "verified": "fetched"
+ },
+ "baltimore": {
+  "issuer": "Baltimore City Department of Housing & Community Development",
+  "url": "https://www.baltimorecity.gov/dhcd/our-work/permits-inspections/building-permits",
+  "verified": "fetched"
+ },
+ "batonrouge": {
+  "issuer": "City of Baton Rouge / Parish of East Baton Rouge Permits & Inspections Division",
+  "url": "https://www.brla.gov/2688/Permits-Inspections",
+  "verified": "fetched"
+ },
+ "birmingham": {
+  "issuer": "City of Birmingham Department of Planning, Engineering & Permits",
+  "url": "https://www.birminghamal.gov/government/city-departments/pep/divisions-pep/permitting-inspection-division/city-birmingham-permitting",
+  "verified": "fetched"
+ },
+ "boise": {
+  "issuer": "City of Boise Planning and Development Services, Building Division",
+  "url": "https://www.cityofboise.org/departments/planning-and-development-services/building/building-permits/residential-construction-400/400-homeowners-guide-to-boises-building-permit-process/",
+  "verified": "fetched"
+ },
+ "boston": {
+  "issuer": "City of Boston Inspectional Services Department",
+  "url": "https://www.boston.gov/departments/inspectional-services",
+  "verified": "fetched"
+ },
+ "buffalo": {
+  "issuer": "City of Buffalo Permit & Inspection Services",
+  "url": "https://www.buffalony.gov/484/Building-Permits",
+  "verified": "fetched"
+ },
+ "capecoral": {
+  "issuer": "City of Cape Coral Development Services, Permitting Services Division",
+  "url": "https://www.capecoral.gov/departments/development_services/permitting_services_division/index.php",
+  "verified": "fetched"
+ },
+ "chandler": {
+  "issuer": "City of Chandler Development Services, Building Safety Division",
+  "url": "https://www.chandleraz.gov/government/departments/development-services/building-safety-plan-review-permits-and-inspections",
+  "verified": "fetched"
+ },
+ "charlotte": {
+  "issuer": "Mecklenburg County Code Enforcement (LUESA)",
+  "url": "https://code.mecknc.gov/permitting",
+  "verified": "fetched"
+ },
+ "chattanooga": {
+  "issuer": "City of Chattanooga Land Development Office",
+  "url": "https://chattanooga.gov/pay-and-apply/permits-applications/residential-building-permit",
+  "verified": "fetched"
+ },
+ "chesapeake": {
+  "issuer": "City of Chesapeake Department of Development and Permits",
+  "url": "https://www.cityofchesapeake.net/developmentpermits",
+  "verified": "fetched"
+ },
+ "chicago": {
+  "issuer": "City of Chicago Department of Buildings",
+  "url": "https://www.chicago.gov/city/en/depts/bldgs/provdrs/permits.html",
+  "verified": "fetched"
+ },
+ "cincinnati": {
+  "issuer": "City of Cincinnati Department of Buildings & Inspections",
+  "url": "https://www.cincinnati-oh.gov/buildings/",
+  "verified": "fetched"
+ },
+ "clarksville": {
+  "issuer": "City of Clarksville Building & Codes Department",
+  "url": "https://www.clarksvilletn.gov/310/Building-Codes",
+  "verified": "fetched"
+ },
+ "clearwater": {
+  "issuer": "City of Clearwater Planning & Development Department",
+  "url": "https://www.myclearwater.com/Business-Development/Permits-and-Inspections/Get-a-Permit",
+  "verified": "fetched"
+ },
+ "cleveland": {
+  "issuer": "City of Cleveland Department of Building & Housing",
+  "url": "https://www.clevelandohio.gov/city-hall/departments/building-housing",
+  "verified": "fetched"
+ },
+ "coloradosprings": {
+  "issuer": "Pikes Peak Regional Building Department (serves Colorado Springs and El Paso County)",
+  "url": "https://www.pprbd.org/",
+  "verified": "fetched"
+ },
+ "columbia": null,
+ "columbus": {
+  "issuer": "City of Columbus Department of Building and Zoning Services",
+  "url": "https://www.columbus.gov/Business-Development/Get-a-Permit/Get-or-Track-a-Building-Permit",
+  "verified": "fetched"
+ },
+ "corpuschristi": {
+  "issuer": "City of Corpus Christi Development Services Department",
+  "url": "https://www.corpuschristitx.gov/department-directory/development-services/applications-permits-and-guidance/",
+  "verified": "fetched"
+ },
+ "dallas": {
+  "issuer": "City of Dallas Development Services (Building Inspection)",
+  "url": "https://dallascityhall.com/departments/sustainabledevelopment/buildinginspection/Pages/default.aspx",
+  "verified": "fetched"
+ },
+ "dayton": {
+  "issuer": "City of Dayton Department of Planning, Neighborhoods & Development, Building Inspection Division",
+  "url": "https://www.daytonohio.gov/190/Building-Inspection",
+  "verified": "fetched"
+ },
+ "denver": {
+  "issuer": "City and County of Denver Community Planning and Development",
+  "url": "https://denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Community-Planning-and-Development/Plan-Review-Permits-and-Inspections",
+  "verified": "fetched"
+ },
+ "desmoines": {
+  "issuer": "City of Des Moines Permit and Development Center",
+  "url": "https://www.dsm.city/departments/development_services/permit_development_center/residential/index.php",
+  "verified": "fetched"
+ },
+ "detroit": {
+  "issuer": "City of Detroit Buildings, Safety Engineering, and Environmental Department (BSEED)",
+  "url": "https://detroitmi.gov/departments/buildings-safety-engineering-and-environmental-department-bseed",
+  "verified": "fetched"
+ },
+ "durham": {
+  "issuer": "Durham City-County Building & Safety Department",
+  "url": "https://www.durhamnc.gov/293/City-County-Building-Safety",
+  "verified": "fetched"
+ },
+ "elkgrove": {
+  "issuer": "City of Elk Grove Building Safety & Inspection Division",
+  "url": "https://www.elkgrovecity.org/departments-and-divisions/building-safety-inspection-permits",
+  "verified": "search"
+ },
+ "elpaso": {
+  "issuer": "City of El Paso Planning & Inspections Department",
+  "url": "https://www.elpasotexas.gov/planning-and-inspections",
+  "verified": "fetched"
+ },
+ "eugene": {
+  "issuer": "City of Eugene Planning and Development, Building and Permit Services",
+  "url": "https://www.eugene-or.gov/858/Residential",
+  "verified": "fetched"
+ },
+ "fayetteville": {
+  "issuer": "City of Fayetteville Development Services, Permitting & Inspections",
+  "url": "https://www.fayettevillenc.gov/City-Departments/Development-Services/Permitting-Inspections",
+  "verified": "fetched"
+ },
+ "fontana": {
+  "issuer": "City of Fontana Building & Safety Division",
+  "url": "https://www.fontanaca.gov/136/Building-Safety",
+  "verified": "fetched"
+ },
+ "fortcollins": {
+  "issuer": "City of Fort Collins Building Services",
+  "url": "https://www.fortcollins.gov/Services/Home-Improvements/Building-Permits",
+  "verified": "fetched"
+ },
+ "fortmyers": {
+  "issuer": "City of Fort Myers Building, Permitting & Inspections Division",
+  "url": "https://fortmyers.gov/1293/Building-Permitting-Inspections",
+  "verified": "fetched"
+ },
+ "fortwayne": {
+  "issuer": "Allen County Building Department (issues building permits for Fort Wayne and unincorporated Allen County)",
+  "url": "https://www.allencounty.in.gov/234/Building-Department",
+  "verified": "search"
+ },
+ "fortworth": {
+  "issuer": "City of Fort Worth Development Services Department",
+  "url": "https://www.fortworthtexas.gov/departments/development-services/permits",
+  "verified": "fetched"
+ },
+ "fremont": {
+  "issuer": "City of Fremont Community Development Department, Building & Safety",
+  "url": "https://www.fremont.gov/government/departments/community-development/planning-building-permit-services/planning-building-permits/apply-for-permit",
+  "verified": "search"
+ },
+ "fresno": {
+  "issuer": "City of Fresno Planning and Development Department",
+  "url": "https://www.fresno.gov/darm/planning-development/single-family-homes/",
+  "verified": "fetched"
+ },
+ "frisco": {
+  "issuer": "City of Frisco",
+  "url": "https://www.friscotexas.gov/1669/Plans-Permits",
+  "verified": "fetched"
+ },
+ "garland": {
+  "issuer": "City of Garland Development & Permitting Center (Building Inspection)",
+  "url": "https://garlandtx.gov/2113/Development-Services",
+  "verified": "fetched"
+ },
+ "gilbert": {
+  "issuer": "Town of Gilbert Development Services, Building Safety Division",
+  "url": "https://www.gilbertaz.gov/departments/development-services/plan-review-inspection/permits-applications",
+  "verified": "fetched"
+ },
+ "glendale": {
+  "issuer": "City of Glendale (AZ) Building Safety Division",
+  "url": "https://www.glendaleaz.gov/Work/Building-Codes-Services/Building-Permits",
+  "verified": "fetched"
+ },
+ "glendaleCA": {
+  "issuer": "City of Glendale (CA) Community Development Department, Development Services Division",
+  "url": "https://www.glendaleca.gov/government/departments/community-development/development-services/permit-guidance",
+  "verified": "search"
+ },
+ "grandprairie": {
+  "issuer": "City of Grand Prairie Building Inspections Division",
+  "url": "https://www.gptx.org/Departments/Building-Inspections/Residential-Information",
+  "verified": "fetched"
+ },
+ "grandrapids": {
+  "issuer": "City of Grand Rapids Development Center",
+  "url": "https://www.grandrapidsmi.gov/grow-and-thrive/development-center/",
+  "verified": "fetched"
+ },
+ "greensboro": {
+  "issuer": "City of Greensboro Engineering & Inspections Department",
+  "url": "https://www.greensboro-nc.gov/departments/engineering-inspections",
+  "verified": "fetched"
+ },
+ "henderson": {
+  "issuer": "City of Henderson Building and Fire Safety Department",
+  "url": "https://www.cityofhenderson.com/government/departments/building-and-fire-safety",
+  "verified": "fetched"
+ },
+ "hialeah": {
+  "issuer": "City of Hialeah Building Department",
+  "url": "https://www.hialeahfl.gov/154/Building-Department",
+  "verified": "fetched"
+ },
+ "honolulu": {
+  "issuer": "City and County of Honolulu Department of Planning and Permitting (DPP)",
+  "url": "https://www.honolulu.gov/dpp/permitting/building-permits-home/building-permit/",
+  "verified": "fetched"
+ },
+ "houston": {
+  "issuer": "City of Houston Permitting Center",
+  "url": "https://www.houstonpermittingcenter.org/",
+  "verified": "fetched"
+ },
+ "huntingtonbeach": {
+  "issuer": "City of Huntington Beach Community Development Department, Building & Inspections Division",
+  "url": "https://www.huntingtonbeachca.gov/departments/community_development/building_inspection/permit_center/index.php",
+  "verified": "fetched"
+ },
+ "huntsville": {
+  "issuer": "City of Huntsville Inspection Department",
+  "url": "https://www.huntsvilleal.gov/development/building-construction/building-license-permits/",
+  "verified": "fetched"
+ },
+ "indianapolis": {
+  "issuer": "City of Indianapolis / Marion County Department of Business and Neighborhood Services (BNS)",
+  "url": "https://www.indy.gov/agency/department-of-business-and-neighborhood-services",
+  "verified": "search"
+ },
+ "irvine": {
+  "issuer": "City of Irvine Community Development Department, Building & Safety",
+  "url": "https://cityofirvine.gov/building-safety",
+  "verified": "fetched"
+ },
+ "irving": null,
+ "jackson": {
+  "issuer": "City of Jackson Planning and Development Department",
+  "url": "https://jacksonms.gov/residents/residential-building-and-permits/",
+  "verified": "fetched"
+ },
+ "jacksonville": {
+  "issuer": "City of Jacksonville Building Inspection Division",
+  "url": "https://www.jacksonville.gov/departments/public-works/building-inspection-division",
+  "verified": "fetched"
+ },
+ "jerseycity": {
+  "issuer": "City of Jersey City Division of the Construction Code Official",
+  "url": "https://www.jerseycitynj.gov/cityhall/HousingAndDevelopment/constructioncode",
+  "verified": "fetched"
+ },
+ "kansascity": {
+  "issuer": "City of Kansas City, Missouri City Planning & Development Department, Permits Division",
+  "url": "https://www.kcmo.gov/city-hall/departments/city-planning-development/permits-division",
+  "verified": "fetched"
+ },
+ "knoxville": null,
+ "laredo": null,
+ "lasvegas": {
+  "issuer": "City of Las Vegas Building & Safety Department",
+  "url": "https://www.lasvegasnevada.gov/Business/Permits-Licenses/Building-Permits",
+  "verified": "fetched"
+ },
+ "lexington": {
+  "issuer": "Lexington-Fayette Urban County Government Division of Building Inspection",
+  "url": "https://www.lexingtonky.gov/government/departments-programs/planning-preservation/building-inspection",
+  "verified": "fetched"
+ },
+ "lincoln": {
+  "issuer": "City of Lincoln Planning and Development Services, Building and Safety",
+  "url": "https://www.lincoln.ne.gov/City/Departments/PDS/Building-Safety",
+  "verified": "fetched"
+ },
+ "littlerock": {
+  "issuer": "City of Little Rock Planning and Development Department, Building Codes Division",
+  "url": "https://littlerock.gov/government/city-departments/planning-and-development/divisions/",
+  "verified": "fetched"
+ },
+ "longbeach": {
+  "issuer": "City of Long Beach Community Development Department, Building & Safety Bureau",
+  "url": "https://www.longbeach.gov/lbcd/building/permit-center/",
+  "verified": "fetched"
+ },
+ "losangeles": {
+  "issuer": "City of Los Angeles Department of Building and Safety (LADBS)",
+  "url": "https://dbs.lacity.gov/",
+  "verified": "fetched"
+ },
+ "louisville": {
+  "issuer": "Louisville Metro Government Office of Construction Review",
+  "url": "https://louisvilleky.gov/government/construction-review/step-step-process",
+  "verified": "search"
+ },
+ "lubbock": null,
+ "macon": {
+  "issuer": "Macon-Bibb County Building and Fire Safety",
+  "url": "https://www.maconbibb.us/buildingpermits/",
+  "verified": "fetched"
+ },
+ "madison": {
+  "issuer": "City of Madison Development Services Center (Building Inspection Division)",
+  "url": "https://www.cityofmadison.com/development-services-center/permits",
+  "verified": "fetched"
+ },
+ "mcallen": {
+  "issuer": "City of McAllen Building Permits & Inspections Department",
+  "url": "https://www.mcallen.net/departments/permits",
+  "verified": "fetched"
+ },
+ "mesa": {
+  "issuer": "City of Mesa Development Services",
+  "url": "https://www.mesaaz.gov/Business-Development/Development-Services/Building-Permit-Plan-Review/Residential-Construction",
+  "verified": "fetched"
+ },
+ "miami": {
+  "issuer": "City of Miami Building Department",
+  "url": "https://www.miami.gov/My-Government/Departments/Building/Guide-to-Getting-a-Permit",
+  "verified": "fetched"
+ },
+ "milwaukee": null,
+ "minneapolis": {
+  "issuer": "City of Minneapolis Construction Code Services",
+  "url": "https://www.minneapolismn.gov/business-services/licenses-permits-inspections/construction-permits/",
+  "verified": "fetched"
+ },
+ "modesto": {
+  "issuer": "City of Modesto Community & Economic Development, Building Safety Division",
+  "url": "https://www.modestogov.com/1281/Building-Permits",
+  "verified": "fetched"
+ },
+ "montgomery": {
+  "issuer": "City of Montgomery Inspections Department",
+  "url": "https://www.montgomeryal.gov/government/city-government/city-departments/inspections",
+  "verified": "fetched"
+ },
+ "morenovalley": {
+  "issuer": "City of Moreno Valley Community Development Department, Building and Safety Division",
+  "url": "https://moval.org/cdd/department/divisions-building-safety.html",
+  "verified": "fetched"
+ },
+ "murfreesboro": null,
+ "nashville": {
+  "issuer": "Metro Nashville Codes and Building Safety",
+  "url": "https://www.nashville.gov/departments/codes",
+  "verified": "fetched"
+ },
+ "neworleans": {
+  "issuer": "City of New Orleans Department of Safety and Permits",
+  "url": "https://nola.gov/next/services/permits/",
+  "verified": "fetched"
+ },
+ "newportnews": {
+  "issuer": "City of Newport News Codes Compliance",
+  "url": "https://apps.nnva.gov/plan-comply-build/",
+  "verified": "fetched"
+ },
+ "newyork": {
+  "issuer": "NYC Department of Buildings",
+  "url": "https://www.nyc.gov/site/buildings/index.page",
+  "verified": "fetched"
+ },
+ "norfolk": {
+  "issuer": "City of Norfolk Department of City Planning (Permits and Inspections)",
+  "url": "https://www.norfolk.gov/2799/Permits-and-Inspections",
+  "verified": "fetched"
+ },
+ "northlasvegas": {
+  "issuer": "City of North Las Vegas Building Safety Division",
+  "url": "https://www.cityofnorthlasvegas.com/business/development-services/building-safety",
+  "verified": "fetched"
+ },
+ "oakland": {
+  "issuer": "City of Oakland Planning & Building Department, Bureau of Building",
+  "url": "https://www.oaklandca.gov/Planning-Building/Building-Construction-Permits-Inspections/Building-Permits",
+  "verified": "fetched"
+ },
+ "oklahomacity": {
+  "issuer": "City of Oklahoma City Development Services Department",
+  "url": "https://www.okc.gov/Services/Permits/Building-Trade-Permits",
+  "verified": "fetched"
+ },
+ "omaha": null,
+ "orlando": {
+  "issuer": "City of Orlando Permits & Inspections",
+  "url": "https://www.orlando.gov/Building-Development/Permits-Inspections",
+  "verified": "fetched"
+ },
+ "overlandpark": {
+  "issuer": "City of Overland Park Building Safety",
+  "url": "https://www.opkansas.gov/permits-licenses-and-inspections-directory",
+  "verified": "fetched"
+ },
+ "oxnard": {
+  "issuer": "City of Oxnard Community Development, Building & Engineering Division",
+  "url": "https://www.oxnard.gov/community-development/building-engineering/residential-permits",
+  "verified": "search"
+ },
+ "palmdale": {
+  "issuer": "City of Palmdale Economic & Community Development, Building & Safety Division",
+  "url": "https://www.cityofpalmdaleca.gov/152/Building-Safety",
+  "verified": "fetched"
+ },
+ "pasadena": {
+  "issuer": "City of Pasadena Planning & Community Development Department, Permit Center",
+  "url": "https://www.cityofpasadena.net/planning/permit-center/apply-for-permit/",
+  "verified": "fetched"
+ },
+ "paterson": {
+  "issuer": "City of Paterson UCC Construction/Buildings Division",
+  "url": "https://www.patersonnj.gov/department/division.php?structureid=161",
+  "verified": "fetched"
+ },
+ "peoria": {
+  "issuer": "City of Peoria Community Development Department, Building Safety",
+  "url": "https://peoriagov.org/168/Building-Safety",
+  "verified": "fetched"
+ },
+ "philadelphia": {
+  "issuer": "City of Philadelphia Department of Licenses and Inspections",
+  "url": "https://www.phila.gov/departments/department-of-licenses-and-inspections/",
+  "verified": "fetched"
+ },
+ "phoenix": {
+  "issuer": "City of Phoenix Planning and Development Department",
+  "url": "https://www.phoenix.gov/administration/departments/pdd/residential-building.html",
+  "verified": "fetched"
+ },
+ "pittsburgh": {
+  "issuer": "City of Pittsburgh Department of Permits, Licenses, and Inspections (PLI)",
+  "url": "https://www.pittsburghpa.gov/Business-Development/Permits-Licenses-and-Inspections/Permitting",
+  "verified": "fetched"
+ },
+ "plano": {
+  "issuer": "City of Plano Building Inspections Department",
+  "url": "https://www.plano.gov/building-permits",
+  "verified": "fetched"
+ },
+ "portland": {
+  "issuer": "City of Portland Permitting & Development",
+  "url": "https://www.portland.gov/ppd",
+  "verified": "fetched"
+ },
+ "providence": {
+  "issuer": "City of Providence Department of Inspection and Standards",
+  "url": "https://www.providenceri.gov/inspection-standards/",
+  "verified": "fetched"
+ },
+ "raleigh": {
+  "issuer": "City of Raleigh Planning and Development",
+  "url": "https://raleighnc.gov/permits/services/how-get-residential-permit",
+  "verified": "fetched"
+ },
+ "ranchocucamonga": {
+  "issuer": "City of Rancho Cucamonga Building & Safety Services",
+  "url": "https://www.cityofrc.us/community-development/building-safety",
+  "verified": "fetched"
+ },
+ "reno": {
+  "issuer": "City of Reno Development Services Department",
+  "url": "https://www.reno.gov/business-development/development-services/building-permits.php",
+  "verified": "fetched"
+ },
+ "richmond": {
+  "issuer": "City of Richmond Planning and Development Review, Bureau of Permits and Inspections",
+  "url": "https://www.rva.gov/planning-development-review/permits-and-inspections",
+  "verified": "fetched"
+ },
+ "riverside": {
+  "issuer": "City of Riverside Community & Economic Development Department, Building & Safety Division",
+  "url": "https://riversideca.gov/cedd/building-safety/building-safety-services/permits",
+  "verified": "fetched"
+ },
+ "rochester": {
+  "issuer": "City of Rochester Department of Neighborhood and Business Development, Permit Office",
+  "url": "https://www.cityofrochester.gov/departments/neighborhood-and-business-development/building-permit-types-and-applications",
+  "verified": "fetched"
+ },
+ "rockford": {
+  "issuer": "City of Rockford Construction & Development Services",
+  "url": "https://rockfordil.gov/442/Building-Permits",
+  "verified": "fetched"
+ },
+ "sacramento": {
+  "issuer": "City of Sacramento Community Development Department, Building Division",
+  "url": "https://www.cityofsacramento.gov/community-development/building",
+  "verified": "fetched"
+ },
+ "saltlakecity": {
+  "issuer": "Salt Lake City Building Services",
+  "url": "https://www.slc.gov/buildingservices/building-permits/",
+  "verified": "fetched"
+ },
+ "sanantonio": {
+  "issuer": "City of San Antonio Development Services Department",
+  "url": "https://www.sa.gov/Directory/Departments/DSD/Constructing/Residential/Permits",
+  "verified": "fetched"
+ },
+ "sandiego": {
+  "issuer": "City of San Diego Development Services Department",
+  "url": "https://www.sandiego.gov/development-services/permits/building-permit",
+  "verified": "fetched"
+ },
+ "sanfrancisco": {
+  "issuer": "San Francisco Department of Building Inspection (DBI)",
+  "url": "https://www.sf.gov/departments--department-building-inspection--permit-services-dbi",
+  "verified": "fetched"
+ },
+ "sanjose": {
+  "issuer": "City of San José Planning, Building and Code Enforcement Department, Building Division",
+  "url": "https://www.sanjoseca.gov/your-government/departments-offices/planning-building-code-enforcement/building-division/building-permit-services-appointments",
+  "verified": "search"
+ },
+ "santaana": {
+  "issuer": "City of Santa Ana Building Safety Division",
+  "url": "https://santa-ana.org/permits-inspections-appointments",
+  "verified": "search"
+ },
+ "santaclarita": {
+  "issuer": "City of Santa Clarita Building & Safety Division",
+  "url": "https://santaclarita.gov/building-safety/",
+  "verified": "fetched"
+ },
+ "santarosa": {
+  "issuer": "City of Santa Rosa Planning and Economic Development Department, Building Division",
+  "url": "https://www.srcity.org/265/Building-Permits",
+  "verified": "search"
+ },
+ "savannah": {
+  "issuer": "City of Savannah Development Services",
+  "url": "https://savannahga.gov/1643/How-to-Apply-for-Residential-Building-Pe",
+  "verified": "fetched"
+ },
+ "scottsdale": {
+  "issuer": "City of Scottsdale Planning & Development, Permit Services",
+  "url": "https://www.scottsdaleaz.gov/planning-development/permit-services",
+  "verified": "fetched"
+ },
+ "seattle": {
+  "issuer": "Seattle Department of Construction & Inspections (SDCI)",
+  "url": "https://www.seattle.gov/construction-and-inspections/permits",
+  "verified": "fetched"
+ },
+ "shreveport": {
+  "issuer": "City of Shreveport Permits & Inspections",
+  "url": "https://shreveportla.gov/473/Permits-Inspections",
+  "verified": "fetched"
+ },
+ "siouxfalls": {
+  "issuer": "City of Sioux Falls Planning & Development Services",
+  "url": "https://www.siouxfalls.gov/business-permits/permits-licenses-inspections/permits/building-permits",
+  "verified": "fetched"
+ },
+ "spokane": null,
+ "springfieldIL": {
+  "issuer": "City of Springfield Office of Public Works, Building & Zoning",
+  "url": "https://springfield.il.us/Departments/PublicWorks/PublicWorksDefault.aspx",
+  "verified": "fetched"
+ },
+ "springfieldMO": {
+  "issuer": "City of Springfield Building Development Services",
+  "url": "https://www.springfieldmo.gov/169/Building-Permits-Codes",
+  "verified": "fetched"
+ },
+ "stlouis": {
+  "issuer": "City of St. Louis Building Division, Permits Section",
+  "url": "https://www.stlouis-mo.gov/government/departments/public-safety/building/permits/index.cfm",
+  "verified": "fetched"
+ },
+ "stockton": {
+  "issuer": "City of Stockton Building & Life Safety Division",
+  "url": "https://stocktonca.gov/business/building___life_safety/index.php",
+  "verified": "fetched"
+ },
+ "stpaul": {
+  "issuer": "City of Saint Paul Department of Safety and Inspections",
+  "url": "https://www.stpaul.gov/departments/safety-inspections/building-and-construction",
+  "verified": "fetched"
+ },
+ "stpetersburg": {
+  "issuer": "City of St. Petersburg Building & Permitting",
+  "url": "https://www.stpete.org/business/building_permitting/index.php",
+  "verified": "fetched"
+ },
+ "syracuse": {
+  "issuer": "City of Syracuse Central Permit Office",
+  "url": "https://www.syr.gov/Departments/Central-Permit-Office",
+  "verified": "fetched"
+ },
+ "tacoma": {
+  "issuer": "City of Tacoma Planning and Development Services",
+  "url": "https://tacoma.gov/government/departments/planning-and-development-services/permits-and-development-services/",
+  "verified": "fetched"
+ },
+ "tallahassee": {
+  "issuer": "City of Tallahassee Growth Management, Building Inspection Division",
+  "url": "https://www.talgov.com/growth/gm_permits_buildins",
+  "verified": "fetched"
+ },
+ "tampa": {
+  "issuer": "City of Tampa Construction Services Division (Development & Growth Management Department)",
+  "url": "https://www.tampa.gov/construction-services",
+  "verified": "fetched"
+ },
+ "tempe": {
+  "issuer": "City of Tempe Community Development Department, Building Safety Division",
+  "url": "https://www.tempe.gov/government/community-development/building-safety/permit-center",
+  "verified": "fetched"
+ },
+ "toledo": {
+  "issuer": "City of Toledo Division of Building Inspection",
+  "url": "https://toledo.oh.gov/business/how-to-build-in-the-city/permits",
+  "verified": "fetched"
+ },
+ "torrance": {
+  "issuer": "City of Torrance Community Development Department, Building and Safety Division",
+  "url": "https://www.torranceca.gov/How-Do-I/Apply-For/Building-and-Safety-Permit",
+  "verified": "fetched"
+ },
+ "tucson": {
+  "issuer": "City of Tucson Planning & Development Services",
+  "url": "https://www.tucsonaz.gov/Departments/Planning-Development-Services/Permits/Residential-Permits",
+  "verified": "fetched"
+ },
+ "tulsa": {
+  "issuer": "City of Tulsa Development Services, Permit Center",
+  "url": "https://www.cityoftulsa.org/government/departments/development-services/permit-center/",
+  "verified": "fetched"
+ },
+ "vancouver": {
+  "issuer": "City of Vancouver, WA Community Development (Building)",
+  "url": "https://www.cityofvancouver.us/business/building-construction/residential-building-permits/",
+  "verified": "fetched"
+ },
+ "virginiabeach": null,
+ "washington": {
+  "issuer": "DC Department of Buildings (DOB)",
+  "url": "https://dob.dc.gov/page/overview-permitting-process",
+  "verified": "fetched"
+ },
+ "wichita": {
+  "issuer": "Metropolitan Area Building and Construction Department (MABCD), City of Wichita / Sedgwick County",
+  "url": "https://www.sedgwick.gov/mabcd/permits/",
+  "verified": "fetched"
+ },
+ "winstonsalem": {
+  "issuer": "City of Winston-Salem Planning and Development Services, Inspections Division",
+  "url": "https://www.cityofws.org/343/Inspections-Division",
+  "verified": "fetched"
+ },
+ "worcester": {
+  "issuer": "City of Worcester Inspectional Services, Building & Zoning Division",
+  "url": "https://worcesterma.gov/building-zoning/building-permits",
+  "verified": "search"
+ },
+ "yonkers": {
+  "issuer": "City of Yonkers Department of Housing and Buildings",
+  "url": "https://www.yonkersny.gov/217/Housing-Buildings",
+  "verified": "fetched"
+ }
+}

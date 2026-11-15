@@ -1,0 +1,1552 @@
+{
+"akron": {
+"cdd": 934,
+"hdd": 5538,
+"km": 6.8,
+"prcp": 32.51,
+"snow": null,
+"station": "USW00014813",
+"station_name": "AKRON FULTON INTL AP, OH US",
+"tavg": 52.3
+},
+"albuquerque": {
+"cdd": 1438,
+"hdd": 3996,
+"km": 7.5,
+"prcp": 8.84,
+"snow": 7.9,
+"station": "USW00023050",
+"station_name": "ALBUQUERQUE INTL AP, NM US",
+"tavg": 57.9
+},
+"amarillo": {
+"cdd": 1609,
+"hdd": 3872,
+"km": 11.9,
+"prcp": 19.66,
+"snow": 17.2,
+"station": "USW00023047",
+"station_name": "AMARILLO, TX US",
+"tavg": 58.7
+},
+"anaheim": {
+"cdd": 1817,
+"hdd": 1387,
+"km": 18.2,
+"prcp": 9.98,
+"snow": null,
+"station": "USW00003179",
+"station_name": "CHINO AP, CA US",
+"tavg": 66.1
+},
+"anchorage": {
+"cdd": 8,
+"hdd": 9979,
+"km": null,
+"prcp": 16.42,
+"snow": 77.9,
+"station": "USW00026451",
+"station_name": "ANCHORAGE INTL AP, AK US",
+"tavg": 37.6
+},
+"arlington": {
+"cdd": 2824,
+"hdd": 2126,
+"km": 5.5,
+"prcp": 36.19,
+"snow": null,
+"station": "USW00053907",
+"station_name": "ARLINGTON MUNI AP, TX US",
+"tavg": 66.8
+},
+"atlanta": {
+"cdd": 1825,
+"hdd": 2775,
+"km": 9.6,
+"prcp": 48.13,
+"snow": null,
+"station": "USW00003888",
+"station_name": "ATLANTA FULTON CO AP, GA US",
+"tavg": 62.3
+},
+"aurora": {
+"cdd": 813,
+"hdd": 5765,
+"km": 14.1,
+"prcp": 15.36,
+"snow": 49.0,
+"station": "USW00023062",
+"station_name": "DENVER-STAPLETON, CO US",
+"tavg": 51.3
+},
+"austin": {
+"cdd": 3290,
+"hdd": 1442,
+"km": 2.5,
+"prcp": 36.25,
+"snow": 0.2,
+"station": "USW00013958",
+"station_name": "AUSTIN-CAMP MABRY, TX US",
+"tavg": 70.0
+},
+"bakersfield": {
+"cdd": 2425,
+"hdd": 1958,
+"km": 9.1,
+"prcp": 6.36,
+"snow": 0.1,
+"station": "USW00023155",
+"station_name": "BAKERSFIELD AP, CA US",
+"tavg": 66.2
+},
+"baltimore": {
+"cdd": 1749,
+"hdd": 3858,
+"km": 2.1,
+"prcp": 43.73,
+"snow": null,
+"station": "USW00093784",
+"station_name": "MD SCI CTR BALTIMORE, MD US",
+"tavg": 59.1
+},
+"batonrouge": {
+"cdd": 2818,
+"hdd": 1534,
+"km": 10.9,
+"prcp": 61.94,
+"snow": 0.2,
+"station": "USW00013970",
+"station_name": "BATON ROUGE RYAN AP, LA US",
+"tavg": 68.5
+},
+"birmingham": {
+"cdd": 2177,
+"hdd": 2533,
+"km": 6.4,
+"prcp": 56.62,
+"snow": 1.4,
+"station": "USW00013876",
+"station_name": "BIRMINGHAM AP, AL US",
+"tavg": 63.9
+},
+"boise": {
+"cdd": 1045,
+"hdd": 5320,
+"km": 3.7,
+"prcp": 11.51,
+"snow": 17.6,
+"station": "USW00024131",
+"station_name": "BOISE AIR TERMINAL, ID US",
+"tavg": 53.2
+},
+"boston": {
+"cdd": 802,
+"hdd": 5545,
+"km": 2.6,
+"prcp": 43.59,
+"snow": 49.2,
+"station": "USW00014739",
+"station_name": "BOSTON LOGAN INTL AP, MA US",
+"tavg": 51.9
+},
+"buffalo": {
+"cdd": 608,
+"hdd": 6466,
+"km": 11.8,
+"prcp": 40.68,
+"snow": 95.4,
+"station": "USW00014733",
+"station_name": "BUFFALO, NY US",
+"tavg": 48.8
+},
+"capecoral": {
+"cdd": 4046,
+"hdd": 252,
+"km": 15.0,
+"prcp": 57.41,
+"snow": null,
+"station": "USW00012835",
+"station_name": "FT MYERS PAGE FLD AP, FL US",
+"tavg": 75.4
+},
+"chandler": {
+"cdd": 4765,
+"hdd": 874,
+"km": 21.4,
+"prcp": 7.22,
+"snow": null,
+"station": "USW00023183",
+"station_name": "PHOENIX SKY HARBOR INTL AP, AZ US",
+"tavg": 75.6
+},
+"charlotte": {
+"cdd": 1769,
+"hdd": 3058,
+"km": 11.3,
+"prcp": 43.6,
+"snow": 3.5,
+"station": "USW00013881",
+"station_name": "CHARLOTTE DOUGLAS AP, NC US",
+"tavg": 61.4
+},
+"chattanooga": {
+"cdd": 1921,
+"hdd": 3029,
+"km": 5.7,
+"prcp": 55.0,
+"snow": 3.6,
+"station": "USW00013882",
+"station_name": "CHATTANOOGA LOVELL AP, TN US",
+"tavg": 61.9
+},
+"chesapeake": {
+"cdd": 2130,
+"hdd": 2810,
+"km": 15.6,
+"prcp": 48.62,
+"snow": null,
+"station": "USW00013762",
+"station_name": "FENTRESS NAAS, VA US",
+"tavg": 63.0
+},
+"chicago": {
+"cdd": 1111,
+"hdd": 5753,
+"km": 8.3,
+"prcp": 34.42,
+"snow": null,
+"station": "USW00014819",
+"station_name": "CHICAGO MIDWAY AP, IL US",
+"tavg": 52.1
+},
+"cincinnati": {
+"cdd": 1125,
+"hdd": 4804,
+"km": 8.6,
+"prcp": 43.4,
+"snow": null,
+"station": "USW00093812",
+"station_name": "CINCINNATI LUNKEN AP, OH US",
+"tavg": 54.8
+},
+"clarksville": {
+"cdd": 1510,
+"hdd": 3886,
+"km": 8.2,
+"prcp": 47.21,
+"snow": null,
+"station": "USW00003894",
+"station_name": "CLARKSVILLE OUTLAW AP, TN US",
+"tavg": 58.4
+},
+"clearwater": {
+"cdd": 3701,
+"hdd": 446,
+"km": 11.2,
+"prcp": 53.62,
+"snow": null,
+"station": "USW00012873",
+"station_name": "ST PETERSBURG INTL AP, FL US",
+"tavg": 73.9
+},
+"cleveland": {
+"cdd": 925,
+"hdd": 5513,
+"km": 5.3,
+"prcp": 33.34,
+"snow": null,
+"station": "USW00004853",
+"station_name": "CLEVELAND BURKE AP, OH US",
+"tavg": 52.3
+},
+"coloradosprings": {
+"cdd": 608,
+"hdd": 5888,
+"km": 9.0,
+"prcp": 15.91,
+"snow": 32.5,
+"station": "USW00093037",
+"station_name": "COLORADO SPRINGS MUNI AP, CO US",
+"tavg": 50.4
+},
+"columbia": {
+"cdd": 2418,
+"hdd": 2210,
+"km": 11.1,
+"prcp": 43.68,
+"snow": null,
+"station": "USW00053867",
+"station_name": "COLUMBIA OWENS DWTN AP, SC US",
+"tavg": 65.5
+},
+"columbus": {
+"cdd": 1068,
+"hdd": 5233,
+"km": 9.2,
+"prcp": 41.57,
+"snow": 28.2,
+"station": "USW00014821",
+"station_name": "COLUMBUS PORT COLUMBUS INTL AP, OH US",
+"tavg": 53.5
+},
+"corpuschristi": {
+"cdd": 4239,
+"hdd": 583,
+"km": 13.8,
+"prcp": 35.21,
+"snow": null,
+"station": "USW00012926",
+"station_name": "CORPUS CHRISTI NAS, TX US",
+"tavg": 75.0
+},
+"dallas": {
+"cdd": 3125,
+"hdd": 1992,
+"km": 8.2,
+"prcp": 38.32,
+"snow": 1.7,
+"station": "USW00013960",
+"station_name": "DALLAS LOVE FLD, TX US",
+"tavg": 68.0
+},
+"dayton": {
+"cdd": 1154,
+"hdd": 5149,
+"km": 13.6,
+"prcp": 41.33,
+"snow": 25.0,
+"station": "USW00093815",
+"station_name": "DAYTON INTL AP, OH US",
+"tavg": 53.9
+},
+"denver": {
+"cdd": 813,
+"hdd": 5765,
+"km": 1.0,
+"prcp": 15.36,
+"snow": 49.0,
+"station": "USW00023062",
+"station_name": "DENVER-STAPLETON, CO US",
+"tavg": 51.3
+},
+"desmoines": {
+"cdd": 1070,
+"hdd": 6178,
+"km": 5.6,
+"prcp": 36.55,
+"snow": 36.5,
+"station": "USW00014933",
+"station_name": "DES MOINES INTL AP, IA US",
+"tavg": 50.9
+},
+"detroit": {
+"cdd": 854,
+"hdd": 6106,
+"km": 8.1,
+"prcp": 29.89,
+"snow": null,
+"station": "USW00014822",
+"station_name": "DETROIT CITY AP, MI US",
+"tavg": 50.5
+},
+"durham": {
+"cdd": 1804,
+"hdd": 3153,
+"km": 14.2,
+"prcp": 46.07,
+"snow": 5.2,
+"station": "USW00013722",
+"station_name": "RALEIGH DURHAM INTL AP, NC US",
+"tavg": 61.2
+},
+"elkgrove": {
+"cdd": 1292,
+"hdd": 2436,
+"km": 14.1,
+"prcp": 18.14,
+"snow": null,
+"station": "USW00023232",
+"station_name": "SACRAMENTO EXECUTIVE AP, CA US",
+"tavg": 61.8
+},
+"elpaso": {
+"cdd": 2662,
+"hdd": 2206,
+"km": 6.4,
+"prcp": 8.78,
+"snow": 2.8,
+"station": "USW00023044",
+"station_name": "EL PASO INTL AP, TX US",
+"tavg": 66.2
+},
+"eugene": {
+"cdd": 293,
+"hdd": 4616,
+"km": 11.5,
+"prcp": 40.83,
+"snow": null,
+"station": "USW00024221",
+"station_name": "EUGENE MAHLON SWEET AP, OR US",
+"tavg": 53.1
+},
+"fayetteville": {
+"cdd": 2050,
+"hdd": 2734,
+"km": 13.4,
+"prcp": 44.58,
+"snow": null,
+"station": "USW00093740",
+"station_name": "FAYETTEVILLE RGNL AP, NC US",
+"tavg": 63.0
+},
+"fontana": {
+"cdd": 1970,
+"hdd": 1293,
+"km": 12.2,
+"prcp": 11.64,
+"snow": null,
+"station": "USW00003102",
+"station_name": "ONTARIO INTL AP, CA US",
+"tavg": 66.8
+},
+"fortcollins": {
+"cdd": 624,
+"hdd": 5797,
+"km": null,
+"prcp": 15.88,
+"snow": 51.4,
+"station": "USC00053005",
+"station_name": "FT COLLINS, CO US",
+"tavg": 50.7
+},
+"fortmyers": {
+"cdd": 4046,
+"hdd": 252,
+"km": 4.9,
+"prcp": 57.41,
+"snow": null,
+"station": "USW00012835",
+"station_name": "FT MYERS PAGE FLD AP, FL US",
+"tavg": 75.4
+},
+"fortwayne": {
+"cdd": 849,
+"hdd": 5968,
+"km": 13.9,
+"prcp": 39.48,
+"snow": 33.6,
+"station": "USW00014827",
+"station_name": "FT WAYNE INTL AP, IN US",
+"tavg": 50.9
+},
+"fortworth": {
+"cdd": 2963,
+"hdd": 2026,
+"km": 3.9,
+"prcp": null,
+"snow": null,
+"station": "USW00093904",
+"station_name": "FT WORTH MEACHAM FLD NAAF, TX US",
+"tavg": 67.5
+},
+"fremont": {
+"cdd": 427,
+"hdd": 2264,
+"km": 13.7,
+"prcp": 13.45,
+"snow": null,
+"station": "USW00023244",
+"station_name": "MOFFETT FEDERAL AIRFIELD, CA US",
+"tavg": 59.9
+},
+"fresno": {
+"cdd": 2209,
+"hdd": 2186,
+"km": 6.5,
+"prcp": 10.99,
+"snow": 0.0,
+"station": "USW00093193",
+"station_name": "FRESNO YOSEMITE INTL AP, CA US",
+"tavg": 65.0
+},
+"frisco": {
+"cdd": 2531,
+"hdd": 2498,
+"km": 21.9,
+"prcp": 38.3,
+"snow": null,
+"station": "USW00053914",
+"station_name": "MCKINNEY MUNI AP, TX US",
+"tavg": 65.0
+},
+"garland": {
+"cdd": 3125,
+"hdd": 1992,
+"km": 20.8,
+"prcp": 38.32,
+"snow": 1.7,
+"station": "USW00013960",
+"station_name": "DALLAS LOVE FLD, TX US",
+"tavg": 68.0
+},
+"gilbert": {
+"cdd": 4765,
+"hdd": 874,
+"km": 27.5,
+"prcp": 7.22,
+"snow": null,
+"station": "USW00023183",
+"station_name": "PHOENIX SKY HARBOR INTL AP, AZ US",
+"tavg": 75.6
+},
+"glendale": {
+"cdd": 4765,
+"hdd": 874,
+"km": 20.9,
+"prcp": 7.22,
+"snow": null,
+"station": "USW00023183",
+"station_name": "PHOENIX SKY HARBOR INTL AP, AZ US",
+"tavg": 75.6
+},
+"glendaleCA": {
+"cdd": 1481,
+"hdd": 1400,
+"km": 11.2,
+"prcp": 13.91,
+"snow": null,
+"station": "USW00023152",
+"station_name": "BURBANK GLENDALE PASADENA AP, CA US",
+"tavg": 65.2
+},
+"grandprairie": {
+"cdd": 2824,
+"hdd": 2126,
+"km": 7.6,
+"prcp": 36.19,
+"snow": null,
+"station": "USW00053907",
+"station_name": "ARLINGTON MUNI AP, TX US",
+"tavg": 66.8
+},
+"grandrapids": {
+"cdd": 732,
+"hdd": 6408,
+"km": 11.7,
+"prcp": 39.4,
+"snow": 77.6,
+"station": "USW00094860",
+"station_name": "GRAND RAPIDS, MI US",
+"tavg": 49.3
+},
+"greensboro": {
+"cdd": 1552,
+"hdd": 3500,
+"km": 10.7,
+"prcp": 43.95,
+"snow": 7.1,
+"station": "USW00013723",
+"station_name": "PIEDMONT TRIAD INTL AP, NC US",
+"tavg": 59.6
+},
+"henderson": {
+"cdd": 3720,
+"hdd": 1836,
+"km": 14.1,
+"prcp": 4.18,
+"snow": 0.2,
+"station": "USW00023169",
+"station_name": "LAS VEGAS MCCARRAN AP, NV US",
+"tavg": 70.1
+},
+"hialeah": {
+"cdd": 4494,
+"hdd": 122,
+"km": 4.9,
+"prcp": 62.65,
+"snow": null,
+"station": "USW00012882",
+"station_name": "MIAMI OPA LOCKA AP, FL US",
+"tavg": 76.9
+},
+"honolulu": {
+"cdd": 4767,
+"hdd": 0,
+"km": 9.5,
+"prcp": 16.41,
+"snow": null,
+"station": "USW00022521",
+"station_name": "HONOLULU INTL AP, HI US",
+"tavg": 78.0
+},
+"houston": {
+"cdd": 3362,
+"hdd": 1098,
+"km": 18.7,
+"prcp": 55.62,
+"snow": null,
+"station": "USW00012918",
+"station_name": "HOUSTON HOBBY AP, TX US",
+"tavg": 71.1
+},
+"huntingtonbeach": {
+"cdd": 1075,
+"hdd": 1092,
+"km": 12.8,
+"prcp": 11.18,
+"snow": null,
+"station": "USW00093184",
+"station_name": "SANTA ANA JOHN WAYNE AP, CA US",
+"tavg": 64.9
+},
+"huntsville": {
+"cdd": 2107,
+"hdd": 2831,
+"km": 11.6,
+"prcp": 54.29,
+"snow": 2.4,
+"station": "USW00003856",
+"station_name": "HUNTSVILLE INTL AP, AL US",
+"tavg": 62.9
+},
+"indianapolis": {
+"cdd": 1139,
+"hdd": 5250,
+"km": 13.8,
+"prcp": 43.63,
+"snow": 25.5,
+"station": "USW00093819",
+"station_name": "INDIANAPOLIS, IN US",
+"tavg": 53.6
+},
+"irvine": {
+"cdd": 1075,
+"hdd": 1092,
+"km": 8.9,
+"prcp": 11.18,
+"snow": null,
+"station": "USW00093184",
+"station_name": "SANTA ANA JOHN WAYNE AP, CA US",
+"tavg": 64.9
+},
+"irving": {
+"cdd": 2824,
+"hdd": 2220,
+"km": 6.6,
+"prcp": 37.01,
+"snow": 1.6,
+"station": "USW00003927",
+"station_name": "DALLAS FT WORTH AP, TX US",
+"tavg": 66.6
+},
+"jackson": {
+"cdd": 2523,
+"hdd": 2123,
+"km": 2.5,
+"prcp": 51.33,
+"snow": null,
+"station": "USW00013927",
+"station_name": "JACKSON HAWKINS FLD, MS US",
+"tavg": 66.0
+},
+"jacksonville": {
+"cdd": 3303,
+"hdd": 944,
+"km": 11.5,
+"prcp": 47.6,
+"snow": 0.0,
+"station": "USW00093837",
+"station_name": "JACKSONVILLE NAS, FL US",
+"tavg": 71.4
+},
+"jerseycity": {
+"cdd": 1270,
+"hdd": 4701,
+"km": 9.4,
+"prcp": 46.6,
+"snow": 31.5,
+"station": "USW00014734",
+"station_name": "NEWARK INTL AP, NJ US",
+"tavg": 55.5
+},
+"kansascity": {
+"cdd": 1708,
+"hdd": 4613,
+"km": 3.4,
+"prcp": 38.13,
+"snow": 11.0,
+"station": "USW00013988",
+"station_name": "KANSAS CITY DOWNTOWN AP, MO US",
+"tavg": 56.9
+},
+"knoxville": {
+"cdd": 1574,
+"hdd": 3528,
+"km": 17.3,
+"prcp": 51.93,
+"snow": 4.6,
+"station": "USW00013891",
+"station_name": "KNOXVILLE MCGHEE TYSON AP, TN US",
+"tavg": 59.6
+},
+"laredo": {
+"cdd": 4340,
+"hdd": 811,
+"km": 3.7,
+"prcp": 21.35,
+"snow": null,
+"station": "USW00012907",
+"station_name": "LAREDO AFB, TX US",
+"tavg": 74.6
+},
+"lasvegas": {
+"cdd": 3407,
+"hdd": 1992,
+"km": 6.7,
+"prcp": 3.99,
+"snow": null,
+"station": "USW00053123",
+"station_name": "LAS VEGAS AIR TERMINAL, NV US",
+"tavg": 68.8
+},
+"lexington": {
+"cdd": 1289,
+"hdd": 4432,
+"km": 13.4,
+"prcp": 49.84,
+"snow": 14.5,
+"station": "USW00093820",
+"station_name": "LEXINGTON BLUEGRASS AP, KY US",
+"tavg": 56.3
+},
+"lincoln": {
+"cdd": 1270,
+"hdd": 5856,
+"km": 8.6,
+"prcp": 29.34,
+"snow": 26.0,
+"station": "USW00014939",
+"station_name": "LINCOLN MUNI AP, NE US",
+"tavg": 52.3
+},
+"littlerock": {
+"cdd": 1989,
+"hdd": 3165,
+"km": 11.2,
+"prcp": 50.42,
+"snow": 3.8,
+"station": "USW00013963",
+"station_name": "LITTLE ROCK AP ADAMS FLD, AR US",
+"tavg": 61.7
+},
+"longbeach": {
+"cdd": 1166,
+"hdd": 1173,
+"km": 3.9,
+"prcp": 12.02,
+"snow": null,
+"station": "USW00023129",
+"station_name": "LONG BEACH DAUGHERTY FLD, CA US",
+"tavg": 64.9
+},
+"losangeles": {
+"cdd": 1296,
+"hdd": 1005,
+"km": null,
+"prcp": 14.25,
+"snow": null,
+"station": "USW00093134",
+"station_name": "LOS ANGELES DWTN USC CAMPUS, CA US",
+"tavg": 65.8
+},
+"louisville": {
+"cdd": 1543,
+"hdd": 4151,
+"km": 7.3,
+"prcp": 48.12,
+"snow": null,
+"station": "USW00013810",
+"station_name": "LOUISVILLE BOWMAN FLD, KY US",
+"tavg": 57.8
+},
+"lubbock": {
+"cdd": 1950,
+"hdd": 3243,
+"km": 12.4,
+"prcp": 18.33,
+"snow": 7.0,
+"station": "USW00023042",
+"station_name": "LUBBOCK, TX US",
+"tavg": 61.4
+},
+"macon": {
+"cdd": 2326,
+"hdd": 2146,
+"km": 13.9,
+"prcp": 46.91,
+"snow": null,
+"station": "USW00003813",
+"station_name": "MACON MIDDLE GA RGNL AP, GA US",
+"tavg": 65.4
+},
+"madison": {
+"cdd": 627,
+"hdd": 7138,
+"km": 9.0,
+"prcp": 37.13,
+"snow": 51.8,
+"station": "USW00014837",
+"station_name": "MADISON DANE RGNL AP, WI US",
+"tavg": 47.0
+},
+"mcallen": {
+"cdd": 4989,
+"hdd": 453,
+"km": 5.1,
+"prcp": 22.16,
+"snow": null,
+"station": "USW00012959",
+"station_name": "MCALLEN MILLER INTL AP, TX US",
+"tavg": 77.4
+},
+"mesa": {
+"cdd": 4765,
+"hdd": 874,
+"km": 26.8,
+"prcp": 7.22,
+"snow": null,
+"station": "USW00023183",
+"station_name": "PHOENIX SKY HARBOR INTL AP, AZ US",
+"tavg": 75.6
+},
+"miami": {
+"cdd": 4187,
+"hdd": 138,
+"km": 8.3,
+"prcp": 57.18,
+"snow": 0.0,
+"station": "USW00092811",
+"station_name": "MIAMI BEACH, FL US",
+"tavg": 76.1
+},
+"milwaukee": {
+"cdd": 780,
+"hdd": 6450,
+"km": 13.1,
+"prcp": 34.57,
+"snow": 48.7,
+"station": "USW00014839",
+"station_name": "MILWAUKEE MITCHELL AP, WI US",
+"tavg": 49.3
+},
+"minneapolis": {
+"cdd": 830,
+"hdd": 7399,
+"km": 9.1,
+"prcp": 31.62,
+"snow": 51.2,
+"station": "USW00014922",
+"station_name": "MINNEAPOLIS/ST PAUL AP, MN US",
+"tavg": 46.9
+},
+"modesto": {
+"cdd": 1624,
+"hdd": 2300,
+"km": 4.4,
+"prcp": 12.27,
+"snow": null,
+"station": "USW00023258",
+"station_name": "MODESTO CITY CO AP, CA US",
+"tavg": 63.1
+},
+"montgomery": {
+"cdd": 2540,
+"hdd": 2000,
+"km": 14.2,
+"prcp": 51.16,
+"snow": null,
+"station": "USW00013895",
+"station_name": "MONTGOMERY AP, AL US",
+"tavg": 66.4
+},
+"morenovalley": {
+"cdd": 1484,
+"hdd": 2096,
+"km": 4.8,
+"prcp": 10.65,
+"snow": null,
+"station": "USW00023119",
+"station_name": "MARCH AFB, CA US",
+"tavg": 63.3
+},
+"murfreesboro": {
+"cdd": 1873,
+"hdd": 3364,
+"km": 37.3,
+"prcp": 50.51,
+"snow": 4.7,
+"station": "USW00013897",
+"station_name": "NASHVILLE INTL AP, TN US",
+"tavg": 60.8
+},
+"nashville": {
+"cdd": 1873,
+"hdd": 3364,
+"km": 11.0,
+"prcp": 50.51,
+"snow": 4.7,
+"station": "USW00013897",
+"station_name": "NASHVILLE INTL AP, TN US",
+"tavg": 60.8
+},
+"neworleans": {
+"cdd": 3292,
+"hdd": 1134,
+"km": 9.1,
+"prcp": 60.12,
+"snow": 0.1,
+"station": "USW00053917",
+"station_name": "NEW ORLEANS LAKEFRONT AP, LA US",
+"tavg": 70.8
+},
+"newportnews": {
+"cdd": 1562,
+"hdd": 3536,
+"km": 6.7,
+"prcp": 45.14,
+"snow": null,
+"station": "USW00093741",
+"station_name": "NEWPORT NEWS INTL AP, VA US",
+"tavg": 59.5
+},
+"newyork": {
+"cdd": 1222,
+"hdd": 4553,
+"km": 13.2,
+"prcp": 49.52,
+"snow": 29.8,
+"station": "USW00094728",
+"station_name": "NEW YORK CNTRL PK TWR, NY US",
+"tavg": 55.8
+},
+"norfolk": {
+"cdd": 1822,
+"hdd": 3106,
+"km": 4.3,
+"prcp": 45.68,
+"snow": 3.0,
+"station": "USW00013750",
+"station_name": "NORFOLK NAS, VA US",
+"tavg": 61.4
+},
+"northlasvegas": {
+"cdd": 3407,
+"hdd": 1992,
+"km": 12.8,
+"prcp": 3.99,
+"snow": null,
+"station": "USW00053123",
+"station_name": "LAS VEGAS AIR TERMINAL, NV US",
+"tavg": 68.8
+},
+"oakland": {
+"cdd": 175,
+"hdd": 2690,
+"km": 5.8,
+"prcp": 18.68,
+"snow": null,
+"station": "USW00023230",
+"station_name": "OAKLAND METRO INTL AP, CA US",
+"tavg": 58.1
+},
+"oklahomacity": {
+"cdd": 1867,
+"hdd": 3615,
+"km": 11.8,
+"prcp": 36.39,
+"snow": 6.7,
+"station": "USW00013967",
+"station_name": "OKLAHOMA CITY WILL ROGERS AP, OK US",
+"tavg": 60.1
+},
+"omaha": {
+"cdd": 1054,
+"hdd": 6001,
+"km": 10.4,
+"prcp": null,
+"snow": null,
+"station": "USW00094918",
+"station_name": "OMAHA #1, NE US",
+"tavg": 51.3
+},
+"orlando": {
+"cdd": 3452,
+"hdd": 525,
+"km": 6.9,
+"prcp": 51.45,
+"snow": 0.0,
+"station": "USW00012815",
+"station_name": "ORLANDO INTL AP, FL US",
+"tavg": 73.0
+},
+"overlandpark": {
+"cdd": 1351,
+"hdd": 4926,
+"km": 6.1,
+"prcp": 37.74,
+"snow": null,
+"station": "USW00003967",
+"station_name": "OLATHE JOHNSON CO EXEC AP, KS US",
+"tavg": 55.1
+},
+"oxnard": {
+"cdd": 324,
+"hdd": 1692,
+"km": 0.3,
+"prcp": 12.93,
+"snow": null,
+"station": "USW00093110",
+"station_name": "OXNARD VENTURA CO AP, CA US",
+"tavg": 61.2
+},
+"palmdale": {
+"cdd": 1944,
+"hdd": 2778,
+"km": 4.7,
+"prcp": 5.9,
+"snow": null,
+"station": "USW00023182",
+"station_name": "PALMDALE AP, CA US",
+"tavg": 62.6
+},
+"pasadena": {
+"cdd": 1296,
+"hdd": 1005,
+"km": 20.8,
+"prcp": 14.25,
+"snow": null,
+"station": "USW00093134",
+"station_name": "LOS ANGELES DWTN USC CAMPUS, CA US",
+"tavg": 65.8
+},
+"paterson": {
+"cdd": 1255,
+"hdd": 4735,
+"km": 10.9,
+"prcp": 46.29,
+"snow": null,
+"station": "USW00094741",
+"station_name": "TETERBORO AP, NJ US",
+"tavg": 55.4
+},
+"peoria": {
+"cdd": 1157,
+"hdd": 5614,
+"km": 10.9,
+"prcp": 37.55,
+"snow": 26.2,
+"station": "USW00014842",
+"station_name": "PEORIA GTR PEORIA AP, IL US",
+"tavg": 52.7
+},
+"philadelphia": {
+"cdd": 1375,
+"hdd": 4466,
+"km": 12.8,
+"prcp": 45.0,
+"snow": null,
+"station": "USW00094732",
+"station_name": "PHILADELPHIA NE AP, PA US",
+"tavg": 56.4
+},
+"phoenix": {
+"cdd": 3963,
+"hdd": 1202,
+"km": 13.3,
+"prcp": 8.9,
+"snow": null,
+"station": "USW00003184",
+"station_name": "PHOENIX DEER VALLEY MUNI AP, AZ US",
+"tavg": 72.5
+},
+"pittsburgh": {
+"cdd": 826,
+"hdd": 5406,
+"km": 10.5,
+"prcp": 41.34,
+"snow": null,
+"station": "USW00014762",
+"station_name": "PITTSBURGH ALLEGHENY CO AP, PA US",
+"tavg": 52.4
+},
+"plano": {
+"cdd": 2531,
+"hdd": 2498,
+"km": 20.8,
+"prcp": 38.3,
+"snow": null,
+"station": "USW00053914",
+"station_name": "MCKINNEY MUNI AP, TX US",
+"tavg": 65.0
+},
+"portland": {
+"cdd": 508,
+"hdd": 4104,
+"km": 7.3,
+"prcp": 36.92,
+"snow": 4.2,
+"station": "USW00024229",
+"station_name": "PORTLAND INTL AP, OR US",
+"tavg": 55.1
+},
+"providence": {
+"cdd": 812,
+"hdd": 5478,
+"km": 11.2,
+"prcp": 47.54,
+"snow": 36.6,
+"station": "USW00014765",
+"station_name": "PROVIDENCE T F GREEN AP, RI US",
+"tavg": 52.1
+},
+"raleigh": {
+"cdd": 1804,
+"hdd": 3153,
+"km": 14.4,
+"prcp": 46.07,
+"snow": 5.2,
+"station": "USW00013722",
+"station_name": "RALEIGH DURHAM INTL AP, NC US",
+"tavg": 61.2
+},
+"ranchocucamonga": {
+"cdd": 1970,
+"hdd": 1293,
+"km": 8.6,
+"prcp": 11.64,
+"snow": null,
+"station": "USW00003102",
+"station_name": "ONTARIO INTL AP, CA US",
+"tavg": 66.8
+},
+"reno": {
+"cdd": 1038,
+"hdd": 4669,
+"km": 8.4,
+"prcp": 7.35,
+"snow": 20.9,
+"station": "USW00023185",
+"station_name": "RENO TAHOE INTL AP, NV US",
+"tavg": 55.0
+},
+"richmond": {
+"cdd": 1560,
+"hdd": 3736,
+"km": 13.6,
+"prcp": 45.5,
+"snow": 8.8,
+"station": "USW00013740",
+"station_name": "RICHMOND INTL AP, VA US",
+"tavg": 59.0
+},
+"riverside": {
+"cdd": 1854,
+"hdd": 1386,
+"km": 4.2,
+"prcp": 9.37,
+"snow": null,
+"station": "USW00003171",
+"station_name": "RIVERSIDE MUNI AP, CA US",
+"tavg": 66.2
+},
+"rochester": {
+"cdd": 677,
+"hdd": 6273,
+"km": 7.5,
+"prcp": 35.09,
+"snow": 102.0,
+"station": "USW00014768",
+"station_name": "ROCHESTER GTR INTL AP, NY US",
+"tavg": 49.5
+},
+"rockford": {
+"cdd": 838,
+"hdd": 6497,
+"km": 7.7,
+"prcp": 37.24,
+"snow": 37.1,
+"station": "USW00094822",
+"station_name": "ROCKFORD GTR ROCKFORD AP, IL US",
+"tavg": 49.4
+},
+"sacramento": {
+"cdd": 1576,
+"hdd": 2138,
+"km": 4.5,
+"prcp": 19.2,
+"snow": 0.0,
+"station": "USW00023271",
+"station_name": "SACRAMENTO 5 ESE, CA US",
+"tavg": 63.4
+},
+"saltlakecity": {
+"cdd": 1420,
+"hdd": 5154,
+"km": 2.9,
+"prcp": 15.52,
+"snow": 51.9,
+"station": "USW00024127",
+"station_name": "SALT LAKE CITY INTL AP, UT US",
+"tavg": 54.7
+},
+"sanantonio": {
+"cdd": 3148,
+"hdd": 1438,
+"km": 9.9,
+"prcp": 32.38,
+"snow": 0.2,
+"station": "USW00012921",
+"station_name": "SAN ANTONIO INTL AP, TX US",
+"tavg": 69.6
+},
+"sandiego": {
+"cdd": 1019,
+"hdd": 1320,
+"km": 0.2,
+"prcp": 11.02,
+"snow": null,
+"station": "USW00003131",
+"station_name": "SAN DIEGO MONTGOMERY FLD, CA US",
+"tavg": 64.1
+},
+"sanfrancisco": {
+"cdd": 121,
+"hdd": 2781,
+"km": 53.4,
+"prcp": 22.89,
+"snow": null,
+"station": "USW00023272",
+"station_name": "SAN FRANCISCO DWTN, CA US",
+"tavg": 57.7
+},
+"sanjose": {
+"cdd": 624,
+"hdd": 2184,
+"km": 12.0,
+"prcp": 13.48,
+"snow": null,
+"station": "USW00023293",
+"station_name": "SAN JOSE, CA US",
+"tavg": 60.7
+},
+"santaana": {
+"cdd": 1075,
+"hdd": 1092,
+"km": 6.5,
+"prcp": 11.18,
+"snow": null,
+"station": "USW00093184",
+"station_name": "SANTA ANA JOHN WAYNE AP, CA US",
+"tavg": 64.9
+},
+"santaclarita": {
+"cdd": 1837,
+"hdd": 1226,
+"km": 22.7,
+"prcp": 13.42,
+"snow": null,
+"station": "USW00023130",
+"station_name": "VAN NUYS AP, CA US",
+"tavg": 66.6
+},
+"santarosa": {
+"cdd": 410,
+"hdd": 2904,
+"km": 11.2,
+"prcp": 33.78,
+"snow": null,
+"station": "USW00023213",
+"station_name": "SANTA ROSA SONOMA CO AP, CA US",
+"tavg": 58.1
+},
+"savannah": {
+"cdd": 2596,
+"hdd": 1675,
+"km": 12.6,
+"prcp": 48.12,
+"snow": 0.0,
+"station": "USW00003822",
+"station_name": "SAVANNAH INTL AP, GA US",
+"tavg": 67.4
+},
+"scottsdale": {
+"cdd": 4170,
+"hdd": 1139,
+"km": 9.8,
+"prcp": 8.73,
+"snow": null,
+"station": "USW00003192",
+"station_name": "SCOTTSDALE MUNI AP, AZ US",
+"tavg": 73.2
+},
+"seattle": {
+"cdd": 282,
+"hdd": 4340,
+"km": 8.7,
+"prcp": 36.49,
+"snow": null,
+"station": "USW00024234",
+"station_name": "SEATTLE BOEING FLD, WA US",
+"tavg": 53.8
+},
+"shreveport": {
+"cdd": 2676,
+"hdd": 2068,
+"km": 5.0,
+"prcp": 51.43,
+"snow": 0.9,
+"station": "USW00013957",
+"station_name": "SHREVEPORT, LA US",
+"tavg": 66.6
+},
+"siouxfalls": {
+"cdd": 847,
+"hdd": 7248,
+"km": 5.2,
+"prcp": 27.85,
+"snow": 45.3,
+"station": "USW00014944",
+"station_name": "SIOUX FALLS, SD US",
+"tavg": 47.3
+},
+"spokane": {
+"cdd": 507,
+"hdd": 6019,
+"km": 8.6,
+"prcp": 17.36,
+"snow": null,
+"station": "USW00094176",
+"station_name": "SPOKANE FELTS FLD, WA US",
+"tavg": 49.8
+},
+"springfieldIL": {
+"cdd": 1252,
+"hdd": 5215,
+"km": 6.9,
+"prcp": 38.04,
+"snow": 21.8,
+"station": "USW00093822",
+"station_name": "SPRINGFIELD CAPITAL AP, IL US",
+"tavg": 54.0
+},
+"springfieldMO": {
+"cdd": 1400,
+"hdd": 4505,
+"km": 0.9,
+"prcp": 46.51,
+"snow": null,
+"station": "USW00093981",
+"station_name": "SPRINGFIELD WBO, MO US",
+"tavg": 56.4
+},
+"stlouis": {
+"cdd": 1476,
+"hdd": 4547,
+"km": 11.5,
+"prcp": 40.84,
+"snow": null,
+"station": "USW00003960",
+"station_name": "CAHOKIA ST LOUIS AP, IL US",
+"tavg": 56.5
+},
+"stockton": {
+"cdd": 1566,
+"hdd": 2260,
+"km": 12.0,
+"prcp": 13.45,
+"snow": null,
+"station": "USW00023237",
+"station_name": "STOCKTON METRO AP, CA US",
+"tavg": 63.0
+},
+"stpaul": {
+"cdd": 724,
+"hdd": 7443,
+"km": 4.2,
+"prcp": 29.2,
+"snow": null,
+"station": "USW00014927",
+"station_name": "ST PAUL DOWNTOWN AP, MN US",
+"tavg": 46.5
+},
+"stpetersburg": {
+"cdd": 3912,
+"hdd": 357,
+"km": 1.9,
+"prcp": 46.65,
+"snow": null,
+"station": "USW00092806",
+"station_name": "ST PETERSBURG AP, FL US",
+"tavg": 74.7
+},
+"syracuse": {
+"cdd": 619,
+"hdd": 6588,
+"km": 8.4,
+"prcp": 39.88,
+"snow": 127.8,
+"station": "USW00014771",
+"station_name": "SYRACUSE HANCOCK INTL AP, NY US",
+"tavg": 48.5
+},
+"tacoma": {
+"cdd": 132,
+"hdd": 4884,
+"km": 8.9,
+"prcp": 42.02,
+"snow": null,
+"station": "USW00094274",
+"station_name": "TACOMA NARROWS AP, WA US",
+"tavg": 51.9
+},
+"tallahassee": {
+"cdd": 2758,
+"hdd": 1473,
+"km": 9.6,
+"prcp": 58.81,
+"snow": null,
+"station": "USW00093805",
+"station_name": "TALLAHASSEE, FL US",
+"tavg": 68.4
+},
+"tampa": {
+"cdd": 3928,
+"hdd": 434,
+"km": 6.0,
+"prcp": 49.48,
+"snow": 0.0,
+"station": "USW00012842",
+"station_name": "TAMPA INTL AP, FL US",
+"tavg": 74.5
+},
+"tempe": {
+"cdd": 4765,
+"hdd": 874,
+"km": 8.0,
+"prcp": 7.22,
+"snow": null,
+"station": "USW00023183",
+"station_name": "PHOENIX SKY HARBOR INTL AP, AZ US",
+"tavg": 75.6
+},
+"toledo": {
+"cdd": 930,
+"hdd": 5839,
+"km": 14.2,
+"prcp": 32.36,
+"snow": null,
+"station": "USW00004848",
+"station_name": "TOLEDO METCALF FLD, OH US",
+"tavg": 51.4
+},
+"torrance": {
+"cdd": 653,
+"hdd": 1378,
+"km": 3.5,
+"prcp": 13.64,
+"snow": 0.0,
+"station": "USW00003122",
+"station_name": "TORRANCE AP, CA US",
+"tavg": 63.0
+},
+"tucson": {
+"cdd": 3424,
+"hdd": 1332,
+"km": 8.4,
+"prcp": 10.61,
+"snow": 0.1,
+"station": "USW00023160",
+"station_name": "TUCSON INTL AP, AZ US",
+"tavg": 70.6
+},
+"tulsa": {
+"cdd": 2128,
+"hdd": 3451,
+"km": 8.1,
+"prcp": 40.96,
+"snow": 8.7,
+"station": "USW00013968",
+"station_name": "TULSA INTL AP, OK US",
+"tavg": 61.3
+},
+"vancouver": {
+"cdd": 508,
+"hdd": 4104,
+"km": 4.7,
+"prcp": 36.92,
+"snow": 4.2,
+"station": "USW00024229",
+"station_name": "PORTLAND INTL AP, OR US",
+"tavg": 55.1
+},
+"virginiabeach": {
+"cdd": 1546,
+"hdd": 3424,
+"km": 4.2,
+"prcp": 46.62,
+"snow": 3.4,
+"station": "USW00013769",
+"station_name": "OCEANA NAS, VA US",
+"tavg": 59.8
+},
+"washington": {
+"cdd": 1738,
+"hdd": 3769,
+"km": 6.5,
+"prcp": 41.82,
+"snow": 13.7,
+"station": "USW00013743",
+"station_name": "WASHINGTON REAGAN AP, VA US",
+"tavg": 59.3
+},
+"wichita": {
+"cdd": 1774,
+"hdd": 4414,
+"km": 9.5,
+"prcp": 34.31,
+"snow": 12.7,
+"station": "USW00003928",
+"station_name": "WICHITA, KS US",
+"tavg": 57.7
+},
+"winstonsalem": {
+"cdd": 1513,
+"hdd": 3497,
+"km": 4.7,
+"prcp": 43.2,
+"snow": null,
+"station": "USW00093807",
+"station_name": "WINSTON SALEM RYNLDS AP, NC US",
+"tavg": 59.5
+},
+"worcester": {
+"cdd": 502,
+"hdd": 6622,
+"km": 5.4,
+"prcp": 48.26,
+"snow": 72.9,
+"station": "USW00094746",
+"station_name": "WORCESTER RGNL AP, MA US",
+"tavg": 48.1
+},
+"yonkers": {
+"cdd": 1408,
+"hdd": 4376,
+"km": 18.5,
+"prcp": 45.28,
+"snow": 29.8,
+"station": "USW00014732",
+"station_name": "NEW YORK LAGUARDIA AP, NY US",
+"tavg": 56.8
+}
+}

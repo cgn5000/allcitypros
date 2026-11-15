@@ -18,3 +18,10 @@
 .g-article .faq-list { display: grid; gap: 10px; margin-top: 10px; }
 .g-article .faq-a { padding: 0 18px 14px; }
 @media (max-width: 600px) { .g-table td:last-child { white-space: normal; } }
+.g-src { font-size: 0.78rem !important; color: var(--gray-400) !important; margin: -8px 0 18px; line-height: 1.5 !important; }
+.g-src a, .g-facts a, .g-wide a { color: var(--navy); text-decoration: underline; }
+.g-facts th { width: 46%; font-weight: 600; background: var(--gray-50); color: var(--gray-800); vertical-align: top; }
+.g-facts td:last-child, .g-wide td:last-child { white-space: normal; }
+.g-wide { font-size: 0.9rem; }
+.g-wide td { vertical-align: top; }
+@media (max-width: 600px) { .g-facts th { width: auto; } .g-wide { display: block; overflow-x: auto; } }

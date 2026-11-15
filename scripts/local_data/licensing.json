@@ -1,0 +1,2440 @@
+{
+ "AK": {
+  "electrical": {
+   "agency": "Alaska Department of Labor and Workforce Development, Mechanical Inspection Section",
+   "agency_url": "https://labor.alaska.gov/lss/mihome.htm",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://labor.alaska.gov/lss/mihome.htm",
+   "summary": "A state-issued certificate of fitness from the Department of Labor and Workforce Development is required to perform electrical construction work in all parts of Alaska; electrical businesses also need a construction contractor registration. Homeowners can confirm an electrician's certificate with the Mechanical Inspection Section.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Alaska Division of Corporations, Business and Professional Licensing (Construction Contractors Program)",
+   "agency_url": "https://www.commerce.alaska.gov/web/cbpl/ProfessionalLicensing/ConstructionContractors/HiringaContractor.aspx",
+   "insurance_bond": "Bond of $25,000 (general contractor), $20,000 (general contractor with residential endorsement doing exclusively residential work), $10,000 (mechanical or specialty) or $5,000 (handyman). Public liability and property damage insurance of at least $20,000 for property damage, $50,000 for injury to one person and $100,000 for injury to more than one person.",
+   "level": "state",
+   "lookup_url": "https://www.commerce.alaska.gov/cbp/main/search/professional",
+   "source_url": "https://www.commerce.alaska.gov/web/Portals/5/pub/con4954.pdf",
+   "summary": "Alaska requires construction contractors to hold a state Certificate of Registration, and general contractors who build or alter 25% or more of the value of a one- to four-unit home must also hold a Residential Contractor Endorsement. Handyman registrants are limited to projects of $10,000 or less including labor and materials.",
+   "threshold": "Handyman contractors may only bid or work on projects with a total contract cost of not more than $10,000, including labor and materials; a Residential Contractor Endorsement is required to undertake 25% or more of the value of a privately owned residential structure of one to four units.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Alaska Division of Corporations, Business and Professional Licensing (Construction Contractors Program)",
+   "agency_url": "https://www.commerce.alaska.gov/web/cbpl/ProfessionalLicensing/ConstructionContractors/HiringaContractor.aspx",
+   "insurance_bond": "$10,000 surety bond for mechanical or specialty contractors. Public liability and property damage insurance of at least $20,000 for property damage, $50,000 for injury to one person and $100,000 for injury to more than one person.",
+   "level": "state",
+   "lookup_url": "https://www.commerce.alaska.gov/cbp/main/search/professional",
+   "source_url": "https://www.commerce.alaska.gov/web/Portals/5/pub/con4954.pdf",
+   "summary": "Alaska requires mechanical contractors to hold a state construction contractor registration, backed by a $10,000 surety bond and liability insurance.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Alaska Bar Association",
+   "agency_url": "https://alaskabar.org/for-lawyers/member-directories/",
+   "level": "state",
+   "lookup_url": "https://alaskabar.org/for-lawyers/member-directories/",
+   "source_url": "https://alaskabar.org/for-lawyers/member-directories/",
+   "summary": "Lawyers practicing in Alaska must be members of the Alaska Bar Association. The Bar's online Lawyer Directory lets the public search for Alaska Bar members.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Alaska Department of Labor and Workforce Development, Mechanical Inspection Section",
+   "agency_url": "https://labor.alaska.gov/lss/mi-license-req.html",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://labor.alaska.gov/lss/forms/Hiring_a_contractor.pdf",
+   "summary": "Alaska plumbers must hold a state certificate of fitness (journeyman or trainee) issued by the Department of Labor and Workforce Development; plumbing businesses also need a construction contractor registration. The state's homeowner guide advises checking with the Mechanical Inspection Section that a plumber holds an appropriate certificate of fitness.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Alaska Division of Corporations, Business and Professional Licensing (Construction Contractors Program)",
+   "agency_url": "https://www.commerce.alaska.gov/web/cbpl/ProfessionalLicensing/ConstructionContractors/HiringaContractor.aspx",
+   "insurance_bond": "Bond of $25,000 (general contractor), $10,000 (specialty contractor) or $5,000 (handyman). Public liability and property damage insurance of at least $20,000 for property damage, $50,000 for injury to one person and $100,000 for injury to more than one person.",
+   "level": "state",
+   "lookup_url": "https://www.commerce.alaska.gov/cbp/main/search/professional",
+   "source_url": "https://labor.alaska.gov/lss/forms/Hiring_a_contractor.pdf",
+   "summary": "Roofing contractors in Alaska fall under the state construction contractor registration, as a general contractor, a specialty contractor (up to three trades) or a handyman for jobs of $10,000 or less. Each type requires a surety bond and liability insurance.",
+   "verified": "fetched"
+  }
+ },
+ "AL": {
+  "electrical": {
+   "agency": "Alabama Board of Electrical Contractors",
+   "agency_url": "https://aecb.alabama.gov/",
+   "level": "state",
+   "lookup_url": "https://alecb-search.kalmservices.net/",
+   "source_url": "https://aecb.alabama.gov/public-records",
+   "summary": "Alabama's Board of Electrical Contractors licenses electrical contractors and journeyman electricians. The board's Public Records page links to its licensee search.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Alabama Home Builders Licensure Board (HBLB)",
+   "agency_url": "https://hblb.alabama.gov/",
+   "insurance_bond": "Builder must give the homeowner a signed written disclosure of whether it has and maintains liability insurance before construction begins.",
+   "level": "state",
+   "lookup_url": "https://alhobv7prod.glsuite.us/GLSuiteWeb/Clients/ALHOB/Public/LicenseeSearch.aspx",
+   "source_url": "https://hblb.alabama.gov/law/",
+   "summary": "Alabama requires a residential home builder license from the HBLB for residential construction or remodeling when the cost of the job exceeds $10,000. Before work starts, the builder must disclose in writing whether it carries liability insurance. Commercial contractors are licensed separately by the Alabama Licensing Board for General Contractors.",
+   "threshold": "residential work when the cost of the undertaking exceeds $10,000",
+   "verified": "search"
+  },
+  "hvac": {
+   "agency": "Alabama Board of Heating, Air Conditioning & Refrigeration Contractors",
+   "agency_url": "https://hacr.alabama.gov/consumers/",
+   "level": "state",
+   "lookup_url": "https://hacr.igovsolution.net/online/Lookups/Individual_Lookup.aspx",
+   "source_url": "https://hacr.alabama.gov/consumers/",
+   "summary": "Alabama's Board of Heating, Air Conditioning & Refrigeration Contractors licenses HVAC contractors and handles complaints about residential and commercial HVAC work. Its consumer page links to an online lookup for finding a licensed contractor.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Alabama State Bar",
+   "agency_url": "https://www.alabar.org/for-the-public/",
+   "level": "state",
+   "lookup_url": "https://members.alabar.org/Member_Portal/Member_Portal/Member-Search.aspx",
+   "source_url": "https://www.alabar.org/for-the-public/",
+   "summary": "Lawyers in Alabama are members of the Alabama State Bar. The Bar's public Find a Member search lets you look up attorneys by name and location.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Alabama Plumbers and Gas Fitters Examining Board",
+   "agency_url": "https://pgfb.alabama.gov/",
+   "level": "state",
+   "lookup_url": "https://alpgfb.igovsolution.net/online/Lookups/Individual.aspx",
+   "source_url": "https://pgfb.alabama.gov/",
+   "summary": "Alabama's Plumbers and Gas Fitters Examining Board licenses plumbers and gas fitters, including journeyman and master levels. You can check an individual's license with the board's online lookup.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Alabama Home Builders Licensure Board (HBLB)",
+   "agency_url": "https://hblb.alabama.gov/law/",
+   "level": "state",
+   "lookup_url": "https://alhobv7prod.glsuite.us/GLSuiteWeb/Clients/ALHOB/Public/LicenseeSearch.aspx",
+   "source_url": "https://hblb.alabama.gov/law/",
+   "summary": "Alabama treats residential roofers as residential home builders under the Home Builders Licensure law, so a residential roofer needs an HBLB license when the cost of the job exceeds $2,500.",
+   "threshold": "residential roofing when the cost of the undertaking exceeds $2,500",
+   "verified": "search"
+  }
+ },
+ "AR": {
+  "electrical": {
+   "agency": "Arkansas Department of Labor and Licensing, Board of Electrical Examiners",
+   "agency_url": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+   "level": "state",
+   "lookup_url": "https://labor.arkansas.gov/licensing/board-of-electrical-examiners/state-board-of-electrical-examiners-roster/",
+   "source_url": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+   "summary": "Arkansas licenses electricians through the Board of Electrical Examiners, with classes including master, journeyman, residential master, and residential journeyman electrician. The board also registers electrical apprentices.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Arkansas Contractors Licensing Board (Arkansas Department of Labor and Licensing)",
+   "agency_url": "https://labor.arkansas.gov/licensing/arkansas-contractors-licensing-board/apply-for-contractors-license-registration/",
+   "level": "state",
+   "lookup_url": "https://labor.arkansas.gov/licensing/arkansas-contractors-licensing-board/find-a-licensed-contractor/",
+   "source_url": "https://labor.arkansas.gov/licensing/arkansas-contractors-licensing-board/apply-for-contractors-license-registration/",
+   "summary": "Arkansas requires a Residential Builders License or Home Improvement License from the Contractors Licensing Board for residential projects over $2,000, and a Commercial License for commercial work of $50,000 or more.",
+   "threshold": "Residential building and home improvement: projects of more than $2,000 including labor and material. Commercial: work of $50,000 or more including labor and materials.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Arkansas Department of Labor and Licensing, HVACR Licensing Board",
+   "agency_url": "https://labor.arkansas.gov/labor/code-enforcement/hvac-r/",
+   "level": "state",
+   "lookup_url": "https://labor.arkansas.gov/licensing/hvac-licensing-board/hvac-roster/",
+   "source_url": "https://labor.arkansas.gov/labor/code-enforcement/hvac-r/",
+   "summary": "Arkansas licenses HVACR contractors through the Department of Labor and Licensing, with contractor license classes A, B, D, and E plus registrant cards for workers employed by a license holder. Contractor applicants must carry general liability insurance.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Arkansas Judiciary (Arkansas Supreme Court)",
+   "agency_url": "https://www.arcourts.gov/administration/professional-programs",
+   "level": "state",
+   "lookup_url": "https://attorneyinfo.aoc.arkansas.gov/info/attorney/attorneysearch.aspx",
+   "source_url": "https://attorneyinfo.aoc.arkansas.gov/info/attorney/attorneysearch.aspx",
+   "summary": "The Arkansas Judiciary offers an online Attorney Search by name or bar number. The site notes it is not the official record; the Clerk of the Court keeps the official record and can confirm an attorney's status.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Arkansas Department of Health, Plumbing and Natural Gas Section",
+   "agency_url": "https://healthy.arkansas.gov/programs-services/licensing-military-member-licensure-permits-plan-reviews/plumbing-natural-gas-health-code/",
+   "level": "state",
+   "lookup_url": "https://adhplumbinghvacrlookup.arkansas.gov/ProtectiveHealthCodesLicensees/Show-ProtectiveHealthCodesLicensees-Table.aspx",
+   "source_url": "https://healthy.arkansas.gov/programs-services/licensing-military-member-licensure-permits-plan-reviews/plumbing-natural-gas-health-code/",
+   "summary": "The Arkansas Department of Health licenses plumbers (including master and journeyman), plumbing inspectors, and gas fitters, and offers a public plumbing license search.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Arkansas Contractors Licensing Board (Arkansas Department of Labor and Licensing)",
+   "agency_url": "https://labor.arkansas.gov/licensing/arkansas-contractors-licensing-board/apply-for-contractors-license-registration/",
+   "level": "state",
+   "lookup_url": "https://labor.arkansas.gov/licensing/arkansas-contractors-licensing-board/find-a-licensed-contractor/",
+   "source_url": "https://labor.arkansas.gov/licensing/arkansas-contractors-licensing-board/apply-for-contractors-license-registration/",
+   "summary": "Arkansas requires residential roofers to hold a Residential Roofer Registration from the Contractors Licensing Board for roofing jobs over $2,000.",
+   "threshold": "More than $2,000, including labor and material.",
+   "verified": "fetched"
+  }
+ },
+ "AZ": {
+  "electrical": {
+   "agency": "Arizona Registrar of Contractors (ROC)",
+   "agency_url": "https://roc.az.gov/license-classifications",
+   "level": "state",
+   "lookup_url": "https://azroc.my.site.com/AZRoc/s/contractor-search",
+   "source_url": "https://www.azleg.gov/ars/32/01121.htm",
+   "summary": "Arizona licenses electrical contractors through the Registrar of Contractors (residential classification R-11, Electrical). A license is required unless the job falls under the state's under-$1,000 handyman exemption.",
+   "threshold": "Unlicensed handyman work is allowed only for casual or minor jobs where the total contract price, including labor, materials, and all other items, is less than $1,000, and only if no building permit is required and the job is not part of a larger project; unlicensed workers must state \"not a licensed contractor\" in advertising. The exemption does not cover fire safety work or connections to natural gas, propane, or other fuel supplies",
+   "verified": "search"
+  },
+  "general_contracting": {
+   "agency": "Arizona Registrar of Contractors (ROC)",
+   "agency_url": "https://roc.az.gov/license-classifications",
+   "level": "state",
+   "lookup_url": "https://azroc.my.site.com/AZRoc/s/contractor-search",
+   "source_url": "https://www.azleg.gov/ars/32/01121.htm",
+   "summary": "Arizona licenses general residential contractors through the Registrar of Contractors (residential classification B, General Residential). A license is required unless the job falls under the state's under-$1,000 handyman exemption.",
+   "threshold": "Unlicensed handyman work is allowed only for casual or minor jobs where the total contract price, including labor, materials, and all other items, is less than $1,000, and only if no building permit is required and the job is not part of a larger project; unlicensed workers must state \"not a licensed contractor\" in advertising. The exemption does not cover fire safety work or connections to natural gas, propane, or other fuel supplies",
+   "verified": "search"
+  },
+  "hvac": {
+   "agency": "Arizona Registrar of Contractors (ROC)",
+   "agency_url": "https://roc.az.gov/license-classifications",
+   "level": "state",
+   "lookup_url": "https://azroc.my.site.com/AZRoc/s/contractor-search",
+   "source_url": "https://www.azleg.gov/ars/32/01121.htm",
+   "summary": "Arizona licenses air conditioning and refrigeration contractors through the Registrar of Contractors (residential classification R-39, Air Conditioning and Refrigeration). A license is required unless the job falls under the state's under-$1,000 handyman exemption.",
+   "threshold": "Unlicensed handyman work is allowed only for casual or minor jobs where the total contract price, including labor, materials, and all other items, is less than $1,000, and only if no building permit is required and the job is not part of a larger project; unlicensed workers must state \"not a licensed contractor\" in advertising. The exemption does not cover fire safety work or connections to natural gas, propane, or other fuel supplies",
+   "verified": "search"
+  },
+  "legal": {
+   "agency": "State Bar of Arizona",
+   "agency_url": "https://www.azbar.org/",
+   "level": "state",
+   "lookup_url": "https://www.azbar.org/for-legal-professionals/practice-tools-management/member-directory/",
+   "source_url": "https://www.azbar.org/for-legal-professionals/practice-tools-management/member-directory/",
+   "summary": "Arizona lawyers are members of the State Bar of Arizona. Its public member directory lets anyone search for a lawyer by name or by legal need and location.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Arizona Registrar of Contractors (ROC)",
+   "agency_url": "https://roc.az.gov/license-classifications",
+   "level": "state",
+   "lookup_url": "https://azroc.my.site.com/AZRoc/s/contractor-search",
+   "source_url": "https://www.azleg.gov/ars/32/01121.htm",
+   "summary": "Arizona licenses plumbing contractors through the Registrar of Contractors (residential classification R-37, Plumbing). A license is required unless the job falls under the state's under-$1,000 handyman exemption.",
+   "threshold": "Unlicensed handyman work is allowed only for casual or minor jobs where the total contract price, including labor, materials, and all other items, is less than $1,000, and only if no building permit is required and the job is not part of a larger project; unlicensed workers must state \"not a licensed contractor\" in advertising. The exemption does not cover fire safety work or connections to natural gas, propane, or other fuel supplies",
+   "verified": "search"
+  },
+  "roofing": {
+   "agency": "Arizona Registrar of Contractors (ROC)",
+   "agency_url": "https://roc.az.gov/license-classifications",
+   "level": "state",
+   "lookup_url": "https://azroc.my.site.com/AZRoc/s/contractor-search",
+   "source_url": "https://www.azleg.gov/ars/32/01121.htm",
+   "summary": "Arizona licenses roofing contractors through the Registrar of Contractors (residential classification R-42, Roofing). A license is required unless the job falls under the state's under-$1,000 handyman exemption.",
+   "threshold": "Unlicensed handyman work is allowed only for casual or minor jobs where the total contract price, including labor, materials, and all other items, is less than $1,000, and only if no building permit is required and the job is not part of a larger project; unlicensed workers must state \"not a licensed contractor\" in advertising. The exemption does not cover fire safety work or connections to natural gas, propane, or other fuel supplies",
+   "verified": "search"
+  }
+ },
+ "CA": {
+  "electrical": {
+   "agency": "Contractors State License Board (CSLB)",
+   "agency_url": "https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/",
+   "insurance_bond": "$25,000 contractor's bond required to issue, reactivate, or renew an active license",
+   "level": "state",
+   "lookup_url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+   "source_url": "https://www.cslb.ca.gov/Resources/PressReleases/2024/AB2622.FINAL.pdf",
+   "summary": "California licenses electrical contractors through the CSLB under the C-10 (Electrical) classification. Since January 1, 2025, a license in the appropriate classification is required for jobs of $1,000 or more, and for smaller jobs that need a building permit or use hired workers.",
+   "threshold": "License required when labor, materials, and all other costs total $1,000 or more, or when the job requires a permit or the person hires workers (effective January 1, 2025)",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Contractors State License Board (CSLB)",
+   "agency_url": "https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/",
+   "insurance_bond": "$25,000 contractor's bond required to issue, reactivate, or renew an active license",
+   "level": "state",
+   "lookup_url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+   "source_url": "https://www.cslb.ca.gov/Resources/PressReleases/2024/AB2622.FINAL.pdf",
+   "summary": "California licenses general building contractors through the CSLB under the B (General Building) classification. Since January 1, 2025, a license in the appropriate classification is required for jobs of $1,000 or more, and for smaller jobs that need a building permit or use hired workers.",
+   "threshold": "License required when labor, materials, and all other costs total $1,000 or more, or when the job requires a permit or the person hires workers (effective January 1, 2025)",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Contractors State License Board (CSLB)",
+   "agency_url": "https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/",
+   "insurance_bond": "$25,000 contractor's bond required to issue, reactivate, or renew an active license",
+   "level": "state",
+   "lookup_url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+   "source_url": "https://www.cslb.ca.gov/Resources/PressReleases/2024/AB2622.FINAL.pdf",
+   "summary": "California licenses heating and air-conditioning contractors through the CSLB under the C-20 (Warm-Air Heating, Ventilating and Air-Conditioning) classification. Since January 1, 2025, a license in the appropriate classification is required for jobs of $1,000 or more, and for smaller jobs that need a building permit or use hired workers.",
+   "threshold": "License required when labor, materials, and all other costs total $1,000 or more, or when the job requires a permit or the person hires workers (effective January 1, 2025)",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "The State Bar of California",
+   "agency_url": "https://www.calbar.ca.gov/",
+   "level": "state",
+   "lookup_url": "https://apps.calbar.ca.gov/attorney/LicenseeSearch/QuickSearch",
+   "source_url": "https://www.calbar.ca.gov/",
+   "summary": "The State Bar of California licenses, regulates, and disciplines attorneys. Its online attorney search shows a lawyer's license status.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Contractors State License Board (CSLB)",
+   "agency_url": "https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/",
+   "insurance_bond": "$25,000 contractor's bond required to issue, reactivate, or renew an active license",
+   "level": "state",
+   "lookup_url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+   "source_url": "https://www.cslb.ca.gov/Resources/PressReleases/2024/AB2622.FINAL.pdf",
+   "summary": "California licenses plumbing contractors through the CSLB under the C-36 (Plumbing) classification. Since January 1, 2025, a license in the appropriate classification is required for jobs of $1,000 or more, and for smaller jobs that need a building permit or use hired workers.",
+   "threshold": "License required when labor, materials, and all other costs total $1,000 or more, or when the job requires a permit or the person hires workers (effective January 1, 2025)",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Contractors State License Board (CSLB)",
+   "agency_url": "https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/",
+   "insurance_bond": "$25,000 contractor's bond required to issue, reactivate, or renew an active license",
+   "level": "state",
+   "lookup_url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+   "source_url": "https://www.cslb.ca.gov/Resources/PressReleases/2024/AB2622.FINAL.pdf",
+   "summary": "California licenses roofing contractors through the CSLB under the C-39 (Roofing) classification. Since January 1, 2025, a license in the appropriate classification is required for jobs of $1,000 or more, and for smaller jobs that need a building permit or use hired workers.",
+   "threshold": "License required when labor, materials, and all other costs total $1,000 or more, or when the job requires a permit or the person hires workers (effective January 1, 2025)",
+   "verified": "fetched"
+  }
+ },
+ "CO": {
+  "electrical": {
+   "agency": "Colorado State Electrical Board (Division of Professions and Occupations, DORA)",
+   "agency_url": "https://dpo.colorado.gov/Electrical",
+   "level": "state",
+   "lookup_url": "https://apps.colorado.gov/dora/licensing/Lookup/LicenseLookup.aspx",
+   "source_url": "https://dpo.colorado.gov/Electrical",
+   "summary": "The Colorado State Electrical Board, part of the Department of Regulatory Agencies, licenses residential wiremen, journeyman electricians and master electricians. Homeowners can verify a license with DORA's online license lookup.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Colorado does not license general contractors at the state level. Many Colorado cities and counties issue their own contractor licenses, so homeowners should check with the local building department where the work will be done.",
+   "verified": "search"
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Colorado does not issue a statewide HVAC contractor license. Mechanical/HVAC contractor licensing is handled by cities and counties, so homeowners should check with their city or county building department.",
+   "verified": "search"
+  },
+  "legal": {
+   "agency": "Colorado Supreme Court, Office of Attorney Regulation Counsel",
+   "agency_url": "https://www.coloradolegalregulation.com/Search/AttSearch.asp",
+   "level": "state",
+   "lookup_url": "https://www.coloradolegalregulation.com/Search/AttSearch.asp",
+   "source_url": "https://www.coloradolegalregulation.com/Search/AttSearch.asp",
+   "summary": "Attorneys in Colorado are registered and regulated by the Office of Attorney Regulation Counsel, an independent office of the Colorado Supreme Court. Its online search shows an attorney's registration status and disciplinary history.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Colorado State Plumbing Board (Division of Professions and Occupations, DORA)",
+   "agency_url": "https://dpo.colorado.gov/Plumbing",
+   "level": "state",
+   "lookup_url": "https://apps.colorado.gov/dora/licensing/Lookup/LicenseLookup.aspx",
+   "source_url": "https://dpo.colorado.gov/Plumbing",
+   "summary": "The Colorado State Plumbing Board, part of the Department of Regulatory Agencies, licenses residential, journeyworker and master plumbers. Homeowners can verify a plumber's license with DORA's online license lookup.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Colorado does not issue a statewide roofing contractor license. Roofing contractor licensing, where required, is handled by cities and counties, so homeowners should check with their city or county building department.",
+   "verified": "search"
+  }
+ },
+ "DC": {
+  "electrical": {
+   "agency": "DC Department of Licensing and Consumer Protection (DLCP), Board of Industrial Trades",
+   "agency_url": "https://dlcp.dc.gov/node/1619081",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://dlcp.dc.gov/node/1619081",
+   "summary": "The District of Columbia licenses electricians through the Board of Industrial Trades at DLCP. DLCP's online occupational license verification requires a free Access DC account.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "DC Department of Licensing and Consumer Protection (DLCP)",
+   "agency_url": "https://dlcp.dc.gov/node/1832226",
+   "insurance_bond": "$25,000 surety bond and a valid Certificate of Liability Insurance required for the HIC license.",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://dlcp.dc.gov/node/1832226",
+   "summary": "Home improvement contractors in DC must hold a Home Improvement Contractor (HIC) license from DLCP, along with a Home Improvement Salesperson license or a designated salesperson. Applicants must post a surety bond and show liability insurance.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "DC Department of Licensing and Consumer Protection (DLCP), Board of Industrial Trades",
+   "agency_url": "https://dlcp.dc.gov/node/1619081",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://dlcp.dc.gov/node/1619081",
+   "summary": "The District of Columbia licenses refrigeration and air conditioning mechanics through the Board of Industrial Trades at DLCP. DLCP's online occupational license verification requires a free Access DC account.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "District of Columbia Bar",
+   "agency_url": "https://www.dcbar.org/About/FAQs",
+   "level": "state",
+   "lookup_url": "https://my.dcbar.org/memberdirectory",
+   "source_url": "https://www.dcbar.org/About/FAQs",
+   "summary": "Attorneys must be licensed by the D.C. Bar to practice law in the District of Columbia. The Bar's Find a Member search shows information about individual members.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "DC Department of Licensing and Consumer Protection (DLCP), Board of Industrial Trades",
+   "agency_url": "https://dlcp.dc.gov/node/1619081",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://dlcp.dc.gov/node/1619081",
+   "summary": "The District of Columbia licenses plumbers and gasfitters through the Board of Industrial Trades at DLCP. DLCP's online occupational license verification requires a free Access DC account.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "DC Department of Licensing and Consumer Protection (DLCP)",
+   "agency_url": "https://dlcp.dc.gov/node/1832226",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://code.dccouncil.gov/us/dc/council/code/sections/47-2883.01",
+   "summary": "DC does not list a separate roofing trade license. Contractors doing repair or remodeling work on residential property fall under DC's home improvement business rules and must hold a Home Improvement Contractor (HIC) license from DLCP.",
+   "verified": "fetched"
+  }
+ },
+ "FL": {
+  "electrical": {
+   "agency": "Florida Department of Business and Professional Regulation (DBPR), Electrical Contractors' Licensing Board (ECLB)",
+   "agency_url": "https://www2.myfloridalicense.com/electrical-contractors/",
+   "level": "state",
+   "lookup_url": "https://www.myfloridalicense.com/wl11.asp",
+   "source_url": "https://www2.myfloridalicense.com/electrical-contractors/",
+   "summary": "Florida's Electrical Contractors' Licensing Board licenses and regulates electrical contractors, alarm system contractors, and specialty electrical contractors. Certified licenses allow work statewide; registered licenses allow work only in the cities or counties listed on the registration.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Florida Department of Business and Professional Regulation (DBPR), Construction Industry Licensing Board (CILB)",
+   "agency_url": "https://www2.myfloridalicense.com/construction-industry/",
+   "level": "state",
+   "lookup_url": "https://www.myfloridalicense.com/wl11.asp",
+   "source_url": "https://flsenate.gov/Laws/Statutes/2025/489.103",
+   "summary": "Florida licenses general, building, and residential contractors through the DBPR Construction Industry Licensing Board (general CG/RG, building CB/RB, residential CR/RR). Certified contractors may work anywhere in the state; registered contractors may work only in the local jurisdictions where they are registered. Residential contractors are limited to one-, two-, or three-family homes up to two stories.",
+   "threshold": "Licensing exemption applies only to casual, minor, or inconsequential work where the total contract price for labor, materials, and all other items is less than $2,500; it does not apply to work that is part of a larger project or to anyone who advertises as a contractor",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Florida Department of Business and Professional Regulation (DBPR), Construction Industry Licensing Board (CILB)",
+   "agency_url": "https://www2.myfloridalicense.com/construction-industry/",
+   "level": "state",
+   "lookup_url": "https://www.myfloridalicense.com/wl11.asp",
+   "source_url": "https://flsenate.gov/Laws/Statutes/2025/489.103",
+   "summary": "Florida licenses air conditioning and mechanical contractors through the DBPR Construction Industry Licensing Board (air conditioning CA/RA in Classes A, B, and C; mechanical CM/RM). Certified contractors may work anywhere in the state; registered contractors may work only in the local jurisdictions where they are registered.",
+   "threshold": "Licensing exemption applies only to casual, minor, or inconsequential work where the total contract price for labor, materials, and all other items is less than $2,500; it does not apply to work that is part of a larger project or to anyone who advertises as a contractor",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "The Florida Bar",
+   "agency_url": "https://www.floridabar.org/",
+   "level": "state",
+   "lookup_url": "https://www.floridabar.org/directories/find-mbr/",
+   "source_url": "https://www.floridabar.org/directories/find-mbr/",
+   "summary": "Lawyers practicing in Florida are members of The Florida Bar. Its online Lawyer Directory lets the public look up a lawyer by name and see their membership status.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Florida Department of Business and Professional Regulation (DBPR), Construction Industry Licensing Board (CILB)",
+   "agency_url": "https://www2.myfloridalicense.com/construction-industry/",
+   "level": "state",
+   "lookup_url": "https://www.myfloridalicense.com/wl11.asp",
+   "source_url": "https://flsenate.gov/Laws/Statutes/2025/489.103",
+   "summary": "Florida licenses plumbing contractors through the DBPR Construction Industry Licensing Board (CF certified / RF registered). Certified contractors may work anywhere in the state; registered contractors may work only in the local jurisdictions where they are registered.",
+   "threshold": "Licensing exemption applies only to casual, minor, or inconsequential work where the total contract price for labor, materials, and all other items is less than $2,500; it does not apply to work that is part of a larger project or to anyone who advertises as a contractor",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Florida Department of Business and Professional Regulation (DBPR), Construction Industry Licensing Board (CILB)",
+   "agency_url": "https://www2.myfloridalicense.com/construction-industry/",
+   "level": "state",
+   "lookup_url": "https://www.myfloridalicense.com/wl11.asp",
+   "source_url": "https://flsenate.gov/Laws/Statutes/2025/489.103",
+   "summary": "Florida licenses roofing contractors through the DBPR Construction Industry Licensing Board (CC certified / RC registered). Certified contractors may work anywhere in the state; registered contractors may work only in the local jurisdictions where they are registered.",
+   "threshold": "Licensing exemption applies only to casual, minor, or inconsequential work where the total contract price for labor, materials, and all other items is less than $2,500; it does not apply to work that is part of a larger project or to anyone who advertises as a contractor",
+   "verified": "fetched"
+  }
+ },
+ "GA": {
+  "electrical": {
+   "agency": "Georgia State Construction Industry Licensing Board (Secretary of State), Division of Electrical Contractors",
+   "agency_url": "https://sos.ga.gov/page/about-georgia-state-board-electrical-contractors",
+   "level": "state",
+   "lookup_url": "https://sos.ga.gov/licensing-division-license-lookup",
+   "source_url": "https://rules.sos.ga.gov/gac/121-3",
+   "summary": "Georgia licenses electrical contractors through the State Construction Industry Licensing Board. Class I licenses are limited to single-phase installations up to 200 amperes at the service drop or lateral; Class II licenses are unrestricted.",
+   "verified": "search"
+  },
+  "general_contracting": {
+   "agency": "State Licensing Board for Residential and General Contractors (Georgia Secretary of State)",
+   "agency_url": "https://sos.ga.gov/page/residential-and-commercial-general-contractors-frequently-asked-questions",
+   "level": "state",
+   "lookup_url": "https://sos.ga.gov/licensing-division-license-lookup",
+   "source_url": "https://sos.ga.gov/sites/default/files/2022-02/49_residential_and_general_contractors_43-41.pdf",
+   "summary": "Georgia requires a residential or general contractor license from the State Licensing Board for Residential and General Contractors for work whose value exceeds $2,500. The residential license does not cover electrical, plumbing, or conditioned air work, which must be done by contractors licensed for those trades.",
+   "threshold": "work whose total value or compensation, whichever is higher, exceeds $2,500",
+   "verified": "search"
+  },
+  "hvac": {
+   "agency": "Georgia State Construction Industry Licensing Board (Secretary of State), Division of Conditioned Air Contractors",
+   "agency_url": "https://sos.ga.gov/page/about-board-conditioned-air-contractors",
+   "level": "state",
+   "lookup_url": "https://sos.ga.gov/licensing-division-license-lookup",
+   "source_url": "https://rules.sos.ga.gov/gac/121-3",
+   "summary": "Georgia licenses HVAC contractors as conditioned air contractors through the State Construction Industry Licensing Board. Class I (restricted) licenses cover systems up to 175,000 BTU of heating and 60,000 BTU of cooling; Class II licenses are unrestricted.",
+   "verified": "search"
+  },
+  "legal": {
+   "agency": "State Bar of Georgia",
+   "agency_url": "https://www.gabar.org/public/find-a-lawyer",
+   "level": "state",
+   "lookup_url": "https://www.gabar.org/member-directory/",
+   "source_url": "https://www.gabar.org/public/find-a-lawyer",
+   "summary": "Lawyers licensed in Georgia are members of the State Bar of Georgia. The Bar's Find a Lawyer page links to its online member directory for looking up attorneys.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Georgia State Construction Industry Licensing Board (Secretary of State), Division of Master and Journeyman Plumbers",
+   "agency_url": null,
+   "level": "state",
+   "lookup_url": "https://sos.ga.gov/licensing-division-license-lookup",
+   "source_url": "https://rules.sos.ga.gov/gac/121-3",
+   "summary": "Georgia licenses plumbers through the State Construction Industry Licensing Board, which issues Class I and Class II Master Plumber licenses and a Journeyman Plumber license. Class II master plumber licenses are unrestricted.",
+   "verified": "search"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": "https://sos.ga.gov/page/traditional-specialty-contractors-policy-statements",
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://sos.ga.gov/page/traditional-specialty-contractors-policy-statements",
+   "summary": "Georgia has no state roofing license. Roofing (flat, sheet metal, and shingle roofing) is on the state's list of traditional specialty trades, and specialty contractors working only within their specialty do not need a residential or general contractor license under O.C.G.A. 43-41-17. Homeowners should check with their city or county about local permits and business licensing.",
+   "verified": "search"
+  }
+ },
+ "HI": {
+  "electrical": {
+   "agency": "Hawaii Board of Electricians and Plumbers (DCCA Professional and Vocational Licensing Division); contractors via the Contractors License Board (C-13)",
+   "agency_url": "https://cca.hawaii.gov/pvl/boards/electrician/",
+   "level": "state",
+   "lookup_url": "https://mypvl.dcca.hawaii.gov/public-license-search/",
+   "source_url": "https://cca.hawaii.gov/pvl/boards/electrician/",
+   "summary": "Hawaii's Board of Electricians and Plumbers licenses individual electricians, and electrical contracting businesses are licensed by the Contractors License Board under the C-13 electrical contractor classification. Both can be checked with the DCCA public license search.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Hawaii Contractors License Board (DCCA Professional and Vocational Licensing Division)",
+   "agency_url": "https://cca.hawaii.gov/pvl/boards/contractor/",
+   "insurance_bond": "Liability insurance of at least $100,000 bodily injury per person, $300,000 per occurrence, and $50,000 property damage per occurrence, plus workers' compensation insurance.",
+   "level": "state",
+   "lookup_url": "https://mypvl.dcca.hawaii.gov/public-license-search/",
+   "source_url": "https://cca.hawaii.gov/wp-content/uploads/2026/01/Require-App-for-Contractor-Sole-Proprietor_10.25.pdf",
+   "summary": "Hawaii licenses contractors through the Contractors License Board, including the \"B\" general building contractor classification and \"C\" specialty classifications. Applicants must carry liability and workers' compensation insurance and maintain it throughout licensure.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Hawaii Contractors License Board (DCCA Professional and Vocational Licensing Division)",
+   "agency_url": "https://cca.hawaii.gov/pvl/boards/contractor/",
+   "insurance_bond": "Liability insurance of at least $100,000 bodily injury per person, $300,000 per occurrence, and $50,000 property damage per occurrence, plus workers' compensation insurance.",
+   "level": "state",
+   "lookup_url": "https://mypvl.dcca.hawaii.gov/public-license-search/",
+   "source_url": "https://cca.hawaii.gov/pvl/files/2014/08/DescriptionofContractorLicenseClassifications.pdf",
+   "summary": "Hawaii licenses HVAC contractors through the Contractors License Board under the C-52 ventilating and air conditioning contractor classification. Licensed contractors must carry liability and workers' compensation insurance.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Hawaii State Bar Association (HSBA)",
+   "agency_url": "https://hsba.org/find-a-lawyer",
+   "level": "state",
+   "lookup_url": "https://hsba.org/find-a-lawyer",
+   "source_url": "https://hsba.org/find-a-lawyer",
+   "summary": "Every lawyer licensed to practice law in Hawaii is listed in the Hawaii State Bar Association's member directory. Listings show whether an attorney can actively practice law in Hawaii.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Hawaii Board of Electricians and Plumbers (DCCA Professional and Vocational Licensing Division); contractors via the Contractors License Board (C-37)",
+   "agency_url": "https://cca.hawaii.gov/pvl/boards/electrician/",
+   "level": "state",
+   "lookup_url": "https://mypvl.dcca.hawaii.gov/public-license-search/",
+   "source_url": "https://cca.hawaii.gov/pvl/boards/electrician/",
+   "summary": "Hawaii's Board of Electricians and Plumbers licenses individual plumbers, and plumbing contracting businesses are licensed by the Contractors License Board under the C-37 plumbing contractor classification. Both can be checked with the DCCA public license search.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Hawaii Contractors License Board (DCCA Professional and Vocational Licensing Division)",
+   "agency_url": "https://cca.hawaii.gov/pvl/boards/contractor/",
+   "insurance_bond": "Liability insurance of at least $100,000 bodily injury per person, $300,000 per occurrence, and $50,000 property damage per occurrence, plus workers' compensation insurance.",
+   "level": "state",
+   "lookup_url": "https://mypvl.dcca.hawaii.gov/public-license-search/",
+   "source_url": "https://cca.hawaii.gov/pvl/files/2014/08/DescriptionofContractorLicenseClassifications.pdf",
+   "summary": "Hawaii licenses roofers through the Contractors License Board under the C-42 roofing contractor specialty classification. Licensed contractors must carry liability and workers' compensation insurance.",
+   "verified": "fetched"
+  }
+ },
+ "IA": {
+  "electrical": {
+   "agency": "Iowa Department of Inspections, Appeals, and Licensing (DIAL) – Electrical Examining Board",
+   "agency_url": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+   "level": "state",
+   "lookup_url": "https://dps-eeb.my.site.com/LicenseSearchPage",
+   "source_url": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+   "summary": "Iowa licenses electricians under Iowa Code chapter 103 through the Electrical Examining Board at DIAL, including master, journeyman, residential and special electrician licenses.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Iowa Department of Inspections, Appeals, and Licensing (DIAL) – Contractor Registration",
+   "agency_url": "https://dial.iowa.gov/licenses/building/contractors",
+   "insurance_bond": "Contractors with employees must carry workers' compensation and file a $25,000 bond; out-of-state contractors must file the bond regardless.",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://dial.iowa.gov/licenses/building/contractors",
+   "summary": "Iowa requires construction contractors, including subcontractors, to register annually with DIAL once they earn at least $2,000 a year from construction. It is a registration rather than a competency license; plumbing and mechanical businesses are licensed through the Plumbing and Mechanical Systems Board instead.",
+   "threshold": "Registration required for contractors earning $2,000 or more per year from construction; work only on one's own property is exempt.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Iowa Department of Inspections, Appeals, and Licensing (DIAL) – Plumbing and Mechanical Systems Board",
+   "agency_url": "https://dial.iowa.gov/licenses/building/plumbing-mechanical",
+   "insurance_bond": "Licensed contractors must carry at least $500,000 in public liability insurance and a $5,000 surety bond.",
+   "level": "state",
+   "lookup_url": "https://amanda-portal.idph.state.ia.us/adpereh/portal/",
+   "source_url": "https://dial.iowa.gov/licenses/building/plumbing-mechanical/plumbing-licensure/contractor-license",
+   "summary": "Iowa's Plumbing and Mechanical Systems Board licenses HVAC, refrigeration, hydronic, sheet metal and mechanical contractors and tradespeople. A contracting business must hold a PMSB contractor license with a master licensee of record for each discipline it performs.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Iowa Supreme Court – Office of Professional Regulation",
+   "agency_url": "https://www.iowacourts.gov/opr/upl/opr",
+   "level": "state",
+   "lookup_url": "https://www.iowacourts.gov/opr/upl/opr",
+   "source_url": "https://www.iowacourts.gov/opr/upl/opr",
+   "summary": "Lawyers in Iowa are regulated by the Iowa Supreme Court through its Office of Professional Regulation, which maintains a public database of licensed Iowa lawyers. If a lawyer does not appear or is not listed as Active, the office can be contacted directly.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Iowa Department of Inspections, Appeals, and Licensing (DIAL) – Plumbing and Mechanical Systems Board",
+   "agency_url": "https://dial.iowa.gov/licenses/building/plumbing-mechanical",
+   "insurance_bond": "Licensed contractors must carry at least $500,000 in public liability insurance and a $5,000 surety bond.",
+   "level": "state",
+   "lookup_url": "https://amanda-portal.idph.state.ia.us/adpereh/portal/",
+   "source_url": "https://dial.iowa.gov/licenses/building/plumbing-mechanical/plumbing-licensure/contractor-license",
+   "summary": "Iowa's Plumbing and Mechanical Systems Board licenses plumbing contractors, master and journeyperson plumbers, and apprentices. A plumbing contractor must have a licensed master plumber of record.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Iowa Department of Inspections, Appeals, and Licensing (DIAL) – Contractor Registration",
+   "agency_url": "https://dial.iowa.gov/licenses/building/contractors",
+   "insurance_bond": "Contractors with employees must carry workers' compensation and file a $25,000 bond; out-of-state contractors must file the bond regardless.",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://dial.iowa.gov/licenses/building/contractor-registration",
+   "summary": "Iowa has no roofing-specific license; roofers are covered by the state's construction contractor registration, which applies to contractors earning at least $2,000 a year from construction work.",
+   "threshold": "Registration required for contractors earning $2,000 or more per year from construction.",
+   "verified": "fetched"
+  }
+ },
+ "ID": {
+  "electrical": {
+   "agency": "Idaho Division of Occupational and Professional Licenses (DOPL), Idaho Electrical Board",
+   "agency_url": "https://dopl.idaho.gov/elec/",
+   "level": "state",
+   "lookup_url": "https://edopl.idaho.gov/OnlineServices/?link=PubSearch",
+   "source_url": "https://dopl.idaho.gov/elec/",
+   "summary": "The Idaho Electrical Board, part of DOPL, licenses electrical apprentices, journeymen, masters and contractors, including limited contractor categories. Homeowners can check a license with DOPL's online license search.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Idaho Division of Occupational and Professional Licenses (DOPL), Idaho Contractors Board",
+   "agency_url": "https://dopl.idaho.gov/con/",
+   "insurance_bond": "Registrants must carry general liability insurance of not less than $300,000 single limit, including products and completed operations coverage.",
+   "level": "state",
+   "lookup_url": "https://edopl.idaho.gov/OnlineServices/?link=PubSearch",
+   "source_url": "https://legislature.idaho.gov/statutesrules/idstat/title54/t54ch52/sect54-5205/",
+   "summary": "Idaho requires contractors to register with the Idaho Contractors Board (a registration, not a competency license). Small projects under $2,000 total, including labor and materials, are exempt unless part of a larger project.",
+   "threshold": "Registration exemption for a single project whose total price is less than $2,000 (labor, materials and other costs), unless part of a larger construction project.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Idaho Division of Occupational and Professional Licenses (DOPL), HVAC Board",
+   "agency_url": "https://dopl.idaho.gov/hvac/",
+   "level": "state",
+   "lookup_url": "https://edopl.idaho.gov/OnlineServices/?link=PubSearch",
+   "source_url": "https://dopl.idaho.gov/hvac/",
+   "summary": "Idaho's HVAC Board, part of DOPL, licenses HVAC apprentices, journeymen and contractors, plus specialty and limited heating specialty categories. Homeowners can check a license with DOPL's online license search.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Idaho State Bar",
+   "agency_url": "https://isb.idaho.gov/licensing-mcle/attorney-roster-search/",
+   "level": "state",
+   "lookup_url": "https://isb.idaho.gov/licensing-mcle/attorney-roster-search/",
+   "source_url": "https://isb.idaho.gov/licensing-mcle/attorney-roster-search/",
+   "summary": "Attorneys practicing in Idaho are licensed through the Idaho State Bar. Its attorney roster search lets the public look up an attorney by last name.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Idaho Division of Occupational and Professional Licenses (DOPL), State Plumbing Board",
+   "agency_url": "https://dopl.idaho.gov/plb/",
+   "level": "state",
+   "lookup_url": "https://edopl.idaho.gov/OnlineServices/?link=PubSearch",
+   "source_url": "https://dopl.idaho.gov/plb/",
+   "summary": "Idaho's State Plumbing Board, part of DOPL, licenses plumbing apprentices, journeymen and contractors, along with specialty categories. Homeowners can check a license with DOPL's online license search.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Idaho Division of Occupational and Professional Licenses (DOPL), Idaho Contractors Board",
+   "agency_url": "https://dopl.idaho.gov/con/",
+   "level": "state",
+   "lookup_url": "https://edopl.idaho.gov/OnlineServices/?link=PubSearch",
+   "source_url": "https://legislature.idaho.gov/statutesrules/idstat/title54/t54ch52/sect54-5203/",
+   "summary": "Roofers in Idaho fall under the contractor registration administered by the Idaho Contractors Board, which covers anyone who performs construction, including repairing buildings and other structures. Registered contractors must carry general liability insurance.",
+   "verified": "fetched"
+  }
+ },
+ "IL": {
+  "electrical": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Illinois has no state electrical contractor license; electricians and electrical contractors are licensed or registered by cities and counties. Homeowners should check with their local building department."
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://illinoisattorneygeneral.gov/news/story/consumer-alertattorney-general-raoul-warns-residents-to-be-on-alert-for-storm-related-repair-scams",
+   "summary": "General contractors are not required by Illinois state law to be licensed, but municipalities may require licenses, permits or other local requirements. Homeowners should check with their city or county before hiring.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Illinois has no state HVAC contractor license; HVAC contractor licensing and registration is handled by cities and counties. Homeowners should check with their local building department."
+  },
+  "legal": {
+   "agency": "Attorney Registration & Disciplinary Commission (ARDC) of the Supreme Court of Illinois",
+   "agency_url": "https://www.iardc.org/",
+   "level": "state",
+   "lookup_url": "https://www.iardc.org/Lawyer/Search",
+   "source_url": "https://www.iardc.org/Lawyer/Search",
+   "summary": "Illinois lawyers register with the Attorney Registration & Disciplinary Commission of the Supreme Court of Illinois. The ARDC lawyer search shows whether a lawyer is authorized to practice and any recent status changes due to registration, continuing education or discipline.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Illinois Department of Public Health (IDPH), Plumbing Program",
+   "agency_url": "https://dph.illinois.gov/topics-services/environmental-health-protection/plumbing.html",
+   "insurance_bond": "Plumbing contractors must maintain minimum general liability, bodily injury, property damage and workers' compensation insurance.",
+   "level": "state",
+   "lookup_url": "https://ildohplmprod.glsuite.us/GLSuiteWeb/Clients/ILDOHPLM/PUBLIC/Verification/Plumber_License_Verification.aspx",
+   "source_url": "https://dph.illinois.gov/topics-services/environmental-health-protection/plumbing.html",
+   "summary": "Under the Illinois Plumbing License Law, IDPH licenses plumbers and apprentice plumbers, and plumbing contractors must register with the state and pay an annual fee. Plumbing contractors must carry general liability, bodily injury, property damage and workers' compensation insurance.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+   "agency_url": "https://idfpr.illinois.gov/profs/roof.html",
+   "insurance_bond": "Continuous bond of $10,000 for a limited license and $25,000 for an unlimited license.",
+   "level": "state",
+   "lookup_url": "https://online-dfpr.micropact.com/lookup/licenselookup.aspx",
+   "source_url": "https://www.ilga.gov/Legislation/ILCS/Articles?ActID=1346&ChapterID=24",
+   "summary": "Under the Illinois Roofing Industry Licensing Act, it is unlawful to work as a roofing contractor without an IDFPR license. Applicants must post a bond and have a qualifying party who passed the state exam.",
+   "verified": "fetched"
+  }
+ },
+ "IN": {
+  "electrical": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.in.gov/core/business_guide.html",
+   "summary": "Indiana does not license electrical contractors at the state level; the only construction contractors licensed by the State of Indiana are plumbers. Licensing varies by city and county, so homeowners should check with their local building department.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.in.gov/core/business_guide.html",
+   "summary": "Indiana does not license general or home-improvement contractors at the state level; the only construction contractors licensed by the State of Indiana are plumbers. Licensing varies by city and county, so homeowners should check with their local building department.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.in.gov/dwd/workforce-ready-grant/resources/hvac-technician",
+   "summary": "Indiana has no statewide licensing requirement for HVAC technicians or contractors; licensing is handled by counties and cities, and most local governments require a license to operate as an HVAC contractor. Homeowners should check with their city or county building department.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Indiana Supreme Court",
+   "agency_url": "https://www.in.gov/courts/help/attorney-search",
+   "level": "state",
+   "lookup_url": "https://courtapps.in.gov/rollofattorneys/",
+   "source_url": "https://www.in.gov/courts/help/attorney-search",
+   "summary": "The Indiana Supreme Court maintains the Roll of Attorneys, a public search tool for checking an Indiana lawyer's license status and attorney number. Search by last name or by attorney number.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Indiana Plumbing Commission (Indiana Professional Licensing Agency)",
+   "agency_url": "https://www.in.gov/pla/professions/plumbing-home/plumbing-licensing-information/",
+   "level": "state",
+   "lookup_url": "https://mylicense.in.gov/EVerification/Search.aspx",
+   "source_url": "https://www.in.gov/pla/professions/plumbing-home/plumbing-licensing-information/",
+   "summary": "Indiana licenses plumbing contractors and journeyman plumbers through the Indiana Plumbing Commission, administered by the Professional Licensing Agency. Plumbers are the only construction contractors licensed by the state.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.in.gov/core/business_guide.html",
+   "summary": "Indiana does not license roofing contractors at the state level; the only construction contractors licensed by the State of Indiana are plumbers. Licensing varies by city and county, so homeowners should check with their local building department.",
+   "verified": "fetched"
+  }
+ },
+ "KS": {
+  "electrical": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Kansas does not issue a statewide electrical contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county."
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Kansas does not issue a statewide general or home improvement contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county."
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Kansas does not issue a statewide HVAC/mechanical contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county."
+  },
+  "legal": {
+   "agency": "Kansas Supreme Court – Attorney Registration (Office of Judicial Administration)",
+   "agency_url": null,
+   "level": "state",
+   "lookup_url": "https://directory-kard.kscourts.gov",
+   "source_url": "https://directory-kard.kscourts.gov",
+   "summary": "Attorneys licensed in Kansas must register annually with the Kansas Supreme Court. The court's online attorney directory shows current information on licensed Kansas attorneys and can be searched by name or registration number.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Kansas does not issue a statewide plumbing contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county."
+  },
+  "roofing": {
+   "agency": "Kansas Attorney General (Roofing Contractor Registration)",
+   "agency_url": null,
+   "insurance_bond": "Applicants must file a liability insurance certificate for at least $500,000 and proof of workers' compensation coverage (or an exemption or self-insurance affidavit).",
+   "level": "state",
+   "lookup_url": "https://ag.ks.gov/licensing/roofing-registration/roofer-search",
+   "source_url": "https://ksrevisor.gov/statutes/chapters/ch50/050_006_0125.html",
+   "summary": "Kansas requires roofing contractors to hold a roofing contractor registration certificate before doing business in the state. Registrations are filed with the Kansas Attorney General, which keeps a public search of registered roofers.",
+   "verified": "fetched"
+  }
+ },
+ "KY": {
+  "electrical": {
+   "agency": "Kentucky Department of Housing, Buildings and Construction (DHBC), Electrical Division",
+   "agency_url": "https://dhbc.ky.gov/newstatic_info.aspx?static_id=344",
+   "level": "state",
+   "lookup_url": "https://dhbc.ky.gov/Search/HBC_List_Licensees.aspx",
+   "source_url": "https://dhbc.ky.gov/newstatic_info.aspx?static_id=344",
+   "summary": "Kentucky licenses electricians and electrical contractors through DHBC's Electrical Division.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Kentucky does not license general or home improvement contractors at the state level; the state licenses only specific trades such as HVAC, plumbing, and electrical. Contractor licensing or registration is handled by cities and counties, so homeowners should check with their local government."
+  },
+  "hvac": {
+   "agency": "Kentucky Department of Housing, Buildings and Construction (DHBC), Division of HVAC",
+   "agency_url": "https://dhbc.ky.gov/newstatic_info.aspx?static_id=335",
+   "level": "state",
+   "lookup_url": "https://dhbc.ky.gov/Search/HBC_List_Licensees.aspx",
+   "source_url": "https://dhbc.ky.gov/newstatic_info.aspx?static_id=335",
+   "summary": "Kentucky licenses heating and air conditioning contractors through DHBC's Division of HVAC, which issues master HVAC contractor and journeyman HVAC mechanic licenses. Only properly licensed or authorized individuals may pull HVAC permits.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Kentucky Bar Association",
+   "agency_url": "https://kybar.org/For-Public/Find-a-Lawyer",
+   "level": "state",
+   "lookup_url": "https://kybar.org/For-Public/Find-a-Lawyer",
+   "source_url": "https://kybar.org/For-Public/Find-a-Lawyer",
+   "summary": "Lawyers practicing in Kentucky are members of the Kentucky Bar Association. Its Find a Lawyer page lets the public search the directory of members.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Kentucky Department of Housing, Buildings and Construction (DHBC), Division of Plumbing",
+   "agency_url": "https://dhbc.ky.gov/newstatic_info.aspx?static_id=337",
+   "level": "state",
+   "lookup_url": "https://dhbc.ky.gov/Search/HBC_List_Licensees.aspx",
+   "source_url": "https://dhbc.ky.gov/newstatic_info.aspx?static_id=337",
+   "summary": "Kentucky licenses master and journeyman plumbers through DHBC's Division of Plumbing. Apart from homeowners working on their own permit, plumbing must be installed by a licensed journeyman under the supervision of a licensed master plumber.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://apps.legislature.ky.gov/record/25rs/hb350.html",
+   "summary": "Kentucky does not issue a statewide roofing contractor license; a 2025 bill to create one (HB 350) did not advance past committee. Any roofing contractor licensing or registration is handled by cities and counties, so homeowners should check with their local government.",
+   "verified": "fetched"
+  }
+ },
+ "LA": {
+  "electrical": {
+   "agency": "Louisiana State Licensing Board for Contractors (LSLBC)",
+   "agency_url": "https://lslbc.gov/types-of-licenses/",
+   "level": "state",
+   "lookup_url": "https://arlspublic.lslbc.louisiana.gov/Public/DetailedSearch/Advanced",
+   "source_url": "https://lslbc.gov/types-of-licenses/",
+   "summary": "LSLBC licenses electrical contractors; under its commercial license requirements, electrical projects over $10,000 including labor and materials require an LSLBC license.",
+   "threshold": "Electrical/mechanical/plumbing projects exceeding $10,000 including labor and materials (LSLBC commercial license requirement).",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Louisiana State Licensing Board for Contractors (LSLBC)",
+   "agency_url": "https://lslbc.gov/types-of-licenses/",
+   "level": "state",
+   "lookup_url": "https://arlspublic.lslbc.louisiana.gov/Public/DetailedSearch/Advanced",
+   "source_url": "https://lslbc.gov/types-of-licenses/",
+   "summary": "Louisiana requires an LSLBC residential construction license for residential construction over $50,000 and home improvement licensing for work on existing homes valued at $7,500 or more. Commercial projects of $50,000 or more require a commercial license.",
+   "threshold": "Residential construction exceeding $50,000; home improvement projects of $7,500 or more on existing residential structures; commercial projects of $50,000 or more (all including labor and materials).",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Louisiana State Licensing Board for Contractors (LSLBC)",
+   "agency_url": "https://lslbc.gov/types-of-licenses/",
+   "level": "state",
+   "lookup_url": "https://arlspublic.lslbc.louisiana.gov/Public/DetailedSearch/Advanced",
+   "source_url": "https://lslbc.gov/types-of-licenses/",
+   "summary": "LSLBC licenses contractors doing mechanical (HVAC) work; under its commercial license requirements, mechanical projects over $10,000 including labor and materials require an LSLBC license.",
+   "threshold": "Electrical/mechanical/plumbing projects exceeding $10,000 including labor and materials (LSLBC commercial license requirement).",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Louisiana State Bar Association",
+   "agency_url": "https://www.lsba.org/",
+   "level": "state",
+   "lookup_url": "https://www.lsba.org/MD321654/MembershipDirectory.aspx",
+   "source_url": "https://www.lsba.org/MD321654/MembershipDirectory.aspx",
+   "summary": "The Louisiana State Bar Association publishes an online membership directory the public can use to look up Louisiana lawyers.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "State Plumbing Board of Louisiana",
+   "agency_url": "https://spbla.com/",
+   "level": "state",
+   "lookup_url": "https://public.spbla.com",
+   "source_url": "https://lslbc.gov/wp-content/uploads/Legislative-Changes.pdf",
+   "summary": "The State Plumbing Board of Louisiana licenses plumbers and publishes a free public roster for verifying a plumber's license. Under Act 908 of 2026, plumbing licensing transfers to LSLBC effective January 1, 2027, and existing apprentice, journeyman, and master plumber licenses will carry over as equivalent LSLBC licenses.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Louisiana State Licensing Board for Contractors (LSLBC)",
+   "agency_url": "https://lslbc.gov/",
+   "insurance_bond": "Since August 1, 2026, residential construction licensees and their subclassifications must maintain at least $500,000 in liability insurance (or qualifying coverage through an authorized liability trust fund).",
+   "level": "state",
+   "lookup_url": "https://arlspublic.lslbc.louisiana.gov/Public/DetailedSearch/Advanced",
+   "source_url": "https://lslbc.gov/wp-content/uploads/LSLBC_Memorandum_Statutory_Changes_July_13_2026_REVISED.pdf",
+   "summary": "Since January 1, 2026, anyone bidding or performing roofing work on a residential structure with a project value of $7,500 or more must hold LSLBC's Residential Roofing or Residential Construction classification. Residential roofing is a subclassification of residential construction.",
+   "threshold": "Residential roofing projects with a project value of $7,500 or more.",
+   "verified": "fetched"
+  }
+ },
+ "MA": {
+  "electrical": {
+   "agency": "Massachusetts Board of State Examiners of Electricians",
+   "agency_url": "https://www.mass.gov/board-of-state-examiners-of-electricians-licensing",
+   "level": "state",
+   "lookup_url": "https://www.mass.gov/info-details/division-of-occupational-licensure-check-a-license",
+   "source_url": "https://www.mass.gov/info-details/electricians-consumer-fact-sheet",
+   "summary": "Massachusetts licenses electricians through the Board of State Examiners of Electricians. License status and complaint history can be checked through the Division of Occupational Licensure's Check a License database.",
+   "verified": "search"
+  },
+  "general_contracting": {
+   "agency": "Massachusetts Office of Consumer Affairs and Business Regulation (HIC registration); Office of Public Safety and Inspections (Construction Supervisor License)",
+   "agency_url": "https://www.mass.gov/info-details/home-improvement-contractor-registration-and-renewal",
+   "level": "state",
+   "lookup_url": "https://contractorhub.mass.gov/",
+   "source_url": "https://www.mass.gov/info-details/hic-homeowner-resources",
+   "summary": "Contractors who work on existing one- to four-unit owner-occupied homes in Massachusetts must register as Home Improvement Contractors with the Office of Consumer Affairs and Business Regulation. Homeowners can check registration and complaint history on the MA Contractor Hub, and the HIC Guaranty Fund can reimburse eligible homeowners up to $25,000 of actual losses. The state also issues Construction Supervisor Licenses.",
+   "verified": "search"
+  },
+  "hvac": {
+   "agency": "Massachusetts Division of Occupational Licensure (Board of Examiners of Sheet Metal Workers; refrigeration technician licensing)",
+   "agency_url": "https://www.mass.gov/info-details/sheet-metal-worker-consumer-fact-sheet",
+   "level": "state",
+   "lookup_url": "https://www.mass.gov/info-details/division-of-occupational-licensure-check-a-license",
+   "source_url": "https://www.mass.gov/info-details/sheet-metal-worker-consumer-fact-sheet",
+   "summary": "Massachusetts has no single HVAC license; HVAC work falls under several state licenses. Sheet metal work such as ductwork must be done by a master or journeyperson sheet metal worker licensed by the Board of Examiners of Sheet Metal Workers, with a local permit, and refrigeration technicians are licensed separately by the Division of Occupational Licensure.",
+   "verified": "search"
+  },
+  "legal": {
+   "agency": "Massachusetts Board of Bar Overseers",
+   "agency_url": "https://www.massbbo.org/s/",
+   "level": "state",
+   "lookup_url": "https://www.massbbo.org/s/attorney-lookup",
+   "source_url": "https://www.mass.gov/info-details/finding-a-lawyer",
+   "summary": "Massachusetts attorneys are overseen by the Board of Bar Overseers. Its Look Up an Attorney tool lets the public find an attorney by name or location and see any public discipline.",
+   "verified": "search"
+  },
+  "plumbing": {
+   "agency": "Massachusetts Board of State Examiners of Plumbers and Gas Fitters",
+   "agency_url": "https://www.mass.gov/info-details/plumbers-and-gas-fitters-consumer-fact-sheet",
+   "level": "state",
+   "lookup_url": "https://www.mass.gov/info-details/division-of-occupational-licensure-check-a-license",
+   "source_url": "https://www.mass.gov/info-details/plumbers-and-gas-fitters-consumer-fact-sheet",
+   "summary": "Massachusetts licenses plumbers and gas fitters through the Board of State Examiners of Plumbers and Gas Fitters. Homeowners can verify a license, years licensed, and disciplinary history online or by calling the board.",
+   "verified": "search"
+  },
+  "roofing": {
+   "agency": "Massachusetts Office of Public Safety and Inspections (Construction Supervisor License); Office of Consumer Affairs and Business Regulation (HIC registration)",
+   "agency_url": "https://www.mass.gov/info-details/learn-about-different-construction-supervisor-licenses",
+   "level": "state",
+   "lookup_url": "https://www.mass.gov/how-to/check-a-construction-supervisor-license",
+   "source_url": "https://www.mass.gov/info-details/learn-about-different-construction-supervisor-licenses",
+   "summary": "Massachusetts offers a specialty Construction Supervisor License for roof covering work. Contractors working on existing one- to four-unit owner-occupied homes must also register as Home Improvement Contractors.",
+   "verified": "search"
+  }
+ },
+ "MD": {
+  "electrical": {
+   "agency": "Maryland State Board of Electricians (Maryland Department of Labor)",
+   "agency_url": "https://www.labor.maryland.gov/license/elec/",
+   "insurance_bond": "General liability insurance of at least $300,000 and property damage insurance of at least $100,000; umbrella coverage is not accepted.",
+   "level": "state",
+   "lookup_url": "https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_search/OP_search.cgi?calling_app=ME::ME_qselect",
+   "source_url": "https://www.labor.maryland.gov/license/elec/",
+   "summary": "Maryland requires electrical work to be done by a licensed master, journeyperson, or apprentice electrician, with apprentices supervised at all times. Licenses are issued by the State Board of Electricians.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Maryland Home Improvement Commission (MHIC)",
+   "agency_url": "https://www.labor.maryland.gov/license/mhic/",
+   "insurance_bond": "General liability insurance of at least $500,000 (effective June 1, 2024). The Home Improvement Guaranty Fund can reimburse homeowners up to $30,000 for actual losses on work by licensed contractors.",
+   "level": "state",
+   "lookup_url": "https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_search/OP_search.cgi?calling_app=HIC::HIC_qselect",
+   "source_url": "https://www.labor.maryland.gov/license/mhic/",
+   "summary": "Only contractors licensed by the Maryland Home Improvement Commission may contract with homeowners for home improvement work such as remodeling, repair, or replacement on a residence. Subcontractors do not need a license but must work for an MHIC-licensed contractor.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Maryland Board of Heating, Ventilation, Air Conditioning and Refrigeration Contractors (Maryland Department of Labor)",
+   "agency_url": "https://www.labor.maryland.gov/license/hvacr/",
+   "level": "state",
+   "lookup_url": "https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_search/OP_search.cgi?calling_app=HVAC::HVAC_qselect",
+   "source_url": "https://www.labor.maryland.gov/license/hvacr/",
+   "summary": "Maryland's HVACR Board, part of the Maryland Department of Labor, licenses and regulates people who provide commercial and residential HVACR services. Homeowners can check a license with the Department of Labor's online license search.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Supreme Court of Maryland (Maryland Judiciary)",
+   "agency_url": "https://www.mdcourts.gov/lawyers/attylist",
+   "level": "state",
+   "lookup_url": "https://www.mdcourts.gov/lawyers/attylist",
+   "source_url": "https://www.mdcourts.gov/lawyers/attylist",
+   "summary": "Attorneys are admitted to the Maryland bar by the Supreme Court of Maryland. The Maryland Judiciary's attorney listing is a searchable index of all attorneys admitted in the state; the Supreme Court Clerk's Office can help if a name is not found.",
+   "verified": "search"
+  },
+  "plumbing": {
+   "agency": "Maryland State Board of Plumbing (Maryland Department of Labor)",
+   "agency_url": "https://www.labor.maryland.gov/license/pl/",
+   "level": "state",
+   "lookup_url": "https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_search/OP_search.cgi?calling_app=PLM::PLM_qselect",
+   "source_url": "https://www.labor.maryland.gov/license/pl/",
+   "summary": "The Maryland State Board of Plumbing licenses people who provide plumbing and gas services, and also licenses natural gas fitters. Baltimore County and the WSSC area (Prince George's and Montgomery Counties) issue their own plumbing licenses.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Maryland Home Improvement Commission (MHIC)",
+   "agency_url": "https://www.labor.maryland.gov/license/mhic/",
+   "insurance_bond": "General liability insurance of at least $500,000 (effective June 1, 2024). The Home Improvement Guaranty Fund can reimburse homeowners up to $30,000 for actual losses on work by licensed contractors.",
+   "level": "state",
+   "lookup_url": "https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_search/OP_search.cgi?calling_app=HIC::HIC_qselect",
+   "source_url": "https://www.labor.maryland.gov/license/mhic/mhicwhatishi.shtml",
+   "summary": "Roofing work on an existing home is listed as home improvement work in Maryland, so residential roofing contractors need a Maryland Home Improvement Commission license. Only MHIC-licensed contractors may contract with homeowners for this work.",
+   "verified": "fetched"
+  }
+ },
+ "MI": {
+  "electrical": {
+   "agency": "Michigan Department of Licensing and Regulatory Affairs (LARA), Bureau of Construction Codes",
+   "agency_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/licensing-section/exam-lic/electrical-examination-licensing-registration-application-information",
+   "level": "state",
+   "lookup_url": "https://aca-prod.accela.com/LARA/GeneralProperty/PropertyLookUp.aspx?isLicensee=Y&TabName=APO",
+   "source_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/licensing-section",
+   "summary": "Michigan licenses journeyman electricians, master electricians and electrical contractors through LARA's Bureau of Construction Codes. Homeowners can verify a license in the bureau's online license lookup.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Michigan Department of Licensing and Regulatory Affairs (LARA), Bureau of Construction Codes",
+   "agency_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/licensing-section/residential-builders",
+   "level": "state",
+   "lookup_url": "https://aca-prod.accela.com/LARA/GeneralProperty/PropertyLookUp.aspx?isLicensee=Y&TabName=APO",
+   "source_url": "https://www.michigan.gov/lara/bureau-list/bcc/Sections/Licensing-Section/residential-builders/lic-info/helpful-information-for-homeowners",
+   "summary": "Michigan licenses Residential Builders (who may build complete homes and do remodeling) and Maintenance & Alteration contractors (licensed for specific trades) through LARA. Contractors offering work totaling $600 or more in labor and materials must be licensed.",
+   "threshold": "work which totals $600 or more in labor and materials",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Michigan Department of Licensing and Regulatory Affairs (LARA), Bureau of Construction Codes",
+   "agency_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/licensing-section/exam-lic/mechanical-examination-licensing-registration-application-information",
+   "level": "state",
+   "lookup_url": "https://aca-prod.accela.com/LARA/GeneralProperty/PropertyLookUp.aspx?isLicensee=Y&TabName=APO",
+   "source_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/permit-section/permits/mechanical-permit-information",
+   "summary": "Michigan requires a state mechanical contractor license, with the appropriate classification, to install, alter or service HVAC equipment, ductwork, hydronic heating and cooling, and refrigeration. Licenses are issued by LARA's Bureau of Construction Codes.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "State Bar of Michigan",
+   "agency_url": "https://www.michbar.org/",
+   "level": "state",
+   "lookup_url": "https://dir.michbar.org/",
+   "source_url": "https://dir.michbar.org/",
+   "summary": "The State Bar of Michigan's member directory lets the public check a Michigan attorney's license status (good standing, suspended, revoked, etc.) and contact information.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Michigan Department of Licensing and Regulatory Affairs (LARA), Bureau of Construction Codes",
+   "agency_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/licensing-section/exam-lic/plumbing-examination-licensing-registration-application-information",
+   "level": "state",
+   "lookup_url": "https://aca-prod.accela.com/LARA/GeneralProperty/PropertyLookUp.aspx?isLicensee=Y&TabName=APO",
+   "source_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/licensing-section",
+   "summary": "Michigan licenses journey plumbers, master plumbers and plumbing contractors through LARA's Bureau of Construction Codes. Homeowners can verify a license in the bureau's online license lookup.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Michigan Department of Licensing and Regulatory Affairs (LARA), Bureau of Construction Codes",
+   "agency_url": "https://www.michigan.gov/lara/bureau-list/bcc/sections/licensing-section/residential-builders",
+   "level": "state",
+   "lookup_url": "https://aca-prod.accela.com/LARA/GeneralProperty/PropertyLookUp.aspx?isLicensee=Y&TabName=APO",
+   "source_url": "https://www.michigan.gov/lara/bureau-list/bcc/Sections/Licensing-Section/residential-builders/lic-info/helpful-information-for-homeowners",
+   "summary": "In Michigan, roofing is one of the trades covered by the state Maintenance & Alteration contractor license (a Residential Builder license also covers remodeling work). Contractors offering residential work totaling $600 or more in labor and materials must be licensed by LARA.",
+   "threshold": "work which totals $600 or more in labor and materials",
+   "verified": "fetched"
+  }
+ },
+ "MN": {
+  "electrical": {
+   "agency": "Minnesota Department of Labor and Industry (DLI)",
+   "agency_url": "https://www.dli.mn.gov/business/electrical-contractors",
+   "level": "state",
+   "lookup_url": "https://www.dli.mn.gov/license-and-registration-lookup",
+   "source_url": "https://www.dli.mn.gov/business/electrical-contractors",
+   "summary": "Minnesota DLI licenses electrical contractors and electricians and registers unlicensed individuals doing electrical work. Homeowners can check a license through DLI's license lookup.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Minnesota Department of Labor and Industry (DLI)",
+   "agency_url": "https://www.dli.mn.gov/business/residential-contractors/residential-contractor-licensing",
+   "level": "state",
+   "lookup_url": "https://www.dli.mn.gov/license-and-registration-lookup",
+   "source_url": "https://www.dli.mn.gov/business/residential-contractors/residential-contractor-licensing",
+   "summary": "In Minnesota, anyone who contracts directly with an owner of residential property (one to four units) to provide work in more than one special skill must hold a DLI residential building contractor or residential remodeler license. Commercial contractors do not need this license but must register with DLI.",
+   "threshold": "Exempt if gross annual residential receipts are less than $15,000 and the contractor holds a Certificate of Exemption.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Minnesota Department of Labor and Industry (DLI)",
+   "agency_url": "https://www.dli.mn.gov/business/plumbing-contractors/mechanical-contractor-bond-requirements",
+   "insurance_bond": "$25,000 mechanical contractor bond filed with DLI.",
+   "level": "local",
+   "lookup_url": "https://www.dli.mn.gov/license-and-registration-lookup",
+   "source_url": "https://www.dli.mn.gov/business/plumbing-contractors/mechanical-contractor-bond-requirements",
+   "summary": "Minnesota has no state license for mechanical (HVAC) contractors, but businesses must file a $25,000 mechanical contractor bond with DLI to contract for gas, heating, ventilation, air conditioning or refrigeration work. Cities may require their own licenses or competency cards, so homeowners should also check with their city.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Minnesota Supreme Court Lawyer Registration Office",
+   "agency_url": "https://mars.courts.state.mn.us/",
+   "level": "state",
+   "lookup_url": "https://mars.courts.state.mn.us/",
+   "source_url": "https://mars.courts.state.mn.us/",
+   "summary": "Minnesota lawyers register with the Minnesota Supreme Court's Lawyer Registration Office. Its public attorney search shows a lawyer's license number, current status, admission date and professional liability insurance information.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Minnesota Department of Labor and Industry (DLI)",
+   "agency_url": "https://www.dli.mn.gov/business/plumbing-and-mechanical-contractors",
+   "level": "state",
+   "lookup_url": "https://www.dli.mn.gov/license-and-registration-lookup",
+   "source_url": "https://www.dli.mn.gov/business/plumbing-contractors/plumbing-contractor-licensing-basics",
+   "summary": "Businesses that contract to provide plumbing services in Minnesota must hold a DLI plumbing contractor license, which is required for plumbing work in communities with a population over 5,000. Licensed plumbing contractors carry a surety bond and liability insurance.",
+   "threshold": "Plumbing contractor license required for plumbing work in Minnesota communities with a population over 5,000.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Minnesota Department of Labor and Industry (DLI)",
+   "agency_url": "https://www.dli.mn.gov/business/residential-contractors/who-needs-roofer-license",
+   "level": "state",
+   "lookup_url": "https://www.dli.mn.gov/license-and-registration-lookup",
+   "source_url": "https://www.dli.mn.gov/business/residential-contractors/who-needs-roofer-license",
+   "summary": "Minnesota contractors who perform residential roofing work must be licensed by DLI as a residential roofer, residential building contractor or residential remodeler. Contractors with annual residential gross receipts under $15,000 are exempt but must obtain a Certificate of Exemption each year.",
+   "threshold": "Exempt if annual gross receipts from residential contracting or remodeling are less than $15,000 (Certificate of Exemption required).",
+   "verified": "fetched"
+  }
+ },
+ "MO": {
+  "electrical": {
+   "agency": "Missouri Division of Professional Registration – Office of Statewide Electrical Contractors",
+   "agency_url": "https://pr.mo.gov/electricalcontractors.asp",
+   "insurance_bond": "Statewide license holders must carry $500,000 in liability insurance; any bond required by a city or county is still posted locally.",
+   "level": "state",
+   "lookup_url": "https://mopro.mo.gov/license/s/license-search",
+   "source_url": "https://pr.mo.gov/boards/electrical/FAQ's_for_Contractors.pdf",
+   "summary": "Missouri offers an optional statewide electrical contractor license that cities and counties must accept in place of a local contractor license. Contractors who only work where they hold a local license, or where none is required, are not required to get it, so many electricians are licensed by their city or county instead.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Missouri does not issue a statewide general or home improvement contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county building department."
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Missouri does not issue a statewide HVAC/mechanical contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county building department."
+  },
+  "legal": {
+   "agency": "Supreme Court of Missouri (Attorney Enrollment) / The Missouri Bar",
+   "agency_url": "https://www.courts.mo.gov/page.jsp?id=103773",
+   "level": "state",
+   "lookup_url": "https://mobar.org/site/content/For-the-Public/Lawyer_Directory.aspx",
+   "source_url": "https://www.courts.mo.gov/page.jsp?id=103773",
+   "summary": "Lawyers in Missouri are admitted and enrolled by the Supreme Court of Missouri, whose clerk keeps the official roll of attorneys. The Official Missouri Directory of Lawyers lets the public check whether a lawyer is in good standing.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Missouri does not issue a statewide plumbing contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county building department."
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "Missouri does not issue a statewide roofing contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county building department."
+  }
+ },
+ "MS": {
+  "electrical": {
+   "agency": "Mississippi State Board of Contractors (MSBOC)",
+   "agency_url": "https://www.msboc.us/one-stop-shop/",
+   "level": "state",
+   "lookup_url": "http://search.msboc.us/",
+   "source_url": "https://www.msboc.us/one-stop-shop/",
+   "summary": "Mississippi's State Board of Contractors licenses residential electrical contractors. The board says residential electrical work under $10,000 does not need a state license, but homeowners should check local building or permit office requirements; its FAQ also says subcontractors doing this work on residential projects must be MSBOC-licensed.",
+   "threshold": "state license not required for residential electrical work less than $10,000",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Mississippi State Board of Contractors (MSBOC)",
+   "agency_url": "https://www.msboc.us/one-stop-shop/",
+   "insurance_bond": "Applicants must provide proof of general liability insurance; residential licenses have no minimum coverage, while commercial applicants must show at least $300,000 per occurrence and $600,000 aggregate.",
+   "level": "state",
+   "lookup_url": "http://search.msboc.us/",
+   "source_url": "https://www.msboc.us/general-info/frequently-asked-questions/",
+   "summary": "Mississippi requires a Residential Builder license for new residential construction over $50,000 and a Residential Remodeler license for remodeling or additions over $10,000. Commercial jobs over $50,000 require a commercial contractor license.",
+   "threshold": "residential building over $50,000; residential remodeling over $10,000; commercial work over $50,000",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Mississippi State Board of Contractors (MSBOC)",
+   "agency_url": "https://www.msboc.us/one-stop-shop/",
+   "level": "state",
+   "lookup_url": "http://search.msboc.us/",
+   "source_url": "https://www.msboc.us/one-stop-shop/",
+   "summary": "Mississippi's State Board of Contractors licenses residential HVAC contractors. The board says residential HVAC work under $10,000 does not need a state license, but homeowners should check local building or permit office requirements; its FAQ also says subcontractors doing this work on residential projects must be MSBOC-licensed.",
+   "threshold": "state license not required for residential HVAC work less than $10,000",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "The Mississippi Bar",
+   "agency_url": "https://www.msbar.org/for-attorneys/publications/membership-directory/",
+   "level": "state",
+   "lookup_url": "https://msbar.reliaguide.com/home",
+   "source_url": "https://www.msbar.org/for-attorneys/publications/membership-directory/",
+   "summary": "Lawyers in Mississippi are members of The Mississippi Bar. The Bar's online member directory, updated daily, lists current membership information.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Mississippi State Board of Contractors (MSBOC)",
+   "agency_url": "https://www.msboc.us/one-stop-shop/",
+   "level": "state",
+   "lookup_url": "http://search.msboc.us/",
+   "source_url": "https://www.msboc.us/one-stop-shop/",
+   "summary": "Mississippi's State Board of Contractors licenses residential plumbing contractors. The board says residential plumbing work under $10,000 does not need a state license, but homeowners should check local building or permit office requirements; its FAQ also says subcontractors doing this work on residential projects must be MSBOC-licensed.",
+   "threshold": "state license not required for residential plumbing work less than $10,000",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Mississippi State Board of Contractors (MSBOC)",
+   "agency_url": "https://www.msboc.us/one-stop-shop/",
+   "insurance_bond": "License applicants must provide proof of general liability insurance; there is no minimum coverage amount for residential licenses.",
+   "level": "state",
+   "lookup_url": "http://search.msboc.us/",
+   "source_url": "https://www.msboc.us/general-info/frequently-asked-questions/",
+   "summary": "Mississippi requires a residential roofing or remodeling license from the State Board of Contractors for residential roofing jobs over $10,000. A Residential Builder license also covers roofing.",
+   "threshold": "residential roofing over $10,000",
+   "verified": "fetched"
+  }
+ },
+ "NC": {
+  "electrical": {
+   "agency": "North Carolina State Board of Examiners of Electrical Contractors",
+   "agency_url": "https://www.ncbeec.org/",
+   "level": "state",
+   "lookup_url": "https://arls-public.ncbeec.org/Public/Search",
+   "source_url": "https://www.ncbeec.org/",
+   "summary": "In North Carolina, the State Board of Examiners of Electrical Contractors licenses electrical contractors under G.S. Chapter 87, Article 4. You can check a contractor on the board's online license search.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "North Carolina Licensing Board for General Contractors (NCLBGC)",
+   "agency_url": "https://www.nclbgc.org/",
+   "level": "state",
+   "lookup_url": "https://portal.nclbgc.org/Public/Search",
+   "source_url": "https://www.nclbgc.org/",
+   "summary": "North Carolina requires a general contractor license from the NCLBGC for projects valued at $40,000 or more. Licenses carry a classification (such as Building or Residential) and a limitation (Limited, Intermediate, or Unlimited) that caps the size of a single project.",
+   "threshold": "projects valued at $40,000 or more",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "North Carolina State Board of Examiners of Plumbing, Heating & Fire Sprinkler Contractors",
+   "agency_url": "https://nclicensing.org/",
+   "level": "state",
+   "lookup_url": "https://public.nclicensing.org/Public/Search",
+   "source_url": "https://nclicensing.org/",
+   "summary": "In North Carolina, the State Board of Examiners of Plumbing, Heating & Fire Sprinkler Contractors licenses heating/HVAC contractors. You can check a contractor on the board's online license search.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "North Carolina State Bar",
+   "agency_url": "https://www.ncbar.gov/for-the-public/finding-a-lawyer/",
+   "level": "state",
+   "lookup_url": "https://portal.ncbar.gov/verification/search.aspx",
+   "source_url": "https://www.ncbar.gov/for-the-public/finding-a-lawyer/",
+   "summary": "The North Carolina State Bar licenses lawyers in North Carolina. Its online membership directory shows whether a lawyer is active and eligible to practice.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "North Carolina State Board of Examiners of Plumbing, Heating & Fire Sprinkler Contractors",
+   "agency_url": "https://nclicensing.org/",
+   "level": "state",
+   "lookup_url": "https://public.nclicensing.org/Public/Search",
+   "source_url": "https://nclicensing.org/",
+   "summary": "In North Carolina, the State Board of Examiners of Plumbing, Heating & Fire Sprinkler Contractors licenses plumbing contractors. You can check a contractor on the board's online license search.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "North Carolina Licensing Board for General Contractors (NCLBGC)",
+   "agency_url": "https://nclbgc.org/classifications-and-limitations/",
+   "level": "state",
+   "lookup_url": "https://portal.nclbgc.org/Public/Search",
+   "source_url": "https://nclbgc.org/classifications-and-limitations/",
+   "summary": "North Carolina has no separate roofing board. Roofing is licensed through the NCLBGC as the S(Roofing) specialty classification, which is also part of the Building and Residential contractor classifications.",
+   "verified": "fetched"
+  }
+ },
+ "NE": {
+  "electrical": {
+   "agency": "Nebraska State Electrical Division",
+   "agency_url": "https://electrical.nebraska.gov/licensing",
+   "level": "state",
+   "lookup_url": "https://www.nebraska.gov/sed/search/index.cgi",
+   "source_url": "https://electrical.nebraska.gov/",
+   "summary": "The Nebraska State Electrical Division licenses electrical contractors, journeyman electricians, residential journeyman wiremen, apprentices and fire alarm installers. Its licensee search lets the public check a license.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Nebraska Department of Labor (Contractor Registration)",
+   "agency_url": "https://dol.nebraska.gov/LaborStandards/Contractors",
+   "insurance_bond": "Contractors with one or more employees must keep a current workers' compensation certificate of insurance on file with the Department of Labor; a lapse removes them from the registered list.",
+   "level": "state",
+   "lookup_url": "https://dol.nebraska.gov/conreg/Search",
+   "source_url": "https://dol.nebraska.gov/LaborStandards/Contractors",
+   "summary": "Under the Nebraska Contractor Registration Act, general contractors and subcontractors doing business in Nebraska must register with the Nebraska Department of Labor. This is a registration, not a competency license; registration does not guarantee quality of work.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://dol.nebraska.gov/LaborStandards/Contractors",
+   "summary": "Nebraska does not issue a statewide HVAC/mechanical license; trade licensing, where required, is handled by cities and counties, so homeowners should check with their city or county. All contractors working in Nebraska must also register with the Nebraska Department of Labor, whose registered-contractor search is public.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Nebraska Supreme Court – Attorney Services Division",
+   "agency_url": "https://nebraskajudicial.gov/administration/attorneys",
+   "level": "state",
+   "lookup_url": "https://attorneys.nejudicial.gov/member-search",
+   "source_url": "https://nebraskajudicial.gov/administration/attorneys",
+   "summary": "Attorney licensing in Nebraska is administered by the Nebraska Judicial Branch's Attorney Services Division under Nebraska Supreme Court rules, with annual license renewal. The Judicial Branch offers a public attorney member search.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://dol.nebraska.gov/LaborStandards/Contractors",
+   "summary": "Nebraska does not issue a statewide plumbing license; trade licensing, where required, is handled by cities and counties, so homeowners should check with their city or county. All contractors working in Nebraska must also register with the Nebraska Department of Labor, whose registered-contractor search is public.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Nebraska Department of Labor (Contractor Registration)",
+   "agency_url": "https://dol.nebraska.gov/LaborStandards/Contractors",
+   "insurance_bond": "Contractors with one or more employees must keep a current workers' compensation certificate of insurance on file with the Department of Labor.",
+   "level": "state",
+   "lookup_url": "https://dol.nebraska.gov/conreg/Search",
+   "source_url": "https://dol.nebraska.gov/LaborStandards/Contractors",
+   "summary": "Nebraska has no roofing-specific license; roofers, like all contractors and subcontractors doing work on others' property in Nebraska, must register with the Nebraska Department of Labor. Registration does not guarantee quality of work.",
+   "verified": "fetched"
+  }
+ },
+ "NJ": {
+  "electrical": {
+   "agency": "New Jersey Board of Examiners of Electrical Contractors",
+   "agency_url": "https://njconsumeraffairs.gov/elec/Pages/applicant-instructions.aspx",
+   "level": "state",
+   "lookup_url": "https://newjersey.mylicense.com/verification/",
+   "source_url": "https://newjersey.mylicense.com/verification/",
+   "summary": "New Jersey licenses electrical contractors through the Board of Examiners of Electrical Contractors in the Division of Consumer Affairs. Electrical contractor businesses and licensees can be looked up in the Division's license verification system.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "New Jersey Division of Consumer Affairs",
+   "agency_url": "https://njconsumeraffairs.gov/HIC",
+   "insurance_bond": "Commercial general liability insurance of at least $500,000 per occurrence, workers' compensation insurance (unless exempt), and a compliance bond, letter of credit, or other security of $10,000 to $50,000 depending on contract size.",
+   "level": "state",
+   "lookup_url": "https://newjersey.mylicense.com/verification/",
+   "source_url": "https://njconsumeraffairs.gov/Documents/HIC-HEC-Regarding-Changes-To-The-Law-New-Requirements-For-Registration.pdf",
+   "summary": "Businesses that sell or perform home improvements in New Jersey must register with the Division of Consumer Affairs under the Contractors' Business Registration Act. A 2024 law (P.L. 2023, c. 237) added workers' compensation and bonding requirements and created a State Board of Home Improvement and Home Elevation Contractors.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "New Jersey State Board of Examiners of Heating, Ventilating, Air Conditioning and Refrigeration (HVACR) Contractors",
+   "agency_url": "https://njconsumeraffairs.gov/HVACR",
+   "level": "state",
+   "lookup_url": "https://newjersey.mylicense.com/verification/",
+   "source_url": "https://njconsumeraffairs.gov/hvacr/Pages/FAQ.aspx",
+   "summary": "New Jersey licenses master HVACR contractors through a state board within the Division of Consumer Affairs. Homeowners can check a license with the Division's online license verification system.",
+   "verified": "search"
+  },
+  "legal": {
+   "agency": "New Jersey Courts (Supreme Court of New Jersey)",
+   "agency_url": "https://www.njcourts.gov/attorneys",
+   "level": "state",
+   "lookup_url": "https://portalattysearch-cloud.njcourts.gov/prweb/PRServletPublicAuth/app/Attorney/-amRUHgepTwWWiiBQpI9_yQNuum4oN16*/!STANDARD?AppName=AttorneySearch",
+   "source_url": "https://www.njcourts.gov/attorneys",
+   "summary": "New Jersey attorneys are licensed by the Supreme Court and must register annually with the New Jersey Courts. The courts' Attorney Index lets the public check an attorney's admission and status to practice.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "New Jersey State Board of Examiners of Master Plumbers",
+   "agency_url": "https://njconsumeraffairs.gov/plu",
+   "level": "state",
+   "lookup_url": "https://newjersey.mylicense.com/verification/",
+   "source_url": "https://njconsumeraffairs.gov/plu",
+   "summary": "New Jersey requires master plumbers to hold a state license from the State Board of Examiners of Master Plumbers, renewed every two years. Licenses can be checked through the Division of Consumer Affairs license verification system.",
+   "verified": "search"
+  },
+  "roofing": {
+   "agency": "New Jersey Division of Consumer Affairs",
+   "agency_url": "https://njconsumeraffairs.gov/HIC",
+   "insurance_bond": "Commercial general liability insurance of at least $500,000 per occurrence, workers' compensation insurance (unless exempt), and a compliance bond, letter of credit, or other security of $10,000 to $50,000 depending on contract size.",
+   "level": "state",
+   "lookup_url": "https://newjersey.mylicense.com/verification/",
+   "source_url": "https://njconsumeraffairs.gov/Documents/HIC-HEC-Regarding-Changes-To-The-Law-New-Requirements-For-Registration.pdf",
+   "summary": "New Jersey has no separate roofing license board; contractors doing residential home improvement work, including roofing, must register with the Division of Consumer Affairs as Home Improvement Contractor Businesses.",
+   "verified": "fetched"
+  }
+ },
+ "NM": {
+  "electrical": {
+   "agency": "New Mexico Regulation and Licensing Department, Construction Industries Division (CID)",
+   "agency_url": "https://www.rld.nm.gov/construction-industries/",
+   "level": "state",
+   "lookup_url": "https://public.psiexams.com/search.jsp",
+   "source_url": "https://www.srca.nm.gov/parts/title14/14.006.0006.html",
+   "summary": "New Mexico's Construction Industries Division requires a license for anyone practicing or offering construction contracting. Electrical work falls under classification EE-98 (residential and commercial electrical) or ER-1 (residential electrical).",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "New Mexico Regulation and Licensing Department, Construction Industries Division (CID)",
+   "agency_url": "https://www.rld.nm.gov/construction-industries/",
+   "level": "state",
+   "lookup_url": "https://public.psiexams.com/search.jsp",
+   "source_url": "https://www.srca.nm.gov/parts/title14/14.006.0006.html",
+   "summary": "New Mexico's Construction Industries Division requires a license for anyone practicing or offering construction contracting. Residential building work falls under classification GB-2 (Residential, homes and apartment buildings up to four units) or GB-98 (General Building).",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "New Mexico Regulation and Licensing Department, Construction Industries Division (CID)",
+   "agency_url": "https://www.rld.nm.gov/construction-industries/",
+   "level": "state",
+   "lookup_url": "https://public.psiexams.com/search.jsp",
+   "source_url": "https://www.srca.nm.gov/parts/title14/14.006.0006.html",
+   "summary": "New Mexico's Construction Industries Division requires a license for anyone practicing or offering construction contracting. Heating, ventilation and air conditioning work falls under classification MM-3 (HVAC); MM-98 (Mechanical) also covers it.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "State Bar of New Mexico",
+   "agency_url": "https://www.sbnm.org/",
+   "level": "state",
+   "lookup_url": "https://www.sbnm.org/For-Public/I-Need-a-Lawyer/Online-Bar-Directory",
+   "source_url": "https://www.sbnm.org/For-Public/I-Need-a-Lawyer/Online-Bar-Directory",
+   "summary": "The State Bar of New Mexico publishes an online bar directory the public can use to find and look up attorneys.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "New Mexico Regulation and Licensing Department, Construction Industries Division (CID)",
+   "agency_url": "https://www.rld.nm.gov/construction-industries/",
+   "level": "state",
+   "lookup_url": "https://public.psiexams.com/search.jsp",
+   "source_url": "https://www.srca.nm.gov/parts/title14/14.006.0006.html",
+   "summary": "New Mexico's Construction Industries Division requires a license for anyone practicing or offering construction contracting. Plumbing work falls under classification MM-1 (Plumbing); MM-98 (Mechanical) also covers it.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "New Mexico Regulation and Licensing Department, Construction Industries Division (CID)",
+   "agency_url": "https://www.rld.nm.gov/construction-industries/",
+   "level": "state",
+   "lookup_url": "https://public.psiexams.com/search.jsp",
+   "source_url": "https://www.srca.nm.gov/parts/title14/14.006.0006.html",
+   "summary": "New Mexico's Construction Industries Division requires a license for anyone practicing or offering construction contracting. Roofing work falls under classification GS-21 (Roofing).",
+   "verified": "fetched"
+  }
+ },
+ "NV": {
+  "electrical": {
+   "agency": "Nevada State Contractors Board (NSCB)",
+   "agency_url": "https://www.nvcontractorsboard.com/licensing/license-classifications/",
+   "insurance_bond": "Bond amount is set by the Board at approval and can range from $1,000 to $500,000",
+   "level": "state",
+   "lookup_url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
+   "source_url": "https://www.leg.state.nv.us/nrs/nrs-624.html",
+   "summary": "Nevada licenses electrical contractors through the Nevada State Contractors Board (classification C-2, Electrical). Contractors must be licensed before bidding or performing work.",
+   "threshold": "The state's small-repair exemption (under $1,000 including labor and materials) does not apply to plumbing, electrical, refrigeration, heating, or air-conditioning work, so this work requires a license regardless of job size",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Nevada State Contractors Board (NSCB)",
+   "agency_url": "https://www.nvcontractorsboard.com/licensing/license-classifications/",
+   "insurance_bond": "Bond amount is set by the Board at approval and can range from $1,000 to $500,000",
+   "level": "state",
+   "lookup_url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
+   "source_url": "https://www.leg.state.nv.us/nrs/nrs-624.html",
+   "summary": "Nevada licenses general building contractors through the Nevada State Contractors Board (classification B, General Building; B-2 covers Residential and Small Commercial). Contractors must be licensed before bidding or performing work.",
+   "threshold": "Repair or maintenance work under $1,000, including labor and materials, is exempt unless it requires a building permit or is part of a larger project",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Nevada State Contractors Board (NSCB)",
+   "agency_url": "https://www.nvcontractorsboard.com/licensing/license-classifications/",
+   "insurance_bond": "Bond amount is set by the Board at approval and can range from $1,000 to $500,000",
+   "level": "state",
+   "lookup_url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
+   "source_url": "https://www.leg.state.nv.us/nrs/nrs-624.html",
+   "summary": "Nevada licenses refrigeration and air-conditioning contractors through the Nevada State Contractors Board (classification C-21, Refrigeration and Air-Conditioning). Contractors must be licensed before bidding or performing work.",
+   "threshold": "The state's small-repair exemption (under $1,000 including labor and materials) does not apply to plumbing, electrical, refrigeration, heating, or air-conditioning work, so this work requires a license regardless of job size",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "State Bar of Nevada",
+   "agency_url": "https://www.nvbar.org/",
+   "level": "state",
+   "lookup_url": "https://nvbar.org/for-the-public/find-a-lawyer/",
+   "source_url": "https://www.nvbar.org/",
+   "summary": "The State Bar of Nevada regulates attorneys in Nevada. Its Find a Lawyer page offers attorney lookup and a lawyer referral service.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Nevada State Contractors Board (NSCB)",
+   "agency_url": "https://www.nvcontractorsboard.com/licensing/license-classifications/",
+   "insurance_bond": "Bond amount is set by the Board at approval and can range from $1,000 to $500,000",
+   "level": "state",
+   "lookup_url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
+   "source_url": "https://www.leg.state.nv.us/nrs/nrs-624.html",
+   "summary": "Nevada licenses plumbing and heating contractors through the Nevada State Contractors Board (classification C-1, Plumbing and Heating). Contractors must be licensed before bidding or performing work.",
+   "threshold": "The state's small-repair exemption (under $1,000 including labor and materials) does not apply to plumbing, electrical, refrigeration, heating, or air-conditioning work, so this work requires a license regardless of job size",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Nevada State Contractors Board (NSCB)",
+   "agency_url": "https://www.nvcontractorsboard.com/licensing/license-classifications/",
+   "insurance_bond": "Bond amount is set by the Board at approval and can range from $1,000 to $500,000",
+   "level": "state",
+   "lookup_url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
+   "source_url": "https://www.leg.state.nv.us/nrs/nrs-624.html",
+   "summary": "Nevada licenses roofing contractors through the Nevada State Contractors Board (classification C-15, Roofing and Siding). Contractors must be licensed before bidding or performing work.",
+   "threshold": "Repair or maintenance work under $1,000, including labor and materials, is exempt unless it requires a building permit or is part of a larger project",
+   "verified": "fetched"
+  }
+ },
+ "NY": {
+  "electrical": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.nyc.gov/site/buildings/industry/skilled-trades.page",
+   "summary": "New York State does not issue a statewide electrician license; electricians are licensed by cities and counties, so homeowners should check with their local government. In New York City, the Department of Buildings licenses electricians.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.nyc.gov/site/buildings/industry/contractors.page",
+   "summary": "New York State does not license general or home improvement contractors statewide; licensing is handled by cities and counties. In New York City, home improvement contractors need a license from the Department of Consumer and Worker Protection (DCWP), and general contractors register with the Department of Buildings.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.nyc.gov/site/buildings/industry/skilled-trades.page",
+   "summary": "New York State does not issue a statewide HVAC contractor license; licensing is handled by cities and counties, so homeowners should check with their local building department. In New York City, the Department of Buildings licenses oil burner equipment installers.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "New York State Unified Court System",
+   "agency_url": "https://www.nycourts.gov/legal-professional",
+   "level": "state",
+   "lookup_url": "https://iapps.courts.state.ny.us/attorneyservices/search?0",
+   "source_url": "https://www.nycourts.gov/legal-professional",
+   "summary": "Lawyers in New York are admitted to the bar by the courts and must register with the Unified Court System every two years. The court system's online attorney directory lets the public look up an attorney's registration.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.nyc.gov/site/buildings/industry/skilled-trades.page",
+   "summary": "New York State does not issue a statewide plumbing license; plumbers are licensed by cities and counties, so homeowners should check with their local government. In New York City, the Department of Buildings licenses master plumbers.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "New York State does not license roofing contractors; any licensing or home improvement contractor requirements are set by cities and counties, so homeowners should check with their local government."
+  }
+ },
+ "OH": {
+  "electrical": {
+   "agency": "Ohio Construction Industry Licensing Board (OCILB), Ohio Department of Commerce",
+   "agency_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "level": "state",
+   "lookup_url": "https://elicense4.com.ohio.gov/Lookup/LicenseLookup.aspx",
+   "source_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "summary": "Ohio's OCILB licenses electrical contractors for commercial work under Ohio Revised Code Chapter 4740. Residential contractor regulation is left to local jurisdictions, which may require the state license at their discretion, so homeowners should also check with their city or county.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "summary": "Ohio does not issue a state general or home-improvement contractor license; residential contractor regulation is the responsibility of local jurisdictions. Homeowners should check registration requirements with their city or county building department.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Ohio Construction Industry Licensing Board (OCILB), Ohio Department of Commerce",
+   "agency_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "level": "state",
+   "lookup_url": "https://elicense4.com.ohio.gov/Lookup/LicenseLookup.aspx",
+   "source_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "summary": "Ohio's OCILB licenses heating, ventilating and air conditioning (HVAC) and refrigeration contractors for commercial work under Ohio Revised Code Chapter 4740. Residential contractor regulation is left to local jurisdictions, which may require the state license at their discretion, so homeowners should also check with their city or county.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Supreme Court of Ohio (Office of Attorney Services)",
+   "agency_url": "https://www.supremecourt.ohio.gov/attorneys/attorney-registration/",
+   "level": "state",
+   "lookup_url": "https://www.supremecourt.ohio.gov/AttorneySearch/#/search",
+   "source_url": "https://www.supremecourt.ohio.gov/attorneys/attorney-registration/",
+   "summary": "Attorneys in Ohio are admitted and registered by the Supreme Court of Ohio; active attorneys must register with the Court every two years. The Court's online Attorney Directory lets the public look up an attorney's registration.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Ohio Construction Industry Licensing Board (OCILB), Ohio Department of Commerce",
+   "agency_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "level": "state",
+   "lookup_url": "https://elicense4.com.ohio.gov/Lookup/LicenseLookup.aspx",
+   "source_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "summary": "Ohio's OCILB licenses plumbing and hydronics contractors for commercial work under Ohio Revised Code Chapter 4740. Residential contractor regulation is left to local jurisdictions, which may require the state license at their discretion, so homeowners should also check with their city or county.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/boards/ohio-construction-industry-licensing-board",
+   "summary": "Ohio has no state roofing contractor license; the state board licenses only commercial electrical, HVAC, plumbing, hydronics and refrigeration contractors, and residential contractor regulation is the responsibility of local jurisdictions. Homeowners should check with their city or county building department.",
+   "verified": "fetched"
+  }
+ },
+ "OK": {
+  "electrical": {
+   "agency": "Oklahoma Construction Industries Board (CIB)",
+   "agency_url": "https://oklahoma.gov/cib/your-industry/electrical.html",
+   "level": "state",
+   "lookup_url": "https://oklahoma.gov/cib/consumers/are-they-licensed.html",
+   "source_url": "https://oklahoma.gov/cib/your-industry/electrical.html",
+   "summary": "Oklahoma's Construction Industries Board licenses electrical contractors and journeymen and registers apprentices. Contractors must carry general liability insurance, and a license bond or an approved waiver affidavit is required to activate a contractor license.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://oklahoma.gov/cib.html",
+   "summary": "Oklahoma does not currently require general contractors to hold a state license, though trade work such as electrical, mechanical, and plumbing requires a state trade license and roofers must register. Any general contractor licensing or registration is handled by cities, so homeowners should check with their local government.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Oklahoma Construction Industries Board (CIB)",
+   "agency_url": "https://oklahoma.gov/cib/your-industry/mechanical.html",
+   "level": "state",
+   "lookup_url": "https://oklahoma.gov/cib/consumers/are-they-licensed.html",
+   "source_url": "https://oklahoma.gov/cib/your-industry/mechanical.html",
+   "summary": "Oklahoma's Construction Industries Board licenses mechanical (HVAC) contractors and journeymen, with an apprentice path. Contractors must carry general liability insurance, and bond and insurance (or an approved waiver affidavit) are required to activate a contractor license.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Oklahoma Bar Association",
+   "agency_url": "https://www.okbar.org/",
+   "level": "state",
+   "lookup_url": "https://my.okbar.org/member-verification/",
+   "source_url": "https://my.okbar.org/member-verification/",
+   "summary": "The Oklahoma Bar Association's Member Verification tool lets the public look up Oklahoma lawyers and shows each member's membership type, status (such as good standing), and admission date.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Oklahoma Construction Industries Board (CIB)",
+   "agency_url": "https://oklahoma.gov/cib/your-industry/plumbing.html",
+   "level": "state",
+   "lookup_url": "https://oklahoma.gov/cib/consumers/are-they-licensed.html",
+   "source_url": "https://oklahoma.gov/cib/your-industry/plumbing.html",
+   "summary": "Oklahoma's Construction Industries Board licenses plumbing contractors and journeymen and registers apprentices. Contractors must carry general liability insurance, and bond and insurance (or an approved waiver affidavit) are required to activate a contractor license.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Oklahoma Construction Industries Board (CIB)",
+   "agency_url": "https://oklahoma.gov/cib/your-industry/roofing.html",
+   "insurance_bond": "General liability insurance covering roofing work of not less than $500,000 for residential roofing work, or not less than $1,000,000 for a commercial roofing endorsement.",
+   "level": "state",
+   "lookup_url": "https://oklahoma.gov/cib/consumers/are-they-licensed.html",
+   "source_url": "https://oklahoma.gov/cib/your-industry/roofing.html",
+   "summary": "Oklahoma requires roofing contractors to register with the Construction Industries Board; commercial roofing work also requires a commercial endorsement, which involves passing an exam.",
+   "verified": "fetched"
+  }
+ },
+ "OR": {
+  "electrical": {
+   "agency": "Oregon Building Codes Division (BCD), Department of Consumer and Business Services",
+   "agency_url": "https://www.oregon.gov/bcd/licensing/pages/electrical-apply.aspx",
+   "level": "state",
+   "lookup_url": "https://www.oregon.gov/bcd/licensing/Pages/search.aspx",
+   "source_url": "https://www.oregon.gov/bcd/licensing/pages/electrical-apply.aspx",
+   "summary": "Oregon's Building Codes Division issues electrical licenses, including general journeyman and general supervising electrician licenses, and its license holder search covers both individual and business contractor licenses.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Oregon Construction Contractors Board (CCB)",
+   "agency_url": "https://www.oregon.gov/ccb/pages/ccb%20license.aspx",
+   "insurance_bond": "Residential general contractors: liability insurance of $500,000 per occurrence; residential specialty contractors: $300,000 per occurrence.",
+   "level": "state",
+   "lookup_url": "https://search.ccb.state.or.us/search/",
+   "source_url": "https://www.oregon.gov/ccb/pages/ccb%20license.aspx",
+   "summary": "Oregon requires anyone who works for compensation in any construction activity involving improvements to real property to be licensed by the Construction Contractors Board. Licensed contractors must carry a surety bond and liability insurance.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Oregon Construction Contractors Board (CCB)",
+   "agency_url": "https://www.oregon.gov/ccb/pages/ccb%20license.aspx",
+   "level": "state",
+   "lookup_url": "https://search.ccb.state.or.us/search/",
+   "source_url": "https://www.oregon.gov/bcd/licensing/Pages/index.aspx",
+   "summary": "Oregon's Building Codes Division issues electrical, plumbing, boiler, elevator and manufactured dwelling licenses but no separate HVAC trade license. HVAC businesses doing construction work on real property need a Construction Contractors Board license, and electrical work on HVAC systems falls under BCD electrical licensing.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Oregon State Bar",
+   "agency_url": "https://www.osbar.org/members/membersearch_start.asp",
+   "level": "state",
+   "lookup_url": "https://www.osbar.org/members/membersearch_start.asp",
+   "source_url": "https://www.osbar.org/members/membersearch_start.asp",
+   "summary": "Lawyers practicing in Oregon are licensed through the Oregon State Bar. Its licensee directory can be searched by name, bar number or city.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Oregon Building Codes Division (BCD), Department of Consumer and Business Services",
+   "agency_url": "https://www.oregon.gov/bcd/licensing/pages/plumbing-apply.aspx",
+   "level": "state",
+   "lookup_url": "https://www.oregon.gov/bcd/licensing/Pages/search.aspx",
+   "source_url": "https://www.oregon.gov/bcd/licensing/pages/plumbing-apply.aspx",
+   "summary": "Oregon's Building Codes Division issues plumbing licenses, including the journeyman plumber license, and its license holder search covers both individual and business contractor licenses.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Oregon Construction Contractors Board (CCB)",
+   "agency_url": "https://www.oregon.gov/ccb/pages/ccb%20license.aspx",
+   "insurance_bond": "Residential specialty contractors must carry liability insurance of $300,000 per occurrence; residential general contractors $500,000 per occurrence.",
+   "level": "state",
+   "lookup_url": "https://search.ccb.state.or.us/search/",
+   "source_url": "https://www.oregon.gov/ccb/pages/ccb%20license.aspx",
+   "summary": "Oregon requires anyone who works for compensation in construction activity involving improvements to real property to hold a Construction Contractors Board license, and the CCB lists roofing as work that requires one.",
+   "verified": "fetched"
+  }
+ },
+ "PA": {
+  "electrical": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.attorneygeneral.gov/home-improvement-contractor-registration/",
+   "summary": "Pennsylvania has no statewide electrical license; electrical licensing is handled by municipalities and counties, so homeowners should check with their local government. Contractors doing home improvement work may also need to register with the Pennsylvania Attorney General as a Home Improvement Contractor.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Pennsylvania Office of Attorney General",
+   "agency_url": "https://www.attorneygeneral.gov/home-improvement-contractor-registration/",
+   "level": "state",
+   "lookup_url": "https://hicsearch.attorneygeneral.gov/",
+   "source_url": "https://www.attorneygeneral.gov/home-improvement-contractor-registration/",
+   "summary": "Pennsylvania does not license general contractors statewide, but contractors who perform at least $5,000 of home improvements per year must register with the Attorney General's Office under the Home Improvement Consumer Protection Act. Local municipalities may have additional licensing rules.",
+   "threshold": "at least $5,000 worth of home improvements per year",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.attorneygeneral.gov/home-improvement-contractor-registration/",
+   "summary": "Pennsylvania has no statewide HVAC license; HVAC licensing is handled by municipalities and counties, so homeowners should check with their local government. Contractors doing home improvement work may also need to register with the Pennsylvania Attorney General as a Home Improvement Contractor.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "The Disciplinary Board of the Supreme Court of Pennsylvania",
+   "agency_url": "https://www.padisciplinaryboard.org/for-the-public/find-attorney",
+   "level": "state",
+   "lookup_url": "https://www.padisciplinaryboard.org/for-the-public/find-attorney",
+   "source_url": "https://www.padisciplinaryboard.org/for-the-public/find-attorney",
+   "summary": "Pennsylvania attorneys are licensed under the Supreme Court of Pennsylvania. The court's Disciplinary Board offers a public lookup showing an attorney's license status, contact information, and disciplinary history.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://www.attorneygeneral.gov/home-improvement-contractor-registration/",
+   "summary": "Pennsylvania has no statewide plumbing license; plumbing licensing is handled by municipalities and counties, so homeowners should check with their local government. Contractors doing home improvement work may also need to register with the Pennsylvania Attorney General as a Home Improvement Contractor.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Pennsylvania Office of Attorney General",
+   "agency_url": "https://www.attorneygeneral.gov/home-improvement-contractor-registration/",
+   "level": "state",
+   "lookup_url": "https://hicsearch.attorneygeneral.gov/",
+   "source_url": "https://www.attorneygeneral.gov/home-improvement-contractor-registration/",
+   "summary": "Pennsylvania has no separate roofing license; roofers doing home improvement work register with the Attorney General as Home Improvement Contractors if they perform at least $5,000 of home improvements per year. Some municipalities also license contractors.",
+   "threshold": "at least $5,000 worth of home improvements per year",
+   "verified": "fetched"
+  }
+ },
+ "RI": {
+  "electrical": {
+   "agency": "Rhode Island Department of Labor and Training, Division of Professional Regulation",
+   "agency_url": "https://dlt.ri.gov/regulation-and-safety/professional-regulation",
+   "level": "state",
+   "lookup_url": "https://dltweb.dlt.ri.gov/profregsonline/",
+   "source_url": "https://www.ri.gov/Licensing/",
+   "summary": "Rhode Island licenses electricians, both individuals and electrical businesses, through the Department of Labor and Training. Licenses can be checked with the division's online trade license search.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Rhode Island Contractors' Registration and Licensing Board (CRLB), Department of Business Regulation",
+   "agency_url": "https://crb.ri.gov/general-contractor-registration",
+   "insurance_bond": "General liability insurance of at least $500,000, plus workers' compensation if the contractor has employees.",
+   "level": "state",
+   "lookup_url": "https://dbr.ri.gov/about-dbr/lookup-license",
+   "source_url": "https://crb.ri.gov/general-contractor-registration/apply",
+   "summary": "Rhode Island law requires anyone doing residential or commercial construction work to register with the Contractors' Registration and Licensing Board. A 2025 law (R.I. Gen. Laws chapter 5-65.4) will also require a residential contractor license for building new homes and structural remodeling starting January 1, 2028.",
+   "verified": "search"
+  },
+  "hvac": {
+   "agency": "Rhode Island Department of Labor and Training, Division of Professional Regulation",
+   "agency_url": "https://dlt.ri.gov/regulation-and-safety/professional-regulation",
+   "level": "state",
+   "lookup_url": "https://dltweb.dlt.ri.gov/profregsonline/",
+   "source_url": "https://www.ri.gov/Licensing/",
+   "summary": "Rhode Island licenses pipefitters, refrigeration technicians, and sheet metal workers, the trades that cover HVAC work, through the Department of Labor and Training. Homeowners can search trade licenses online by trade, name, or license number.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Rhode Island Supreme Court",
+   "agency_url": "https://www.courts.ri.gov/attorney-resources",
+   "level": "state",
+   "lookup_url": "http://rijrs.courts.ri.gov/rijrs/attorney.do",
+   "source_url": "https://www.courts.ri.gov/attorney-resources",
+   "summary": "Rhode Island attorneys are admitted by the Supreme Court and file annual registration through the court's attorney portal. The Judiciary's public Attorney Search provides attorney information, with registration questions handled by the Supreme Court Clerk's Office.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Rhode Island Department of Labor and Training, Division of Professional Regulation",
+   "agency_url": "https://dlt.ri.gov/regulation-and-safety/professional-regulation",
+   "level": "state",
+   "lookup_url": "https://dltweb.dlt.ri.gov/profregsonline/",
+   "source_url": "https://www.ri.gov/Licensing/",
+   "summary": "Rhode Island licenses plumbers through the Department of Labor and Training's Division of Professional Regulation. Licenses can be checked with the division's online trade license search.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Rhode Island Contractors' Registration and Licensing Board (CRLB), Department of Business Regulation",
+   "agency_url": "https://crb.ri.gov/licenses/commercial-roofing-license",
+   "insurance_bond": "Commercial roofing license: general liability insurance of at least $2,000,000, plus workers' compensation if the contractor has employees.",
+   "level": "state",
+   "lookup_url": "https://dbr.ri.gov/about-dbr/lookup-license",
+   "source_url": "https://crb.ri.gov/licenses/commercial-roofing-license",
+   "summary": "Rhode Island requires a Commercial Roofing License from the CRLB for commercial or industrial roofing work; it does not cover residential buildings with four or fewer dwelling units. Residential roofers must still register with the CRLB as contractors.",
+   "verified": "search"
+  }
+ },
+ "SC": {
+  "electrical": {
+   "agency": "South Carolina Residential Builders Commission (SC LLR)",
+   "agency_url": "https://llr.sc.gov/res/",
+   "insurance_bond": "A bond is required when work for an individual property owner exceeds $5,000.",
+   "level": "state",
+   "lookup_url": "https://verify.llronline.com/LicLookup/Resbu/Resbu.aspx?div=46",
+   "source_url": "https://www.scstatehouse.gov/code/t40c059.php",
+   "summary": "For residential work, South Carolina's Residential Builders Commission issues residential electrician licenses after an exam. The license applies to residential specialty work exceeding $500; commercial mechanical work falls under the SC Contractor's Licensing Board.",
+   "threshold": "residential specialty work that exceeds $500",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "South Carolina Residential Builders Commission (SC LLR)",
+   "agency_url": "https://www.llr.sc.gov/res/resbuilder.aspx",
+   "level": "state",
+   "lookup_url": "https://verify.llronline.com/LicLookup/Resbu/Resbu.aspx?div=46",
+   "source_url": "https://www.llr.sc.gov/res/resbuilder.aspx",
+   "summary": "South Carolina requires a Residential Builder license from the Residential Builders Commission when the cost of a residential job exceeds $5,000. Regulated commercial construction over $10,000 requires a General or Mechanical Contractor license from the SC Contractor's Licensing Board.",
+   "threshold": "residential work when the cost of the undertaking exceeds $5,000; commercial construction over $10,000",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "South Carolina Residential Builders Commission (SC LLR)",
+   "agency_url": "https://llr.sc.gov/res/",
+   "insurance_bond": "A bond is required when work for an individual property owner exceeds $5,000.",
+   "level": "state",
+   "lookup_url": "https://verify.llronline.com/LicLookup/Resbu/Resbu.aspx?div=46",
+   "source_url": "https://www.scstatehouse.gov/code/t40c059.php",
+   "summary": "For residential work, South Carolina's Residential Builders Commission issues HVAC (heating and air conditioning installer and repairer) licenses after an exam. The license applies to residential specialty work exceeding $500; commercial mechanical work falls under the SC Contractor's Licensing Board.",
+   "threshold": "residential specialty work that exceeds $500",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "South Carolina Judicial Branch / South Carolina Bar",
+   "agency_url": "https://www.sccourts.org/resources/legal-community/sc-bar-member-directory/",
+   "level": "state",
+   "lookup_url": "https://www.sccourts.org/attorneys/",
+   "source_url": "https://www.sccourts.org/attorneys/",
+   "summary": "The South Carolina Judicial Branch runs a public attorney search covering attorneys licensed to practice law in South Carolina. You can search by first name, last name, or bar number.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "South Carolina Residential Builders Commission (SC LLR)",
+   "agency_url": "https://llr.sc.gov/res/",
+   "insurance_bond": "A bond is required when work for an individual property owner exceeds $5,000.",
+   "level": "state",
+   "lookup_url": "https://verify.llronline.com/LicLookup/Resbu/Resbu.aspx?div=46",
+   "source_url": "https://www.scstatehouse.gov/code/t40c059.php",
+   "summary": "For residential work, South Carolina's Residential Builders Commission issues residential plumber licenses after an exam. The license applies to residential specialty work exceeding $500; commercial mechanical work falls under the SC Contractor's Licensing Board.",
+   "threshold": "residential specialty work that exceeds $500",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "South Carolina Residential Builders Commission (SC LLR)",
+   "agency_url": "https://llr.sc.gov/res/",
+   "insurance_bond": "A $5,000 surety bond must be on file before doing work over $5,000 total cost (labor and materials) on a project.",
+   "level": "state",
+   "lookup_url": "https://verify.llronline.com/LicLookup/Resbu/Resbu.aspx?div=46",
+   "source_url": "https://llr.sc.gov/res/PDF/Residential_Specialty_Contractor_Registration_Application_PKG.pdf",
+   "summary": "Residential roofers in South Carolina register with the Residential Builders Commission as residential specialty contractors (Roofing classification) for jobs over $500. Commercial roofing is licensed by the SC Contractor's Licensing Board.",
+   "threshold": "work that exceeds $500",
+   "verified": "fetched"
+  }
+ },
+ "SD": {
+  "electrical": {
+   "agency": "South Dakota Electrical Commission (Department of Labor and Regulation)",
+   "agency_url": "https://dlr.sd.gov/electrical/licensing.aspx",
+   "insurance_bond": "Electrical contractors must provide a $10,000 undertaking and public liability insurance of at least $100,000 per occurrence and $300,000 aggregate (or a $300,000 combined single limit).",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://dlr.sd.gov/electrical/undertaking_insurance.aspx",
+   "summary": "The South Dakota Electrical Commission licenses apprentice electricians, journeymen and electrical contractors. Contractors must post an undertaking and carry public liability insurance; no online license search was found, so homeowners may need to contact the Commission to verify a license.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "South Dakota does not issue a statewide general or home improvement contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county."
+  },
+  "hvac": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "South Dakota does not issue a statewide HVAC/mechanical contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county."
+  },
+  "legal": {
+   "agency": "South Dakota Supreme Court / State Bar of South Dakota",
+   "agency_url": "https://www.statebarofsouthdakota.com/?p=55670",
+   "level": "state",
+   "lookup_url": null,
+   "source_url": "https://www.statebarofsouthdakota.com/?p=55670",
+   "summary": "To practice law in South Dakota, an attorney must be licensed by the South Dakota Supreme Court and be an active member in good standing of the State Bar of South Dakota.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "South Dakota Plumbing Commission (Department of Labor and Regulation)",
+   "agency_url": "https://dlr.sd.gov/plumbing/default.aspx",
+   "level": "state",
+   "lookup_url": "https://dlr.sd.gov/plumbing/consumer_info.aspx",
+   "source_url": "https://dlr.sd.gov/plumbing/default.aspx",
+   "summary": "The South Dakota Plumbing Commission licenses plumbers, plumbing contractors, and related installers such as sewer and water installers. Licenses expire each December 31, and the Commission publishes lists of current licensees rather than a searchable database.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "summary": "South Dakota does not issue a statewide roofing contractor license. Licensing, where required, is handled by cities and counties, so homeowners should check with their city or county."
+  }
+ },
+ "TN": {
+  "electrical": {
+   "agency": "Tennessee Board for Licensing Contractors (Department of Commerce & Insurance)",
+   "agency_url": "https://www.tn.gov/commerce/regboards/contractors.html",
+   "level": "state",
+   "lookup_url": "https://search.cloud.commerce.tn.gov/",
+   "source_url": "https://www.tn.gov/commerce/regboards/contractors/license/get/contractor.html",
+   "summary": "Tennessee requires a contractor's license from the Board for Licensing Contractors for electrical work of $25,000 or more. The board also issues a Limited Licensed Electrician (LLE) license for smaller electrical jobs.",
+   "threshold": "projects of $25,000 or more (including materials, equipment, and labor)",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Tennessee Board for Licensing Contractors (Department of Commerce & Insurance)",
+   "agency_url": "https://www.tn.gov/commerce/regboards/contractors.html",
+   "insurance_bond": "Home improvement licensees must provide a $10,000 surety bond (or other approved financial responsibility such as a cash or property bond or irrevocable letter of credit).",
+   "level": "state",
+   "lookup_url": "https://search.cloud.commerce.tn.gov/",
+   "source_url": "https://www.tn.gov/commerce/regboards/contractors/license/get/home-improvement.html",
+   "summary": "Tennessee requires a contractor's license before bidding or contracting on projects of $25,000 or more. Residential remodeling projects from $3,000 to $24,999 require a home improvement license only in counties that have adopted the law: Bradley, Davidson, Hamilton, Haywood, Knox, Marion, Robertson, Rutherford, and Shelby.",
+   "threshold": "contractor's license for projects of $25,000 or more; home improvement license for residential remodeling of $3,000 to $24,999 in adopting counties",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Tennessee Board for Licensing Contractors (Department of Commerce & Insurance)",
+   "agency_url": "https://www.tn.gov/commerce/regboards/contractors.html",
+   "level": "state",
+   "lookup_url": "https://search.cloud.commerce.tn.gov/",
+   "source_url": "https://www.tn.gov/commerce/regboards/contractors/license/get/contractor.html",
+   "summary": "Tennessee requires a contractor's license from the Board for Licensing Contractors for HVAC/mechanical work of $25,000 or more, whether the contractor works directly for the owner or as a subcontractor. For smaller jobs, homeowners should check their city or county's requirements.",
+   "threshold": "projects of $25,000 or more (including materials, equipment, and labor)",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Board of Professional Responsibility of the Supreme Court of Tennessee",
+   "agency_url": "https://www.tbpr.org/",
+   "level": "state",
+   "lookup_url": "https://www.tbpr.org/for-the-public/online-attorney-directory",
+   "source_url": "https://www.tbpr.org/for-the-public/online-attorney-directory",
+   "summary": "The Board of Professional Responsibility of the Supreme Court of Tennessee runs the online attorney directory for lawyers licensed in Tennessee. Listings show license status (such as active, inactive, or suspended) and any public discipline.",
+   "verified": "search"
+  },
+  "plumbing": {
+   "agency": "Tennessee Board for Licensing Contractors (Department of Commerce & Insurance)",
+   "agency_url": "https://www.tn.gov/commerce/regboards/contractors.html",
+   "level": "state",
+   "lookup_url": "https://search.cloud.commerce.tn.gov/",
+   "source_url": "https://www.tn.gov/commerce/regboards/contractors/license/get/contractor.html",
+   "summary": "Tennessee requires a contractor's license from the Board for Licensing Contractors for plumbing work of $25,000 or more. The board also issues a Limited Licensed Plumber (LLP) license for smaller jobs, which is accepted only in some cities and counties, so homeowners should check local rules.",
+   "threshold": "projects of $25,000 or more (including materials, equipment, and labor)",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Tennessee Board for Licensing Contractors (Department of Commerce & Insurance)",
+   "agency_url": "https://www.tn.gov/commerce/regboards/contractors.html",
+   "level": "state",
+   "lookup_url": "https://search.cloud.commerce.tn.gov/",
+   "source_url": "https://www.tn.gov/commerce/regboards/contractors/license/get/contractor.html",
+   "summary": "Tennessee has no separate roofing board; roofing contractors need a contractor's license from the Board for Licensing Contractors when the roofing work is $25,000 or more. In some counties, residential remodeling jobs from $3,000 to $24,999 require a home improvement license.",
+   "threshold": "projects of $25,000 or more (including materials, equipment, and labor)",
+   "verified": "fetched"
+  }
+ },
+ "TX": {
+  "electrical": {
+   "agency": "Texas Department of Licensing and Regulation (TDLR)",
+   "agency_url": "https://www.tdlr.texas.gov/electricians/elec.htm",
+   "level": "state",
+   "lookup_url": "https://www.tdlr.texas.gov/LicenseSearch/",
+   "source_url": "https://www.tdlr.texas.gov/electricians/elec.htm",
+   "summary": "Texas requires anyone performing non-exempt electrical work to be licensed by TDLR and to work through a licensed electrical contractor.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://gov.texas.gov/uploads/files/business/transcript_Basics_of-Business_Licensing.pdf",
+   "summary": "Texas has no statewide licensing requirement for general contractors, though some trades (such as electrical, air conditioning, and plumbing) need state licenses. Homeowners should check with their city or county for local registration and permit rules.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Texas Department of Licensing and Regulation (TDLR)",
+   "agency_url": "https://www.tdlr.texas.gov/acr/acr.htm",
+   "insurance_bond": "Commercial general liability insurance: Class A $300,000 per occurrence / $600,000 aggregate / $300,000 products-completed operations; Class B $100,000 / $200,000 / $100,000",
+   "level": "state",
+   "lookup_url": "https://www.tdlr.texas.gov/LicenseSearch/",
+   "source_url": "https://www.tdlr.texas.gov/acr/contractor-apply.htm",
+   "summary": "Texas requires anyone who installs, repairs, or maintains air conditioning, refrigeration, or heating systems to hold a TDLR license. Class A covers any size unit; Class B covers cooling systems of 25 tons and under and heating systems of 1.5 million BTU per hour and under.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "State Bar of Texas",
+   "agency_url": "https://www.texasbar.com/",
+   "level": "state",
+   "lookup_url": "https://www.texasbar.com/AM/Template.cfm?Section=Find_A_Lawyer&Template=/CustomSource/MemberDirectory/Search_Form_Client_Main.cfm",
+   "source_url": "https://www.texasbar.com/",
+   "summary": "Attorneys practicing in Texas are members of the State Bar of Texas. Its Find a Lawyer directory lets the public look up attorneys.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Texas State Board of Plumbing Examiners (TSBPE)",
+   "agency_url": "https://tsbpe.texas.gov/",
+   "level": "state",
+   "lookup_url": "https://vo.licensing.hpc.texas.gov/datamart/selSearchType.do",
+   "source_url": "https://tsbpe.texas.gov/",
+   "summary": "The Texas State Board of Plumbing Examiners licenses and regulates the plumbing trade in Texas. Its public license search lets homeowners look up a plumber's license.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": null,
+   "agency_url": null,
+   "level": "local",
+   "lookup_url": null,
+   "source_url": "https://gov.texas.gov/uploads/files/business/transcript_Basics_of-Business_Licensing.pdf",
+   "summary": "Texas has no statewide license requirement for roofing contractors. Homeowners should check with their city or county for any local registration or permit rules.",
+   "verified": "fetched"
+  }
+ },
+ "UT": {
+  "electrical": {
+   "agency": "Utah Division of Professional Licensing (DOPL), Department of Commerce",
+   "agency_url": "https://commerce.utah.gov/dopl/contracting/",
+   "insurance_bond": "General liability insurance of at least $1,000,000 per occurrence and $2,000,000 aggregate.",
+   "level": "state",
+   "lookup_url": "https://secure.utah.gov/llv/search/index.html",
+   "source_url": "https://commerce.utah.gov/wp-content/uploads/2026/03/contractor-all-classifications.pdf",
+   "summary": "Utah licenses electrical contractors through DOPL (E200 General Electrical and E201 Residential Electrical classifications), and the qualifier must hold an active Utah master or residential master electrician license. Individual electricians are also licensed by DOPL.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Utah Division of Professional Licensing (DOPL), Department of Commerce",
+   "agency_url": "https://commerce.utah.gov/dopl/contracting/",
+   "insurance_bond": "General liability insurance of at least $1,000,000 per occurrence and $2,000,000 aggregate.",
+   "level": "state",
+   "lookup_url": "https://secure.utah.gov/llv/search/index.html",
+   "source_url": "https://commerce.utah.gov/wp-content/uploads/2026/03/contractor-all-classifications.pdf",
+   "summary": "Utah licenses contractors at the state level through DOPL, including B100 General Building and R100 Residential & Small Commercial classifications. Licenses are issued to business entities, which must carry general liability insurance.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Utah Division of Professional Licensing (DOPL), Department of Commerce",
+   "agency_url": "https://commerce.utah.gov/dopl/contracting/",
+   "insurance_bond": "General liability insurance of at least $1,000,000 per occurrence and $2,000,000 aggregate.",
+   "level": "state",
+   "lookup_url": "https://secure.utah.gov/llv/search/index.html",
+   "source_url": "https://commerce.utah.gov/wp-content/uploads/2026/03/contractor-all-classifications.pdf",
+   "summary": "Utah licenses HVAC contractors through DOPL under the H100 HVAC contractor classification, which requires the qualifier to pass the H100 trade exam. All licensed contractors must carry general liability insurance.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Utah State Bar",
+   "agency_url": "https://services.utahbar.org/Licensee-Directory",
+   "level": "state",
+   "lookup_url": "https://services.utahbar.org/Licensee-Directory",
+   "source_url": "https://services.utahbar.org/Licensee-Directory",
+   "summary": "Lawyers practicing in Utah must be licensed members of the Utah State Bar. The Bar's licensee directory can be used to check whether someone is a licensed Utah attorney.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Utah Division of Professional Licensing (DOPL), Department of Commerce",
+   "agency_url": "https://commerce.utah.gov/dopl/contracting/",
+   "insurance_bond": "General liability insurance of at least $1,000,000 per occurrence and $2,000,000 aggregate.",
+   "level": "state",
+   "lookup_url": "https://secure.utah.gov/llv/search/index.html",
+   "source_url": "https://commerce.utah.gov/wp-content/uploads/2026/03/contractor-all-classifications.pdf",
+   "summary": "Utah licenses plumbing contractors through DOPL (P200 General Plumbing and P201 Residential Plumbing classifications), and the qualifier must hold an active Utah master or residential master plumber license. Individual plumbers are also licensed by DOPL.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Utah Division of Professional Licensing (DOPL), Department of Commerce",
+   "agency_url": "https://commerce.utah.gov/dopl/contracting/",
+   "insurance_bond": "General liability insurance of at least $1,000,000 per occurrence and $2,000,000 aggregate.",
+   "level": "state",
+   "lookup_url": "https://secure.utah.gov/llv/search/index.html",
+   "source_url": "https://commerce.utah.gov/wp-content/uploads/2026/03/contractor-all-classifications.pdf",
+   "summary": "Utah licenses roofing contractors through DOPL under the S280 Roofing Contractor specialty classification. All licensed contractors must carry general liability insurance.",
+   "verified": "fetched"
+  }
+ },
+ "VA": {
+  "electrical": {
+   "agency": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+   "agency_url": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+   "level": "state",
+   "lookup_url": "https://www.dpor.virginia.gov/LicenseLookup",
+   "source_url": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+   "summary": "Virginia's Board for Contractors licenses individual electricians at journeyman and master levels. Firms doing electrical work over $1,000 also need a Class A, B, or C contractor license.",
+   "threshold": "Class C contractor license required for a single contract or project over $1,000 but less than $30,000 (and less than $250,000 within any 12-month period); Class B and Class A apply to larger amounts.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+   "agency_url": "https://www.dpor.virginia.gov/Boards/Contractors",
+   "level": "state",
+   "lookup_url": "https://www.dpor.virginia.gov/LicenseLookup",
+   "source_url": "https://law.lis.virginia.gov/vacode/title54.1/chapter11/section54.1-1100/",
+   "summary": "Virginia requires contractors to hold a Class A, B, or C license from the Board for Contractors; the class sets how large a job they may take on. Home repair and improvement work falls under the Home Improvement Contracting (HIC) classification, among others.",
+   "threshold": "Class C: single contract or project over $1,000 but less than $30,000, and less than $250,000 within any 12-month period. Class B: $30,000 or more but less than $150,000 per project, or $250,000 or more but less than $1 million in 12 months. Class A: $150,000 or more per project, or $1 million or more in 12 months.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+   "agency_url": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+   "level": "state",
+   "lookup_url": "https://www.dpor.virginia.gov/LicenseLookup",
+   "source_url": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+   "summary": "Virginia's Board for Contractors licenses individual HVAC tradesmen at journeyman and master levels, with a separate residential HVAC mechanic license. Firms doing HVAC work over $1,000 also need a Class A, B, or C contractor license.",
+   "threshold": "Class C contractor license required for a single contract or project over $1,000 but less than $30,000 (and less than $250,000 within any 12-month period); Class B and Class A apply to larger amounts.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Virginia State Bar",
+   "agency_url": "https://vsb.org/Shared_Content/Directory/va-lawyer-directory.aspx",
+   "level": "state",
+   "lookup_url": "https://vsb.org/Shared_Content/Directory/va-lawyer-directory.aspx",
+   "source_url": "https://vsb.org/Shared_Content/Directory/va-lawyer-directory.aspx",
+   "summary": "Lawyers practicing in Virginia must be members of the Virginia State Bar; active (plenary) members in good standing may practice law. The Bar's lawyer directory shows each attorney's membership status.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+   "agency_url": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+   "level": "state",
+   "lookup_url": "https://www.dpor.virginia.gov/LicenseLookup",
+   "source_url": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+   "summary": "Virginia's Board for Contractors licenses individual plumbers at journeyman and master levels, with a separate residential plumbing license. Firms doing plumbing work over $1,000 also need a Class A, B, or C contractor license.",
+   "threshold": "Class C contractor license required for a single contract or project over $1,000 but less than $30,000 (and less than $250,000 within any 12-month period); Class B and Class A apply to larger amounts.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+   "agency_url": "https://www.dpor.virginia.gov/Boards/Contractors",
+   "level": "state",
+   "lookup_url": "https://www.dpor.virginia.gov/LicenseLookup",
+   "source_url": "https://law.lis.virginia.gov/admincode/title18/agency50/chapter22/section30/",
+   "summary": "Virginia licenses roofers as contractors under the Board for Contractors, using the Roofing Contracting (ROC) specialty on a Class A, B, or C contractor license.",
+   "threshold": "A contractor license is required for a single contract or project over $1,000; Class C covers over $1,000 but less than $30,000 per project (and less than $250,000 within any 12-month period).",
+   "verified": "fetched"
+  }
+ },
+ "WA": {
+  "electrical": {
+   "agency": "Washington State Department of Labor & Industries (L&I)",
+   "agency_url": "https://lni.wa.gov/licensing-permits/electrical/electrical-licensing-exams-education/electrical-contractor",
+   "insurance_bond": "$4,000 electrical/telecommunication contractor's surety bond, or assignment of savings account.",
+   "level": "state",
+   "lookup_url": "https://secure.lni.wa.gov/verify/",
+   "source_url": "https://lni.wa.gov/licensing-permits/electrical/electrical-licensing-exams-education/electrical-contractor",
+   "summary": "Electrical contractors in Washington must hold an L&I electrical contractor license with an assigned certified electrical administrator or master electrician, and electricians must hold an L&I electrician certificate. L&I encourages but does not require liability insurance for electrical contractors.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Washington State Department of Labor & Industries (L&I)",
+   "agency_url": "https://lni.wa.gov/licensing-permits/contractors/register-as-a-contractor/",
+   "insurance_bond": "$30,000 surety bond for general contractors ($15,000 for specialty contractors). General liability insurance of $200,000 public liability and $50,000 property damage, or $250,000 combined single limit.",
+   "level": "state",
+   "lookup_url": "https://secure.lni.wa.gov/verify/",
+   "source_url": "https://lni.wa.gov/licensing-permits/contractors/register-as-a-contractor/",
+   "summary": "Washington requires all construction contractors to register with L&I as either general contractors, who can perform most types of construction work and hire subcontractors, or specialty contractors. Registration requires a surety bond and general liability insurance.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Washington State Department of Labor & Industries (L&I)",
+   "agency_url": "https://lni.wa.gov/licensing-permits/electrical/electrical-licensing-exams-education/electrician",
+   "level": "state",
+   "lookup_url": "https://secure.lni.wa.gov/verify/",
+   "source_url": "https://lni.wa.gov/licensing-permits/electrical/electrical-licensing-exams-education/electrician",
+   "summary": "Washington requires all construction contractors, including HVAC contractors, to register with L&I. Electrical work on HVAC and refrigeration equipment requires an L&I electrician certificate, such as the HVAC/refrigeration system (06A) specialty.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Washington State Bar Association (WSBA)",
+   "agency_url": "https://www.mywsba.org/PersonifyEbusiness/LegalDirectory.aspx",
+   "level": "state",
+   "lookup_url": "https://www.mywsba.org/PersonifyEbusiness/LegalDirectory.aspx",
+   "source_url": "https://www.mywsba.org/PersonifyEbusiness/LegalDirectory.aspx",
+   "summary": "Lawyers in Washington are licensed through the Washington State Bar Association. Its Legal Directory shows contact information, license status and public discipline for licensed legal professionals.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Washington State Department of Labor & Industries (L&I)",
+   "agency_url": "https://lni.wa.gov/licensing-permits/plumbing/",
+   "level": "state",
+   "lookup_url": "https://secure.lni.wa.gov/verify/",
+   "source_url": "https://lni.wa.gov/licensing-permits/plumbing/",
+   "summary": "L&I certifies plumbers after they complete required on-the-job training hours and pass an exam. Only L&I-certified plumbers can legally do plumbing work on someone else's property; owners may do their own plumbing on property they own.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Washington State Department of Labor & Industries (L&I)",
+   "agency_url": "https://lni.wa.gov/licensing-permits/contractors/register-as-a-contractor/",
+   "insurance_bond": "Specialty contractors: $15,000 surety bond; general contractors: $30,000 surety bond. General liability insurance of $200,000 public liability and $50,000 property damage, or $250,000 combined single limit.",
+   "level": "state",
+   "lookup_url": "https://secure.lni.wa.gov/verify/",
+   "source_url": "https://lni.wa.gov/licensing-permits/contractors/register-as-a-contractor/",
+   "summary": "Washington requires all construction contractors to register with L&I; a roofer can register as a specialty contractor, which may only do work in its registered specialty, or as a general contractor.",
+   "verified": "fetched"
+  }
+ },
+ "WI": {
+  "electrical": {
+   "agency": "Wisconsin Department of Safety and Professional Services (DSPS)",
+   "agency_url": "https://dsps.wi.gov/a-z-professions-list/electrical-contractor/",
+   "level": "state",
+   "lookup_url": "https://license.wi.gov/s/license-lookup",
+   "source_url": "https://dsps.wi.gov/a-z-professions-list/electrical-contractor/",
+   "summary": "Wisconsin's DSPS issues Electrical Contractor credentials to businesses and licenses individual electricians (such as master and journeyman electricians). Homeowners can check a credential in DSPS's LicensE license lookup.",
+   "verified": "fetched"
+  },
+  "general_contracting": {
+   "agency": "Wisconsin Department of Safety and Professional Services (DSPS)",
+   "agency_url": "https://dsps.wi.gov/a-z-professions-list/dwelling-contractor-dc/",
+   "insurance_bond": "A bond of at least $25,000 endorsed by a surety authorized in Wisconsin, or a general liability insurance policy of at least $250,000 per occurrence.",
+   "level": "state",
+   "lookup_url": "https://license.wi.gov/s/license-lookup",
+   "source_url": "https://dsps.wi.gov/a-z-professions-list/dwelling-contractor-dc/",
+   "summary": "Wisconsin requires contractors who obtain building permits for one- and two-family dwelling work to hold a Dwelling Contractor certification from DSPS (homeowners working on their own residence are exempt). The certification requires proof of financial responsibility.",
+   "verified": "fetched"
+  },
+  "hvac": {
+   "agency": "Wisconsin Department of Safety and Professional Services (DSPS)",
+   "agency_url": "https://dsps.wi.gov/a-z-professions-list/hvac-contractor/",
+   "level": "state",
+   "lookup_url": "https://license.wi.gov/s/license-lookup",
+   "source_url": "https://dsps.wi.gov/a-z-professions-list/hvac-contractor/",
+   "summary": "Wisconsin's DSPS issues an HVAC Contractor credential to businesses and an HVAC Qualifier credential to individuals. Homeowners can check a credential in DSPS's LicensE license lookup.",
+   "verified": "fetched"
+  },
+  "legal": {
+   "agency": "Supreme Court of Wisconsin / State Bar of Wisconsin",
+   "agency_url": "https://www.wicourts.gov/services/public/selfhelp/selfrep/faqslawyers.htm",
+   "level": "state",
+   "lookup_url": "https://www.wisbar.org/Pages/BasicLawyerSearch.aspx",
+   "source_url": "https://www.wicourts.gov/services/public/selfhelp/selfrep/faqslawyers.htm",
+   "summary": "The Wisconsin court system directs the public to the State Bar of Wisconsin's Lawyer Search to check whether a lawyer is in good standing. The court's Office of Lawyer Regulation can say whether public discipline has been imposed.",
+   "verified": "fetched"
+  },
+  "plumbing": {
+   "agency": "Wisconsin Department of Safety and Professional Services (DSPS)",
+   "agency_url": "https://dsps.wi.gov/a-z-professions-list/master-plumber/",
+   "level": "state",
+   "lookup_url": "https://license.wi.gov/s/license-lookup",
+   "source_url": "https://dsps.wi.gov/a-z-professions-list/master-plumber/",
+   "summary": "Wisconsin licenses plumbers at the state level through DSPS, including master plumber and journeyman plumber credentials. Homeowners can check a credential in DSPS's LicensE license lookup.",
+   "verified": "fetched"
+  },
+  "roofing": {
+   "agency": "Wisconsin Department of Safety and Professional Services (DSPS)",
+   "agency_url": "https://dsps.wi.gov/a-z-professions-list/dwelling-contractor-dc/",
+   "level": "state",
+   "lookup_url": "https://license.wi.gov/s/license-lookup",
+   "source_url": "https://docs.legis.wisconsin.gov/statutes/statutes/101/ii/654",
+   "summary": "Wisconsin has no separate roofing license. Contractors who obtain a building permit for one- and two-family dwelling work must hold the state Dwelling Contractor certification from DSPS (owner-occupants working on their own home are exempt).",
+   "verified": "fetched"
+  }
+ }
+}

@@ -18,10 +18,11 @@ sys.path.insert(0, os.path.dirname(__file__))
 from guide_data import CATS, CLIMATE, REGION, REGION_LABEL, STATE_NAMES, local_note  # noqa: E402
 from ga4 import GA4_SNIPPET  # noqa: E402
 from build_sitemap import build as build_sitemap  # noqa: E402
+import local_render as LR  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://allcitypros.com"
-TODAY = os.environ.get("GUIDE_DATE", "2026-10-17")
+TODAY = os.environ.get("GUIDE_DATE", "2026-11-15")
 MONTH_YEAR = datetime.date.fromisoformat(TODAY).strftime("%B %Y")
 
 # Largest metros, used only to pick a short "popular cities" link list (WAVE1_N).
@@ -127,6 +128,8 @@ def cta_html(cat, city_name):
             f'<small>Sponsored link{": " + esc(c["partner"]) if c.get("partner") else ""}. We may earn a commission at no cost to you.</small></div>')
 
 def guide_page(city, cat):
+    if LR.has_core_data(city, cat):
+        return core_page(city, cat)
     name, st = CITIES[city]
     d = CATS[cat]
     state = STATE_NAMES[st]
@@ -167,6 +170,7 @@ def guide_page(city, cat):
 <p>{esc(snap)}</p>
 <p class="g-small">For the full {esc(lc(label))} guide &mdash; cost drivers, how prices vary by region, licensing and the complete FAQ &mdash; see <a href="/guides/{slug(cat)}">our {esc(lc(label))} guide</a>.</p>
 {f'<h2>What to know in {esc(name)}</h2><p>{esc(note)}</p>' if note else ''}
+{LR.market_block(city, cat, name, label)}
 <h2>Typical {esc(lc(label))} costs</h2>
 <p class="g-small">National ballpark ranges for planning only. Actual prices in {esc(name)} depend on the scope of work, materials and the provider &mdash; always compare written quotes.</p>
 <table class="g-table"><thead><tr><th>Service</th><th>Typical range</th></tr></thead><tbody>{rows}</tbody></table>
@@ -188,6 +192,103 @@ def guide_page(city, cat):
     # indexable page; these stay live and crawlable ("follow") for readers and internal links.
     robots = '  <meta name="robots" content="noindex, follow">\n'
     return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots=robots) + body + FOOT
+
+CORE_TITLE = {"legal": "Lawyers"}
+
+
+def core_page(city, cat):
+    """City x service page built around cited local data (indexable).
+
+    The generic hiring advice lives on the service guide; this page carries what is specific to the
+    city: the state licensing body and rules, the official license lookup, the permit office, Census
+    firm counts, BLS wages and (for HVAC/roofing) NOAA climate normals.
+    """
+    name, st = CITIES[city]
+    d = CATS[cat]
+    state = STATE_NAMES[st]
+    label = d["label"]
+    what = CORE_TITLE.get(cat, label)
+    fmt = dict(city=name, state=state, st=st)
+    e = LR.lic(st, cat) or {}
+    is_legal = cat == "legal"
+    title = (f"{what} in {name}, {st}: {'Bar License Check' if is_legal else 'License Check, Permits'} & Local Market Data")
+    lic_bit = (f"how to check a {state} {'bar' if is_legal else 'contractor'} license" +
+               (f" ({e['agency']})" if e.get("level") == "state" and e.get("agency") and len(e["agency"]) < 60 else ""))
+    desc = (f"{what} in {name}, {state}: {lic_bit}, "
+            f"{'' if is_legal else 'the local permit office, '}how many firms operate locally and what workers earn. "
+            f"Sources cited, checked {MONTH_YEAR}.")
+    url = f"{DOMAIN}{gpath(city, cat)}"
+    crumbs = [("Home", "/"), ("Guides", "/guides"), (label, f"/guides/{slug(cat)}"), (f"{name}, {st}", gpath(city, cat))]
+    ld = ld_block(
+        {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc, "dateModified": TODAY,
+         "datePublished": "2026-10-17", "mainEntityOfPage": url, "author": {"@type": "Organization", "name": "AllCityPros"},
+         "publisher": {"@type": "Organization", "name": "AllCityPros", "url": DOMAIN}},
+        crumbs_ld(crumbs))
+
+    # Local, data-driven checklist. Each item depends on what the data says for this city.
+    checks = []
+    if e.get("lookup_url"):
+        checks.append(f'Look the {esc(d["noun"])} up in the <a href="{esc(e["lookup_url"])}" target="_blank" rel="noopener">official {esc(state)} license lookup</a> '
+                      + ('and confirm the license is active and in good standing.' if is_legal else 'and make sure the name and license number match the contract.'))
+    elif e.get("level") == "local":
+        checks.append(f"{esc(state)} has no statewide license for this work, so ask which local license or registration the {esc(d['noun'])} holds and confirm it with the issuing city or county.")
+    if e.get("threshold"):
+        checks.append(f"Know the threshold: {esc(e['threshold'].rstrip('.'))}.")
+    if e.get("insurance_bond"):
+        checks.append(f"Ask for proof of the insurance or bond {esc(state)} requires (listed below) and current workers' compensation coverage.")
+    elif not is_legal:
+        checks.append("Ask for a certificate of liability insurance and workers' compensation coverage before work starts.")
+    permit = LR.PERMITS.get(city) or {}
+    if permit.get("url") and not is_legal:
+        checks.append(f'Confirm who will pull the permit with <a href="{esc(permit["url"])}" target="_blank" rel="noopener">{esc(permit["issuer"])}</a> and that final inspection is included in the price.')
+    if is_legal:
+        checks.append("Check the lawyer's public discipline history, ask how they bill (hourly, flat or contingency) and get the fee agreement in writing.")
+    checks.append("Get at least three written quotes for the same scope; " if not is_legal else "Talk to two or three lawyers before you sign; ")
+    checks[-1] += f'our <a href="/guides/{slug(cat)}">{esc(lc(label))} guide</a> covers typical costs, questions to ask and red flags.'
+    checklist = "".join(f"<li>{c}</li>" for c in checks)
+
+    note = CLIMATE.get(cat, {}).get(REGION.get(st, "mixed")) or ""
+    note = note.format(**fmt) if note else ""
+
+    others = [c for c in CATS if c != cat]
+    core_links = "".join(f'<a class="rel-link" href="{gpath(city, c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> {esc(CORE_TITLE.get(c, CATS[c]["label"]))} in {esc(name)}</a>'
+                         for c in LR.CORE if c != cat and LR.has_core_data(city, c))
+    more = "".join(f'<a class="rel-link" href="{gpath(city, c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> {esc(CATS[c]["label"])}</a>'
+                   for c in others if c not in LR.CORE)
+    same_state = [c for c, (n_, s) in CITIES.items() if s == st and c != city][:8]
+    if len(same_state) < 6:
+        same_state += [c for c in WAVE1 if c in CITIES and c != city and c not in same_state][: 8 - len(same_state)]
+    nearby = "".join(f'<a class="rel-link" href="{gpath(c, cat)}">{esc(what)} in {esc(CITIES[c][0])}, {CITIES[c][1]}</a>' for c in same_state)
+
+    pc = LR.principal(city)
+    shared_note = ""
+    if pc != city:
+        shared_note = (f'<p class="g-small">{esc(name)} is in {esc(LR.county_label(city))}, so the county business counts, '
+                       f'metro wages and climate figures below are the same as on our <a href="{gpath(pc, cat)}">{esc(what)} in '
+                       f'{esc(CITIES[pc][0])}</a> page. The permit office is specific to {esc(name)}.</p>')
+    lic_heading = (f"Checking a lawyer's license in {state}" if is_legal else f"{label} licensing in {state}")
+    body = f"""{breadcrumb_html(crumbs)}
+<section class="page-hero"><h1>{CAT_EMOJI[cat]} {esc(what)} in {esc(name)}, {st}</h1><p>License checks, {'' if is_legal else 'permits, '}local firms and pay &middot; Sources checked {MONTH_YEAR}</p></section>
+<main class="g-wrap">
+<article class="g-article">
+<p class="g-lead">Hiring {'a lawyer' if is_legal else 'for ' + esc(lc(label)) + ' work'} in {esc(name)}? Start with the facts that are specific to {esc(name)} and {esc(state)}: who licenses the work, how to check a license, {'' if is_legal else 'where permits come from, '}and what the local market looks like. Every figure below links to its official source.</p>
+{shared_note}
+<h2>Before you hire in {esc(name)}: a checklist</h2><ol>{checklist}</ol>
+{LR.licensing_block(city, cat, state, lic_heading)}
+{'' if is_legal else LR.permit_block(city, name, cat)}
+{LR.market_block(city, cat, name, label)}
+{LR.climate_block(city, cat, name)}
+{f'<h2>Seasonal notes for {esc(state)}</h2><p>{esc(note)}</p>' if note else ''}
+{cta_html(cat, name)}
+<h2>Other trades in {esc(name)}</h2><div class="rel-grid">{core_links}</div>
+<h2>More {esc(name)} guides</h2><div class="rel-grid">{more}</div>
+<h2>{esc(what)} in other cities</h2><div class="rel-grid">{nearby}</div>
+<p class="g-disclaimer">AllCityPros is an independent information resource. We do not endorse, rate or vouch for any business, and nothing here is legal or professional advice. Licensing rules change; confirm requirements with the licensing agency before you sign a contract. Business counts and wages are official statistics for the county or metro area, not counts of businesses available to you.</p>
+</article>
+</main>"""
+    robots = "" if LR.is_indexable(city, cat) else '  <meta name="robots" content="noindex, follow">\n'
+    return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots=robots) + body + FOOT
+
 
 REGION_ORDER = ["hot_humid", "hot_dry", "mixed", "cold", "mild"]
 REGION_NAME = {
@@ -296,6 +397,13 @@ def category_hub(cat):
     more = "".join(f'<a class="rel-link" href="/guides/{slug(c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> '
                    f'{esc(CATS[c]["label"])}</a>' for c in others)
 
+    lic_table = ""
+    if cat in LR.CORE:
+        by_state = {}
+        for c, (nm, st_) in sorted(CITIES.items(), key=lambda x: x[1][0]):
+            if LR.is_indexable(c, cat):
+                by_state.setdefault(st_, []).append((c, nm))
+        lic_table = LR.state_license_table(cat, STATE_NAMES, by_state)
     crumbs = [("Home", "/"), ("Guides", "/guides"), (label, "")]
     return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots="") + f"""{breadcrumb_html(crumbs)}
 <section class="page-hero"><h1>{CAT_EMOJI[cat]} {esc(label)}: Costs &amp; How to Hire</h1><p>What the work costs, how to compare quotes and what to ask &middot; Updated {MONTH_YEAR}</p></section>
@@ -311,6 +419,7 @@ def category_hub(cat):
 <h2>Questions to ask before you hire</h2><ul>{qs}</ul>
 <h2>Red flags to watch for</h2><ul>{red}</ul>
 <h2>Licensing and verification</h2><p>{esc(generic(d['lic']))}</p>
+{lic_table}
 <h2>When to schedule</h2><p>{esc(generic(d['timing']))}</p>
 <h2>Frequently asked questions</h2><div class="faq-list">{faqh}</div>
 <h2>{esc(label)} by city</h2>
@@ -340,21 +449,30 @@ def city_hub(city):
     name, st = CITIES[city]
     url = f"{DOMAIN}/{city}"
     title = f"{name}, {st} Local Service Guides: Costs & Hiring Tips | AllCityPros"
-    desc = f"Hiring help in {name}, {st}: cost guides, questions to ask and red flags for HVAC, plumbing, roofing, legal, accounting and 18 more services."
+    desc = f"Hiring in {name}, {st}: who licenses each trade in {STATE_NAMES[st]}, official license lookups, the permit office, local business counts and climate data, plus cost guides for 24 services."
     ld = ld_block(crumbs_ld([("Home", "/"), (f"{name}, {st}", f"/{city}")]))
     # Point the city hub at the indexable service guides. It used to link only the city x service
     # leaves, which are now noindexed -- that left every city hub a dead end passing no signal to
     # the pages meant to rank. The local page is still offered, as a secondary "local notes" link.
     cards = "".join(f'<a class="rel-link" href="/guides/{slug(c)}"><span class="rel-emoji">{CAT_EMOJI[c]}</span> '
                     f'{esc(d["label"])}</a>' for c, d in CATS.items())
-    local = "".join(f'<a class="rel-link" href="{gpath(city, c)}">{esc(CATS[c]["label"])} in {esc(name)}</a>'
-                    for c in CATS)
+    local = "".join(f'<a class="rel-link" href="{gpath(city, c)}">{esc(CORE_TITLE.get(c, CATS[c]["label"]))} in {esc(name)}</a>'
+                    for c in sorted(CATS, key=lambda c: (not LR.has_core_data(city, c), list(CATS).index(c))))
+    p = LR.PERMITS.get(city) or {}
+    permit_html = (f'<h2>Building permits in {esc(name)}</h2><p>Residential building permits are issued by '
+                   f'<a href="{esc(p["url"])}" target="_blank" rel="noopener">{esc(p["issuer"])}</a>. '
+                   f'Your contractor should normally pull the permit and schedule inspections.</p>'
+                   f'<p class="g-src">Official permit office page, checked {LR.CHECKED}.</p>') if p.get("url") else ""
     return HEAD.format(title=esc(title), desc=esc(desc), canon=url, ld=ld, robots="") + f"""{breadcrumb_html([("Home", "/"), ("Guides", "/guides"), (f"{name}, {st}", "")])}
 <section class="page-hero"><h1>{esc(name)}, {st} Local Service Guides</h1><p>Costs, hiring checklists and red flags for {len(CATS)} services &middot; Updated {MONTH_YEAR}</p></section>
 <main class="g-wrap"><article class="g-article"><h2>Choose a service</h2><div class="rel-grid">{cards}</div>
 <p>These guides explain what typical projects cost, how to compare providers and how to check licensing in {esc(STATE_NAMES[st])}.</p>
+{LR.city_license_table(city, STATE_NAMES[st])}
+{permit_html}
+{LR.city_market_table(city, [(c, CATS[c]["label"]) for c in CATS])}
+{LR.city_climate_line(city, name)}
 <h2>Local notes for {esc(name)}</h2>
-<p class="g-small">Short {esc(name)}-specific notes on climate, seasonal timing and {esc(STATE_NAMES[st])} licensing. The full guidance is in the service guides above.</p>
+<p class="g-small">{esc(name)} pages for each service. HVAC, plumbing, electrical, roofing, contracting and lawyer pages include the licensing body, permit office, local firm counts and wages, with sources.</p>
 <div class="rel-grid">{local}</div>
 <p class="g-disclaimer">AllCityPros is an independent information resource and does not endorse or rate specific businesses. Sample directory entries from an earlier version of this site are kept for reference and are not verified.</p></article></main>""" + FOOT
 
@@ -418,9 +536,10 @@ def main():
         write(f"{city}/index.html", city_hub(city))
     # City x service guides are noindex (see guide_page). build_sitemap scans the tree and
     # lists only indexable URLs, split under the 50,000-URL / 50 MB sitemap limits.
+    indexable = sum(1 for city in CITIES for cat in CATS if LR.is_indexable(city, cat))
     info = build_sitemap(ROOT)
     print(
-        f"guides: {n} (noindex), service hubs: {len(CATS)}, city hubs: {len(CITIES)}, "
+        f"guides: {n} ({indexable} indexable), service hubs: {len(CATS)}, city hubs: {len(CITIES)}, "
         f"sitemap urls: {info['url_count']}"
     )
 
