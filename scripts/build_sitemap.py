@@ -34,6 +34,7 @@ Privacy and terms are included. Output:
     sitemap.xml                         sitemap index (Search Console URL)
     sitemaps/sitemap-<section>.xml      one file per section
     sitemaps/sitemap-<section>-N.xml    further splits past 50,000 URLs or 50 MB
+    <indexnow-key>.txt                  IndexNow key file at the site root
 
 Sections are pages, guides, city-services, cities, and listings. Empty
 sections are omitted. The generators call build() after they write HTML.
@@ -50,6 +51,9 @@ from urllib.parse import urlsplit
 
 DOMAIN = "https://allcitypros.com"
 HOST = "allcitypros.com"
+# IndexNow fetches https://allcitypros.com/<key>.txt. The body must be the key
+# alone: HTTP 200, text/plain, no redirect, no trailing newline.
+INDEXNOW_KEY = "9bc689fb44b47c744591312afdcf2253"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 NS = {"sm": SITEMAP_NS}
 MAX_URLS = 50_000
@@ -99,6 +103,19 @@ _URLSET_FOOT = "</urlset>\n"
 
 def repo_root():
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def write_indexnow_key(root):
+    """Copy the IndexNow key file into the deployed site root."""
+    path = os.path.join(root, INDEXNOW_KEY + ".txt")
+    payload = INDEXNOW_KEY.encode("ascii")
+    if os.path.isfile(path):
+        with open(path, "rb") as handle:
+            if handle.read() == payload:
+                return path
+    with open(path, "wb") as handle:
+        handle.write(payload)
+    return path
 
 
 def _attrs(raw):
@@ -570,6 +587,7 @@ def validate(root, entries):
 
 def build(root=None, max_urls=MAX_URLS, max_bytes=MAX_BYTES):
     root = os.path.abspath(root or repo_root())
+    write_indexnow_key(root)
     entries, skipped = collect(root)
     written = write_sitemaps(root, entries, max_urls=max_urls, max_bytes=max_bytes)
     ensure_robots(root)
@@ -679,6 +697,11 @@ def _self_test():
 
         # Force a split so the 50,000-URL path is exercised.
         info = build(tmp, max_urls=2, max_bytes=MAX_BYTES)
+        key_path = os.path.join(tmp, INDEXNOW_KEY + ".txt")
+        with open(key_path, "rb") as handle:
+            key_body = handle.read()
+        if key_body != INDEXNOW_KEY.encode("ascii"):
+            raise SystemExit(f"indexnow key file mismatch: {key_body!r}")
         if info["url_count"] != 7:
             raise SystemExit(f"unexpected count {info}")
         names = [name for name, _count in info["files"]]
